@@ -80,6 +80,21 @@ namespace Test
             this.btnArticleEdit = new System.Windows.Forms.RibbonButton();
             this.btnArticleDelete = new System.Windows.Forms.RibbonButton();
             this.btnArticleRefresh = new System.Windows.Forms.RibbonButton();
+            this.btnVisitsShow = new System.Windows.Forms.RibbonButton();
+            this.btnVisitsAdd = new System.Windows.Forms.RibbonButton();
+            this.btnVisitsEdit = new System.Windows.Forms.RibbonButton();
+            this.btnVisitsDelete = new System.Windows.Forms.RibbonButton();
+            this.btnVisitsRefresh = new System.Windows.Forms.RibbonButton();
+            this.btnOperationsShow = new System.Windows.Forms.RibbonButton();
+            this.btnOperationsAdd = new System.Windows.Forms.RibbonButton();
+            this.btnOperationsEdit = new System.Windows.Forms.RibbonButton();
+            this.btnOperationsDelete = new System.Windows.Forms.RibbonButton();
+            this.btnOperationsRefresh = new System.Windows.Forms.RibbonButton();
+            this.btnPriceShow = new System.Windows.Forms.RibbonButton();
+            this.btnPriceAdd = new System.Windows.Forms.RibbonButton();
+            this.btnPriceEdit = new System.Windows.Forms.RibbonButton();
+            this.btnPriceDelete = new System.Windows.Forms.RibbonButton();
+            this.btnPriceRefresh = new System.Windows.Forms.RibbonButton();
             this._mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             this.SuspendLayout();
@@ -393,8 +408,13 @@ namespace Test
             // 
             // ribbonPanel7
             // 
+            this.ribbonPanel7.Items.Add(this.btnVisitsShow);
+            this.ribbonPanel7.Items.Add(this.btnVisitsAdd);
+            this.ribbonPanel7.Items.Add(this.btnVisitsEdit);
+            this.ribbonPanel7.Items.Add(this.btnVisitsDelete);
+            this.ribbonPanel7.Items.Add(this.btnVisitsRefresh);
             this.ribbonPanel7.Name = "ribbonPanel7";
-            this.ribbonPanel7.Text = "Zarządzanie";
+            this.ribbonPanel7.Text = "Zarządzanie - Wizyty";
             // 
             // ribbonTab7
             // 
@@ -404,8 +424,13 @@ namespace Test
             // 
             // ribbonPanel8
             // 
+            this.ribbonPanel8.Items.Add(this.btnOperationsShow);
+            this.ribbonPanel8.Items.Add(this.btnOperationsAdd);
+            this.ribbonPanel8.Items.Add(this.btnOperationsEdit);
+            this.ribbonPanel8.Items.Add(this.btnOperationsDelete);
+            this.ribbonPanel8.Items.Add(this.btnOperationsRefresh);
             this.ribbonPanel8.Name = "ribbonPanel8";
-            this.ribbonPanel8.Text = "Zarządzanie";
+            this.ribbonPanel8.Text = "Zarządzanie - Operacje";
             // 
             // ribbonTab8
             // 
@@ -415,8 +440,13 @@ namespace Test
             // 
             // ribbonPanel9
             // 
+            this.ribbonPanel9.Items.Add(this.btnPriceShow);
+            this.ribbonPanel9.Items.Add(this.btnPriceAdd);
+            this.ribbonPanel9.Items.Add(this.btnPriceEdit);
+            this.ribbonPanel9.Items.Add(this.btnPriceDelete);
+            this.ribbonPanel9.Items.Add(this.btnPriceRefresh);
             this.ribbonPanel9.Name = "ribbonPanel9";
-            this.ribbonPanel9.Text = "Zarządzanie";
+            this.ribbonPanel9.Text = "Zarządzanie - Cennik leków";
             // 
             // _mainPanel
             // 
@@ -522,6 +552,126 @@ namespace Test
             this.btnArticleRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleRefresh.SmallImage")));
             this.btnArticleRefresh.Text = "Odśwież";
             // 
+            // btnVisitsShow
+            // 
+            this.btnVisitsShow.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitsShow.Image")));
+            this.btnVisitsShow.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsShow.LargeImage")));
+            this.btnVisitsShow.Name = "btnVisitsShow";
+            this.btnVisitsShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsShow.SmallImage")));
+            this.btnVisitsShow.Text = "Wyświetl";
+            // 
+            // btnVisitsAdd
+            // 
+            this.btnVisitsAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitsAdd.Image")));
+            this.btnVisitsAdd.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsAdd.LargeImage")));
+            this.btnVisitsAdd.Name = "btnVisitsAdd";
+            this.btnVisitsAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsAdd.SmallImage")));
+            this.btnVisitsAdd.Text = "Dodaj";
+            // 
+            // btnVisitsEdit
+            // 
+            this.btnVisitsEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitsEdit.Image")));
+            this.btnVisitsEdit.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsEdit.LargeImage")));
+            this.btnVisitsEdit.Name = "btnVisitsEdit";
+            this.btnVisitsEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsEdit.SmallImage")));
+            this.btnVisitsEdit.Text = "Edytuj";
+            // 
+            // btnVisitsDelete
+            // 
+            this.btnVisitsDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitsDelete.Image")));
+            this.btnVisitsDelete.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsDelete.LargeImage")));
+            this.btnVisitsDelete.Name = "btnVisitsDelete";
+            this.btnVisitsDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsDelete.SmallImage")));
+            this.btnVisitsDelete.Text = "Usuń";
+            // 
+            // btnVisitsRefresh
+            // 
+            this.btnVisitsRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitsRefresh.Image")));
+            this.btnVisitsRefresh.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsRefresh.LargeImage")));
+            this.btnVisitsRefresh.Name = "btnVisitsRefresh";
+            this.btnVisitsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsRefresh.SmallImage")));
+            this.btnVisitsRefresh.Text = "Odśwież";
+            // 
+            // btnOperationsShow
+            // 
+            this.btnOperationsShow.Image = ((System.Drawing.Image)(resources.GetObject("btnOperationsShow.Image")));
+            this.btnOperationsShow.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsShow.LargeImage")));
+            this.btnOperationsShow.Name = "btnOperationsShow";
+            this.btnOperationsShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsShow.SmallImage")));
+            this.btnOperationsShow.Text = "Wyświetl";
+            // 
+            // btnOperationsAdd
+            // 
+            this.btnOperationsAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnOperationsAdd.Image")));
+            this.btnOperationsAdd.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsAdd.LargeImage")));
+            this.btnOperationsAdd.Name = "btnOperationsAdd";
+            this.btnOperationsAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsAdd.SmallImage")));
+            this.btnOperationsAdd.Text = "Dodaj";
+            // 
+            // btnOperationsEdit
+            // 
+            this.btnOperationsEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnOperationsEdit.Image")));
+            this.btnOperationsEdit.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsEdit.LargeImage")));
+            this.btnOperationsEdit.Name = "btnOperationsEdit";
+            this.btnOperationsEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsEdit.SmallImage")));
+            this.btnOperationsEdit.Text = "Edytuj";
+            // 
+            // btnOperationsDelete
+            // 
+            this.btnOperationsDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnOperationsDelete.Image")));
+            this.btnOperationsDelete.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsDelete.LargeImage")));
+            this.btnOperationsDelete.Name = "btnOperationsDelete";
+            this.btnOperationsDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsDelete.SmallImage")));
+            this.btnOperationsDelete.Text = "Usuń";
+            // 
+            // btnOperationsRefresh
+            // 
+            this.btnOperationsRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnOperationsRefresh.Image")));
+            this.btnOperationsRefresh.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsRefresh.LargeImage")));
+            this.btnOperationsRefresh.Name = "btnOperationsRefresh";
+            this.btnOperationsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsRefresh.SmallImage")));
+            this.btnOperationsRefresh.Text = "Odśwież";
+            // 
+            // btnPriceShow
+            // 
+            this.btnPriceShow.Image = ((System.Drawing.Image)(resources.GetObject("btnPriceShow.Image")));
+            this.btnPriceShow.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPriceShow.LargeImage")));
+            this.btnPriceShow.Name = "btnPriceShow";
+            this.btnPriceShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPriceShow.SmallImage")));
+            this.btnPriceShow.Text = "Wyświetl";
+            // 
+            // btnPriceAdd
+            // 
+            this.btnPriceAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnPriceAdd.Image")));
+            this.btnPriceAdd.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPriceAdd.LargeImage")));
+            this.btnPriceAdd.Name = "btnPriceAdd";
+            this.btnPriceAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPriceAdd.SmallImage")));
+            this.btnPriceAdd.Text = "Dodaj";
+            // 
+            // btnPriceEdit
+            // 
+            this.btnPriceEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnPriceEdit.Image")));
+            this.btnPriceEdit.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPriceEdit.LargeImage")));
+            this.btnPriceEdit.Name = "btnPriceEdit";
+            this.btnPriceEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPriceEdit.SmallImage")));
+            this.btnPriceEdit.Text = "Edytuj";
+            // 
+            // btnPriceDelete
+            // 
+            this.btnPriceDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnPriceDelete.Image")));
+            this.btnPriceDelete.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPriceDelete.LargeImage")));
+            this.btnPriceDelete.Name = "btnPriceDelete";
+            this.btnPriceDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPriceDelete.SmallImage")));
+            this.btnPriceDelete.Text = "Usuń";
+            // 
+            // btnPriceRefresh
+            // 
+            this.btnPriceRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnPriceRefresh.Image")));
+            this.btnPriceRefresh.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPriceRefresh.LargeImage")));
+            this.btnPriceRefresh.Name = "btnPriceRefresh";
+            this.btnPriceRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPriceRefresh.SmallImage")));
+            this.btnPriceRefresh.Text = "Odśwież";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,6 +743,21 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnArticleEdit;
         private System.Windows.Forms.RibbonButton btnArticleDelete;
         private System.Windows.Forms.RibbonButton btnArticleRefresh;
+        private System.Windows.Forms.RibbonButton btnVisitsShow;
+        private System.Windows.Forms.RibbonButton btnVisitsAdd;
+        private System.Windows.Forms.RibbonButton btnVisitsEdit;
+        private System.Windows.Forms.RibbonButton btnVisitsDelete;
+        private System.Windows.Forms.RibbonButton btnVisitsRefresh;
+        private System.Windows.Forms.RibbonButton btnOperationsShow;
+        private System.Windows.Forms.RibbonButton btnOperationsAdd;
+        private System.Windows.Forms.RibbonButton btnOperationsEdit;
+        private System.Windows.Forms.RibbonButton btnOperationsDelete;
+        private System.Windows.Forms.RibbonButton btnOperationsRefresh;
+        private System.Windows.Forms.RibbonButton btnPriceShow;
+        private System.Windows.Forms.RibbonButton btnPriceAdd;
+        private System.Windows.Forms.RibbonButton btnPriceEdit;
+        private System.Windows.Forms.RibbonButton btnPriceDelete;
+        private System.Windows.Forms.RibbonButton btnPriceRefresh;
     }
 }
 
