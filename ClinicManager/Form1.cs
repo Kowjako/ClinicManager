@@ -29,5 +29,16 @@ namespace Test
             
         }
 
+        private void btnDoctorsAdd_Click(object sender, EventArgs e)
+        {
+            var form = new DoctorDetails();
+            form.ShowDialog();
+        }
+
+        private void btnClientsAdd_Click(object sender, EventArgs e)
+        {
+            var form = new PatientDetails();
+            form.ShowDialog();
+        }
     }
 }

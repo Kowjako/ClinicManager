@@ -287,6 +287,7 @@ namespace Test
             this.btnDoctorsAdd.Name = "btnDoctorsAdd";
             this.btnDoctorsAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsAdd.SmallImage")));
             this.btnDoctorsAdd.Text = "Dodaj";
+            this.btnDoctorsAdd.Click += new System.EventHandler(this.btnDoctorsAdd_Click);
             // 
             // btnDoctorsEdit
             // 
@@ -343,6 +344,7 @@ namespace Test
             this.btnClientsAdd.Name = "btnClientsAdd";
             this.btnClientsAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClientsAdd.SmallImage")));
             this.btnClientsAdd.Text = "Dodaj";
+            this.btnClientsAdd.Click += new System.EventHandler(this.btnClientsAdd_Click);
             // 
             // btnClientsEdit
             // 
