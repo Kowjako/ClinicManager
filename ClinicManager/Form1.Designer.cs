@@ -70,6 +70,11 @@ namespace Test
             this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
             this._mainPanel = new System.Windows.Forms.Panel();
             this._gvMain = new System.Windows.Forms.DataGridView();
+            this.btnAssetsShow = new System.Windows.Forms.RibbonButton();
+            this.btnAssetsAdd = new System.Windows.Forms.RibbonButton();
+            this.btnAssetsEdit = new System.Windows.Forms.RibbonButton();
+            this.btnAssetsDelete = new System.Windows.Forms.RibbonButton();
+            this.btnAssetsRefresh = new System.Windows.Forms.RibbonButton();
             this._mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             this.SuspendLayout();
@@ -351,6 +356,11 @@ namespace Test
             // 
             // ribbonPanel5
             // 
+            this.ribbonPanel5.Items.Add(this.btnAssetsShow);
+            this.ribbonPanel5.Items.Add(this.btnAssetsAdd);
+            this.ribbonPanel5.Items.Add(this.btnAssetsEdit);
+            this.ribbonPanel5.Items.Add(this.btnAssetsDelete);
+            this.ribbonPanel5.Items.Add(this.btnAssetsRefresh);
             this.ribbonPanel5.Name = "ribbonPanel5";
             this.ribbonPanel5.Text = "Zarządzanie";
             // 
@@ -422,6 +432,46 @@ namespace Test
             this._gvMain.Size = new System.Drawing.Size(1313, 644);
             this._gvMain.TabIndex = 0;
             // 
+            // btnAssetsShow
+            // 
+            this.btnAssetsShow.Image = ((System.Drawing.Image)(resources.GetObject("btnAssetsShow.Image")));
+            this.btnAssetsShow.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsShow.LargeImage")));
+            this.btnAssetsShow.Name = "btnAssetsShow";
+            this.btnAssetsShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsShow.SmallImage")));
+            this.btnAssetsShow.Text = "Wyświetl";
+            // 
+            // btnAssetsAdd
+            // 
+            this.btnAssetsAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnAssetsAdd.Image")));
+            this.btnAssetsAdd.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsAdd.LargeImage")));
+            this.btnAssetsAdd.Name = "btnAssetsAdd";
+            this.btnAssetsAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsAdd.SmallImage")));
+            this.btnAssetsAdd.Text = "Dodaj";
+            // 
+            // btnAssetsEdit
+            // 
+            this.btnAssetsEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnAssetsEdit.Image")));
+            this.btnAssetsEdit.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsEdit.LargeImage")));
+            this.btnAssetsEdit.Name = "btnAssetsEdit";
+            this.btnAssetsEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsEdit.SmallImage")));
+            this.btnAssetsEdit.Text = "Edytuj";
+            // 
+            // btnAssetsDelete
+            // 
+            this.btnAssetsDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnAssetsDelete.Image")));
+            this.btnAssetsDelete.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsDelete.LargeImage")));
+            this.btnAssetsDelete.Name = "btnAssetsDelete";
+            this.btnAssetsDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsDelete.SmallImage")));
+            this.btnAssetsDelete.Text = "Usuń";
+            // 
+            // btnAssetsRefresh
+            // 
+            this.btnAssetsRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnAssetsRefresh.Image")));
+            this.btnAssetsRefresh.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsRefresh.LargeImage")));
+            this.btnAssetsRefresh.Name = "btnAssetsRefresh";
+            this.btnAssetsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsRefresh.SmallImage")));
+            this.btnAssetsRefresh.Text = "Odśwież";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,6 +533,11 @@ namespace Test
         private System.Windows.Forms.RibbonPanel ribbonPanel7;
         private System.Windows.Forms.RibbonPanel ribbonPanel8;
         private System.Windows.Forms.RibbonPanel ribbonPanel9;
+        private System.Windows.Forms.RibbonButton btnAssetsShow;
+        private System.Windows.Forms.RibbonButton btnAssetsAdd;
+        private System.Windows.Forms.RibbonButton btnAssetsEdit;
+        private System.Windows.Forms.RibbonButton btnAssetsDelete;
+        private System.Windows.Forms.RibbonButton btnAssetsRefresh;
     }
 }
 
