@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClinicManager;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace Test
 
         private void btnHospitalAdd_Click(object sender, EventArgs e)
         {
-            
+            var form = new ClinicDetails();
+            form.ShowDialog();
         }
 
         private void btnHospitalEdit_Click(object sender, EventArgs e)

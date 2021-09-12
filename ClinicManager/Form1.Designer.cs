@@ -679,6 +679,7 @@ namespace Test
             this.ClientSize = new System.Drawing.Size(1313, 766);
             this.Controls.Add(this._mainPanel);
             this.Controls.Add(this.ribbon1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Bazy Danych 2 - Projekt";
