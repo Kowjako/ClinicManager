@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnArticleShow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsShow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAANOSURBVGhD7ZZNTBNBFMdB48W7JxU1NgWKfARMIZFohRYssISPEFuqgIAFazECxkrsYUiaWJOe
@@ -138,7 +138,7 @@
         Ld7ExMTEpDhKSv4BOjM9GN+rDlIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnArticleShow.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsShow.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAANOSURBVGhD7ZZNTBNBFMdB48W7JxU1NgWKfARMIZFohRYssISPEFuqgIAFazECxkrsYUiaWJOe
@@ -158,14 +158,14 @@
         Ld7ExMTEpDhKSv4BOjM9GN+rDlIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnArticleShow.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsShow.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATSURBVDhPYxgFo2AUjAIwYGAAAAQQAAGnRHxjAAAAAElF
         TkSuQmCC
 </value>
   </data>
-  <data name="btnArticleAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAQJSURBVGhD7ZnvS9VnGMb9P+YRhqbklrYmKzYxKyvXLJeUzVJbIlZiP05F9stxV0pCgxFRUOAL
@@ -188,7 +188,7 @@
         LVM5aH0bzpi5tbTSSuujKCPjNThR/qdiRcFiAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnArticleAdd.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsAdd.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAQJSURBVGhD7ZnvS9VnGMb9P+YRhqbklrYmKzYxKyvXLJeUzVJbIlZiP05F9stxV0pCgxFRUOAL
@@ -211,14 +211,14 @@
         LVM5aH0bzpi5tbTSSuujKCPjNThR/qdiRcFiAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnArticleAdd.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsAdd.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATSURBVDhPYxgFo2AUjAIwYGAAAAQQAAGnRHxjAAAAAElF
         TkSuQmCC
 </value>
   </data>
-  <data name="btnArticleEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAZSSURBVGhD7Zh7UJRVGMaprKzRspxqKmxMbi4rgqzIRcMVFUHkpoIohCsCOiTYeAtNnE1NLW94
@@ -251,7 +251,7 @@
         yM3tH+2EKNVLFLARAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnArticleEdit.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsEdit.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAZSSURBVGhD7Zh7UJRVGMaprKzRspxqKmxMbi4rgqzIRcMVFUHkpoIohCsCOiTYeAtNnE1NLW94
@@ -284,14 +284,14 @@
         yM3tH+2EKNVLFLARAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnArticleEdit.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsEdit.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATSURBVDhPYxgFo2AUjAIwYGAAAAQQAAGnRHxjAAAAAElF
         TkSuQmCC
 </value>
   </data>
-  <data name="btnArticleDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAhOSURBVGhD7Vl/TJT3HT6b/bdEW2sy1zWdaZlDEFRAsBWRVXADBEWDClJ/i1NLG+eytpnNcD+k
@@ -332,7 +332,7 @@
         VsvTqOY1vzWAd/6rJW36vGG8AvNHvsmarMn6Xy6H49+N6ZMrZIYJlAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnArticleDelete.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsDelete.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAhOSURBVGhD7Vl/TJT3HT6b/bdEW2sy1zWdaZlDEFRAsBWRVXADBEWDClJ/i1NLG+eytpnNcD+k
@@ -373,14 +373,14 @@
         VsvTqOY1vzWAd/6rJW36vGG8AvNHvsmarMn6Xy6H49+N6ZMrZIYJlAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnArticleDelete.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsDelete.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATSURBVDhPYxgFo2AUjAIwYGAAAAQQAAGnRHxjAAAAAElF
         TkSuQmCC
 </value>
   </data>
-  <data name="btnArticleRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAXnSURBVGhD7ZhdTBRnFIZJa5toUi8aLqqxqVGUX/lxRX4EGa1SBAFRKOAiUsS1i9HGNthq1I79
@@ -411,7 +411,7 @@
         Qrln6X/zt9AMM8zgi4CAfwH12RYeFb5kAwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnArticleRefresh.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsRefresh.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAXnSURBVGhD7ZhdTBRnFIZJa5toUi8aLqqxqVGUX/lxRX4EGa1SBAFRKOAiUsS1i9HGNthq1I79
@@ -442,7 +442,7 @@
         Qrln6X/zt9AMM8zgi4CAfwH12RYeFb5kAwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnArticleRefresh.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVisitsRefresh.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATSURBVDhPYxgFo2AUjAIwYGAAAAQQAAGnRHxjAAAAAElF
@@ -2051,7 +2051,7 @@
         TkSuQmCC
 </value>
   </data>
-  <data name="btnVisitsShow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleShow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAANOSURBVGhD7ZZNTBNBFMdB48W7JxU1NgWKfARMIZFohRYssISPEFuqgIAFazECxkrsYUiaWJOe
@@ -2071,7 +2071,7 @@
         Ld7ExMTEpDhKSv4BOjM9GN+rDlIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnVisitsShow.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleShow.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAANOSURBVGhD7ZZNTBNBFMdB48W7JxU1NgWKfARMIZFohRYssISPEFuqgIAFazECxkrsYUiaWJOe
@@ -2091,14 +2091,14 @@
         Ld7ExMTEpDhKSv4BOjM9GN+rDlIAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnVisitsShow.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleShow.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATSURBVDhPYxgFo2AUjAIwYGAAAAQQAAGnRHxjAAAAAElF
         TkSuQmCC
 </value>
   </data>
-  <data name="btnVisitsAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAQJSURBVGhD7ZnvS9VnGMb9P+YRhqbklrYmKzYxKyvXLJeUzVJbIlZiP05F9stxV0pCgxFRUOAL
@@ -2121,7 +2121,7 @@
         LVM5aH0bzpi5tbTSSuujKCPjNThR/qdiRcFiAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnVisitsAdd.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleAdd.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAQJSURBVGhD7ZnvS9VnGMb9P+YRhqbklrYmKzYxKyvXLJeUzVJbIlZiP05F9stxV0pCgxFRUOAL
@@ -2144,14 +2144,14 @@
         LVM5aH0bzpi5tbTSSuujKCPjNThR/qdiRcFiAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnVisitsAdd.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleAdd.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATSURBVDhPYxgFo2AUjAIwYGAAAAQQAAGnRHxjAAAAAElF
         TkSuQmCC
 </value>
   </data>
-  <data name="btnVisitsEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAZSSURBVGhD7Zh7UJRVGMaprKzRspxqKmxMbi4rgqzIRcMVFUHkpoIohCsCOiTYeAtNnE1NLW94
@@ -2184,7 +2184,7 @@
         yM3tH+2EKNVLFLARAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnVisitsEdit.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleEdit.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAZSSURBVGhD7Zh7UJRVGMaprKzRspxqKmxMbi4rgqzIRcMVFUHkpoIohCsCOiTYeAtNnE1NLW94
@@ -2217,14 +2217,14 @@
         yM3tH+2EKNVLFLARAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnVisitsEdit.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleEdit.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATSURBVDhPYxgFo2AUjAIwYGAAAAQQAAGnRHxjAAAAAElF
         TkSuQmCC
 </value>
   </data>
-  <data name="btnVisitsDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAhOSURBVGhD7Vl/TJT3HT6b/bdEW2sy1zWdaZlDEFRAsBWRVXADBEWDClJ/i1NLG+eytpnNcD+k
@@ -2265,7 +2265,7 @@
         VsvTqOY1vzWAd/6rJW36vGG8AvNHvsmarMn6Xy6H49+N6ZMrZIYJlAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnVisitsDelete.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleDelete.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAhOSURBVGhD7Vl/TJT3HT6b/bdEW2sy1zWdaZlDEFRAsBWRVXADBEWDClJ/i1NLG+eytpnNcD+k
@@ -2306,14 +2306,14 @@
         VsvTqOY1vzWAd/6rJW36vGG8AvNHvsmarMn6Xy6H49+N6ZMrZIYJlAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnVisitsDelete.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleDelete.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATSURBVDhPYxgFo2AUjAIwYGAAAAQQAAGnRHxjAAAAAElF
         TkSuQmCC
 </value>
   </data>
-  <data name="btnVisitsRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAXnSURBVGhD7ZhdTBRnFIZJa5toUi8aLqqxqVGUX/lxRX4EGa1SBAFRKOAiUsS1i9HGNthq1I79
@@ -2344,7 +2344,7 @@
         Qrln6X/zt9AMM8zgi4CAfwH12RYeFb5kAwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnVisitsRefresh.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleRefresh.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAXnSURBVGhD7ZhdTBRnFIZJa5toUi8aLqqxqVGUX/lxRX4EGa1SBAFRKOAiUsS1i9HGNthq1I79
@@ -2375,7 +2375,7 @@
         Qrln6X/zt9AMM8zgi4CAfwH12RYeFb5kAwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnVisitsRefresh.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnArticleRefresh.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAATSURBVDhPYxgFo2AUjAIwYGAAAAQQAAGnRHxjAAAAAElF

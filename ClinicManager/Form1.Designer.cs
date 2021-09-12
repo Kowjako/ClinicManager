@@ -571,6 +571,7 @@ namespace Test
             this.btnVisitsAdd.Name = "btnVisitsAdd";
             this.btnVisitsAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsAdd.SmallImage")));
             this.btnVisitsAdd.Text = "Dodaj";
+            this.btnVisitsAdd.Click += new System.EventHandler(this.btnVisitsAdd_Click);
             // 
             // btnVisitsEdit
             // 
