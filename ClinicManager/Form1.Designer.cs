@@ -489,6 +489,7 @@ namespace Test
             this.btnAssetsAdd.Name = "btnAssetsAdd";
             this.btnAssetsAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsAdd.SmallImage")));
             this.btnAssetsAdd.Text = "Dodaj";
+            this.btnAssetsAdd.Click += new System.EventHandler(this.btnAssetsAdd_Click);
             // 
             // btnAssetsEdit
             // 
@@ -529,6 +530,7 @@ namespace Test
             this.btnArticleAdd.Name = "btnArticleAdd";
             this.btnArticleAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleAdd.SmallImage")));
             this.btnArticleAdd.Text = "Dodaj";
+            this.btnArticleAdd.Click += new System.EventHandler(this.btnArticleAdd_Click);
             // 
             // btnArticleEdit
             // 
@@ -684,7 +686,7 @@ namespace Test
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Form1";
-            this.Text = "Bazy Danych 2 - Projekt";
+            this.Text = "ClinicManager - Zarządzanie siecią przychodni";
             this._mainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).EndInit();
             this.ResumeLayout(false);

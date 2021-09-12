@@ -40,5 +40,17 @@ namespace Test
             var form = new PatientDetails();
             form.ShowDialog();
         }
+
+        private void btnAssetsAdd_Click(object sender, EventArgs e)
+        {
+            var form = new FixedAsset();
+            form.ShowDialog();
+        }
+
+        private void btnArticleAdd_Click(object sender, EventArgs e)
+        {
+            var form = new ArticleDetails();
+            form.ShowDialog();
+        }
     }
 }

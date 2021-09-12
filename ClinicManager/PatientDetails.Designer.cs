@@ -287,7 +287,7 @@ namespace ClinicManager
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PatientDetails";
-            this.Text = "PatientDetails";
+            this.Text = "Szczegóły pacjenta";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

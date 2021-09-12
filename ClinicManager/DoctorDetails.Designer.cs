@@ -249,7 +249,7 @@ namespace ClinicManager
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DoctorDetails";
-            this.Text = "DoctorDetails";
+            this.Text = "Szczegóły lekarza";
             this.ResumeLayout(false);
             this.PerformLayout();
 
