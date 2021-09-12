@@ -75,6 +75,11 @@ namespace Test
             this.btnAssetsEdit = new System.Windows.Forms.RibbonButton();
             this.btnAssetsDelete = new System.Windows.Forms.RibbonButton();
             this.btnAssetsRefresh = new System.Windows.Forms.RibbonButton();
+            this.btnArticleShow = new System.Windows.Forms.RibbonButton();
+            this.btnArticleAdd = new System.Windows.Forms.RibbonButton();
+            this.btnArticleEdit = new System.Windows.Forms.RibbonButton();
+            this.btnArticleDelete = new System.Windows.Forms.RibbonButton();
+            this.btnArticleRefresh = new System.Windows.Forms.RibbonButton();
             this._mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             this.SuspendLayout();
@@ -136,7 +141,7 @@ namespace Test
             this.ribbonPanel1.Items.Add(this.btnHospitalRemove);
             this.ribbonPanel1.Items.Add(this.btnHospitalRefresh);
             this.ribbonPanel1.Name = "ribbonPanel1";
-            this.ribbonPanel1.Text = "Zarządzanie";
+            this.ribbonPanel1.Text = "Zarządzanie - Przychodnie";
             // 
             // btnHospitalShowList
             // 
@@ -250,7 +255,7 @@ namespace Test
             this.ribbonPanel3.Items.Add(this.btnDoctorsDelete);
             this.ribbonPanel3.Items.Add(this.btnDoctorsRefresh);
             this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Text = "Zarządzanie";
+            this.ribbonPanel3.Text = "Zarządzanie - Lekarze";
             // 
             // btnDoctorsShow
             // 
@@ -306,7 +311,7 @@ namespace Test
             this.ribbonPanel4.Items.Add(this.btnClientsDelete);
             this.ribbonPanel4.Items.Add(this.btnClientsRefresh);
             this.ribbonPanel4.Name = "ribbonPanel4";
-            this.ribbonPanel4.Text = "Zarządzanie";
+            this.ribbonPanel4.Text = "Zarządzanie - Pacjenci";
             // 
             // btnClientsShow
             // 
@@ -362,7 +367,7 @@ namespace Test
             this.ribbonPanel5.Items.Add(this.btnAssetsDelete);
             this.ribbonPanel5.Items.Add(this.btnAssetsRefresh);
             this.ribbonPanel5.Name = "ribbonPanel5";
-            this.ribbonPanel5.Text = "Zarządzanie";
+            this.ribbonPanel5.Text = "Zarządzanie - Środki trwałe";
             // 
             // ribbonTab5
             // 
@@ -372,8 +377,13 @@ namespace Test
             // 
             // ribbonPanel6
             // 
+            this.ribbonPanel6.Items.Add(this.btnArticleShow);
+            this.ribbonPanel6.Items.Add(this.btnArticleAdd);
+            this.ribbonPanel6.Items.Add(this.btnArticleEdit);
+            this.ribbonPanel6.Items.Add(this.btnArticleDelete);
+            this.ribbonPanel6.Items.Add(this.btnArticleRefresh);
             this.ribbonPanel6.Name = "ribbonPanel6";
-            this.ribbonPanel6.Text = "Zarządzanie";
+            this.ribbonPanel6.Text = "Zarządzanie - Leki";
             // 
             // ribbonTab6
             // 
@@ -472,6 +482,46 @@ namespace Test
             this.btnAssetsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsRefresh.SmallImage")));
             this.btnAssetsRefresh.Text = "Odśwież";
             // 
+            // btnArticleShow
+            // 
+            this.btnArticleShow.Image = ((System.Drawing.Image)(resources.GetObject("btnArticleShow.Image")));
+            this.btnArticleShow.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnArticleShow.LargeImage")));
+            this.btnArticleShow.Name = "btnArticleShow";
+            this.btnArticleShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleShow.SmallImage")));
+            this.btnArticleShow.Text = "Wyświetl";
+            // 
+            // btnArticleAdd
+            // 
+            this.btnArticleAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnArticleAdd.Image")));
+            this.btnArticleAdd.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnArticleAdd.LargeImage")));
+            this.btnArticleAdd.Name = "btnArticleAdd";
+            this.btnArticleAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleAdd.SmallImage")));
+            this.btnArticleAdd.Text = "Dodaj";
+            // 
+            // btnArticleEdit
+            // 
+            this.btnArticleEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnArticleEdit.Image")));
+            this.btnArticleEdit.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnArticleEdit.LargeImage")));
+            this.btnArticleEdit.Name = "btnArticleEdit";
+            this.btnArticleEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleEdit.SmallImage")));
+            this.btnArticleEdit.Text = "Edytuj";
+            // 
+            // btnArticleDelete
+            // 
+            this.btnArticleDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnArticleDelete.Image")));
+            this.btnArticleDelete.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnArticleDelete.LargeImage")));
+            this.btnArticleDelete.Name = "btnArticleDelete";
+            this.btnArticleDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleDelete.SmallImage")));
+            this.btnArticleDelete.Text = "Usuń";
+            // 
+            // btnArticleRefresh
+            // 
+            this.btnArticleRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnArticleRefresh.Image")));
+            this.btnArticleRefresh.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnArticleRefresh.LargeImage")));
+            this.btnArticleRefresh.Name = "btnArticleRefresh";
+            this.btnArticleRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleRefresh.SmallImage")));
+            this.btnArticleRefresh.Text = "Odśwież";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -538,6 +588,11 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnAssetsEdit;
         private System.Windows.Forms.RibbonButton btnAssetsDelete;
         private System.Windows.Forms.RibbonButton btnAssetsRefresh;
+        private System.Windows.Forms.RibbonButton btnArticleShow;
+        private System.Windows.Forms.RibbonButton btnArticleAdd;
+        private System.Windows.Forms.RibbonButton btnArticleEdit;
+        private System.Windows.Forms.RibbonButton btnArticleDelete;
+        private System.Windows.Forms.RibbonButton btnArticleRefresh;
     }
 }
 
