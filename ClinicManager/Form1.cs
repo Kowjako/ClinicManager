@@ -58,5 +58,11 @@ namespace Test
             var form = new VisitDetails();
             form.ShowDialog();
         }
+
+        private void btnOperationsAdd_Click(object sender, EventArgs e)
+        {
+            var form = new OperationDetails();
+            form.ShowDialog();
+        }
     }
 }
