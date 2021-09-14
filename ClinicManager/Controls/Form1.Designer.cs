@@ -95,6 +95,10 @@ namespace Test
             this.btnPriceRefresh = new System.Windows.Forms.RibbonButton();
             this._mainPanel = new System.Windows.Forms.Panel();
             this._gvMain = new System.Windows.Forms.DataGridView();
+            this.ribbonTab9 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
+            this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
+            this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             this.SuspendLayout();
@@ -127,7 +131,7 @@ namespace Test
             this.ribbon1.QuickAccessToolbar.Enabled = false;
             this.ribbon1.QuickAccessToolbar.Visible = false;
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(1313, 122);
+            this.ribbon1.Size = new System.Drawing.Size(1428, 122);
             this.ribbon1.TabIndex = 0;
             this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.Tabs.Add(this.ribbonTab2);
@@ -137,6 +141,7 @@ namespace Test
             this.ribbon1.Tabs.Add(this.ribbonTab6);
             this.ribbon1.Tabs.Add(this.ribbonTab7);
             this.ribbon1.Tabs.Add(this.ribbonTab8);
+            this.ribbon1.Tabs.Add(this.ribbonTab9);
             this.ribbon1.TabSpacing = 3;
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue_2010;
@@ -661,7 +666,7 @@ namespace Test
             this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._mainPanel.Location = new System.Drawing.Point(0, 122);
             this._mainPanel.Name = "_mainPanel";
-            this._mainPanel.Size = new System.Drawing.Size(1313, 644);
+            this._mainPanel.Size = new System.Drawing.Size(1428, 695);
             this._mainPanel.TabIndex = 3;
             // 
             // _gvMain
@@ -676,14 +681,43 @@ namespace Test
             this._gvMain.Location = new System.Drawing.Point(0, 0);
             this._gvMain.Name = "_gvMain";
             this._gvMain.RowHeadersVisible = false;
-            this._gvMain.Size = new System.Drawing.Size(1313, 644);
+            this._gvMain.Size = new System.Drawing.Size(1428, 695);
             this._gvMain.TabIndex = 0;
+            // 
+            // ribbonTab9
+            // 
+            this.ribbonTab9.Name = "ribbonTab9";
+            this.ribbonTab9.Panels.Add(this.ribbonPanel10);
+            this.ribbonTab9.Text = "Konfiguracja";
+            // 
+            // ribbonPanel10
+            // 
+            this.ribbonPanel10.Items.Add(this.btnConfigurationShowDBScript);
+            this.ribbonPanel10.Items.Add(this.btnConfigurationInsertDBData);
+            this.ribbonPanel10.Name = "ribbonPanel10";
+            this.ribbonPanel10.Text = "Zarządzanie bazą";
+            // 
+            // btnConfigurationShowDBScript
+            // 
+            this.btnConfigurationShowDBScript.Image = ((System.Drawing.Image)(resources.GetObject("btnConfigurationShowDBScript.Image")));
+            this.btnConfigurationShowDBScript.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationShowDBScript.LargeImage")));
+            this.btnConfigurationShowDBScript.Name = "btnConfigurationShowDBScript";
+            this.btnConfigurationShowDBScript.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationShowDBScript.SmallImage")));
+            this.btnConfigurationShowDBScript.Text = "Skrypt";
+            // 
+            // btnConfigurationInsertDBData
+            // 
+            this.btnConfigurationInsertDBData.Image = ((System.Drawing.Image)(resources.GetObject("btnConfigurationInsertDBData.Image")));
+            this.btnConfigurationInsertDBData.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationInsertDBData.LargeImage")));
+            this.btnConfigurationInsertDBData.Name = "btnConfigurationInsertDBData";
+            this.btnConfigurationInsertDBData.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationInsertDBData.SmallImage")));
+            this.btnConfigurationInsertDBData.Text = "Wypełnij";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1313, 766);
+            this.ClientSize = new System.Drawing.Size(1428, 817);
             this.Controls.Add(this._mainPanel);
             this.Controls.Add(this.ribbon1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -766,6 +800,10 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnPriceEdit;
         private System.Windows.Forms.RibbonButton btnPriceDelete;
         private System.Windows.Forms.RibbonButton btnPriceRefresh;
+        private System.Windows.Forms.RibbonTab ribbonTab9;
+        private System.Windows.Forms.RibbonPanel ribbonPanel10;
+        private System.Windows.Forms.RibbonButton btnConfigurationShowDBScript;
+        private System.Windows.Forms.RibbonButton btnConfigurationInsertDBData;
     }
 }
 

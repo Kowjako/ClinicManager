@@ -1,0 +1,197 @@
+CREATE DATABASE ClinicData
+GO
+
+USE ClinicData
+
+CREATE TABLE Localizations (
+	Id INT IDENTITY(1,1) NOT NULL,
+	Country NVARCHAR(255) NOT NULL,
+	City NVARCHAR(255) NOT NULL,
+	Street NVARCHAR(255) NOT NULL,
+	House TINYINT NOT NULL,
+	Flat TINYINT NOT NULL,
+	PostalCode NVARCHAR(255) NOT NULL,
+	CONSTRAINT PK__Localizations_Id PRIMARY KEY CLUSTERED (Id),
+	CONSTRAINT CK__Localizations_House CHECK (House > 0),
+	CONSTRAINT CK__Localizations_Flat CHECK (Flat > 0),
+);
+GO
+
+CREATE TABLE Drugs (
+	Id INT IDENTITY(1,1),
+	Name NVARCHAR(255) NOT NULL,
+	Percentage TINYINT,
+	ProductionDate DATETIME NOT NULL,
+	ExpireDate DATETIME NOT NULL,
+	IsPsychotropic BIT NOT NULL,
+	AvailableAmount TINYINT NOT NULL,
+	Unit NVARCHAR(10) NOT NULL,
+	CONSTRAINT PK__Drugs_Id PRIMARY KEY CLUSTERED (Id),
+	CONSTRAINT CK__Drugs_Percentage CHECK (Percentage > 0),
+	CONSTRAINT CK__Drugs_AvailableAmount CHECK (AvailableAmount >= 0),
+);
+GO
+
+CREATE TABLE Tools (
+	Id INT IDENTITY(1,1),
+	Name NVARCHAR(255) NOT NULL,
+	AvailableCount TINYINT NOT NULL,
+	ProductionDate DATETIME NOT NULL,
+	ExpireDate DATETIME NOT NULL,
+	Description NVARCHAR(255),
+	CONSTRAINT PK__Tools_Id PRIMARY KEY CLUSTERED (Id),
+	CONSTRAINT CK__Tools_AvailableCount CHECK (AvailableCount >= 0)
+);
+GO
+
+CREATE TABLE Data (
+	Id INT IDENTITY(1,1),
+	Name NVARCHAR(255) NOT NULL,
+	Surname NVARCHAR(255) NOT NULL,
+	BirthDate DATETIME NOT NULL,
+	Gender NVARCHAR(1),
+	Phone NVARCHAR(255),
+	Email NVARCHAR(255),
+	CONSTRAINT PK__Data_Id PRIMARY KEY CLUSTERED (Id),
+	CONSTRAINT CK__Data_Gender CHECK (Gender IN ('M', 'K'))
+);
+GO
+
+CREATE TABLE Operations (
+	Id INT IDENTITY(1,1),
+	Name NVARCHAR(255) NOT NULL,
+	Type NVARCHAR(255) NOT NULL,
+	IsAnesthesia BIT NOT NULL,
+	ToolId INT,
+	DrugId INT,
+	Description NVARCHAR(255),
+	CONSTRAINT PK__Operations_Id PRIMARY KEY CLUSTERED (Id),
+	CONSTRAINT FK__Operations_ToolId FOREIGN KEY (ToolId) REFERENCES Tools(Id) ON DELETE SET NULL,
+	CONSTRAINT FK__Operations_DrugId FOREIGN KEY (DrugId) REFERENCES Drugs(Id) ON DELETE SET NULL
+);
+GO
+
+CREATE TABLE Producents (
+	Id INT IDENTITY(1,1),
+	Name NVARCHAR(255) NOT NULL,
+	OpenDate DATETIME NOT NULL,
+	LocalizationId INT NOT NULL,
+	DataId INT NOT NULL,
+	Email NVARCHAR(255),
+	CONSTRAINT PK__Producents_Id PRIMARY KEY CLUSTERED (Id),
+	CONSTRAINT UQ__Producents_LocalizationID UNIQUE (LocalizationId),
+	CONSTRAINT FK__Producents_LocalizationID FOREIGN KEY (LocalizationId) REFERENCES Localizations(Id) ON DELETE CASCADE,
+	CONSTRAINT UQ__Producents_DataId UNIQUE (DataId),
+	CONSTRAINT FK__Producents_DataId FOREIGN KEY (DataId) REFERENCES Data(Id) ON DELETE CASCADE
+);
+GO
+
+CREATE TABLE Costs (
+	Id INT IDENTITY(1,1),
+	ProducentId INT NOT NULL,
+	DrugId INT NOT NULL,
+	MinPrice INT,
+	MaxPrice INT,
+	TransportDays TINYINT,
+	CONSTRAINT PK__Costs_Id PRIMARY KEY CLUSTERED (Id),
+	CONSTRAINT CK__Costs_MinPrice CHECK (MinPrice >= 0),
+	CONSTRAINT CK__Costs_MaxPrice CHECK (MaxPrice >= 0),
+	CONSTRAINT CK__Costs_TransportDays CHECK (TransportDays > 0),
+	CONSTRAINT FK__Costs_ProducentId FOREIGN KEY (ProducentId) REFERENCES Producents(Id) ON DELETE CASCADE,
+	CONSTRAINT FK__Costs_DrugId FOREIGN KEY (DrugId) REFERENCES Drugs(Id) ON DELETE CASCADE
+);
+GO
+
+CREATE TABLE Patients (
+	Id INT IDENTITY(1,1),
+	DataId INT NOT NULL,
+	OperationId INT NOT NULL,
+	Priority TINYINT,
+	OperationDate DATETIME NOT NULL,
+	Description NVARCHAR(255),
+	CONSTRAINT PK__Patients_Id PRIMARY KEY CLUSTERED (Id),
+	CONSTRAINT CK__Patients_Priority CHECK (Priority >= 0),
+	CONSTRAINT UQ__Patients_DataId UNIQUE (DataId),
+	CONSTRAINT FK__Patients_DataId FOREIGN KEY (DataId) REFERENCES Data(Id) ON DELETE CASCADE,
+	CONSTRAINT FK__Patients_OperationId FOREIGN KEY (OperationId) REFERENCES Operations(Id) ON DELETE CASCADE
+);
+GO
+
+CREATE TABLE Clinics (
+	Id INT IDENTITY(1,1),
+	Name NVARCHAR(255) NOT NULL,
+	OpenDate DATETIME NOT NULL,
+	IsPrivate BIT NOT NULL,
+	EmployeeId INT,
+	LocalizationId INT NOT NULL,
+	Usermark DECIMAL(2,1) NOT NULL,
+	CONSTRAINT PK__Clinics_Id PRIMARY KEY CLUSTERED (Id),
+	CONSTRAINT UQ__Clinics_EmployeeId UNIQUE (EmployeeId),
+	CONSTRAINT UQ__Clinics_LocalizationId UNIQUE (LocalizationId),
+	CONSTRAINT CK__Clinics_Usermark CHECK (Usermark >= 0),
+	CONSTRAINT FK__Clinics_LocalizationId FOREIGN KEY (LocalizationId) REFERENCES Localizations(Id) ON DELETE CASCADE
+);
+GO
+
+CREATE TABLE Employees (
+	Id INT IDENTITY(1,1),
+	OperationCount TINYINT,
+	OperationId INT NOT NULL,
+	ClinicId INT,
+	DataId INT NOT NULL,
+	Rank NVARCHAR(255) NOT NULL,
+	Cost INT NOT NULL,
+	CONSTRAINT PK__Employees_Id PRIMARY KEY CLUSTERED (Id),
+	CONSTRAINT CK__Employees_Cost CHECK (Cost > 0),
+	CONSTRAINT UQ__Employees_DataId UNIQUE (DataId),
+	CONSTRAINT FK__Employees_OperationId FOREIGN KEY (OperationId) REFERENCES Operations(Id) ON DELETE CASCADE
+);
+GO
+
+ALTER TABLE Clinics 
+ADD CONSTRAINT FK__Clinics_EmployeeId FOREIGN KEY (EmployeeId) REFERENCES Employees(Id) ON DELETE SET NULL
+GO
+
+ALTER TABLE Employees  
+ADD CONSTRAINT FK__Employees_ClinicId FOREIGN KEY (ClinicId) REFERENCES Clinics(Id) ON DELETE SET NULL
+GO
+
+CREATE TABLE Opinions (
+	Id INT IDENTITY(1,1),
+	ClinicId INT NOT NULL,
+	DataId INT NOT NULL,
+	Mark TINYINT NOT NULL,
+	CONSTRAINT PK__Opinions_Id PRIMARY KEY CLUSTERED (Id),
+	CONSTRAINT CK__Opinions_Mark CHECK (Mark > 0),
+	CONSTRAINT FK__Opinions_ClinicId FOREIGN KEY (ClinicId) REFERENCES Clinics(Id) ON DELETE CASCADE,
+	CONSTRAINT FK__Opinions_DataId FOREIGN KEY (DataId) REFERENCES Data(Id) ON DELETE CASCADE
+);
+GO
+
+CREATE TABLE Registrations (
+	Id INT IDENTITY(1,1),
+	DATE DATETIME NOT NULL,
+	Time NVARCHAR(255) NOT NULL,
+	EmployeeId INT NOT NULL,
+	PatientId INT NOT NULL,
+	CONSTRAINT PK__Registrations_Id PRIMARY KEY CLUSTERED (Id),
+	CONSTRAINT FK__Registrations_EmployeeId FOREIGN KEY (EmployeeId) REFERENCES Employees(Id) ON DELETE CASCADE,
+	CONSTRAINT FK__Registrations_PatientId FOREIGN KEY (PatientId ) REFERENCES Patients(Id) ON DELETE NO ACTION
+);
+GO
+
+--DataRow - nie ma sensu
+--LocalizationRow - nie ma sensu
+
+CREATE VIEW ClinicRow ()
+CREATE VIEW OperationRow ()
+CREATE VIEW PatientRow ()
+CREATE VIEW ToolRow ()
+CREATE VIEW RegistrationRow ()
+CREATE VIEW EmployeeRow ()
+CREATE VIEW CostRow ()
+CREATE VIEW ProducentRow ()
+CREATE VIEW DrugRow ()
+CREATE VIEW OpinionRow() 
+
+
