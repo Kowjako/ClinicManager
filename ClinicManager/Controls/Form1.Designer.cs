@@ -629,6 +629,7 @@ namespace Test
             this.btnPriceAdd.Name = "btnPriceAdd";
             this.btnPriceAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPriceAdd.SmallImage")));
             this.btnPriceAdd.Text = "Dodaj";
+            this.btnPriceAdd.Click += new System.EventHandler(this.btnPriceAdd_Click);
             // 
             // btnPriceEdit
             // 

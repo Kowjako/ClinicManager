@@ -64,5 +64,11 @@ namespace Test
             var form = new OperationDetails();
             form.ShowDialog();
         }
+
+        private void btnPriceAdd_Click(object sender, EventArgs e)
+        {
+            var form = new CostDetails();
+            form.ShowDialog();
+        }
     }
 }
