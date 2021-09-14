@@ -183,7 +183,9 @@
   <ItemGroup>
     <Folder Include="DataAccessLayer\" />
     <Folder Include="Services\" />
-    <Folder Include="SQL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SQL\ClinicBase.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

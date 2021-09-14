@@ -180,18 +180,80 @@ CREATE TABLE Registrations (
 );
 GO
 
---DataRow - nie ma sensu
---LocalizationRow - nie ma sensu
+--DataRow - nie ma sensu - bo nie b?dzie dost?pu do tej bazy
 
-CREATE VIEW ClinicRow ()
-CREATE VIEW OperationRow ()
-CREATE VIEW PatientRow ()
-CREATE VIEW ToolRow ()
-CREATE VIEW RegistrationRow ()
-CREATE VIEW EmployeeRow ()
-CREATE VIEW CostRow ()
-CREATE VIEW ProducentRow ()
-CREATE VIEW DrugRow ()
-CREATE VIEW OpinionRow() 
+CREATE VIEW ClinicRow AS
+SELECT c.Id 'Id', c.Name 'Nazwa', c.OpenDate 'Data otwarcia', c.IsPrivate 'Prywatna', c.Usermark 'Ocena', l.Country + '/' + l.Country + '/' + l.House 'Lokalizacja', d.Name + ' ' + d.Surname 'Kierownik'
+FROM Clinics c
+JOIN Localizations l ON (c.LocalizationId = l.Id) 
+JOIN Employees e ON (c.EmployeeId = e.Id)
+JOIN Data d ON (e.DataId = d.Id)
+GO
 
+CREATE VIEW OperationRow AS
+SELECT o.Id 'Id', o.Name 'Nazwa', o.Type 'Typ', o.IsAnesthesia 'Znieczulenie', t.Name 'Narz?dzie', d.Name 'Lek'
+FROM Operations o
+JOIN Tools t ON (o.ToolId = t.Id)
+JOIN Drugs d ON (o.DrugId = d.Id)
+GO
+
+CREATE VIEW PatientRow AS
+SELECT p.Id 'Id', d.Name + ' ' + d.Surname 'Pacjent', o.Name 'Operacja', p.OperationDate 'Planowana data', p.Priority 'Priorytet' 
+FROM Patients p
+JOIN Operations o ON (p.OperationId = o.Id)
+JOIN Data d ON (p.DataId = d.Id)
+GO
+
+CREATE VIEW RegistrationRow AS
+SELECT r.Id 'Id',
+(SELECT Name + ' ' + Surname FROM Data WHERE Id = r.PatientId) 'Pacjent',
+(SELECT Name + ' ' + Surname FROM Data WHERE Id = r.EmployeeId) 'Lekarz',
+r.Date 'Data operacji', r.Time 'Czas rozpocz?cia' 
+FROM Registrations r
+GO
+
+CREATE VIEW EmployeeRow AS
+SELECT e.Id 'Id', d.Name + ' ' + d.Surname 'Lekarz', c.Name 'Miejsce pracy', o.Name 'Specjalizacja', e.Cost 'Koszt operacji', e.Rank 'Stanowisko'
+FROM Employees e
+JOIN Operations o ON (e.OperationId = o.Id)
+JOIN Data d ON (e.DataId = d.Id)
+JOIN Clinics c ON (e.ClinicId = c.Id)
+GO
+
+CREATE VIEW CostRow AS
+SELECT c.Id 'Id', d.Name 'Nazwa leku', c.MinPrice 'Minimalna cena', c.MaxPrice 'Maksymalna cena', c.TransportDays 'Czas dostawy (dni)', p.Name 'Producent'
+FROM Costs c
+JOIN Drugs d ON (c.DrugId = d.Id)
+JOIN Producents p ON (c.ProducentId = p.Id)
+GO
+
+CREATE VIEW ProducentRow AS
+SELECT p.Id 'Id', p.Name 'Nazwa producenta', p.Email 'Email', l.Country + '/' + l.City + '/' + l.House 'Siedziba firmy', d.Name + ' ' + d.Surname 'Kierownik'
+FROM Producents p
+JOIN Localizations l ON (p.LocalizationId = l.Id)
+JOIN Data d ON (p.DataId = d.Id)
+GO
+
+CREATE VIEW OpinionRow AS
+SELECT o.Id 'Id', o.Mark 'Ocena', d.Name + ' ' + d.Surname 'Wystawiaj?cy', c.Name 'Przychodnia'
+FROM Opinions o
+JOIN Data d ON (o.DataId = d.Id)
+JOIN Clinics c ON (o.ClinicId = c.Id)
+GO
+
+CREATE VIEW LocalizationRow AS
+SELECT l.Id 'Id', l.Country 'Kraj', l.City 'Miasto', l.Street 'Ulica', l.House 'Budynek', l.Flat 'Mieszkanie', l.PostalCode 'Kod pocztowy'
+FROM Localizations l
+GO
+
+CREATE VIEW ToolRow AS
+SELECT t.Id 'Id', t.Name 'Nazwa', t.AvailableCount 'Ilo?? dost?pna', t.ProductionDate 'Data produkcji', t.ExpireDate 'Data wa?no?ci', t.Description 'Opis'
+FROM Tools t
+GO
+
+CREATE VIEW DrugRow AS
+SELECT d.Id 'Id', d.Name 'Nazwa', d.Percentage 'Dawka', d.ProductionDate 'Data produkcji', d.ExpireDate 'Data wa?no?ci',
+d.IsPsychotropic 'Psychotropowe', d.AvailableAmount 'Ilo?? dost?pna', d.Unit 'Jednostka'
+FROM Drugs d
+GO
 

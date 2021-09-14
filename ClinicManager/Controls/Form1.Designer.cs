@@ -29,6 +29,7 @@ namespace Test
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
@@ -99,8 +100,11 @@ namespace Test
             this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
             this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
+            this.ribbonTab10 = new System.Windows.Forms.RibbonTab();
+            this.bsMain = new System.Windows.Forms.BindingSource(this.components);
             this._mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -131,7 +135,7 @@ namespace Test
             this.ribbon1.QuickAccessToolbar.Enabled = false;
             this.ribbon1.QuickAccessToolbar.Visible = false;
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(1428, 122);
+            this.ribbon1.Size = new System.Drawing.Size(1162, 122);
             this.ribbon1.TabIndex = 0;
             this.ribbon1.Tabs.Add(this.ribbonTab1);
             this.ribbon1.Tabs.Add(this.ribbonTab2);
@@ -142,6 +146,7 @@ namespace Test
             this.ribbon1.Tabs.Add(this.ribbonTab7);
             this.ribbon1.Tabs.Add(this.ribbonTab8);
             this.ribbon1.Tabs.Add(this.ribbonTab9);
+            this.ribbon1.Tabs.Add(this.ribbonTab10);
             this.ribbon1.TabSpacing = 3;
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue_2010;
@@ -666,7 +671,7 @@ namespace Test
             this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._mainPanel.Location = new System.Drawing.Point(0, 122);
             this._mainPanel.Name = "_mainPanel";
-            this._mainPanel.Size = new System.Drawing.Size(1428, 695);
+            this._mainPanel.Size = new System.Drawing.Size(1162, 611);
             this._mainPanel.TabIndex = 3;
             // 
             // _gvMain
@@ -674,14 +679,16 @@ namespace Test
             this._gvMain.AllowUserToAddRows = false;
             this._gvMain.AllowUserToDeleteRows = false;
             this._gvMain.AllowUserToResizeRows = false;
+            this._gvMain.AutoGenerateColumns = false;
             this._gvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._gvMain.DataSource = this.bsMain;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 0);
             this._gvMain.Name = "_gvMain";
             this._gvMain.RowHeadersVisible = false;
-            this._gvMain.Size = new System.Drawing.Size(1428, 695);
+            this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 0;
             // 
             // ribbonTab9
@@ -713,11 +720,16 @@ namespace Test
             this.btnConfigurationInsertDBData.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationInsertDBData.SmallImage")));
             this.btnConfigurationInsertDBData.Text = "Wypełnij";
             // 
+            // ribbonTab10
+            // 
+            this.ribbonTab10.Name = "ribbonTab10";
+            this.ribbonTab10.Text = "ribbonTab10";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1428, 817);
+            this.ClientSize = new System.Drawing.Size(1162, 733);
             this.Controls.Add(this._mainPanel);
             this.Controls.Add(this.ribbon1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -726,6 +738,7 @@ namespace Test
             this.Text = "ClinicManager - Zarządzanie siecią przychodni";
             this._mainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -804,6 +817,8 @@ namespace Test
         private System.Windows.Forms.RibbonPanel ribbonPanel10;
         private System.Windows.Forms.RibbonButton btnConfigurationShowDBScript;
         private System.Windows.Forms.RibbonButton btnConfigurationInsertDBData;
+        private System.Windows.Forms.RibbonTab ribbonTab10;
+        private System.Windows.Forms.BindingSource bsMain;
     }
 }
 
