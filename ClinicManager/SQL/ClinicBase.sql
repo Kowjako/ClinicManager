@@ -170,7 +170,7 @@ GO
 
 CREATE TABLE Registrations (
 	Id INT IDENTITY(1,1),
-	DATE DATETIME NOT NULL,
+	Date DATETIME NOT NULL,
 	Time NVARCHAR(255) NOT NULL,
 	EmployeeId INT NOT NULL,
 	PatientId INT NOT NULL,
@@ -256,4 +256,5 @@ SELECT d.Id 'Id', d.Name 'Nazwa', d.Percentage 'Dawka', d.ProductionDate 'Data p
 d.IsPsychotropic 'Psychotropowe', d.AvailableAmount 'Ilo?? dost?pna', d.Unit 'Jednostka'
 FROM Drugs d
 GO
+
 
