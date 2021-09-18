@@ -29,17 +29,10 @@ namespace Test
         private void btnHospitalEdit_Click(object sender, EventArgs e)
         {
             var form = new ClinicDetails();
-            using(var context = new ClinicDataEntities())
+            using (var context = new ClinicDataEntities())
             {
-                try
-                {
-                    var clinic = context.Clinics.Find((_gvMain.SelectedRows[0].DataBoundItem as ClinicRow).Id);
-                    form.BindingSource = new List<Clinics> { clinic };
-                }
-                catch(ArgumentOutOfRangeException ex)
-                {
-                    MessageBox.Show("Należy wybrać cały wiersz");
-                }
+                var clinic = context.Clinics.Find((_gvMain.SelectedRows[0].DataBoundItem as ClinicRow).Id);
+                form.BindingSource = new List<Clinics> { clinic };
             }
             form.ShowDialog();
         }
@@ -92,6 +85,83 @@ namespace Test
             {
                 var clinicList = context.ClinicRow.ToList();
                 bsMain.DataSource = typeof(ClinicRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
+
+        private void btnDoctorsShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.EmployeeRow.ToList();
+                bsMain.DataSource = typeof(EmployeeRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
+
+        private void btnClientsShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.PatientRow.ToList();
+                bsMain.DataSource = typeof(PatientRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
+
+        private void btnAssetsShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.ToolRow.ToList();
+                bsMain.DataSource = typeof(ToolRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
+
+        private void btnArticleShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.DrugRow.ToList();
+                bsMain.DataSource = typeof(DrugRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
+
+        private void btnVisitsShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.RegistrationRow.ToList();
+                bsMain.DataSource = typeof(RegistrationRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
+
+        private void btnOperationsShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.OperationRow.ToList();
+                bsMain.DataSource = typeof(OperationRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
+
+        private void btnPriceShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.CostRow.ToList();
+                bsMain.DataSource = typeof(CostRow);
                 bsMain.DataSource = clinicList;
                 _gvMain.DataSource = bsMain;
             }

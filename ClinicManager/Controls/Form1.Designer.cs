@@ -293,6 +293,7 @@ namespace Test
             this.btnDoctorsShow.Name = "btnDoctorsShow";
             this.btnDoctorsShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsShow.SmallImage")));
             this.btnDoctorsShow.Text = "Wyświetl";
+            this.btnDoctorsShow.Click += new System.EventHandler(this.btnDoctorsShow_Click);
             // 
             // btnDoctorsAdd
             // 
@@ -360,6 +361,7 @@ namespace Test
             this.btnClientsShow.Name = "btnClientsShow";
             this.btnClientsShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClientsShow.SmallImage")));
             this.btnClientsShow.Text = "Wyświetl";
+            this.btnClientsShow.Click += new System.EventHandler(this.btnClientsShow_Click);
             // 
             // btnClientsAdd
             // 
@@ -427,6 +429,7 @@ namespace Test
             this.btnAssetsShow.Name = "btnAssetsShow";
             this.btnAssetsShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsShow.SmallImage")));
             this.btnAssetsShow.Text = "Wyświetl";
+            this.btnAssetsShow.Click += new System.EventHandler(this.btnAssetsShow_Click);
             // 
             // btnAssetsAdd
             // 
@@ -494,6 +497,7 @@ namespace Test
             this.btnArticleShow.Name = "btnArticleShow";
             this.btnArticleShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleShow.SmallImage")));
             this.btnArticleShow.Text = "Wyświetl";
+            this.btnArticleShow.Click += new System.EventHandler(this.btnArticleShow_Click);
             // 
             // btnArticleAdd
             // 
@@ -561,6 +565,7 @@ namespace Test
             this.btnVisitsShow.Name = "btnVisitsShow";
             this.btnVisitsShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsShow.SmallImage")));
             this.btnVisitsShow.Text = "Wyświetl";
+            this.btnVisitsShow.Click += new System.EventHandler(this.btnVisitsShow_Click);
             // 
             // btnVisitsAdd
             // 
@@ -628,6 +633,7 @@ namespace Test
             this.btnOperationsShow.Name = "btnOperationsShow";
             this.btnOperationsShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsShow.SmallImage")));
             this.btnOperationsShow.Text = "Wyświetl";
+            this.btnOperationsShow.Click += new System.EventHandler(this.btnOperationsShow_Click);
             // 
             // btnOperationsAdd
             // 
@@ -695,6 +701,7 @@ namespace Test
             this.btnPriceShow.Name = "btnPriceShow";
             this.btnPriceShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPriceShow.SmallImage")));
             this.btnPriceShow.Text = "Wyświetl";
+            this.btnPriceShow.Click += new System.EventHandler(this.btnPriceShow_Click);
             // 
             // btnPriceAdd
             // 
@@ -771,6 +778,7 @@ namespace Test
             // 
             this._gvMain.AllowUserToAddRows = false;
             this._gvMain.AllowUserToDeleteRows = false;
+            this._gvMain.AllowUserToResizeRows = false;
             this._gvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -778,6 +786,7 @@ namespace Test
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
             this._gvMain.Name = "_gvMain";
+            this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
             // 
