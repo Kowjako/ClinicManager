@@ -183,11 +183,11 @@ GO
 --DataRow - nie ma sensu - bo nie b?dzie dost?pu do tej bazy
 
 CREATE VIEW ClinicRow AS
-SELECT c.Id 'Id', c.Name 'Nazwa', c.OpenDate 'Data otwarcia', c.IsPrivate 'Prywatna', c.Usermark 'Ocena', l.Country + '/' + l.Country + '/' + l.House 'Lokalizacja', d.Name + ' ' + d.Surname 'Kierownik'
+SELECT c.Id 'Id', c.Name 'Nazwa', c.OpenDate 'Data otwarcia', c.IsPrivate 'Prywatna', c.Usermark 'Ocena', l.Country + '/' + l.City + '/' + CAST(l.House as NVARCHAR) 'Lokalizacja', d.Name + ' ' + d.Surname 'Kierownik'
 FROM Clinics c
 JOIN Localizations l ON (c.LocalizationId = l.Id) 
-JOIN Employees e ON (c.EmployeeId = e.Id)
-JOIN Data d ON (e.DataId = d.Id)
+LEFT JOIN Employees e ON (c.EmployeeId = e.Id)
+LEFT JOIN Data d ON (e.DataId = d.Id)
 GO
 
 CREATE VIEW OperationRow AS
@@ -228,7 +228,7 @@ JOIN Producents p ON (c.ProducentId = p.Id)
 GO
 
 CREATE VIEW ProducentRow AS
-SELECT p.Id 'Id', p.Name 'Nazwa producenta', p.Email 'Email', l.Country + '/' + l.City + '/' + l.House 'Siedziba firmy', d.Name + ' ' + d.Surname 'Kierownik'
+SELECT p.Id 'Id', p.Name 'Nazwa producenta', p.Email 'Email', l.Country + '/' + l.City + '/' + CAST(l.House as NVARCHAR) 'Siedziba firmy', d.Name + ' ' + d.Surname 'Kierownik'
 FROM Producents p
 JOIN Localizations l ON (p.LocalizationId = l.Id)
 JOIN Data d ON (p.DataId = d.Id)
