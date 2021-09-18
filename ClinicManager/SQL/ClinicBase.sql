@@ -126,7 +126,6 @@ CREATE TABLE Clinics (
 	LocalizationId INT NOT NULL,
 	Usermark DECIMAL(2,1) NOT NULL,
 	CONSTRAINT PK__Clinics_Id PRIMARY KEY CLUSTERED (Id),
-	CONSTRAINT UQ__Clinics_EmployeeId UNIQUE (EmployeeId),
 	CONSTRAINT UQ__Clinics_LocalizationId UNIQUE (LocalizationId),
 	CONSTRAINT CK__Clinics_Usermark CHECK (Usermark >= 0),
 	CONSTRAINT FK__Clinics_LocalizationId FOREIGN KEY (LocalizationId) REFERENCES Localizations(Id) ON DELETE CASCADE
