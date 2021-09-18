@@ -320,6 +320,48 @@ insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, 
 insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (13, 12, 13, 13, 28, 'Mlodszy lekarz', 390);
 insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (14, 12, 14, 14, 29, 'Mlodszy lekarz', 370);
 insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (15, 12, 15, 15, 30, 'Mlodszy lekarz', 468);
+
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (16, 2, 5, 1, 61, 'Kierownik przychodni', 287);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (17, 13, 13, 2, 62, 'Kierownik przychodni', 587);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (18, 15, 5, 3, 63, 'Kierownik przychodni', 494);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (19, 11, 15, 4, 64, 'Kierownik przychodni', 356);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (20, 3, 12, 5, 65, 'Kierownik przychodni', 224);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (21, 2, 13, 6, 66, 'Kierownik przychodni', 273);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (22, 3, 2, 7, 67, 'Kierownik przychodni', 282);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (23, 15, 7, 8, 68, 'Kierownik przychodni', 231);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (24, 9, 15, 9, 69, 'Kierownik przychodni', 244);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (25, 7, 1, 10, 70, 'Kierownik przychodni', 563);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (26, 12, 7,11, 71, 'Kierownik przychodni', 504);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (27, 7, 9, 12, 72, 'Kierownik przychodni', 590);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (28, 8, 1, 13, 73, 'Kierownik przychodni', 550);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (29, 12, 11, 14, 74, 'Kierownik przychodni', 432);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (30, 7, 13, 15, 75,'Kierownik przychodni', 344);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (31, 6, 11, 9, 76, 'Mlodszy lekarz', 227);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (32, 12, 8, 15, 77, 'Mlodszy lekarz', 386);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (33, 6, 3, 4, 78, 'Mlodszy lekarz', 377);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (34, 13, 8, 14, 79, 'Mlodszy lekarz', 320);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (35, 15, 2, 13, 80, 'Mlodszy lekarz', 268);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (36, 3, 1, 12, 81, 'Mlodszy lekarz', 226);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (37, 15, 1, 12, 82, 'Lekarz', 305);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (38, 9, 5, 9, 83, 'Lekarz', 372);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (39, 8, 11, 15, 84, 'Lekarz', 533);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (40, 10, 7, 3, 85, 'Lekarz', 512);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (41, 5, 3, 15, 86,'Lekarz', 231);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (42, 7, 9, 3, 87, 'Lekarz', 512);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (43, 13, 3, 7, 88, 'Lekarz', 580);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (44, 7, 7, 5, 89, 'Lekarz', 297);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (45, 9, 6, 3, 90, 'Lekarz', 252);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (46, 5, 6, 13, 91, 'Lekarz', 271);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (47, 7, 10, 4, 92, 'Lekarz', 493);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (48, 13, 7, 7, 93, 'Lekarz', 444);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (49, 8, 6, 1, 94, 'Lekarz', 265);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (50, 10, 8, 8, 95, 'Lekarz', 579);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (51, 13, 12, 3, 96, 'Glowny lekarz', 267);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (52, 3, 6, 11, 97, 'Glowny lekarz', 298);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (53, 6, 5, 2, 98, 'Glowny lekarz', 487);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (54, 15, 14, 12, 99, 'Glowny lekarz', 336);
+insert into Employees (id, OperationCount, OperationId, ClinicId, DataId, Rank, Cost) values (55, 11, 9, 3, 100, 'Glowny lekarz', 481);
+
 SET IDENTITY_INSERT Employees OFF
 GO
 
@@ -394,7 +436,6 @@ SET IDENTITY_INSERT Registrations OFF
 GO
 
 SET IDENTITY_INSERT Opinions ON
-GO
 insert into Opinions (id, ClinicId, DataId, Mark) values (1, 6, 62, 4);
 insert into Opinions (id, ClinicId, DataId, Mark) values (2, 5, 10, 4);
 insert into Opinions (id, ClinicId, DataId, Mark) values (3, 8, 41, 4);
@@ -448,3 +489,18 @@ insert into Opinions (id, ClinicId, DataId, Mark) values (50, 7, 36, 2);
 SET IDENTITY_INSERT Opinions OFF
 GO
 
+UPDATE Clinics SET EmployeeId = 16 WHERE Id = 1;
+UPDATE Clinics SET EmployeeId = 17 WHERE Id = 2;
+UPDATE Clinics SET EmployeeId = 18 WHERE Id = 3;
+UPDATE Clinics SET EmployeeId = 19 WHERE Id = 4;
+UPDATE Clinics SET EmployeeId = 20 WHERE Id = 5;
+UPDATE Clinics SET EmployeeId = 21 WHERE Id = 6;
+UPDATE Clinics SET EmployeeId = 22 WHERE Id = 7;
+UPDATE Clinics SET EmployeeId = 23 WHERE Id = 8;
+UPDATE Clinics SET EmployeeId = 24 WHERE Id = 9;
+UPDATE Clinics SET EmployeeId = 25 WHERE Id = 10;
+UPDATE Clinics SET EmployeeId = 26 WHERE Id = 11;
+UPDATE Clinics SET EmployeeId = 27 WHERE Id = 12;
+UPDATE Clinics SET EmployeeId = 28 WHERE Id = 13;
+UPDATE Clinics SET EmployeeId = 29 WHERE Id = 14;
+UPDATE Clinics SET EmployeeId = 30 WHERE Id = 15;
