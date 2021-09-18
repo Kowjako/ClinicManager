@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -40,12 +43,20 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9, processorArchitecture=MSIL">
       <HintPath>..\packages\RibbonWinForms.5.0.1.1\lib\net472\System.Windows.Forms.Ribbon.dll</HintPath>
     </Reference>
@@ -89,6 +100,12 @@
     <Compile Include="Controls\DoctorDetails.Designer.cs">
       <DependentUpon>DoctorDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\FilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\FilterForm.Designer.cs">
+      <DependentUpon>FilterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FixedAsset.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +129,90 @@
     </Compile>
     <Compile Include="Controls\PatientDetails.Designer.cs">
       <DependentUpon>PatientDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Clinic.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Clinic.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Clinic.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Clinic.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Clinic.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\ClinicRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Clinics.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\CostRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Costs.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Data.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\DrugRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Drugs.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\EmployeeRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Employees.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\LocalizationRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Localizations.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\OperationRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Operations.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\OpinionRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Opinions.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\PatientRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Patients.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\ProducentRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Producents.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\RegistrationRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Registrations.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\ToolRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Tools.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IArticleDetailsViewModel.cs" />
     <Compile Include="Interfaces\IClinicDetailsViewModel.cs" />
@@ -141,11 +242,15 @@
     <EmbeddedResource Include="Controls\DoctorDetails.resx">
       <DependentUpon>DoctorDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\FilterForm.resx">
+      <DependentUpon>FilterForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\FixedAsset.resx">
       <DependentUpon>FixedAsset.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OperationDetails.resx">
       <DependentUpon>OperationDetails.cs</DependentUpon>
@@ -166,7 +271,16 @@
     <EmbeddedResource Include="Controls\VisitDetails.resx">
       <DependentUpon>VisitDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="DataAccessLayer\Clinic.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Clinic.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataAccessLayer\Clinic.edmx.diagram">
+      <DependentUpon>Clinic.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ClinicDetails.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Clinics.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -181,11 +295,31 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataAccessLayer\" />
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataAccessLayer\Clinic.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Clinic.edmx</DependentUpon>
+      <LastGenOutput>Clinic.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataAccessLayer\Clinic.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Clinic.edmx</DependentUpon>
+      <LastGenOutput>Clinic.cs</LastGenOutput>
+    </Content>
     <Content Include="SQL\ClinicBase.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

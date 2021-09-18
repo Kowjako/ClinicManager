@@ -7,20 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClinicManager.DataAccessLayer;
 
-namespace ClinicManager
+namespace ClinicManager.Controls
 {
-    public partial class ClinicDetails : Form
+    public partial class FilterForm : Form
     {
-        public ClinicDetails()
+        public FilterForm()
         {
             InitializeComponent();
-        }
-
-        public List<Clinics> BindingSource
-        {
-            set { _bsDetails.DataSource = value; }
+            firstLogic.SelectedIndex = 0;
+            secondLogic.SelectedIndex = 0;
+            thirdLogic.SelectedIndex = 0;
         }
     }
 }

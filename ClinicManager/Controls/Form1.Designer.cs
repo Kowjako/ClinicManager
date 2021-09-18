@@ -39,12 +39,12 @@ namespace Test
             this.btnHospitalEdit = new System.Windows.Forms.RibbonButton();
             this.btnHospitalRemove = new System.Windows.Forms.RibbonButton();
             this.btnHospitalRefresh = new System.Windows.Forms.RibbonButton();
+            this.btnHospitalFilter = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
-            this.btnHospitalLocalization = new System.Windows.Forms.RibbonButton();
-            this.btnHospitalManagerMail = new System.Windows.Forms.RibbonButton();
-            this.btnHospitalAddOpinion = new System.Windows.Forms.RibbonButton();
-            this.btnAddOpinion = new System.Windows.Forms.RibbonButton();
-            this.btnShowOpinions = new System.Windows.Forms.RibbonButton();
+            this.btnHospitalOpinions = new System.Windows.Forms.RibbonButton();
+            this.btnOpinionShow = new System.Windows.Forms.RibbonButton();
+            this.btnOpinionAdd = new System.Windows.Forms.RibbonButton();
             this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.btnDoctorsShow = new System.Windows.Forms.RibbonButton();
@@ -52,6 +52,7 @@ namespace Test
             this.btnDoctorsEdit = new System.Windows.Forms.RibbonButton();
             this.btnDoctorsDelete = new System.Windows.Forms.RibbonButton();
             this.btnDoctorsRefresh = new System.Windows.Forms.RibbonButton();
+            this.btnDoctorsFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
             this.btnClientsShow = new System.Windows.Forms.RibbonButton();
@@ -59,6 +60,7 @@ namespace Test
             this.btnClientsEdit = new System.Windows.Forms.RibbonButton();
             this.btnClientsDelete = new System.Windows.Forms.RibbonButton();
             this.btnClientsRefresh = new System.Windows.Forms.RibbonButton();
+            this.btnClientsFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
             this.btnAssetsShow = new System.Windows.Forms.RibbonButton();
@@ -66,6 +68,7 @@ namespace Test
             this.btnAssetsEdit = new System.Windows.Forms.RibbonButton();
             this.btnAssetsDelete = new System.Windows.Forms.RibbonButton();
             this.btnAssetsRefresh = new System.Windows.Forms.RibbonButton();
+            this.btnAssetsFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonTab5 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
             this.btnArticleShow = new System.Windows.Forms.RibbonButton();
@@ -73,6 +76,7 @@ namespace Test
             this.btnArticleEdit = new System.Windows.Forms.RibbonButton();
             this.btnArticleDelete = new System.Windows.Forms.RibbonButton();
             this.btnArticleRefresh = new System.Windows.Forms.RibbonButton();
+            this.btnArticleFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
             this.btnVisitsShow = new System.Windows.Forms.RibbonButton();
@@ -80,6 +84,7 @@ namespace Test
             this.btnVisitsEdit = new System.Windows.Forms.RibbonButton();
             this.btnVisitsDelete = new System.Windows.Forms.RibbonButton();
             this.btnVisitsRefresh = new System.Windows.Forms.RibbonButton();
+            this.btnVisitsFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
             this.btnOperationsShow = new System.Windows.Forms.RibbonButton();
@@ -87,6 +92,7 @@ namespace Test
             this.btnOperationsEdit = new System.Windows.Forms.RibbonButton();
             this.btnOperationsDelete = new System.Windows.Forms.RibbonButton();
             this.btnOperationsRefresh = new System.Windows.Forms.RibbonButton();
+            this.btnOperationsFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonTab8 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
             this.btnPriceShow = new System.Windows.Forms.RibbonButton();
@@ -94,17 +100,15 @@ namespace Test
             this.btnPriceEdit = new System.Windows.Forms.RibbonButton();
             this.btnPriceDelete = new System.Windows.Forms.RibbonButton();
             this.btnPriceRefresh = new System.Windows.Forms.RibbonButton();
-            this._mainPanel = new System.Windows.Forms.Panel();
-            this._gvMain = new System.Windows.Forms.DataGridView();
+            this.btnPriceFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonTab9 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
             this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab10 = new System.Windows.Forms.RibbonTab();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this._mainPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
+            this._gvMain = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -146,7 +150,6 @@ namespace Test
             this.ribbon1.Tabs.Add(this.ribbonTab7);
             this.ribbon1.Tabs.Add(this.ribbonTab8);
             this.ribbon1.Tabs.Add(this.ribbonTab9);
-            this.ribbon1.Tabs.Add(this.ribbonTab10);
             this.ribbon1.TabSpacing = 3;
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue_2010;
@@ -155,16 +158,19 @@ namespace Test
             // 
             this.ribbonTab1.Name = "ribbonTab1";
             this.ribbonTab1.Panels.Add(this.ribbonPanel1);
+            this.ribbonTab1.Panels.Add(this.ribbonPanel12);
             this.ribbonTab1.Panels.Add(this.ribbonPanel2);
             this.ribbonTab1.Text = "Przychodnie";
             // 
             // ribbonPanel1
             // 
+            this.ribbonPanel1.ButtonMoreVisible = false;
             this.ribbonPanel1.Items.Add(this.btnHospitalShowList);
             this.ribbonPanel1.Items.Add(this.btnHospitalAdd);
             this.ribbonPanel1.Items.Add(this.btnHospitalEdit);
             this.ribbonPanel1.Items.Add(this.btnHospitalRemove);
             this.ribbonPanel1.Items.Add(this.btnHospitalRefresh);
+            this.ribbonPanel1.Items.Add(this.btnHospitalFilter);
             this.ribbonPanel1.Name = "ribbonPanel1";
             this.ribbonPanel1.Text = "Zarządzanie - Przychodnie";
             // 
@@ -175,6 +181,7 @@ namespace Test
             this.btnHospitalShowList.Name = "btnHospitalShowList";
             this.btnHospitalShowList.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalShowList.SmallImage")));
             this.btnHospitalShowList.Text = "Wyświetl";
+            this.btnHospitalShowList.Click += new System.EventHandler(this.btnHospitalShowList_Click);
             // 
             // btnHospitalAdd
             // 
@@ -213,58 +220,53 @@ namespace Test
             this.btnHospitalRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalRefresh.SmallImage")));
             this.btnHospitalRefresh.Text = "Odśwież";
             // 
+            // btnHospitalFilter
+            // 
+            this.btnHospitalFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnHospitalFilter.Image")));
+            this.btnHospitalFilter.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalFilter.LargeImage")));
+            this.btnHospitalFilter.Name = "btnHospitalFilter";
+            this.btnHospitalFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalFilter.SmallImage")));
+            this.btnHospitalFilter.Text = "Filtruj";
+            // 
+            // ribbonPanel12
+            // 
+            this.ribbonPanel12.Name = "ribbonPanel12";
+            this.ribbonPanel12.Text = "Ogólne";
+            // 
             // ribbonPanel2
             // 
-            this.ribbonPanel2.Items.Add(this.btnHospitalLocalization);
-            this.ribbonPanel2.Items.Add(this.btnHospitalManagerMail);
-            this.ribbonPanel2.Items.Add(this.btnHospitalAddOpinion);
+            this.ribbonPanel2.Items.Add(this.btnHospitalOpinions);
             this.ribbonPanel2.Name = "ribbonPanel2";
-            this.ribbonPanel2.Text = "Ogólne";
+            this.ribbonPanel2.Text = "Inne";
             // 
-            // btnHospitalLocalization
+            // btnHospitalOpinions
             // 
-            this.btnHospitalLocalization.Image = ((System.Drawing.Image)(resources.GetObject("btnHospitalLocalization.Image")));
-            this.btnHospitalLocalization.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalLocalization.LargeImage")));
-            this.btnHospitalLocalization.Name = "btnHospitalLocalization";
-            this.btnHospitalLocalization.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalLocalization.SmallImage")));
-            this.btnHospitalLocalization.Text = "Lokalizacja";
+            this.btnHospitalOpinions.DropDownItems.Add(this.btnOpinionShow);
+            this.btnHospitalOpinions.DropDownItems.Add(this.btnOpinionAdd);
+            this.btnHospitalOpinions.Image = ((System.Drawing.Image)(resources.GetObject("btnHospitalOpinions.Image")));
+            this.btnHospitalOpinions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalOpinions.LargeImage")));
+            this.btnHospitalOpinions.Name = "btnHospitalOpinions";
+            this.btnHospitalOpinions.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalOpinions.SmallImage")));
+            this.btnHospitalOpinions.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
+            this.btnHospitalOpinions.Text = "Opinie";
             // 
-            // btnHospitalManagerMail
+            // btnOpinionShow
             // 
-            this.btnHospitalManagerMail.Image = ((System.Drawing.Image)(resources.GetObject("btnHospitalManagerMail.Image")));
-            this.btnHospitalManagerMail.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalManagerMail.LargeImage")));
-            this.btnHospitalManagerMail.Name = "btnHospitalManagerMail";
-            this.btnHospitalManagerMail.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalManagerMail.SmallImage")));
-            this.btnHospitalManagerMail.Text = "Powiadomienie";
+            this.btnOpinionShow.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.btnOpinionShow.Image = ((System.Drawing.Image)(resources.GetObject("btnOpinionShow.Image")));
+            this.btnOpinionShow.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionShow.LargeImage")));
+            this.btnOpinionShow.Name = "btnOpinionShow";
+            this.btnOpinionShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionShow.SmallImage")));
+            this.btnOpinionShow.Text = "Wyświetl opinie";
             // 
-            // btnHospitalAddOpinion
+            // btnOpinionAdd
             // 
-            this.btnHospitalAddOpinion.DropDownItems.Add(this.btnAddOpinion);
-            this.btnHospitalAddOpinion.DropDownItems.Add(this.btnShowOpinions);
-            this.btnHospitalAddOpinion.Image = ((System.Drawing.Image)(resources.GetObject("btnHospitalAddOpinion.Image")));
-            this.btnHospitalAddOpinion.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalAddOpinion.LargeImage")));
-            this.btnHospitalAddOpinion.Name = "btnHospitalAddOpinion";
-            this.btnHospitalAddOpinion.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalAddOpinion.SmallImage")));
-            this.btnHospitalAddOpinion.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
-            this.btnHospitalAddOpinion.Text = "Opinie";
-            // 
-            // btnAddOpinion
-            // 
-            this.btnAddOpinion.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.btnAddOpinion.Image = ((System.Drawing.Image)(resources.GetObject("btnAddOpinion.Image")));
-            this.btnAddOpinion.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAddOpinion.LargeImage")));
-            this.btnAddOpinion.Name = "btnAddOpinion";
-            this.btnAddOpinion.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAddOpinion.SmallImage")));
-            this.btnAddOpinion.Text = "Dodaj opinię";
-            // 
-            // btnShowOpinions
-            // 
-            this.btnShowOpinions.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.btnShowOpinions.Image = ((System.Drawing.Image)(resources.GetObject("btnShowOpinions.Image")));
-            this.btnShowOpinions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnShowOpinions.LargeImage")));
-            this.btnShowOpinions.Name = "btnShowOpinions";
-            this.btnShowOpinions.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnShowOpinions.SmallImage")));
-            this.btnShowOpinions.Text = "Wyświetl opinie";
+            this.btnOpinionAdd.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.btnOpinionAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnOpinionAdd.Image")));
+            this.btnOpinionAdd.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionAdd.LargeImage")));
+            this.btnOpinionAdd.Name = "btnOpinionAdd";
+            this.btnOpinionAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionAdd.SmallImage")));
+            this.btnOpinionAdd.Text = "Dodaj opinię";
             // 
             // ribbonTab2
             // 
@@ -274,11 +276,13 @@ namespace Test
             // 
             // ribbonPanel3
             // 
+            this.ribbonPanel3.ButtonMoreVisible = false;
             this.ribbonPanel3.Items.Add(this.btnDoctorsShow);
             this.ribbonPanel3.Items.Add(this.btnDoctorsAdd);
             this.ribbonPanel3.Items.Add(this.btnDoctorsEdit);
             this.ribbonPanel3.Items.Add(this.btnDoctorsDelete);
             this.ribbonPanel3.Items.Add(this.btnDoctorsRefresh);
+            this.ribbonPanel3.Items.Add(this.btnDoctorsFilter);
             this.ribbonPanel3.Name = "ribbonPanel3";
             this.ribbonPanel3.Text = "Zarządzanie - Lekarze";
             // 
@@ -323,6 +327,14 @@ namespace Test
             this.btnDoctorsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsRefresh.SmallImage")));
             this.btnDoctorsRefresh.Text = "Odśwież";
             // 
+            // btnDoctorsFilter
+            // 
+            this.btnDoctorsFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctorsFilter.Image")));
+            this.btnDoctorsFilter.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsFilter.LargeImage")));
+            this.btnDoctorsFilter.Name = "btnDoctorsFilter";
+            this.btnDoctorsFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsFilter.SmallImage")));
+            this.btnDoctorsFilter.Text = "Filtruj";
+            // 
             // ribbonTab3
             // 
             this.ribbonTab3.Name = "ribbonTab3";
@@ -331,11 +343,13 @@ namespace Test
             // 
             // ribbonPanel4
             // 
+            this.ribbonPanel4.ButtonMoreVisible = false;
             this.ribbonPanel4.Items.Add(this.btnClientsShow);
             this.ribbonPanel4.Items.Add(this.btnClientsAdd);
             this.ribbonPanel4.Items.Add(this.btnClientsEdit);
             this.ribbonPanel4.Items.Add(this.btnClientsDelete);
             this.ribbonPanel4.Items.Add(this.btnClientsRefresh);
+            this.ribbonPanel4.Items.Add(this.btnClientsFilter);
             this.ribbonPanel4.Name = "ribbonPanel4";
             this.ribbonPanel4.Text = "Zarządzanie - Pacjenci";
             // 
@@ -380,21 +394,31 @@ namespace Test
             this.btnClientsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClientsRefresh.SmallImage")));
             this.btnClientsRefresh.Text = "Odśwież";
             // 
+            // btnClientsFilter
+            // 
+            this.btnClientsFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnClientsFilter.Image")));
+            this.btnClientsFilter.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClientsFilter.LargeImage")));
+            this.btnClientsFilter.Name = "btnClientsFilter";
+            this.btnClientsFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClientsFilter.SmallImage")));
+            this.btnClientsFilter.Text = "Filtruj";
+            // 
             // ribbonTab4
             // 
             this.ribbonTab4.Name = "ribbonTab4";
             this.ribbonTab4.Panels.Add(this.ribbonPanel5);
-            this.ribbonTab4.Text = "Środki trwałe";
+            this.ribbonTab4.Text = "Narzędzia";
             // 
             // ribbonPanel5
             // 
+            this.ribbonPanel5.ButtonMoreVisible = false;
             this.ribbonPanel5.Items.Add(this.btnAssetsShow);
             this.ribbonPanel5.Items.Add(this.btnAssetsAdd);
             this.ribbonPanel5.Items.Add(this.btnAssetsEdit);
             this.ribbonPanel5.Items.Add(this.btnAssetsDelete);
             this.ribbonPanel5.Items.Add(this.btnAssetsRefresh);
+            this.ribbonPanel5.Items.Add(this.btnAssetsFilter);
             this.ribbonPanel5.Name = "ribbonPanel5";
-            this.ribbonPanel5.Text = "Zarządzanie - Środki trwałe";
+            this.ribbonPanel5.Text = "Zarządzanie - Narzędzia";
             // 
             // btnAssetsShow
             // 
@@ -437,6 +461,14 @@ namespace Test
             this.btnAssetsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsRefresh.SmallImage")));
             this.btnAssetsRefresh.Text = "Odśwież";
             // 
+            // btnAssetsFilter
+            // 
+            this.btnAssetsFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnAssetsFilter.Image")));
+            this.btnAssetsFilter.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsFilter.LargeImage")));
+            this.btnAssetsFilter.Name = "btnAssetsFilter";
+            this.btnAssetsFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsFilter.SmallImage")));
+            this.btnAssetsFilter.Text = "Filtruj";
+            // 
             // ribbonTab5
             // 
             this.ribbonTab5.Name = "ribbonTab5";
@@ -445,11 +477,13 @@ namespace Test
             // 
             // ribbonPanel6
             // 
+            this.ribbonPanel6.ButtonMoreVisible = false;
             this.ribbonPanel6.Items.Add(this.btnArticleShow);
             this.ribbonPanel6.Items.Add(this.btnArticleAdd);
             this.ribbonPanel6.Items.Add(this.btnArticleEdit);
             this.ribbonPanel6.Items.Add(this.btnArticleDelete);
             this.ribbonPanel6.Items.Add(this.btnArticleRefresh);
+            this.ribbonPanel6.Items.Add(this.btnArticleFilter);
             this.ribbonPanel6.Name = "ribbonPanel6";
             this.ribbonPanel6.Text = "Zarządzanie - Leki";
             // 
@@ -494,6 +528,14 @@ namespace Test
             this.btnArticleRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleRefresh.SmallImage")));
             this.btnArticleRefresh.Text = "Odśwież";
             // 
+            // btnArticleFilter
+            // 
+            this.btnArticleFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnArticleFilter.Image")));
+            this.btnArticleFilter.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnArticleFilter.LargeImage")));
+            this.btnArticleFilter.Name = "btnArticleFilter";
+            this.btnArticleFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleFilter.SmallImage")));
+            this.btnArticleFilter.Text = "Filtruj";
+            // 
             // ribbonTab6
             // 
             this.ribbonTab6.Name = "ribbonTab6";
@@ -502,11 +544,13 @@ namespace Test
             // 
             // ribbonPanel7
             // 
+            this.ribbonPanel7.ButtonMoreVisible = false;
             this.ribbonPanel7.Items.Add(this.btnVisitsShow);
             this.ribbonPanel7.Items.Add(this.btnVisitsAdd);
             this.ribbonPanel7.Items.Add(this.btnVisitsEdit);
             this.ribbonPanel7.Items.Add(this.btnVisitsDelete);
             this.ribbonPanel7.Items.Add(this.btnVisitsRefresh);
+            this.ribbonPanel7.Items.Add(this.btnVisitsFilter);
             this.ribbonPanel7.Name = "ribbonPanel7";
             this.ribbonPanel7.Text = "Zarządzanie - Wizyty";
             // 
@@ -551,6 +595,14 @@ namespace Test
             this.btnVisitsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsRefresh.SmallImage")));
             this.btnVisitsRefresh.Text = "Odśwież";
             // 
+            // btnVisitsFilter
+            // 
+            this.btnVisitsFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitsFilter.Image")));
+            this.btnVisitsFilter.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsFilter.LargeImage")));
+            this.btnVisitsFilter.Name = "btnVisitsFilter";
+            this.btnVisitsFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsFilter.SmallImage")));
+            this.btnVisitsFilter.Text = "Filtruj";
+            // 
             // ribbonTab7
             // 
             this.ribbonTab7.Name = "ribbonTab7";
@@ -559,11 +611,13 @@ namespace Test
             // 
             // ribbonPanel8
             // 
+            this.ribbonPanel8.ButtonMoreVisible = false;
             this.ribbonPanel8.Items.Add(this.btnOperationsShow);
             this.ribbonPanel8.Items.Add(this.btnOperationsAdd);
             this.ribbonPanel8.Items.Add(this.btnOperationsEdit);
             this.ribbonPanel8.Items.Add(this.btnOperationsDelete);
             this.ribbonPanel8.Items.Add(this.btnOperationsRefresh);
+            this.ribbonPanel8.Items.Add(this.btnOperationsFilter);
             this.ribbonPanel8.Name = "ribbonPanel8";
             this.ribbonPanel8.Text = "Zarządzanie - Operacje";
             // 
@@ -608,6 +662,14 @@ namespace Test
             this.btnOperationsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsRefresh.SmallImage")));
             this.btnOperationsRefresh.Text = "Odśwież";
             // 
+            // btnOperationsFilter
+            // 
+            this.btnOperationsFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnOperationsFilter.Image")));
+            this.btnOperationsFilter.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsFilter.LargeImage")));
+            this.btnOperationsFilter.Name = "btnOperationsFilter";
+            this.btnOperationsFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsFilter.SmallImage")));
+            this.btnOperationsFilter.Text = "Filtruj";
+            // 
             // ribbonTab8
             // 
             this.ribbonTab8.Name = "ribbonTab8";
@@ -616,11 +678,13 @@ namespace Test
             // 
             // ribbonPanel9
             // 
+            this.ribbonPanel9.ButtonMoreVisible = false;
             this.ribbonPanel9.Items.Add(this.btnPriceShow);
             this.ribbonPanel9.Items.Add(this.btnPriceAdd);
             this.ribbonPanel9.Items.Add(this.btnPriceEdit);
             this.ribbonPanel9.Items.Add(this.btnPriceDelete);
             this.ribbonPanel9.Items.Add(this.btnPriceRefresh);
+            this.ribbonPanel9.Items.Add(this.btnPriceFilter);
             this.ribbonPanel9.Name = "ribbonPanel9";
             this.ribbonPanel9.Text = "Zarządzanie - Cennik leków";
             // 
@@ -665,31 +729,13 @@ namespace Test
             this.btnPriceRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPriceRefresh.SmallImage")));
             this.btnPriceRefresh.Text = "Odśwież";
             // 
-            // _mainPanel
+            // btnPriceFilter
             // 
-            this._mainPanel.Controls.Add(this._gvMain);
-            this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._mainPanel.Location = new System.Drawing.Point(0, 122);
-            this._mainPanel.Name = "_mainPanel";
-            this._mainPanel.Size = new System.Drawing.Size(1162, 611);
-            this._mainPanel.TabIndex = 3;
-            // 
-            // _gvMain
-            // 
-            this._gvMain.AllowUserToAddRows = false;
-            this._gvMain.AllowUserToDeleteRows = false;
-            this._gvMain.AllowUserToResizeRows = false;
-            this._gvMain.AutoGenerateColumns = false;
-            this._gvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._gvMain.DataSource = this.bsMain;
-            this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._gvMain.Location = new System.Drawing.Point(0, 0);
-            this._gvMain.Name = "_gvMain";
-            this._gvMain.RowHeadersVisible = false;
-            this._gvMain.Size = new System.Drawing.Size(1162, 611);
-            this._gvMain.TabIndex = 0;
+            this.btnPriceFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnPriceFilter.Image")));
+            this.btnPriceFilter.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPriceFilter.LargeImage")));
+            this.btnPriceFilter.Name = "btnPriceFilter";
+            this.btnPriceFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPriceFilter.SmallImage")));
+            this.btnPriceFilter.Text = "Filtruj";
             // 
             // ribbonTab9
             // 
@@ -699,6 +745,7 @@ namespace Test
             // 
             // ribbonPanel10
             // 
+            this.ribbonPanel10.ButtonMoreVisible = false;
             this.ribbonPanel10.Items.Add(this.btnConfigurationShowDBScript);
             this.ribbonPanel10.Items.Add(this.btnConfigurationInsertDBData);
             this.ribbonPanel10.Name = "ribbonPanel10";
@@ -720,25 +767,33 @@ namespace Test
             this.btnConfigurationInsertDBData.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationInsertDBData.SmallImage")));
             this.btnConfigurationInsertDBData.Text = "Wypełnij";
             // 
-            // ribbonTab10
+            // _gvMain
             // 
-            this.ribbonTab10.Name = "ribbonTab10";
-            this.ribbonTab10.Text = "ribbonTab10";
+            this._gvMain.AllowUserToAddRows = false;
+            this._gvMain.AllowUserToDeleteRows = false;
+            this._gvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._gvMain.Location = new System.Drawing.Point(0, 122);
+            this._gvMain.Name = "_gvMain";
+            this._gvMain.Size = new System.Drawing.Size(1162, 611);
+            this._gvMain.TabIndex = 1;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1162, 733);
-            this.Controls.Add(this._mainPanel);
+            this.Controls.Add(this._gvMain);
             this.Controls.Add(this.ribbon1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "ClinicManager - Zarządzanie siecią przychodni";
-            this._mainPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this._gvMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._gvMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -748,7 +803,6 @@ namespace Test
         private System.Windows.Forms.Ribbon ribbon1;
         private System.Windows.Forms.RibbonTab ribbonTab1;
         private System.Windows.Forms.RibbonPanel ribbonPanel1;
-        private System.Windows.Forms.RibbonPanel ribbonPanel2;
         private System.Windows.Forms.RibbonTab ribbonTab2;
         private System.Windows.Forms.RibbonPanel ribbonPanel3;
         private System.Windows.Forms.RibbonButton btnHospitalAdd;
@@ -756,10 +810,6 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnHospitalEdit;
         private System.Windows.Forms.RibbonTab ribbonTab3;
         private System.Windows.Forms.RibbonTab ribbonTab4;
-        private System.Windows.Forms.RibbonButton btnHospitalLocalization;
-        private System.Windows.Forms.RibbonButton btnHospitalManagerMail;
-        private System.Windows.Forms.Panel _mainPanel;
-        private System.Windows.Forms.DataGridView _gvMain;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isOrderDataGridViewCheckBoxColumn;
@@ -769,9 +819,6 @@ namespace Test
         private System.Windows.Forms.RibbonTab ribbonTab8;
         private System.Windows.Forms.RibbonButton btnHospitalShowList;
         private System.Windows.Forms.RibbonButton btnHospitalRefresh;
-        private System.Windows.Forms.RibbonButton btnHospitalAddOpinion;
-        private System.Windows.Forms.RibbonButton btnAddOpinion;
-        private System.Windows.Forms.RibbonButton btnShowOpinions;
         private System.Windows.Forms.RibbonButton btnDoctorsShow;
         private System.Windows.Forms.RibbonButton btnDoctorsAdd;
         private System.Windows.Forms.RibbonButton btnDoctorsEdit;
@@ -817,8 +864,21 @@ namespace Test
         private System.Windows.Forms.RibbonPanel ribbonPanel10;
         private System.Windows.Forms.RibbonButton btnConfigurationShowDBScript;
         private System.Windows.Forms.RibbonButton btnConfigurationInsertDBData;
-        private System.Windows.Forms.RibbonTab ribbonTab10;
         private System.Windows.Forms.BindingSource bsMain;
+        private System.Windows.Forms.RibbonButton btnHospitalFilter;
+        private System.Windows.Forms.RibbonPanel ribbonPanel12;
+        private System.Windows.Forms.RibbonPanel ribbonPanel2;
+        private System.Windows.Forms.RibbonButton btnHospitalOpinions;
+        private System.Windows.Forms.RibbonButton btnOpinionShow;
+        private System.Windows.Forms.RibbonButton btnOpinionAdd;
+        private System.Windows.Forms.RibbonButton btnDoctorsFilter;
+        private System.Windows.Forms.RibbonButton btnClientsFilter;
+        private System.Windows.Forms.RibbonButton btnAssetsFilter;
+        private System.Windows.Forms.RibbonButton btnArticleFilter;
+        private System.Windows.Forms.RibbonButton btnVisitsFilter;
+        private System.Windows.Forms.RibbonButton btnOperationsFilter;
+        private System.Windows.Forms.RibbonButton btnPriceFilter;
+        private System.Windows.Forms.DataGridView _gvMain;
     }
 }
 

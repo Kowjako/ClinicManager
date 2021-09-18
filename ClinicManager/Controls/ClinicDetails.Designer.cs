@@ -29,6 +29,7 @@ namespace ClinicManager
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,6 +41,8 @@ namespace ClinicManager
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this._bsDetails = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this._bsDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,6 +97,7 @@ namespace ClinicManager
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsDetails, "Name", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox1.Location = new System.Drawing.Point(182, 10);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
@@ -101,6 +105,7 @@ namespace ClinicManager
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this._bsDetails, "OpenDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(182, 38);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -110,6 +115,7 @@ namespace ClinicManager
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this._bsDetails, "IsPrivate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBox1.Location = new System.Drawing.Point(182, 68);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(45, 17);
@@ -144,6 +150,10 @@ namespace ClinicManager
             this.button1.Text = "Zatwierdź";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // _bsDetails
+            // 
+            this._bsDetails.DataSource = typeof(ClinicManager.DataAccessLayer.Clinics);
+            // 
             // ClinicDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,6 +176,7 @@ namespace ClinicManager
             this.MinimizeBox = false;
             this.Name = "ClinicDetails";
             this.Text = "Szczególy przychodni";
+            ((System.ComponentModel.ISupportInitialize)(this._bsDetails)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +195,6 @@ namespace ClinicManager
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource _bsDetails;
     }
 }

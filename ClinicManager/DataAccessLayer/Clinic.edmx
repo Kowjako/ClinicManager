@@ -1,0 +1,1675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ClinicDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Clinics">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="OpenDate" Type="datetime" Nullable="false" />
+          <Property Name="IsPrivate" Type="bit" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="LocalizationId" Type="int" Nullable="false" />
+          <Property Name="Usermark" Type="decimal" Precision="2" Scale="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Costs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProducentId" Type="int" Nullable="false" />
+          <Property Name="DrugId" Type="int" Nullable="false" />
+          <Property Name="MinPrice" Type="int" />
+          <Property Name="MaxPrice" Type="int" />
+          <Property Name="TransportDays" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Data">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="BirthDate" Type="datetime" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="1" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Drugs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Percentage" Type="tinyint" />
+          <Property Name="ProductionDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpireDate" Type="datetime" Nullable="false" />
+          <Property Name="IsPsychotropic" Type="bit" Nullable="false" />
+          <Property Name="AvailableAmount" Type="tinyint" Nullable="false" />
+          <Property Name="Unit" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OperationCount" Type="tinyint" />
+          <Property Name="OperationId" Type="int" Nullable="false" />
+          <Property Name="ClinicId" Type="int" />
+          <Property Name="DataId" Type="int" Nullable="false" />
+          <Property Name="Rank" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Cost" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Localizations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Country" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Street" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="House" Type="tinyint" Nullable="false" />
+          <Property Name="Flat" Type="tinyint" Nullable="false" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Operations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="IsAnesthesia" Type="bit" Nullable="false" />
+          <Property Name="ToolId" Type="int" />
+          <Property Name="DrugId" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Opinions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClinicId" Type="int" Nullable="false" />
+          <Property Name="DataId" Type="int" Nullable="false" />
+          <Property Name="Mark" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patients">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DataId" Type="int" Nullable="false" />
+          <Property Name="OperationId" Type="int" Nullable="false" />
+          <Property Name="Priority" Type="tinyint" />
+          <Property Name="OperationDate" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Producents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="OpenDate" Type="datetime" Nullable="false" />
+          <Property Name="LocalizationId" Type="int" Nullable="false" />
+          <Property Name="DataId" Type="int" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Registrations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Time" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="PatientId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tools">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="AvailableCount" Type="tinyint" Nullable="false" />
+          <Property Name="ProductionDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpireDate" Type="datetime" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ClinicData.dbo.ClinicRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ClinicRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Data otwarcia" />
+            <PropertyRef Name="Prywatna" />
+            <PropertyRef Name="Ocena" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Data otwarcia" Type="datetime" Nullable="false" />
+          <Property Name="Prywatna" Type="bit" Nullable="false" />
+          <Property Name="Ocena" Type="decimal" Precision="2" Scale="1" Nullable="false" />
+          <Property Name="Lokalizacja" Type="nvarchar" MaxLength="542" />
+          <Property Name="Kierownik" Type="nvarchar" MaxLength="511" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ClinicData.dbo.CostRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CostRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nazwa leku" />
+            <PropertyRef Name="Producent" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nazwa leku" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Minimalna cena" Type="int" />
+          <Property Name="Maksymalna cena" Type="int" />
+          <Property Name="Czas dostawy (dni)" Type="tinyint" />
+          <Property Name="Producent" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ClinicData.dbo.DrugRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DrugRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Data produkcji" />
+            <PropertyRef Name="Data ważności" />
+            <PropertyRef Name="Psychotropowe" />
+            <PropertyRef Name="Ilość dostępna" />
+            <PropertyRef Name="Jednostka" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Dawka" Type="tinyint" />
+          <Property Name="Data produkcji" Type="datetime" Nullable="false" />
+          <Property Name="Data ważności" Type="datetime" Nullable="false" />
+          <Property Name="Psychotropowe" Type="bit" Nullable="false" />
+          <Property Name="Ilość dostępna" Type="tinyint" Nullable="false" />
+          <Property Name="Jednostka" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ClinicData.dbo.EmployeeRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EmployeeRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Lekarz" />
+            <PropertyRef Name="Miejsce pracy" />
+            <PropertyRef Name="Specjalizacja" />
+            <PropertyRef Name="Koszt operacji" />
+            <PropertyRef Name="Stanowisko" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Lekarz" Type="nvarchar" MaxLength="511" Nullable="false" />
+          <Property Name="Miejsce pracy" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Specjalizacja" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Koszt operacji" Type="int" Nullable="false" />
+          <Property Name="Stanowisko" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ClinicData.dbo.LocalizationRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="LocalizationRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Kraj" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Budynek" />
+            <PropertyRef Name="Mieszkanie" />
+            <PropertyRef Name="Kod pocztowy" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Kraj" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Miasto" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Ulica" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Budynek" Type="tinyint" Nullable="false" />
+          <Property Name="Mieszkanie" Type="tinyint" Nullable="false" />
+          <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ClinicData.dbo.OperationRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OperationRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Typ" />
+            <PropertyRef Name="Znieczulenie" />
+            <PropertyRef Name="Narzędzie" />
+            <PropertyRef Name="Lek" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Typ" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Znieczulenie" Type="bit" Nullable="false" />
+          <Property Name="Narzędzie" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Lek" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ClinicData.dbo.OpinionRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OpinionRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Ocena" />
+            <PropertyRef Name="Wystawiający" />
+            <PropertyRef Name="Przychodnia" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Ocena" Type="tinyint" Nullable="false" />
+          <Property Name="Wystawiający" Type="nvarchar" MaxLength="511" Nullable="false" />
+          <Property Name="Przychodnia" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ClinicData.dbo.PatientRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PatientRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Pacjent" />
+            <PropertyRef Name="Operacja" />
+            <PropertyRef Name="Planowana data" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Pacjent" Type="nvarchar" MaxLength="511" Nullable="false" />
+          <Property Name="Operacja" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Planowana data" Type="datetime" Nullable="false" />
+          <Property Name="Priorytet" Type="tinyint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ClinicData.dbo.ProducentRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProducentRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nazwa producenta" />
+            <PropertyRef Name="Kierownik" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nazwa producenta" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="Siedziba firmy" Type="tinyint" />
+          <Property Name="Kierownik" Type="nvarchar" MaxLength="511" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ClinicData.dbo.RegistrationRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="RegistrationRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Data operacji" />
+            <PropertyRef Name="Czas rozpoczęcia" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pacjent" Type="nvarchar" MaxLength="511" />
+          <Property Name="Lekarz" Type="nvarchar" MaxLength="511" />
+          <Property Name="Data operacji" Type="datetime" Nullable="false" />
+          <Property Name="Czas rozpoczęcia" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ToolRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Ilość dostępna" />
+            <PropertyRef Name="Data produkcji" />
+            <PropertyRef Name="Data ważności" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Ilość dostępna" Type="tinyint" Nullable="false" />
+          <Property Name="Data produkcji" Type="datetime" Nullable="false" />
+          <Property Name="Data ważności" Type="datetime" Nullable="false" />
+          <Property Name="Opis" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK__Clinics_EmployeeId">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Clinics" Type="Self.Clinics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clinics">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Clinics_LocalizationId">
+          <End Role="Localizations" Type="Self.Localizations" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Clinics" Type="Self.Clinics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localizations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clinics">
+              <PropertyRef Name="LocalizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Costs_DrugId">
+          <End Role="Drugs" Type="Self.Drugs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Costs" Type="Self.Costs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drugs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Costs">
+              <PropertyRef Name="DrugId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Costs_ProducentId">
+          <End Role="Producents" Type="Self.Producents" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Costs" Type="Self.Costs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producents">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Costs">
+              <PropertyRef Name="ProducentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employees_ClinicId">
+          <End Role="Clinics" Type="Self.Clinics" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clinics">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="ClinicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employees_OperationId">
+          <End Role="Operations" Type="Self.Operations" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="OperationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Operations_DrugId">
+          <End Role="Drugs" Type="Self.Drugs" Multiplicity="0..1" />
+          <End Role="Operations" Type="Self.Operations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drugs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Operations">
+              <PropertyRef Name="DrugId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Operations_ToolId">
+          <End Role="Tools" Type="Self.Tools" Multiplicity="0..1" />
+          <End Role="Operations" Type="Self.Operations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tools">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Operations">
+              <PropertyRef Name="ToolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Opinions_ClinicId">
+          <End Role="Clinics" Type="Self.Clinics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Opinions" Type="Self.Opinions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clinics">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Opinions">
+              <PropertyRef Name="ClinicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Opinions_DataId">
+          <End Role="Data" Type="Self.Data" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Opinions" Type="Self.Opinions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Data">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Opinions">
+              <PropertyRef Name="DataId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients_DataId">
+          <End Role="Data" Type="Self.Data" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Data">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="DataId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients_OperationId">
+          <End Role="Operations" Type="Self.Operations" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="OperationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Producents_DataId">
+          <End Role="Data" Type="Self.Data" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Producents" Type="Self.Producents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Data">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producents">
+              <PropertyRef Name="DataId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Producents_LocalizationID">
+          <End Role="Localizations" Type="Self.Localizations" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Producents" Type="Self.Producents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localizations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producents">
+              <PropertyRef Name="LocalizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrations_EmployeeId">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Registrations" Type="Self.Registrations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Registrations">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrations_PatientId">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+          <End Role="Registrations" Type="Self.Registrations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Registrations">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClinicDataModelStoreContainer">
+          <EntitySet Name="Clinics" EntityType="Self.Clinics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Costs" EntityType="Self.Costs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Data" EntityType="Self.Data" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Drugs" EntityType="Self.Drugs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Localizations" EntityType="Self.Localizations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Operations" EntityType="Self.Operations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Opinions" EntityType="Self.Opinions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producents" EntityType="Self.Producents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Registrations" EntityType="Self.Registrations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tools" EntityType="Self.Tools" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClinicRow" EntityType="Self.ClinicRow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ClinicRow].[Id] AS [Id], 
+    [ClinicRow].[Nazwa] AS [Nazwa], 
+    [ClinicRow].[Data otwarcia] AS [Data otwarcia], 
+    [ClinicRow].[Prywatna] AS [Prywatna], 
+    [ClinicRow].[Ocena] AS [Ocena], 
+    [ClinicRow].[Lokalizacja] AS [Lokalizacja], 
+    [ClinicRow].[Kierownik] AS [Kierownik]
+    FROM [dbo].[ClinicRow] AS [ClinicRow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CostRow" EntityType="Self.CostRow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CostRow].[Id] AS [Id], 
+    [CostRow].[Nazwa leku] AS [Nazwa leku], 
+    [CostRow].[Minimalna cena] AS [Minimalna cena], 
+    [CostRow].[Maksymalna cena] AS [Maksymalna cena], 
+    [CostRow].[Czas dostawy (dni)] AS [Czas dostawy (dni)], 
+    [CostRow].[Producent] AS [Producent]
+    FROM [dbo].[CostRow] AS [CostRow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DrugRow" EntityType="Self.DrugRow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DrugRow].[Id] AS [Id], 
+    [DrugRow].[Nazwa] AS [Nazwa], 
+    [DrugRow].[Dawka] AS [Dawka], 
+    [DrugRow].[Data produkcji] AS [Data produkcji], 
+    [DrugRow].[Data ważności] AS [Data ważności], 
+    [DrugRow].[Psychotropowe] AS [Psychotropowe], 
+    [DrugRow].[Ilość dostępna] AS [Ilość dostępna], 
+    [DrugRow].[Jednostka] AS [Jednostka]
+    FROM [dbo].[DrugRow] AS [DrugRow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="EmployeeRow" EntityType="Self.EmployeeRow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EmployeeRow].[Id] AS [Id], 
+    [EmployeeRow].[Lekarz] AS [Lekarz], 
+    [EmployeeRow].[Miejsce pracy] AS [Miejsce pracy], 
+    [EmployeeRow].[Specjalizacja] AS [Specjalizacja], 
+    [EmployeeRow].[Koszt operacji] AS [Koszt operacji], 
+    [EmployeeRow].[Stanowisko] AS [Stanowisko]
+    FROM [dbo].[EmployeeRow] AS [EmployeeRow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LocalizationRow" EntityType="Self.LocalizationRow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LocalizationRow].[Id] AS [Id], 
+    [LocalizationRow].[Kraj] AS [Kraj], 
+    [LocalizationRow].[Miasto] AS [Miasto], 
+    [LocalizationRow].[Ulica] AS [Ulica], 
+    [LocalizationRow].[Budynek] AS [Budynek], 
+    [LocalizationRow].[Mieszkanie] AS [Mieszkanie], 
+    [LocalizationRow].[Kod pocztowy] AS [Kod pocztowy]
+    FROM [dbo].[LocalizationRow] AS [LocalizationRow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OperationRow" EntityType="Self.OperationRow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OperationRow].[Id] AS [Id], 
+    [OperationRow].[Nazwa] AS [Nazwa], 
+    [OperationRow].[Typ] AS [Typ], 
+    [OperationRow].[Znieczulenie] AS [Znieczulenie], 
+    [OperationRow].[Narzędzie] AS [Narzędzie], 
+    [OperationRow].[Lek] AS [Lek]
+    FROM [dbo].[OperationRow] AS [OperationRow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OpinionRow" EntityType="Self.OpinionRow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OpinionRow].[Id] AS [Id], 
+    [OpinionRow].[Ocena] AS [Ocena], 
+    [OpinionRow].[Wystawiający] AS [Wystawiający], 
+    [OpinionRow].[Przychodnia] AS [Przychodnia]
+    FROM [dbo].[OpinionRow] AS [OpinionRow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PatientRow" EntityType="Self.PatientRow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PatientRow].[Id] AS [Id], 
+    [PatientRow].[Pacjent] AS [Pacjent], 
+    [PatientRow].[Operacja] AS [Operacja], 
+    [PatientRow].[Planowana data] AS [Planowana data], 
+    [PatientRow].[Priorytet] AS [Priorytet]
+    FROM [dbo].[PatientRow] AS [PatientRow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProducentRow" EntityType="Self.ProducentRow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProducentRow].[Id] AS [Id], 
+    [ProducentRow].[Nazwa producenta] AS [Nazwa producenta], 
+    [ProducentRow].[Email] AS [Email], 
+    [ProducentRow].[Siedziba firmy] AS [Siedziba firmy], 
+    [ProducentRow].[Kierownik] AS [Kierownik]
+    FROM [dbo].[ProducentRow] AS [ProducentRow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="RegistrationRow" EntityType="Self.RegistrationRow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [RegistrationRow].[Id] AS [Id], 
+    [RegistrationRow].[Pacjent] AS [Pacjent], 
+    [RegistrationRow].[Lekarz] AS [Lekarz], 
+    [RegistrationRow].[Data operacji] AS [Data operacji], 
+    [RegistrationRow].[Czas rozpoczęcia] AS [Czas rozpoczęcia]
+    FROM [dbo].[RegistrationRow] AS [RegistrationRow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ToolRow" EntityType="Self.ToolRow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ToolRow].[Id] AS [Id], 
+    [ToolRow].[Nazwa] AS [Nazwa], 
+    [ToolRow].[Ilość dostępna] AS [Ilość dostępna], 
+    [ToolRow].[Data produkcji] AS [Data produkcji], 
+    [ToolRow].[Data ważności] AS [Data ważności], 
+    [ToolRow].[Opis] AS [Opis]
+    FROM [dbo].[ToolRow] AS [ToolRow]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Clinics_EmployeeId" Association="Self.FK__Clinics_EmployeeId">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Clinics" EntitySet="Clinics" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Clinics_LocalizationId" Association="Self.FK__Clinics_LocalizationId">
+            <End Role="Localizations" EntitySet="Localizations" />
+            <End Role="Clinics" EntitySet="Clinics" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Costs_DrugId" Association="Self.FK__Costs_DrugId">
+            <End Role="Drugs" EntitySet="Drugs" />
+            <End Role="Costs" EntitySet="Costs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Costs_ProducentId" Association="Self.FK__Costs_ProducentId">
+            <End Role="Producents" EntitySet="Producents" />
+            <End Role="Costs" EntitySet="Costs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employees_ClinicId" Association="Self.FK__Employees_ClinicId">
+            <End Role="Clinics" EntitySet="Clinics" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employees_OperationId" Association="Self.FK__Employees_OperationId">
+            <End Role="Operations" EntitySet="Operations" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Operations_DrugId" Association="Self.FK__Operations_DrugId">
+            <End Role="Drugs" EntitySet="Drugs" />
+            <End Role="Operations" EntitySet="Operations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Operations_ToolId" Association="Self.FK__Operations_ToolId">
+            <End Role="Tools" EntitySet="Tools" />
+            <End Role="Operations" EntitySet="Operations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Opinions_ClinicId" Association="Self.FK__Opinions_ClinicId">
+            <End Role="Clinics" EntitySet="Clinics" />
+            <End Role="Opinions" EntitySet="Opinions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Opinions_DataId" Association="Self.FK__Opinions_DataId">
+            <End Role="Data" EntitySet="Data" />
+            <End Role="Opinions" EntitySet="Opinions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients_DataId" Association="Self.FK__Patients_DataId">
+            <End Role="Data" EntitySet="Data" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients_OperationId" Association="Self.FK__Patients_OperationId">
+            <End Role="Operations" EntitySet="Operations" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Producents_DataId" Association="Self.FK__Producents_DataId">
+            <End Role="Data" EntitySet="Data" />
+            <End Role="Producents" EntitySet="Producents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Producents_LocalizationID" Association="Self.FK__Producents_LocalizationID">
+            <End Role="Localizations" EntitySet="Localizations" />
+            <End Role="Producents" EntitySet="Producents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrations_EmployeeId" Association="Self.FK__Registrations_EmployeeId">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Registrations" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrations_PatientId" Association="Self.FK__Registrations_PatientId">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Registrations" EntitySet="Registrations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClinicDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Clinics">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OpenDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsPrivate" Type="Boolean" Nullable="false" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="LocalizationId" Type="Int32" Nullable="false" />
+          <Property Name="Usermark" Type="Decimal" Precision="2" Scale="1" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Clinics_EmployeeId" FromRole="Clinics" ToRole="Employees" />
+          <NavigationProperty Name="Localizations" Relationship="Self.FK__Clinics_LocalizationId" FromRole="Clinics" ToRole="Localizations" />
+          <NavigationProperty Name="Employees1" Relationship="Self.FK__Employees_ClinicId" FromRole="Clinics" ToRole="Employees" />
+          <NavigationProperty Name="Opinions" Relationship="Self.FK__Opinions_ClinicId" FromRole="Clinics" ToRole="Opinions" />
+        </EntityType>
+        <EntityType Name="Costs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProducentId" Type="Int32" Nullable="false" />
+          <Property Name="DrugId" Type="Int32" Nullable="false" />
+          <Property Name="MinPrice" Type="Int32" />
+          <Property Name="MaxPrice" Type="Int32" />
+          <Property Name="TransportDays" Type="Byte" />
+          <NavigationProperty Name="Drugs" Relationship="Self.FK__Costs_DrugId" FromRole="Costs" ToRole="Drugs" />
+          <NavigationProperty Name="Producents" Relationship="Self.FK__Costs_ProducentId" FromRole="Costs" ToRole="Producents" />
+        </EntityType>
+        <EntityType Name="Data">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Opinions" Relationship="Self.FK__Opinions_DataId" FromRole="Data" ToRole="Opinions" />
+          <NavigationProperty Name="Patients" Relationship="Self.FK__Patients_DataId" FromRole="Data" ToRole="Patients" />
+          <NavigationProperty Name="Producents" Relationship="Self.FK__Producents_DataId" FromRole="Data" ToRole="Producents" />
+        </EntityType>
+        <EntityType Name="Drugs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Percentage" Type="Byte" />
+          <Property Name="ProductionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpireDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsPsychotropic" Type="Boolean" Nullable="false" />
+          <Property Name="AvailableAmount" Type="Byte" Nullable="false" />
+          <Property Name="Unit" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Costs" Relationship="Self.FK__Costs_DrugId" FromRole="Drugs" ToRole="Costs" />
+          <NavigationProperty Name="Operations" Relationship="Self.FK__Operations_DrugId" FromRole="Drugs" ToRole="Operations" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OperationCount" Type="Byte" />
+          <Property Name="OperationId" Type="Int32" Nullable="false" />
+          <Property Name="ClinicId" Type="Int32" />
+          <Property Name="DataId" Type="Int32" Nullable="false" />
+          <Property Name="Rank" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cost" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clinics" Relationship="Self.FK__Clinics_EmployeeId" FromRole="Employees" ToRole="Clinics" />
+          <NavigationProperty Name="Clinics1" Relationship="Self.FK__Employees_ClinicId" FromRole="Employees" ToRole="Clinics" />
+          <NavigationProperty Name="Operations" Relationship="Self.FK__Employees_OperationId" FromRole="Employees" ToRole="Operations" />
+          <NavigationProperty Name="Registrations" Relationship="Self.FK__Registrations_EmployeeId" FromRole="Employees" ToRole="Registrations" />
+        </EntityType>
+        <EntityType Name="Localizations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Country" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Street" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="House" Type="Byte" Nullable="false" />
+          <Property Name="Flat" Type="Byte" Nullable="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Clinics" Relationship="Self.FK__Clinics_LocalizationId" FromRole="Localizations" ToRole="Clinics" />
+          <NavigationProperty Name="Producents" Relationship="Self.FK__Producents_LocalizationID" FromRole="Localizations" ToRole="Producents" />
+        </EntityType>
+        <EntityType Name="Operations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsAnesthesia" Type="Boolean" Nullable="false" />
+          <Property Name="ToolId" Type="Int32" />
+          <Property Name="DrugId" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Drugs" Relationship="Self.FK__Operations_DrugId" FromRole="Operations" ToRole="Drugs" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Employees_OperationId" FromRole="Operations" ToRole="Employees" />
+          <NavigationProperty Name="Tools" Relationship="Self.FK__Operations_ToolId" FromRole="Operations" ToRole="Tools" />
+          <NavigationProperty Name="Patients" Relationship="Self.FK__Patients_OperationId" FromRole="Operations" ToRole="Patients" />
+        </EntityType>
+        <EntityType Name="Opinions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClinicId" Type="Int32" Nullable="false" />
+          <Property Name="DataId" Type="Int32" Nullable="false" />
+          <Property Name="Mark" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="Clinics" Relationship="Self.FK__Opinions_ClinicId" FromRole="Opinions" ToRole="Clinics" />
+          <NavigationProperty Name="Data" Relationship="Self.FK__Opinions_DataId" FromRole="Opinions" ToRole="Data" />
+        </EntityType>
+        <EntityType Name="Patients">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataId" Type="Int32" Nullable="false" />
+          <Property Name="OperationId" Type="Int32" Nullable="false" />
+          <Property Name="Priority" Type="Byte" />
+          <Property Name="OperationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Data" Relationship="Self.FK__Patients_DataId" FromRole="Patients" ToRole="Data" />
+          <NavigationProperty Name="Operations" Relationship="Self.FK__Patients_OperationId" FromRole="Patients" ToRole="Operations" />
+          <NavigationProperty Name="Registrations" Relationship="Self.FK__Registrations_PatientId" FromRole="Patients" ToRole="Registrations" />
+        </EntityType>
+        <EntityType Name="Producents">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OpenDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LocalizationId" Type="Int32" Nullable="false" />
+          <Property Name="DataId" Type="Int32" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Costs" Relationship="Self.FK__Costs_ProducentId" FromRole="Producents" ToRole="Costs" />
+          <NavigationProperty Name="Data" Relationship="Self.FK__Producents_DataId" FromRole="Producents" ToRole="Data" />
+          <NavigationProperty Name="Localizations" Relationship="Self.FK__Producents_LocalizationID" FromRole="Producents" ToRole="Localizations" />
+        </EntityType>
+        <EntityType Name="Registrations">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="PatientId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Registrations_EmployeeId" FromRole="Registrations" ToRole="Employees" />
+          <NavigationProperty Name="Patients" Relationship="Self.FK__Registrations_PatientId" FromRole="Registrations" ToRole="Patients" />
+        </EntityType>
+        <EntityType Name="Tools">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AvailableCount" Type="Byte" Nullable="false" />
+          <Property Name="ProductionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpireDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Operations" Relationship="Self.FK__Operations_ToolId" FromRole="Tools" ToRole="Operations" />
+        </EntityType>
+        <EntityType Name="ClinicRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Data_otwarcia" />
+            <PropertyRef Name="Prywatna" />
+            <PropertyRef Name="Ocena" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Data_otwarcia" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Prywatna" Type="Boolean" Nullable="false" />
+          <Property Name="Ocena" Type="Decimal" Precision="2" Scale="1" Nullable="false" />
+          <Property Name="Lokalizacja" Type="String" MaxLength="542" FixedLength="false" Unicode="true" />
+          <Property Name="Kierownik" Type="String" MaxLength="511" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CostRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nazwa_leku" />
+            <PropertyRef Name="Producent" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa_leku" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Minimalna_cena" Type="Int32" />
+          <Property Name="Maksymalna_cena" Type="Int32" />
+          <Property Name="Czas_dostawy__dni_" Type="Byte" />
+          <Property Name="Producent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DrugRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Data_produkcji" />
+            <PropertyRef Name="Data_ważności" />
+            <PropertyRef Name="Psychotropowe" />
+            <PropertyRef Name="Ilość_dostępna" />
+            <PropertyRef Name="Jednostka" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Dawka" Type="Byte" />
+          <Property Name="Data_produkcji" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Data_ważności" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Psychotropowe" Type="Boolean" Nullable="false" />
+          <Property Name="Ilość_dostępna" Type="Byte" Nullable="false" />
+          <Property Name="Jednostka" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EmployeeRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Lekarz" />
+            <PropertyRef Name="Miejsce_pracy" />
+            <PropertyRef Name="Specjalizacja" />
+            <PropertyRef Name="Koszt_operacji" />
+            <PropertyRef Name="Stanowisko" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Lekarz" Type="String" MaxLength="511" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Miejsce_pracy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Specjalizacja" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Koszt_operacji" Type="Int32" Nullable="false" />
+          <Property Name="Stanowisko" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LocalizationRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Kraj" />
+            <PropertyRef Name="Miasto" />
+            <PropertyRef Name="Ulica" />
+            <PropertyRef Name="Budynek" />
+            <PropertyRef Name="Mieszkanie" />
+            <PropertyRef Name="Kod_pocztowy" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Kraj" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Miasto" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ulica" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Budynek" Type="Byte" Nullable="false" />
+          <Property Name="Mieszkanie" Type="Byte" Nullable="false" />
+          <Property Name="Kod_pocztowy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OperationRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Typ" />
+            <PropertyRef Name="Znieczulenie" />
+            <PropertyRef Name="Narzędzie" />
+            <PropertyRef Name="Lek" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Typ" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Znieczulenie" Type="Boolean" Nullable="false" />
+          <Property Name="Narzędzie" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Lek" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OpinionRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Ocena" />
+            <PropertyRef Name="Wystawiający" />
+            <PropertyRef Name="Przychodnia" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Ocena" Type="Byte" Nullable="false" />
+          <Property Name="Wystawiający" Type="String" MaxLength="511" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Przychodnia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PatientRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Pacjent" />
+            <PropertyRef Name="Operacja" />
+            <PropertyRef Name="Planowana_data" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Pacjent" Type="String" MaxLength="511" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Operacja" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Planowana_data" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Priorytet" Type="Byte" />
+        </EntityType>
+        <EntityType Name="ProducentRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nazwa_producenta" />
+            <PropertyRef Name="Kierownik" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa_producenta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Siedziba_firmy" Type="Byte" />
+          <Property Name="Kierownik" Type="String" MaxLength="511" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RegistrationRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Data_operacji" />
+            <PropertyRef Name="Czas_rozpoczęcia" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pacjent" Type="String" MaxLength="511" FixedLength="false" Unicode="true" />
+          <Property Name="Lekarz" Type="String" MaxLength="511" FixedLength="false" Unicode="true" />
+          <Property Name="Data_operacji" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Czas_rozpoczęcia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ToolRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nazwa" />
+            <PropertyRef Name="Ilość_dostępna" />
+            <PropertyRef Name="Data_produkcji" />
+            <PropertyRef Name="Data_ważności" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nazwa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Ilość_dostępna" Type="Byte" Nullable="false" />
+          <Property Name="Data_produkcji" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Data_ważności" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Opis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__Clinics_EmployeeId">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Clinics" Type="Self.Clinics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clinics">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Clinics_LocalizationId">
+          <End Role="Localizations" Type="Self.Localizations" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Clinics" Type="Self.Clinics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localizations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clinics">
+              <PropertyRef Name="LocalizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employees_ClinicId">
+          <End Role="Clinics" Type="Self.Clinics" Multiplicity="0..1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clinics">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="ClinicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Opinions_ClinicId">
+          <End Role="Clinics" Type="Self.Clinics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Opinions" Type="Self.Opinions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clinics">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Opinions">
+              <PropertyRef Name="ClinicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Costs_DrugId">
+          <End Role="Drugs" Type="Self.Drugs" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Costs" Type="Self.Costs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drugs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Costs">
+              <PropertyRef Name="DrugId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Costs_ProducentId">
+          <End Role="Producents" Type="Self.Producents" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Costs" Type="Self.Costs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producents">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Costs">
+              <PropertyRef Name="ProducentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Opinions_DataId">
+          <End Role="Data" Type="Self.Data" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Opinions" Type="Self.Opinions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Data">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Opinions">
+              <PropertyRef Name="DataId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients_DataId">
+          <End Role="Data" Type="Self.Data" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Data">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="DataId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Producents_DataId">
+          <End Role="Data" Type="Self.Data" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Producents" Type="Self.Producents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Data">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producents">
+              <PropertyRef Name="DataId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Operations_DrugId">
+          <End Role="Drugs" Type="Self.Drugs" Multiplicity="0..1" />
+          <End Role="Operations" Type="Self.Operations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Drugs">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Operations">
+              <PropertyRef Name="DrugId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employees_OperationId">
+          <End Role="Operations" Type="Self.Operations" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="OperationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrations_EmployeeId">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Registrations" Type="Self.Registrations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Registrations">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Producents_LocalizationID">
+          <End Role="Localizations" Type="Self.Localizations" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Producents" Type="Self.Producents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Localizations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producents">
+              <PropertyRef Name="LocalizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Operations_ToolId">
+          <End Role="Tools" Type="Self.Tools" Multiplicity="0..1" />
+          <End Role="Operations" Type="Self.Operations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tools">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Operations">
+              <PropertyRef Name="ToolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients_OperationId">
+          <End Role="Operations" Type="Self.Operations" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operations">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="OperationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Registrations_PatientId">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+          <End Role="Registrations" Type="Self.Registrations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Registrations">
+              <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ClinicDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Clinics" EntityType="Self.Clinics" />
+          <EntitySet Name="Costs" EntityType="Self.Costs" />
+          <EntitySet Name="Data" EntityType="Self.Data" />
+          <EntitySet Name="Drugs" EntityType="Self.Drugs" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" />
+          <EntitySet Name="Localizations" EntityType="Self.Localizations" />
+          <EntitySet Name="Operations" EntityType="Self.Operations" />
+          <EntitySet Name="Opinions" EntityType="Self.Opinions" />
+          <EntitySet Name="Patients" EntityType="Self.Patients" />
+          <EntitySet Name="Producents" EntityType="Self.Producents" />
+          <EntitySet Name="Registrations" EntityType="Self.Registrations" />
+          <EntitySet Name="Tools" EntityType="Self.Tools" />
+          <EntitySet Name="ClinicRow" EntityType="Self.ClinicRow" />
+          <EntitySet Name="CostRow" EntityType="Self.CostRow" />
+          <EntitySet Name="DrugRow" EntityType="Self.DrugRow" />
+          <EntitySet Name="EmployeeRow" EntityType="Self.EmployeeRow" />
+          <EntitySet Name="LocalizationRow" EntityType="Self.LocalizationRow" />
+          <EntitySet Name="OperationRow" EntityType="Self.OperationRow" />
+          <EntitySet Name="OpinionRow" EntityType="Self.OpinionRow" />
+          <EntitySet Name="PatientRow" EntityType="Self.PatientRow" />
+          <EntitySet Name="ProducentRow" EntityType="Self.ProducentRow" />
+          <EntitySet Name="RegistrationRow" EntityType="Self.RegistrationRow" />
+          <EntitySet Name="ToolRow" EntityType="Self.ToolRow" />
+          <AssociationSet Name="FK__Clinics_EmployeeId" Association="Self.FK__Clinics_EmployeeId">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Clinics" EntitySet="Clinics" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Clinics_LocalizationId" Association="Self.FK__Clinics_LocalizationId">
+            <End Role="Localizations" EntitySet="Localizations" />
+            <End Role="Clinics" EntitySet="Clinics" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employees_ClinicId" Association="Self.FK__Employees_ClinicId">
+            <End Role="Clinics" EntitySet="Clinics" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Opinions_ClinicId" Association="Self.FK__Opinions_ClinicId">
+            <End Role="Clinics" EntitySet="Clinics" />
+            <End Role="Opinions" EntitySet="Opinions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Costs_DrugId" Association="Self.FK__Costs_DrugId">
+            <End Role="Drugs" EntitySet="Drugs" />
+            <End Role="Costs" EntitySet="Costs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Costs_ProducentId" Association="Self.FK__Costs_ProducentId">
+            <End Role="Producents" EntitySet="Producents" />
+            <End Role="Costs" EntitySet="Costs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Opinions_DataId" Association="Self.FK__Opinions_DataId">
+            <End Role="Data" EntitySet="Data" />
+            <End Role="Opinions" EntitySet="Opinions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients_DataId" Association="Self.FK__Patients_DataId">
+            <End Role="Data" EntitySet="Data" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Producents_DataId" Association="Self.FK__Producents_DataId">
+            <End Role="Data" EntitySet="Data" />
+            <End Role="Producents" EntitySet="Producents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Operations_DrugId" Association="Self.FK__Operations_DrugId">
+            <End Role="Drugs" EntitySet="Drugs" />
+            <End Role="Operations" EntitySet="Operations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employees_OperationId" Association="Self.FK__Employees_OperationId">
+            <End Role="Operations" EntitySet="Operations" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrations_EmployeeId" Association="Self.FK__Registrations_EmployeeId">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Registrations" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Producents_LocalizationID" Association="Self.FK__Producents_LocalizationID">
+            <End Role="Localizations" EntitySet="Localizations" />
+            <End Role="Producents" EntitySet="Producents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Operations_ToolId" Association="Self.FK__Operations_ToolId">
+            <End Role="Tools" EntitySet="Tools" />
+            <End Role="Operations" EntitySet="Operations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients_OperationId" Association="Self.FK__Patients_OperationId">
+            <End Role="Operations" EntitySet="Operations" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Registrations_PatientId" Association="Self.FK__Registrations_PatientId">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Registrations" EntitySet="Registrations" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClinicDataModelStoreContainer" CdmEntityContainer="ClinicDataEntities">
+          <EntitySetMapping Name="Clinics">
+            <EntityTypeMapping TypeName="ClinicDataModel.Clinics">
+              <MappingFragment StoreEntitySet="Clinics">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="OpenDate" ColumnName="OpenDate" />
+                <ScalarProperty Name="IsPrivate" ColumnName="IsPrivate" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="LocalizationId" ColumnName="LocalizationId" />
+                <ScalarProperty Name="Usermark" ColumnName="Usermark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Costs">
+            <EntityTypeMapping TypeName="ClinicDataModel.Costs">
+              <MappingFragment StoreEntitySet="Costs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ProducentId" ColumnName="ProducentId" />
+                <ScalarProperty Name="DrugId" ColumnName="DrugId" />
+                <ScalarProperty Name="MinPrice" ColumnName="MinPrice" />
+                <ScalarProperty Name="MaxPrice" ColumnName="MaxPrice" />
+                <ScalarProperty Name="TransportDays" ColumnName="TransportDays" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Data">
+            <EntityTypeMapping TypeName="ClinicDataModel.Data">
+              <MappingFragment StoreEntitySet="Data">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Drugs">
+            <EntityTypeMapping TypeName="ClinicDataModel.Drugs">
+              <MappingFragment StoreEntitySet="Drugs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+                <ScalarProperty Name="ProductionDate" ColumnName="ProductionDate" />
+                <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+                <ScalarProperty Name="IsPsychotropic" ColumnName="IsPsychotropic" />
+                <ScalarProperty Name="AvailableAmount" ColumnName="AvailableAmount" />
+                <ScalarProperty Name="Unit" ColumnName="Unit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="ClinicDataModel.Employees">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="OperationCount" ColumnName="OperationCount" />
+                <ScalarProperty Name="OperationId" ColumnName="OperationId" />
+                <ScalarProperty Name="ClinicId" ColumnName="ClinicId" />
+                <ScalarProperty Name="DataId" ColumnName="DataId" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Localizations">
+            <EntityTypeMapping TypeName="ClinicDataModel.Localizations">
+              <MappingFragment StoreEntitySet="Localizations">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="House" ColumnName="House" />
+                <ScalarProperty Name="Flat" ColumnName="Flat" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operations">
+            <EntityTypeMapping TypeName="ClinicDataModel.Operations">
+              <MappingFragment StoreEntitySet="Operations">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="IsAnesthesia" ColumnName="IsAnesthesia" />
+                <ScalarProperty Name="ToolId" ColumnName="ToolId" />
+                <ScalarProperty Name="DrugId" ColumnName="DrugId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Opinions">
+            <EntityTypeMapping TypeName="ClinicDataModel.Opinions">
+              <MappingFragment StoreEntitySet="Opinions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ClinicId" ColumnName="ClinicId" />
+                <ScalarProperty Name="DataId" ColumnName="DataId" />
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="ClinicDataModel.Patients">
+              <MappingFragment StoreEntitySet="Patients">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DataId" ColumnName="DataId" />
+                <ScalarProperty Name="OperationId" ColumnName="OperationId" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="OperationDate" ColumnName="OperationDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producents">
+            <EntityTypeMapping TypeName="ClinicDataModel.Producents">
+              <MappingFragment StoreEntitySet="Producents">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="OpenDate" ColumnName="OpenDate" />
+                <ScalarProperty Name="LocalizationId" ColumnName="LocalizationId" />
+                <ScalarProperty Name="DataId" ColumnName="DataId" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Registrations">
+            <EntityTypeMapping TypeName="ClinicDataModel.Registrations">
+              <MappingFragment StoreEntitySet="Registrations">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tools">
+            <EntityTypeMapping TypeName="ClinicDataModel.Tools">
+              <MappingFragment StoreEntitySet="Tools">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="AvailableCount" ColumnName="AvailableCount" />
+                <ScalarProperty Name="ProductionDate" ColumnName="ProductionDate" />
+                <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClinicRow">
+            <EntityTypeMapping TypeName="ClinicDataModel.ClinicRow">
+              <MappingFragment StoreEntitySet="ClinicRow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Data_otwarcia" ColumnName="Data otwarcia" />
+                <ScalarProperty Name="Prywatna" ColumnName="Prywatna" />
+                <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+                <ScalarProperty Name="Lokalizacja" ColumnName="Lokalizacja" />
+                <ScalarProperty Name="Kierownik" ColumnName="Kierownik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CostRow">
+            <EntityTypeMapping TypeName="ClinicDataModel.CostRow">
+              <MappingFragment StoreEntitySet="CostRow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa_leku" ColumnName="Nazwa leku" />
+                <ScalarProperty Name="Minimalna_cena" ColumnName="Minimalna cena" />
+                <ScalarProperty Name="Maksymalna_cena" ColumnName="Maksymalna cena" />
+                <ScalarProperty Name="Czas_dostawy__dni_" ColumnName="Czas dostawy (dni)" />
+                <ScalarProperty Name="Producent" ColumnName="Producent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DrugRow">
+            <EntityTypeMapping TypeName="ClinicDataModel.DrugRow">
+              <MappingFragment StoreEntitySet="DrugRow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Dawka" ColumnName="Dawka" />
+                <ScalarProperty Name="Data_produkcji" ColumnName="Data produkcji" />
+                <ScalarProperty Name="Data_ważności" ColumnName="Data ważności" />
+                <ScalarProperty Name="Psychotropowe" ColumnName="Psychotropowe" />
+                <ScalarProperty Name="Ilość_dostępna" ColumnName="Ilość dostępna" />
+                <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeRow">
+            <EntityTypeMapping TypeName="ClinicDataModel.EmployeeRow">
+              <MappingFragment StoreEntitySet="EmployeeRow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Lekarz" ColumnName="Lekarz" />
+                <ScalarProperty Name="Miejsce_pracy" ColumnName="Miejsce pracy" />
+                <ScalarProperty Name="Specjalizacja" ColumnName="Specjalizacja" />
+                <ScalarProperty Name="Koszt_operacji" ColumnName="Koszt operacji" />
+                <ScalarProperty Name="Stanowisko" ColumnName="Stanowisko" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocalizationRow">
+            <EntityTypeMapping TypeName="ClinicDataModel.LocalizationRow">
+              <MappingFragment StoreEntitySet="LocalizationRow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Kraj" ColumnName="Kraj" />
+                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
+                <ScalarProperty Name="Budynek" ColumnName="Budynek" />
+                <ScalarProperty Name="Mieszkanie" ColumnName="Mieszkanie" />
+                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OperationRow">
+            <EntityTypeMapping TypeName="ClinicDataModel.OperationRow">
+              <MappingFragment StoreEntitySet="OperationRow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Typ" ColumnName="Typ" />
+                <ScalarProperty Name="Znieczulenie" ColumnName="Znieczulenie" />
+                <ScalarProperty Name="Narzędzie" ColumnName="Narzędzie" />
+                <ScalarProperty Name="Lek" ColumnName="Lek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OpinionRow">
+            <EntityTypeMapping TypeName="ClinicDataModel.OpinionRow">
+              <MappingFragment StoreEntitySet="OpinionRow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ocena" ColumnName="Ocena" />
+                <ScalarProperty Name="Wystawiający" ColumnName="Wystawiający" />
+                <ScalarProperty Name="Przychodnia" ColumnName="Przychodnia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PatientRow">
+            <EntityTypeMapping TypeName="ClinicDataModel.PatientRow">
+              <MappingFragment StoreEntitySet="PatientRow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Pacjent" ColumnName="Pacjent" />
+                <ScalarProperty Name="Operacja" ColumnName="Operacja" />
+                <ScalarProperty Name="Planowana_data" ColumnName="Planowana data" />
+                <ScalarProperty Name="Priorytet" ColumnName="Priorytet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProducentRow">
+            <EntityTypeMapping TypeName="ClinicDataModel.ProducentRow">
+              <MappingFragment StoreEntitySet="ProducentRow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa_producenta" ColumnName="Nazwa producenta" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Siedziba_firmy" ColumnName="Siedziba firmy" />
+                <ScalarProperty Name="Kierownik" ColumnName="Kierownik" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RegistrationRow">
+            <EntityTypeMapping TypeName="ClinicDataModel.RegistrationRow">
+              <MappingFragment StoreEntitySet="RegistrationRow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Pacjent" ColumnName="Pacjent" />
+                <ScalarProperty Name="Lekarz" ColumnName="Lekarz" />
+                <ScalarProperty Name="Data_operacji" ColumnName="Data operacji" />
+                <ScalarProperty Name="Czas_rozpoczęcia" ColumnName="Czas rozpoczęcia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ToolRow">
+            <EntityTypeMapping TypeName="ClinicDataModel.ToolRow">
+              <MappingFragment StoreEntitySet="ToolRow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Ilość_dostępna" ColumnName="Ilość dostępna" />
+                <ScalarProperty Name="Data_produkcji" ColumnName="Data produkcji" />
+                <ScalarProperty Name="Data_ważności" ColumnName="Data ważności" />
+                <ScalarProperty Name="Opis" ColumnName="Opis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

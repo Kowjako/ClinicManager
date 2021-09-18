@@ -1,4 +1,6 @@
 ﻿using ClinicManager;
+using ClinicManager.Controls;
+using ClinicManager.DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +28,20 @@ namespace Test
 
         private void btnHospitalEdit_Click(object sender, EventArgs e)
         {
-            
+            var form = new ClinicDetails();
+            using(var context = new ClinicDataEntities())
+            {
+                try
+                {
+                    var clinic = context.Clinics.Find((_gvMain.SelectedRows[0].DataBoundItem as ClinicRow).Id);
+                    form.BindingSource = new List<Clinics> { clinic };
+                }
+                catch(ArgumentOutOfRangeException ex)
+                {
+                    MessageBox.Show("Należy wybrać cały wiersz");
+                }
+            }
+            form.ShowDialog();
         }
 
         private void btnDoctorsAdd_Click(object sender, EventArgs e)
@@ -69,6 +84,17 @@ namespace Test
         {
             var form = new CostDetails();
             form.ShowDialog();
+        }
+
+        private void btnHospitalShowList_Click(object sender, EventArgs e)
+        {
+            using(var context = new ClinicDataEntities())
+            {
+                var clinicList = context.ClinicRow.ToList();
+                bsMain.DataSource = typeof(ClinicRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
+            }
         }
     }
 }
