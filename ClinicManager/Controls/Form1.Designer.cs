@@ -105,10 +105,11 @@ namespace Test
             this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
             this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
-            this.bsMain = new System.Windows.Forms.BindingSource(this.components);
             this._gvMain = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
+            this.btnLocalizationAdd = new System.Windows.Forms.RibbonButton();
+            this.bsMain = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -211,6 +212,7 @@ namespace Test
             this.btnHospitalRemove.Name = "btnHospitalRemove";
             this.btnHospitalRemove.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalRemove.SmallImage")));
             this.btnHospitalRemove.Text = "Usuń";
+            this.btnHospitalRemove.Click += new System.EventHandler(this.btnHospitalRemove_Click);
             // 
             // btnHospitalRefresh
             // 
@@ -230,11 +232,14 @@ namespace Test
             // 
             // ribbonPanel12
             // 
+            this.ribbonPanel12.ButtonMoreVisible = false;
+            this.ribbonPanel12.Items.Add(this.btnLocalizationAdd);
             this.ribbonPanel12.Name = "ribbonPanel12";
-            this.ribbonPanel12.Text = "Ogólne";
+            this.ribbonPanel12.Text = "Tworzenie lokalizacji";
             // 
             // ribbonPanel2
             // 
+            this.ribbonPanel2.ButtonMoreVisible = false;
             this.ribbonPanel2.Items.Add(this.btnHospitalOpinions);
             this.ribbonPanel2.Name = "ribbonPanel2";
             this.ribbonPanel2.Text = "Inne";
@@ -258,6 +263,7 @@ namespace Test
             this.btnOpinionShow.Name = "btnOpinionShow";
             this.btnOpinionShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionShow.SmallImage")));
             this.btnOpinionShow.Text = "Wyświetl opinie";
+            this.btnOpinionShow.Click += new System.EventHandler(this.btnOpinionShow_Click);
             // 
             // btnOpinionAdd
             // 
@@ -790,6 +796,15 @@ namespace Test
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
             // 
+            // btnLocalizationAdd
+            // 
+            this.btnLocalizationAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizationAdd.Image")));
+            this.btnLocalizationAdd.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLocalizationAdd.LargeImage")));
+            this.btnLocalizationAdd.Name = "btnLocalizationAdd";
+            this.btnLocalizationAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnLocalizationAdd.SmallImage")));
+            this.btnLocalizationAdd.Text = "Lokalizacja";
+            this.btnLocalizationAdd.Click += new System.EventHandler(this.btnLocalizationAdd_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -801,8 +816,8 @@ namespace Test
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "ClinicManager - Zarządzanie siecią przychodni";
-            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -888,6 +903,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnOperationsFilter;
         private System.Windows.Forms.RibbonButton btnPriceFilter;
         private System.Windows.Forms.DataGridView _gvMain;
+        private System.Windows.Forms.RibbonButton btnLocalizationAdd;
     }
 }
 

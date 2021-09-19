@@ -38,9 +38,9 @@ namespace ClinicManager
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.employeeBox = new System.Windows.Forms.ComboBox();
+            this.localizationBox = new System.Windows.Forms.ComboBox();
+            this.saveBtn = new System.Windows.Forms.Button();
             this._bsDetails = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._bsDetails)).BeginInit();
             this.SuspendLayout();
@@ -123,32 +123,33 @@ namespace ClinicManager
             this.checkBox1.Text = "Tak";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // employeeBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(182, 96);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(325, 21);
-            this.comboBox1.TabIndex = 8;
+            this.employeeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.employeeBox.FormattingEnabled = true;
+            this.employeeBox.Location = new System.Drawing.Point(182, 96);
+            this.employeeBox.Name = "employeeBox";
+            this.employeeBox.Size = new System.Drawing.Size(325, 21);
+            this.employeeBox.TabIndex = 8;
             // 
-            // comboBox2
+            // localizationBox
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(182, 123);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(325, 21);
-            this.comboBox2.TabIndex = 9;
+            this.localizationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.localizationBox.FormattingEnabled = true;
+            this.localizationBox.Location = new System.Drawing.Point(182, 123);
+            this.localizationBox.Name = "localizationBox";
+            this.localizationBox.Size = new System.Drawing.Size(325, 21);
+            this.localizationBox.TabIndex = 9;
             // 
-            // button1
+            // saveBtn
             // 
-            this.button1.Location = new System.Drawing.Point(12, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(495, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Zatwierdź";
-            this.button1.UseVisualStyleBackColor = true;
+            this.saveBtn.Location = new System.Drawing.Point(12, 150);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(495, 23);
+            this.saveBtn.TabIndex = 10;
+            this.saveBtn.Text = "Zatwierdź";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // _bsDetails
             // 
@@ -160,9 +161,9 @@ namespace ClinicManager
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(519, 177);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.saveBtn);
+            this.Controls.Add(this.localizationBox);
+            this.Controls.Add(this.employeeBox);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.textBox1);
@@ -192,9 +193,9 @@ namespace ClinicManager
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox employeeBox;
+        private System.Windows.Forms.ComboBox localizationBox;
+        private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.BindingSource _bsDetails;
     }
 }

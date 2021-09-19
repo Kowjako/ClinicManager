@@ -1,6 +1,8 @@
 ﻿using ClinicManager;
 using ClinicManager.Controls;
 using ClinicManager.DataAccessLayer;
+using ClinicManager.Interfaces;
+using ClinicManager.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,25 +17,38 @@ namespace Test
 {
     public partial class Form1 : Form
     {
+        public enum DetailsMode
+        {
+            Add = 1,
+            Edit = 2
+        }
+        #region ViewModels
+
+        IClinicDetailsViewModel ClinicViewModel;
+
+        #endregion
+
         public Form1()
         {
             InitializeComponent();
+            ClinicViewModel = new ClinicViewModel();
         }
 
         private void btnHospitalAdd_Click(object sender, EventArgs e)
         {
-            var form = new ClinicDetails();
+            var form = new ClinicDetails(DetailsMode.Add);
             form.ShowDialog();
         }
 
         private void btnHospitalEdit_Click(object sender, EventArgs e)
         {
-            var form = new ClinicDetails();
+            var form = new ClinicDetails(DetailsMode.Edit);
             using (var context = new ClinicDataEntities())
             {
                 var clinic = context.Clinics.Find((_gvMain.SelectedRows[0].DataBoundItem as ClinicRow).Id);
                 form.BindingSource = new List<Clinics> { clinic };
             }
+            form.SetSpecificProperties();
             form.ShowDialog();
         }
 
@@ -165,6 +180,34 @@ namespace Test
                 bsMain.DataSource = clinicList;
                 _gvMain.DataSource = bsMain;
             }
+        }
+
+        private void btnOpinionShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var clinic = context.Clinics.Find((_gvMain.SelectedRows[0].DataBoundItem as ClinicRow).Id);
+                var opinions = context.Opinions.Where(p => p.ClinicId == clinic.Id).ToList();
+                var opinionList = new List<OpinionRow>();
+                foreach (var opinion in opinions) 
+                {
+                    opinionList.Add(context.OpinionRow.First(p => p.Id == opinion.Id));
+                }
+                bsMain.DataSource = typeof(OpinionRow);
+                bsMain.DataSource = opinionList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
+
+        private void btnLocalizationAdd_Click(object sender, EventArgs e)
+        {
+            var form = new LocalizationDetails();
+            form.ShowDialog();
+        }
+
+        private void btnHospitalRemove_Click(object sender, EventArgs e)
+        {
+            ClinicViewModel.DeleteClinics(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
         }
     }
 }
