@@ -2,9 +2,13 @@
 using ClinicManager.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Test;
+using static Test.Form1;
 
 namespace ClinicManager.ViewModels
 {
@@ -26,6 +30,33 @@ namespace ClinicManager.ViewModels
             if(RefreshHandler != null)
             {
                 RefreshHandler.Invoke();
+            }
+        }
+
+        public void SaveClinics(Clinics newClinicData, Form1.DetailsMode Mode)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                if (Mode == DetailsMode.Add)
+                {
+                    newClinicData.OpenDate = DateTime.Parse(newClinicData.OpenDate.ToShortDateString());
+                    context.Clinics.Add(newClinicData);
+                }
+                else
+                {
+                    context.Entry(newClinicData).State = System.Data.Entity.EntityState.Modified;
+                }
+                try
+                {
+                    context.SaveChanges();
+                }
+                catch (DbUpdateException ex)
+                {
+                    if (ex.InnerException.InnerException.Message.Contains("UQ__Clinics_LocalizationId"))
+                    {
+                        MessageBox.Show(null, "Wybrana lokalizacja jest już zajęta", "Błąd!");
+                    }
+                }
             }
         }
     }
