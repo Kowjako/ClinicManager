@@ -237,7 +237,14 @@
       <DependentUpon>VisitDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="StaticDictionaries.cs" />
+    <Compile Include="ViewModels\ArticleViewModel.cs" />
     <Compile Include="ViewModels\ClinicViewModel.cs" />
+    <Compile Include="ViewModels\CostViewModel.cs" />
+    <Compile Include="ViewModels\EmployeeViewModel.cs" />
+    <Compile Include="ViewModels\FixedAssetViewModel.cs" />
+    <Compile Include="ViewModels\OperationViewModel.cs" />
+    <Compile Include="ViewModels\PatientViewModel.cs" />
+    <Compile Include="ViewModels\VisitViewModel.cs" />
     <EmbeddedResource Include="Controls\ArticleDetails.resx">
       <DependentUpon>ArticleDetails.cs</DependentUpon>
     </EmbeddedResource>

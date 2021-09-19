@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClinicManager.DataAccessLayer;
+using ClinicManager.Interfaces;
+using ClinicManager.ViewModels;
 using static Test.Form1;
 
 namespace ClinicManager
@@ -17,6 +19,7 @@ namespace ClinicManager
     {
         private StaticDictionaries Dictionaries;
         private DetailsMode Mode;
+        private IClinicDetailsViewModel ClinicViewModel;
         public ClinicDetails(DetailsMode mode)
         {
             InitializeComponent();
@@ -27,6 +30,8 @@ namespace ClinicManager
             {
                 _bsDetails.DataSource = new List<Clinics> { new Clinics() };
             }
+
+            ClinicViewModel = new ClinicViewModel();
 
             foreach (var employee in Dictionaries.EmployeeList)
             {
@@ -56,29 +61,7 @@ namespace ClinicManager
             var newClinicData = (_bsDetails.DataSource as List<Clinics>).First();
             newClinicData.LocalizationId = localizationBox.SelectedIndex + 1;
             newClinicData.EmployeeId = employeeBox.SelectedIndex + 1;
-
-            using (var context = new ClinicDataEntities())
-            {
-                if(Mode == DetailsMode.Add)
-                {
-                    context.Clinics.Add(newClinicData);
-                }
-                else
-                {
-                    context.Entry(newClinicData).State = System.Data.Entity.EntityState.Modified;
-                }
-                try
-                {
-                    context.SaveChanges();
-                }
-                catch (DbUpdateException ex)
-                {
-                    if(ex.InnerException.InnerException.Message.Contains("UQ__Clinics_LocalizationId"))
-                    {
-                        MessageBox.Show(this, "Wybrana lokalizacja jest już zajęta", "Błąd!");
-                    }
-                }
-            }
+            ClinicViewModel.SaveClinics(newClinicData, Mode);
             this.Close();
         }
     }

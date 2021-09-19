@@ -36,7 +36,7 @@ namespace ClinicManager
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.openDatePicker = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.employeeBox = new System.Windows.Forms.ComboBox();
             this.localizationBox = new System.Windows.Forms.ComboBox();
@@ -103,14 +103,14 @@ namespace ClinicManager
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 5;
             // 
-            // dateTimePicker1
+            // openDatePicker
             // 
-            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this._bsDetails, "OpenDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(182, 38);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(325, 20);
-            this.dateTimePicker1.TabIndex = 6;
+            this.openDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this._bsDetails, "OpenDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.openDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.openDatePicker.Location = new System.Drawing.Point(182, 38);
+            this.openDatePicker.Name = "openDatePicker";
+            this.openDatePicker.Size = new System.Drawing.Size(325, 20);
+            this.openDatePicker.TabIndex = 6;
             // 
             // checkBox1
             // 
@@ -165,7 +165,7 @@ namespace ClinicManager
             this.Controls.Add(this.localizationBox);
             this.Controls.Add(this.employeeBox);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.openDatePicker);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -191,7 +191,7 @@ namespace ClinicManager
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker openDatePicker;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.ComboBox employeeBox;
         private System.Windows.Forms.ComboBox localizationBox;

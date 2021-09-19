@@ -1,4 +1,5 @@
-﻿using ClinicManager.DataAccessLayer;
+﻿using ClinicManager.Controls;
+using ClinicManager.DataAccessLayer;
 using ClinicManager.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,13 @@ namespace ClinicManager.ViewModels
     public class ClinicViewModel : IClinicDetailsViewModel
     {
         public event Action RefreshHandler;
+
+        public void AddClinic()
+        {
+            var form = new ClinicDetails(DetailsMode.Add);
+            form.ShowDialog();
+        }
+
         public void DeleteClinics(ClinicRow clinic)
         {
             using (var context = new ClinicDataEntities())
@@ -22,6 +30,65 @@ namespace ClinicManager.ViewModels
                 var deleteClinic = context.Clinics.Find(clinic.Id);
                 context.Clinics.Remove(deleteClinic);
                 context.SaveChanges();
+            }
+        }
+
+        public void EditClinic(ClinicRow row)
+        {
+            var form = new ClinicDetails(DetailsMode.Edit);
+            using (var context = new ClinicDataEntities())
+            {
+                var clinic = context.Clinics.Find(row.Id);
+                form.BindingSource = new List<Clinics> { clinic };
+            }
+            form.SetSpecificProperties();
+            form.ShowDialog();
+        }
+
+        public List<ClinicRow> Filter()
+        {
+            var parameters = new string[] { "Name", "OpenDate", "IsPrivate", "UserMark", "EmployeeId", "LocalizationId" };
+            var form = new FilterForm(parameters);
+            if(form.ShowDialog() == DialogResult.OK)
+            {
+                var sqlFilter = form.ReturnFilterString();
+                var sqlQuery = $"SELECT * FROM Clinics {sqlFilter}";
+                using(var context = new ClinicDataEntities())
+                {
+                    try
+                    {
+                        var entites = context.Database.SqlQuery<Clinics>(sqlQuery).ToList();
+                        var entityRows = new List<ClinicRow>();
+                        foreach (var obj in entites)
+                        {
+                            entityRows.Add(context.ClinicRow.First(p => p.Id == obj.Id));
+                        }
+                        return entityRows;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(null, "Niepoprawne zapytanie filtrowania", "Błąd");
+                    }
+                }
+            }
+            return null;
+        }
+
+        public BindingSource GetOpinions(ClinicRow row)
+        {
+            var bsMain = new BindingSource();
+            using (var context = new ClinicDataEntities())
+            {
+                var clinic = context.Clinics.Find(row.Id);
+                var opinions = context.Opinions.Where(p => p.ClinicId == clinic.Id).ToList();
+                var opinionList = new List<OpinionRow>();
+                foreach (var opinion in opinions)
+                {
+                    opinionList.Add(context.OpinionRow.First(p => p.Id == opinion.Id));
+                }
+                bsMain.DataSource = typeof(OpinionRow);
+                bsMain.DataSource = opinionList;
+                return bsMain;
             }
         }
 

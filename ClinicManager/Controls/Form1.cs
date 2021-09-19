@@ -17,14 +17,26 @@ namespace Test
 {
     public partial class Form1 : Form
     {
+        #region Enums & values
+
         public enum DetailsMode
         {
             Add = 1,
             Edit = 2
         }
+
+        #endregion
+
         #region ViewModels
 
         IClinicDetailsViewModel ClinicViewModel;
+        IArticleDetailsViewModel ArticleViewModel;
+        IFixedAssetViewModel FixedAssetViewModel;
+        IVisitDetailsViewModel VisitViewModel;
+        IPatientDetailsViewModel PatientViewModel;
+        IOperationDetailsViewModel OperationViewModel;
+        ICostDetailsViewModel CostViewModel;
+        IDoctorDetailsViewModel EmployeeViewModel;
 
         #endregion
 
@@ -32,31 +44,75 @@ namespace Test
         {
             InitializeComponent();
             ClinicViewModel = new ClinicViewModel();
+            ArticleViewModel = new ArticleViewModel();
+            FixedAssetViewModel = new FixedAssetViewModel();
+            VisitViewModel = new VisitViewModel();
+            PatientViewModel = new PatientViewModel();
+            OperationViewModel = new OperationViewModel();
+            CostViewModel = new CostViewModel();
+            EmployeeViewModel = new EmployeeViewModel();
         }
+
+
+        #region Clinics & Localizations & Opinions
 
         private void btnHospitalAdd_Click(object sender, EventArgs e)
         {
-            var form = new ClinicDetails(DetailsMode.Add);
-            form.ShowDialog();
+            ClinicViewModel.AddClinic();
         }
 
         private void btnHospitalEdit_Click(object sender, EventArgs e)
         {
-            var form = new ClinicDetails(DetailsMode.Edit);
+            ClinicViewModel.EditClinic(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
+        }
+
+        private void btnHospitalShowList_Click(object sender, EventArgs e)
+        {
             using (var context = new ClinicDataEntities())
             {
-                var clinic = context.Clinics.Find((_gvMain.SelectedRows[0].DataBoundItem as ClinicRow).Id);
-                form.BindingSource = new List<Clinics> { clinic };
+                var clinicList = context.ClinicRow.ToList();
+                bsMain.DataSource = typeof(ClinicRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
             }
-            form.SetSpecificProperties();
+        }
+
+        private void btnOpinionShow_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = ClinicViewModel.GetOpinions(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
+        }
+
+        private void btnLocalizationAdd_Click(object sender, EventArgs e)
+        {
+            var form = new LocalizationDetails();
             form.ShowDialog();
         }
+
+        private void btnHospitalRemove_Click(object sender, EventArgs e)
+        {
+            ClinicViewModel.DeleteClinics(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
+        }
+
+        private void btnHospitalFilter_Click(object sender, EventArgs e)
+        {
+            bsMain.DataSource = ClinicViewModel.Filter();
+            _gvMain.DataSource = bsMain;
+        }
+
+        #endregion
+
+
+        #region Employees
 
         private void btnDoctorsAdd_Click(object sender, EventArgs e)
         {
             var form = new DoctorDetails();
             form.ShowDialog();
         }
+
+        #endregion
+
+
 
         private void btnClientsAdd_Click(object sender, EventArgs e)
         {
@@ -94,16 +150,7 @@ namespace Test
             form.ShowDialog();
         }
 
-        private void btnHospitalShowList_Click(object sender, EventArgs e)
-        {
-            using(var context = new ClinicDataEntities())
-            {
-                var clinicList = context.ClinicRow.ToList();
-                bsMain.DataSource = typeof(ClinicRow);
-                bsMain.DataSource = clinicList;
-                _gvMain.DataSource = bsMain;
-            }
-        }
+        
 
         private void btnDoctorsShow_Click(object sender, EventArgs e)
         {
@@ -182,32 +229,5 @@ namespace Test
             }
         }
 
-        private void btnOpinionShow_Click(object sender, EventArgs e)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                var clinic = context.Clinics.Find((_gvMain.SelectedRows[0].DataBoundItem as ClinicRow).Id);
-                var opinions = context.Opinions.Where(p => p.ClinicId == clinic.Id).ToList();
-                var opinionList = new List<OpinionRow>();
-                foreach (var opinion in opinions) 
-                {
-                    opinionList.Add(context.OpinionRow.First(p => p.Id == opinion.Id));
-                }
-                bsMain.DataSource = typeof(OpinionRow);
-                bsMain.DataSource = opinionList;
-                _gvMain.DataSource = bsMain;
-            }
-        }
-
-        private void btnLocalizationAdd_Click(object sender, EventArgs e)
-        {
-            var form = new LocalizationDetails();
-            form.ShowDialog();
-        }
-
-        private void btnHospitalRemove_Click(object sender, EventArgs e)
-        {
-            ClinicViewModel.DeleteClinics(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
-        }
     }
 }

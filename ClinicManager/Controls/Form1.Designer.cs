@@ -41,6 +41,7 @@ namespace Test
             this.btnHospitalRefresh = new System.Windows.Forms.RibbonButton();
             this.btnHospitalFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
+            this.btnLocalizationAdd = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.btnHospitalOpinions = new System.Windows.Forms.RibbonButton();
             this.btnOpinionShow = new System.Windows.Forms.RibbonButton();
@@ -106,7 +107,6 @@ namespace Test
             this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
-            this.btnLocalizationAdd = new System.Windows.Forms.RibbonButton();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
@@ -229,6 +229,7 @@ namespace Test
             this.btnHospitalFilter.Name = "btnHospitalFilter";
             this.btnHospitalFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalFilter.SmallImage")));
             this.btnHospitalFilter.Text = "Filtruj";
+            this.btnHospitalFilter.Click += new System.EventHandler(this.btnHospitalFilter_Click);
             // 
             // ribbonPanel12
             // 
@@ -236,6 +237,15 @@ namespace Test
             this.ribbonPanel12.Items.Add(this.btnLocalizationAdd);
             this.ribbonPanel12.Name = "ribbonPanel12";
             this.ribbonPanel12.Text = "Tworzenie lokalizacji";
+            // 
+            // btnLocalizationAdd
+            // 
+            this.btnLocalizationAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizationAdd.Image")));
+            this.btnLocalizationAdd.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLocalizationAdd.LargeImage")));
+            this.btnLocalizationAdd.Name = "btnLocalizationAdd";
+            this.btnLocalizationAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnLocalizationAdd.SmallImage")));
+            this.btnLocalizationAdd.Text = "Lokalizacja";
+            this.btnLocalizationAdd.Click += new System.EventHandler(this.btnLocalizationAdd_Click);
             // 
             // ribbonPanel2
             // 
@@ -792,18 +802,10 @@ namespace Test
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
             this._gvMain.Name = "_gvMain";
+            this._gvMain.ReadOnly = true;
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
-            // 
-            // btnLocalizationAdd
-            // 
-            this.btnLocalizationAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnLocalizationAdd.Image")));
-            this.btnLocalizationAdd.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLocalizationAdd.LargeImage")));
-            this.btnLocalizationAdd.Name = "btnLocalizationAdd";
-            this.btnLocalizationAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnLocalizationAdd.SmallImage")));
-            this.btnLocalizationAdd.Text = "Lokalizacja";
-            this.btnLocalizationAdd.Click += new System.EventHandler(this.btnLocalizationAdd_Click);
             // 
             // Form1
             // 
