@@ -284,6 +284,24 @@ namespace Test
             }
         }
 
-        
+        private void btnConfigurationShowDBScript_Click(object sender, EventArgs e)
+        {
+            if(((RibbonButton)sender).Name == "btnConfigurationShowDBScript")
+            {
+                var form = new ScriptForm();
+                form.HeaderText = "Poniższy skrypt należy uruchomić na bazie danych do tworzenia struktury:";
+                form.ScriptText = ClinicManager.Properties.Resources.dbConfig;
+                form.HeaderColor = Color.Red;
+                form.ShowDialog();
+            }
+            else
+            {
+                var form = new ScriptForm();
+                form.HeaderColor = Color.Blue;
+                form.ScriptText = ClinicManager.Properties.Resources.dbData;
+                form.HeaderText = "Poniższy skrypt należy uruchomić na bazie danych do wypelniania danych:";
+                form.ShowDialog();
+            }
+        }
     }
 }

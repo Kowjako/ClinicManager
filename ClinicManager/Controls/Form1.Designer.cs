@@ -790,6 +790,7 @@ namespace Test
             this.btnConfigurationShowDBScript.Name = "btnConfigurationShowDBScript";
             this.btnConfigurationShowDBScript.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationShowDBScript.SmallImage")));
             this.btnConfigurationShowDBScript.Text = "Skrypt";
+            this.btnConfigurationShowDBScript.Click += new System.EventHandler(this.btnConfigurationShowDBScript_Click);
             // 
             // btnConfigurationInsertDBData
             // 
@@ -798,6 +799,7 @@ namespace Test
             this.btnConfigurationInsertDBData.Name = "btnConfigurationInsertDBData";
             this.btnConfigurationInsertDBData.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationInsertDBData.SmallImage")));
             this.btnConfigurationInsertDBData.Text = "Wypełnij";
+            this.btnConfigurationInsertDBData.Click += new System.EventHandler(this.btnConfigurationShowDBScript_Click);
             // 
             // _gvMain
             // 
