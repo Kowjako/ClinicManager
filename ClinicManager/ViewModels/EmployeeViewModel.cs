@@ -20,14 +20,27 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
-        public void DeleteEmployee(EmployeeRow clinic)
+        public void DeleteEmployee(EmployeeRow employee)
         {
-            throw new NotImplementedException();
+            using (var context = new ClinicDataEntities())
+            {
+                var deleteEmployee = context.Employees.Find(employee.Id);
+                var deleteData = context.Data.Find(deleteEmployee.DataId); /* Usuwanie kaskadowe - usuniecie danych osobowych => usuniecie pracownika */
+                context.Data.Remove(deleteData);
+                context.SaveChanges();
+            }
         }
 
         public void EditEmployee(EmployeeRow row)
         {
-            throw new NotImplementedException();
+            var form = new DoctorDetails(DetailsMode.Edit);
+            using (var context = new ClinicDataEntities())
+            {
+                var employee = context.Employees.Find(row.Id);
+                form.BindingSource = new List<Employees> { employee };
+            }
+            form.SetSpecificProperties();
+            form.ShowDialog();
         }
 
         public List<EmployeeRow> Filter()
