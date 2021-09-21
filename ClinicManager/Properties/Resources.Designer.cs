@@ -59,5 +59,54 @@ namespace ClinicManager.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CREATE DATABASE ClinicData
+        ///GO
+        ///
+        ///USE ClinicData
+        ///
+        ///CREATE TABLE Localizations (
+        ///	Id INT IDENTITY(1,1) NOT NULL,
+        ///	Country NVARCHAR(255) NOT NULL,
+        ///	City NVARCHAR(255) NOT NULL,
+        ///	Street NVARCHAR(255) NOT NULL,
+        ///	House TINYINT NOT NULL,
+        ///	Flat TINYINT NOT NULL,
+        ///	PostalCode NVARCHAR(255) NOT NULL,
+        ///	CONSTRAINT PK__Localizations_Id PRIMARY KEY CLUSTERED (Id),
+        ///	CONSTRAINT CK__Localizations_House CHECK (House &gt; 0),
+        ///	CONSTRAINT CK__Localizations_Flat CHECK (Flat &gt; 0),
+        ///);
+        ///GO
+        ///
+        ///CREATE TABLE Drugs (
+        ///	Id INT [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string dbConfig {
+            get {
+                return ResourceManager.GetString("dbConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DBCC CHECKIDENT (&apos;Clinics&apos;, RESEED, 1)  -- wyzerowanie autoinkrementowanego ID
+        ///DBCC CHECKIDENT (&apos;Costs&apos;, RESEED, 1)
+        ///DBCC CHECKIDENT (&apos;Data&apos;, RESEED, 1)
+        ///DBCC CHECKIDENT (&apos;Drugs&apos;, RESEED, 1)
+        ///DBCC CHECKIDENT (&apos;Employees&apos;, RESEED, 1)
+        ///DBCC CHECKIDENT (&apos;Localizations&apos;, RESEED, 1)
+        ///DBCC CHECKIDENT (&apos;Operations&apos;, RESEED, 1)
+        ///DBCC CHECKIDENT (&apos;Opinions&apos;, RESEED, 1)
+        ///DBCC CHECKIDENT (&apos;Patients&apos;, RESEED, 1)
+        ///DBCC CHECKIDENT (&apos;Producents&apos;, RESEED, 1)
+        ///DBCC CHECKIDENT (&apos;Registrations&apos;, RESEED, 1)
+        ///DBCC CHECKIDENT ( [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string dbData {
+            get {
+                return ResourceManager.GetString("dbData", resourceCulture);
+            }
+        }
     }
 }
