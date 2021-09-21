@@ -47,7 +47,7 @@ namespace ClinicManager
                 /* Ustawienie danych w przypadku edycji istniejacego */
                 using(var context = new ClinicDataEntities())
                 {
-                    _bsEmployeeData.DataSource = context.Data.Find(value.First().Id);
+                    _bsEmployeeData.DataSource = context.Data.Find(value.First().DataId);
                 }
             }
         }
@@ -56,12 +56,29 @@ namespace ClinicManager
         {
             var opId = (_bsEmployees.DataSource as List<Employees>).First().OperationId;
             operationBox.SelectedIndex = Dictionaries.OperationList.Values.Where(p => p.Id == opId).First().Id - 1;
+            /* Ustawienie plci */
+            if((_bsEmployeeData.DataSource as Data).Gender == "M")
+            {
+                _maleBtn.Checked = true;
+            }
+            else
+            {
+                _femaleBtn.Checked = true;
+            }
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
             var newEmployeeData = (_bsEmployees.DataSource as List<Employees>).First();
-            var newData = (_bsEmployeeData.DataSource as List<Data>).First();
+            var newData = new Data();
+            if (Mode == DetailsMode.Add)
+            {
+                newData = (_bsEmployeeData.DataSource as List<Data>).First();
+            }
+            else
+            {
+                newData = _bsEmployeeData.DataSource as Data;
+            }
             newData.Gender = _maleBtn.Checked ? "M" : "K";
             newEmployeeData.OperationId = operationBox.SelectedIndex + 1;
             EmployeeViewModel.SaveEmployee(newEmployeeData, newData, Mode);
