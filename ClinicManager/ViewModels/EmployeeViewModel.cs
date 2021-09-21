@@ -46,6 +46,7 @@ namespace ClinicManager.ViewModels
             {
                 if (Mode == DetailsMode.Add)
                 {
+                    employeeData.BirthDate = DateTime.Parse(employeeData.BirthDate.ToShortDateString());
                     context.Data.Add(employeeData);
                     context.SaveChanges();  /* zapisywanie danych osobowych */
 

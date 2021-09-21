@@ -216,7 +216,7 @@ SELECT e.Id 'Id', d.Name + ' ' + d.Surname 'Lekarz', c.Name 'Miejsce pracy', o.N
 FROM Employees e
 JOIN Operations o ON (e.OperationId = o.Id)
 JOIN Data d ON (e.DataId = d.Id)
-JOIN Clinics c ON (e.ClinicId = c.Id)
+LEFT JOIN Clinics c ON (e.ClinicId = c.Id)
 GO
 
 CREATE VIEW CostRow AS

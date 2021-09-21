@@ -201,14 +201,13 @@ warning 6002: The table/view 'ClinicData.dbo.EmployeeRow' does not have a primar
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="Lekarz" />
-            <PropertyRef Name="Miejsce pracy" />
             <PropertyRef Name="Specjalizacja" />
             <PropertyRef Name="Koszt operacji" />
             <PropertyRef Name="Stanowisko" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Lekarz" Type="nvarchar" MaxLength="511" Nullable="false" />
-          <Property Name="Miejsce pracy" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Miejsce pracy" Type="nvarchar" MaxLength="255" />
           <Property Name="Specjalizacja" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Koszt operacji" Type="int" Nullable="false" />
           <Property Name="Stanowisko" Type="nvarchar" MaxLength="255" Nullable="false" />
@@ -951,14 +950,13 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="Lekarz" />
-            <PropertyRef Name="Miejsce_pracy" />
             <PropertyRef Name="Specjalizacja" />
             <PropertyRef Name="Koszt_operacji" />
             <PropertyRef Name="Stanowisko" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Lekarz" Type="String" MaxLength="511" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Miejsce_pracy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Miejsce_pracy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Specjalizacja" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Koszt_operacji" Type="Int32" Nullable="false" />
           <Property Name="Stanowisko" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
