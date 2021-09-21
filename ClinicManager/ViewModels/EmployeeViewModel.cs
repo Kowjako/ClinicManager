@@ -1,4 +1,5 @@
-﻿using ClinicManager.DataAccessLayer;
+﻿using ClinicManager.Controls;
+using ClinicManager.DataAccessLayer;
 using ClinicManager.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -45,12 +46,43 @@ namespace ClinicManager.ViewModels
 
         public List<EmployeeRow> Filter()
         {
-            throw new NotImplementedException();
+            var parameters = new string[] { "OperationCount", "OperationId", "ClinicId", "Rank", "Cost" };
+            var form = new FilterForm(parameters);
+            if (form.ShowDialog() == DialogResult.OK)
+            {
+                var sqlFilter = form.ReturnFilterString();
+                var sqlQuery = $"SELECT * FROM Employees {sqlFilter}";
+                using (var context = new ClinicDataEntities())
+                {
+                    try
+                    {
+                        var entites = context.Database.SqlQuery<Employees>(sqlQuery).ToList();
+                        var entityRows = new List<EmployeeRow>();
+                        foreach (var obj in entites)
+                        {
+                            entityRows.Add(context.EmployeeRow.First(p => p.Id == obj.Id));
+                        }
+                        return entityRows;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(null, "Niepoprawne zapytanie filtrowania", "Błąd");
+                    }
+                }
+            }
+            return null;
         }
 
         public BindingSource RefreshEmployees()
         {
-            throw new NotImplementedException();
+            var bsMain = new BindingSource();
+            using (var context = new ClinicDataEntities())
+            {
+                var employeeList = context.EmployeeRow.ToList();
+                bsMain.DataSource = typeof(EmployeeRow);
+                bsMain.DataSource = employeeList;
+                return bsMain;
+            }
         }
 
         public void SaveEmployee(Employees employee, Data employeeData, DetailsMode Mode)
