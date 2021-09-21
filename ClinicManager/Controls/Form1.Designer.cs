@@ -400,6 +400,7 @@ namespace Test
             this.btnClientsEdit.Name = "btnClientsEdit";
             this.btnClientsEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClientsEdit.SmallImage")));
             this.btnClientsEdit.Text = "Edytuj";
+            this.btnClientsEdit.Click += new System.EventHandler(this.btnClientsEdit_Click);
             // 
             // btnClientsDelete
             // 
@@ -408,6 +409,7 @@ namespace Test
             this.btnClientsDelete.Name = "btnClientsDelete";
             this.btnClientsDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClientsDelete.SmallImage")));
             this.btnClientsDelete.Text = "Usuń";
+            this.btnClientsDelete.Click += new System.EventHandler(this.btnClientsDelete_Click);
             // 
             // btnClientsRefresh
             // 
@@ -416,6 +418,7 @@ namespace Test
             this.btnClientsRefresh.Name = "btnClientsRefresh";
             this.btnClientsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClientsRefresh.SmallImage")));
             this.btnClientsRefresh.Text = "Odśwież";
+            this.btnClientsRefresh.Click += new System.EventHandler(this.btnClientsRefresh_Click);
             // 
             // btnClientsFilter
             // 
@@ -424,6 +427,7 @@ namespace Test
             this.btnClientsFilter.Name = "btnClientsFilter";
             this.btnClientsFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClientsFilter.SmallImage")));
             this.btnClientsFilter.Text = "Filtruj";
+            this.btnClientsFilter.Click += new System.EventHandler(this.btnClientsFilter_Click);
             // 
             // ribbonTab4
             // 

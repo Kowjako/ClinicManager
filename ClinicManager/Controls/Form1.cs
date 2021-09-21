@@ -40,6 +40,8 @@ namespace Test
 
         #endregion
 
+        #region Initializing
+
         public Form1()
         {
             InitializeComponent();
@@ -53,6 +55,7 @@ namespace Test
             EmployeeViewModel = new EmployeeViewModel();
         }
 
+        #endregion
 
         #region Clinics & Localizations & Opinions
 
@@ -147,13 +150,48 @@ namespace Test
 
         #endregion
 
-
+        #region Patients
 
         private void btnClientsAdd_Click(object sender, EventArgs e)
         {
-            var form = new PatientDetails();
-            form.ShowDialog();
+            PatientViewModel.AddPatient();
         }
+
+        private void btnClientsShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.PatientRow.ToList();
+                bsMain.DataSource = typeof(PatientRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
+
+        private void btnClientsEdit_Click(object sender, EventArgs e)
+        {
+            PatientViewModel.EditPatient(_gvMain.SelectedRows[0].DataBoundItem as PatientRow);
+        }
+
+        private void btnClientsDelete_Click(object sender, EventArgs e)
+        {
+            PatientViewModel.DeletePatient(_gvMain.SelectedRows[0].DataBoundItem as PatientRow);
+        }
+
+        private void btnClientsRefresh_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = PatientViewModel.RefreshPatients();
+        }
+
+        private void btnClientsFilter_Click(object sender, EventArgs e)
+        {
+            bsMain.DataSource = PatientViewModel.Filter();
+            _gvMain.DataSource = bsMain;
+        }
+
+        #endregion
+
+
 
         private void btnAssetsAdd_Click(object sender, EventArgs e)
         {
@@ -189,16 +227,7 @@ namespace Test
 
         
 
-        private void btnClientsShow_Click(object sender, EventArgs e)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                var clinicList = context.PatientRow.ToList();
-                bsMain.DataSource = typeof(PatientRow);
-                bsMain.DataSource = clinicList;
-                _gvMain.DataSource = bsMain;
-            }
-        }
+        
 
         private void btnAssetsShow_Click(object sender, EventArgs e)
         {

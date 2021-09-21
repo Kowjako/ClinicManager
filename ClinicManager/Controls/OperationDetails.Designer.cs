@@ -85,9 +85,9 @@ namespace ClinicManager
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(12, 69);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 18);
+            this.label3.Size = new System.Drawing.Size(94, 18);
             this.label3.TabIndex = 31;
-            this.label3.Text = "Narkoza";
+            this.label3.Text = "Znieczulenie";
             // 
             // checkBox1
             // 
