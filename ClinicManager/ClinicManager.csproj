@@ -299,6 +299,8 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ClinicDetails.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Clinics.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Data.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Employees.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

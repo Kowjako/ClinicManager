@@ -221,6 +221,7 @@ namespace Test
             this.btnHospitalRefresh.Name = "btnHospitalRefresh";
             this.btnHospitalRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalRefresh.SmallImage")));
             this.btnHospitalRefresh.Text = "Odśwież";
+            this.btnHospitalRefresh.Click += new System.EventHandler(this.btnHospitalRefresh_Click);
             // 
             // btnHospitalFilter
             // 
@@ -327,6 +328,7 @@ namespace Test
             this.btnDoctorsEdit.Name = "btnDoctorsEdit";
             this.btnDoctorsEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsEdit.SmallImage")));
             this.btnDoctorsEdit.Text = "Edytuj";
+            this.btnDoctorsEdit.Click += new System.EventHandler(this.btnDoctorsEdit_Click);
             // 
             // btnDoctorsDelete
             // 
@@ -335,6 +337,7 @@ namespace Test
             this.btnDoctorsDelete.Name = "btnDoctorsDelete";
             this.btnDoctorsDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsDelete.SmallImage")));
             this.btnDoctorsDelete.Text = "Usuń";
+            this.btnDoctorsDelete.Click += new System.EventHandler(this.btnDoctorsDelete_Click);
             // 
             // btnDoctorsRefresh
             // 
@@ -343,6 +346,7 @@ namespace Test
             this.btnDoctorsRefresh.Name = "btnDoctorsRefresh";
             this.btnDoctorsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsRefresh.SmallImage")));
             this.btnDoctorsRefresh.Text = "Odśwież";
+            this.btnDoctorsRefresh.Click += new System.EventHandler(this.btnDoctorsRefresh_Click);
             // 
             // btnDoctorsFilter
             // 
@@ -351,6 +355,7 @@ namespace Test
             this.btnDoctorsFilter.Name = "btnDoctorsFilter";
             this.btnDoctorsFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsFilter.SmallImage")));
             this.btnDoctorsFilter.Text = "Filtruj";
+            this.btnDoctorsFilter.Click += new System.EventHandler(this.btnDoctorsFilter_Click);
             // 
             // ribbonTab3
             // 

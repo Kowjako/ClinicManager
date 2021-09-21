@@ -2,11 +2,13 @@
 using ClinicManager.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Test;
+using static Test.Form1;
 
 namespace ClinicManager.ViewModels
 {
@@ -14,7 +16,7 @@ namespace ClinicManager.ViewModels
     {
         public void AddEmployee()
         {
-            var form = new DoctorDetails();
+            var form = new DoctorDetails(DetailsMode.Add);
             form.ShowDialog();
         }
 
@@ -38,9 +40,32 @@ namespace ClinicManager.ViewModels
             throw new NotImplementedException();
         }
 
-        public void SaveEmployee(Employees clinic, Form1.DetailsMode mode)
+        public void SaveEmployee(Employees employee, Data employeeData, DetailsMode Mode)
         {
-            throw new NotImplementedException();
+            using (var context = new ClinicDataEntities())
+            {
+                if (Mode == DetailsMode.Add)
+                {
+                    context.Data.Add(employeeData);
+                    context.SaveChanges();  /* zapisywanie danych osobowych */
+
+                    employee.DataId = employeeData.Id;  /* przypisanie danych osobowych do pracownika */
+                    context.Employees.Add(employee);
+                }
+                else
+                {
+                    context.Entry(employeeData).State = System.Data.Entity.EntityState.Modified;
+                    context.Entry(employee).State = System.Data.Entity.EntityState.Modified;
+                }
+                try
+                {
+                    context.SaveChanges();
+                }
+                catch (DbUpdateException ex)
+                {
+                    MessageBox.Show(null, ex.Message, "Blad");
+                }
+            }
         }
     }
 }

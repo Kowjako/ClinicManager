@@ -11,10 +11,9 @@ namespace ClinicManager.Interfaces
 {
     interface IClinicDetailsViewModel
     {
-        event Action RefreshHandler;
         void SaveClinics(Clinics clinic, DetailsMode mode);
         void DeleteClinics(ClinicRow clinic);
-        void RefreshClinics();
+        BindingSource RefreshClinics();
         List<ClinicRow> Filter();
         void EditClinic(ClinicRow row);
         void AddClinic();

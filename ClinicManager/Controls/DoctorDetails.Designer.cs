@@ -29,6 +29,7 @@ namespace ClinicManager
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,16 +40,20 @@ namespace ClinicManager
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this._bsEmployeeData = new System.Windows.Forms.BindingSource(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this._bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.operationBox = new System.Windows.Forms.ComboBox();
+            this._maleBtn = new System.Windows.Forms.RadioButton();
+            this._femaleBtn = new System.Windows.Forms.RadioButton();
+            this.saveBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this._bsEmployeeData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -143,13 +148,19 @@ namespace ClinicManager
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsEmployeeData, "Name", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox1.Location = new System.Drawing.Point(172, 10);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(368, 20);
             this.textBox1.TabIndex = 9;
             // 
+            // _bsEmployeeData
+            // 
+            this._bsEmployeeData.DataSource = typeof(ClinicManager.DataAccessLayer.Data);
+            // 
             // textBox2
             // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsEmployeeData, "Surname", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox2.Location = new System.Drawing.Point(172, 41);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(368, 20);
@@ -157,6 +168,7 @@ namespace ClinicManager
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this._bsEmployeeData, "BirthDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(172, 67);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -165,6 +177,7 @@ namespace ClinicManager
             // 
             // textBox3
             // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsEmployeeData, "Phone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox3.Location = new System.Drawing.Point(172, 123);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(368, 20);
@@ -172,6 +185,7 @@ namespace ClinicManager
             // 
             // textBox4
             // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsEmployeeData, "Email", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox4.Location = new System.Drawing.Point(172, 154);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(368, 20);
@@ -179,67 +193,74 @@ namespace ClinicManager
             // 
             // textBox5
             // 
+            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsEmployees, "Cost", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox5.Location = new System.Drawing.Point(172, 241);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(368, 20);
             this.textBox5.TabIndex = 16;
             // 
+            // _bsEmployees
+            // 
+            this._bsEmployees.DataSource = typeof(ClinicManager.DataAccessLayer.Employees);
+            // 
             // textBox6
             // 
+            this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsEmployees, "Rank", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox6.Location = new System.Drawing.Point(172, 182);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(368, 20);
             this.textBox6.TabIndex = 17;
             // 
-            // comboBox1
+            // operationBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(172, 209);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(368, 21);
-            this.comboBox1.TabIndex = 18;
+            this.operationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.operationBox.FormattingEnabled = true;
+            this.operationBox.Location = new System.Drawing.Point(172, 209);
+            this.operationBox.Name = "operationBox";
+            this.operationBox.Size = new System.Drawing.Size(368, 21);
+            this.operationBox.TabIndex = 18;
             // 
-            // radioButton1
+            // _maleBtn
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(172, 100);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(78, 17);
-            this.radioButton1.TabIndex = 19;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Mężczyzna";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this._maleBtn.AutoSize = true;
+            this._maleBtn.Location = new System.Drawing.Point(172, 100);
+            this._maleBtn.Name = "_maleBtn";
+            this._maleBtn.Size = new System.Drawing.Size(78, 17);
+            this._maleBtn.TabIndex = 19;
+            this._maleBtn.TabStop = true;
+            this._maleBtn.Text = "Mężczyzna";
+            this._maleBtn.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // _femaleBtn
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(263, 101);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(61, 17);
-            this.radioButton2.TabIndex = 20;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Kobieta";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this._femaleBtn.AutoSize = true;
+            this._femaleBtn.Location = new System.Drawing.Point(263, 101);
+            this._femaleBtn.Name = "_femaleBtn";
+            this._femaleBtn.Size = new System.Drawing.Size(61, 17);
+            this._femaleBtn.TabIndex = 20;
+            this._femaleBtn.TabStop = true;
+            this._femaleBtn.Text = "Kobieta";
+            this._femaleBtn.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // saveBtn
             // 
-            this.button1.Location = new System.Drawing.Point(15, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(525, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Zatwierdź";
-            this.button1.UseVisualStyleBackColor = true;
+            this.saveBtn.Location = new System.Drawing.Point(15, 267);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(525, 23);
+            this.saveBtn.TabIndex = 21;
+            this.saveBtn.Text = "Zatwierdź";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // DoctorDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 299);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.saveBtn);
+            this.Controls.Add(this._femaleBtn);
+            this.Controls.Add(this._maleBtn);
+            this.Controls.Add(this.operationBox);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -261,6 +282,8 @@ namespace ClinicManager
             this.MinimizeBox = false;
             this.Name = "DoctorDetails";
             this.Text = "Szczegóły lekarza";
+            ((System.ComponentModel.ISupportInitialize)(this._bsEmployeeData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,9 +307,11 @@ namespace ClinicManager
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox operationBox;
+        private System.Windows.Forms.RadioButton _maleBtn;
+        private System.Windows.Forms.RadioButton _femaleBtn;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.BindingSource _bsEmployees;
+        private System.Windows.Forms.BindingSource _bsEmployeeData;
     }
 }
