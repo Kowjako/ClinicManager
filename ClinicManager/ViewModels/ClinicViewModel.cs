@@ -15,7 +15,6 @@ namespace ClinicManager.ViewModels
 {
     public class ClinicViewModel : IClinicDetailsViewModel
     {
-        public event Action RefreshHandler;
 
         public void AddClinic()
         {
@@ -92,11 +91,15 @@ namespace ClinicManager.ViewModels
             }
         }
 
-        public void RefreshClinics()
+        public BindingSource RefreshClinics()
         {
-            if(RefreshHandler != null)
+            var bsMain = new BindingSource();
+            using (var context = new ClinicDataEntities())
             {
-                RefreshHandler.Invoke();
+                var clinicList = context.ClinicRow.ToList();
+                bsMain.DataSource = typeof(ClinicRow);
+                bsMain.DataSource = clinicList;
+                return bsMain;
             }
         }
 
@@ -121,7 +124,7 @@ namespace ClinicManager.ViewModels
                 {
                     if (ex.InnerException.InnerException.Message.Contains("UQ__Clinics_LocalizationId"))
                     {
-                        MessageBox.Show(null, "Wybrana lokalizacja jest już zajęta", "Błąd!");
+                        MessageBox.Show(null, "Wybrana lokalizacja jest już zajęta. Prosze stworzyc nowa", "Błąd!");
                     }
                 }
             }

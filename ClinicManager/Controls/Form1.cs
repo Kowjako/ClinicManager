@@ -99,15 +99,50 @@ namespace Test
             _gvMain.DataSource = bsMain;
         }
 
-        #endregion
+        private void btnHospitalRefresh_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = ClinicViewModel.RefreshClinics();
+        }
 
+        #endregion
 
         #region Employees
 
         private void btnDoctorsAdd_Click(object sender, EventArgs e)
         {
-            var form = new DoctorDetails();
-            form.ShowDialog();
+            EmployeeViewModel.AddEmployee();
+        }
+
+        private void btnDoctorsShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.EmployeeRow.ToList();
+                bsMain.DataSource = typeof(EmployeeRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
+
+        private void btnDoctorsEdit_Click(object sender, EventArgs e)
+        {
+            EmployeeViewModel.EditEmployee(_gvMain.SelectedRows[0].DataBoundItem as EmployeeRow);
+        }
+
+        private void btnDoctorsDelete_Click(object sender, EventArgs e)
+        {
+            EmployeeViewModel.DeleteEmployee(_gvMain.SelectedRows[0].DataBoundItem as EmployeeRow);
+        }
+
+        private void btnDoctorsRefresh_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = EmployeeViewModel.RefreshEmployees();
+        }
+
+        private void btnDoctorsFilter_Click(object sender, EventArgs e)
+        {
+            bsMain.DataSource = EmployeeViewModel.Filter();
+            _gvMain.DataSource = bsMain;
         }
 
         #endregion
@@ -152,16 +187,7 @@ namespace Test
 
         
 
-        private void btnDoctorsShow_Click(object sender, EventArgs e)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                var clinicList = context.EmployeeRow.ToList();
-                bsMain.DataSource = typeof(EmployeeRow);
-                bsMain.DataSource = clinicList;
-                _gvMain.DataSource = bsMain;
-            }
-        }
+        
 
         private void btnClientsShow_Click(object sender, EventArgs e)
         {
@@ -229,5 +255,6 @@ namespace Test
             }
         }
 
+        
     }
 }
