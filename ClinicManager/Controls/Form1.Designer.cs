@@ -104,6 +104,8 @@ namespace Test
             this.btnPriceFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonTab9 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonTab10 = new System.Windows.Forms.RibbonTab();
+            this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
             this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
@@ -151,6 +153,7 @@ namespace Test
             this.ribbon1.Tabs.Add(this.ribbonTab7);
             this.ribbon1.Tabs.Add(this.ribbonTab8);
             this.ribbon1.Tabs.Add(this.ribbonTab9);
+            this.ribbon1.Tabs.Add(this.ribbonTab10);
             this.ribbon1.TabSpacing = 3;
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue_2010;
@@ -472,6 +475,7 @@ namespace Test
             this.btnAssetsEdit.Name = "btnAssetsEdit";
             this.btnAssetsEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsEdit.SmallImage")));
             this.btnAssetsEdit.Text = "Edytuj";
+            this.btnAssetsEdit.Click += new System.EventHandler(this.btnAssetsEdit_Click);
             // 
             // btnAssetsDelete
             // 
@@ -480,6 +484,7 @@ namespace Test
             this.btnAssetsDelete.Name = "btnAssetsDelete";
             this.btnAssetsDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsDelete.SmallImage")));
             this.btnAssetsDelete.Text = "Usuń";
+            this.btnAssetsDelete.Click += new System.EventHandler(this.btnAssetsDelete_Click);
             // 
             // btnAssetsRefresh
             // 
@@ -488,6 +493,7 @@ namespace Test
             this.btnAssetsRefresh.Name = "btnAssetsRefresh";
             this.btnAssetsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsRefresh.SmallImage")));
             this.btnAssetsRefresh.Text = "Odśwież";
+            this.btnAssetsRefresh.Click += new System.EventHandler(this.btnAssetsRefresh_Click);
             // 
             // btnAssetsFilter
             // 
@@ -496,6 +502,7 @@ namespace Test
             this.btnAssetsFilter.Name = "btnAssetsFilter";
             this.btnAssetsFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnAssetsFilter.SmallImage")));
             this.btnAssetsFilter.Text = "Filtruj";
+            this.btnAssetsFilter.Click += new System.EventHandler(this.btnAssetsFilter_Click);
             // 
             // ribbonTab5
             // 
@@ -773,15 +780,27 @@ namespace Test
             // 
             this.ribbonTab9.Name = "ribbonTab9";
             this.ribbonTab9.Panels.Add(this.ribbonPanel10);
-            this.ribbonTab9.Text = "Konfiguracja";
+            this.ribbonTab9.Text = "Producenci";
             // 
             // ribbonPanel10
             // 
             this.ribbonPanel10.ButtonMoreVisible = false;
-            this.ribbonPanel10.Items.Add(this.btnConfigurationShowDBScript);
-            this.ribbonPanel10.Items.Add(this.btnConfigurationInsertDBData);
             this.ribbonPanel10.Name = "ribbonPanel10";
             this.ribbonPanel10.Text = "Zarządzanie bazą";
+            // 
+            // ribbonTab10
+            // 
+            this.ribbonTab10.Name = "ribbonTab10";
+            this.ribbonTab10.Panels.Add(this.ribbonPanel11);
+            this.ribbonTab10.Text = "Konfiguracja";
+            // 
+            // ribbonPanel11
+            // 
+            this.ribbonPanel11.ButtonMoreVisible = false;
+            this.ribbonPanel11.Items.Add(this.btnConfigurationShowDBScript);
+            this.ribbonPanel11.Items.Add(this.btnConfigurationInsertDBData);
+            this.ribbonPanel11.Name = "ribbonPanel11";
+            this.ribbonPanel11.Text = "Zarządzanie bazą";
             // 
             // btnConfigurationShowDBScript
             // 
@@ -899,8 +918,6 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnPriceRefresh;
         private System.Windows.Forms.RibbonTab ribbonTab9;
         private System.Windows.Forms.RibbonPanel ribbonPanel10;
-        private System.Windows.Forms.RibbonButton btnConfigurationShowDBScript;
-        private System.Windows.Forms.RibbonButton btnConfigurationInsertDBData;
         private System.Windows.Forms.BindingSource bsMain;
         private System.Windows.Forms.RibbonButton btnHospitalFilter;
         private System.Windows.Forms.RibbonPanel ribbonPanel12;
@@ -917,6 +934,10 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnPriceFilter;
         private System.Windows.Forms.DataGridView _gvMain;
         private System.Windows.Forms.RibbonButton btnLocalizationAdd;
+        private System.Windows.Forms.RibbonTab ribbonTab10;
+        private System.Windows.Forms.RibbonPanel ribbonPanel11;
+        private System.Windows.Forms.RibbonButton btnConfigurationShowDBScript;
+        private System.Windows.Forms.RibbonButton btnConfigurationInsertDBData;
     }
 }
 
