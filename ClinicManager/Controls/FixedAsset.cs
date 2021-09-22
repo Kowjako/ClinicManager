@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ClinicManager.DataAccessLayer;
+using ClinicManager.Interfaces;
+using ClinicManager.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,14 +10,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Test.Form1;
 
 namespace ClinicManager
 {
     public partial class FixedAsset : Form
     {
-        public FixedAsset()
+        private DetailsMode Mode;
+        private IFixedAssetViewModel FixedAssetViewModel;
+
+        public FixedAsset(DetailsMode mode)
         {
             InitializeComponent();
+            Mode = mode;   /* 1 - Add, 2 - Edit */
+
+            if (mode == DetailsMode.Add)
+            {
+                _bsFixedAsset.DataSource = new List<Tools> { new Tools() };
+            }
+
+            FixedAssetViewModel = new FixedAssetViewModel();
+        }
+
+        public List<Tools> BindingSource
+        {
+            set
+            {
+                _bsFixedAsset.DataSource = value;
+            }
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            var newFixedAsset = (_bsFixedAsset.DataSource as List<Tools>).First();
+            FixedAssetViewModel.SaveFixedAsset(newFixedAsset, Mode);
+            this.Close();
         }
     }
 }

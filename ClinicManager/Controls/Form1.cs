@@ -191,13 +191,48 @@ namespace Test
 
         #endregion
 
-
+        #region FixedAssets
 
         private void btnAssetsAdd_Click(object sender, EventArgs e)
         {
-            var form = new FixedAsset();
-            form.ShowDialog();
+            FixedAssetViewModel.AddFixedAsset();
         }
+
+        private void btnAssetsShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.ToolRow.ToList();
+                bsMain.DataSource = typeof(ToolRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
+
+        private void btnAssetsEdit_Click(object sender, EventArgs e)
+        {
+            FixedAssetViewModel.EditFixedAsset(_gvMain.SelectedRows[0].DataBoundItem as ToolRow);
+        }
+
+        private void btnAssetsDelete_Click(object sender, EventArgs e)
+        {
+            FixedAssetViewModel.DeleteFixedAsset(_gvMain.SelectedRows[0].DataBoundItem as ToolRow);
+        }
+
+        private void btnAssetsRefresh_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = FixedAssetViewModel.RefreshFixedAssets();
+        }
+
+        private void btnAssetsFilter_Click(object sender, EventArgs e)
+        {
+            bsMain.DataSource = FixedAssetViewModel.Filter();
+            _gvMain.DataSource = bsMain;
+        }
+
+        #endregion
+
+
 
         private void btnArticleAdd_Click(object sender, EventArgs e)
         {
@@ -229,16 +264,7 @@ namespace Test
 
         
 
-        private void btnAssetsShow_Click(object sender, EventArgs e)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                var clinicList = context.ToolRow.ToList();
-                bsMain.DataSource = typeof(ToolRow);
-                bsMain.DataSource = clinicList;
-                _gvMain.DataSource = bsMain;
-            }
-        }
+        
 
         private void btnArticleShow_Click(object sender, EventArgs e)
         {
@@ -303,5 +329,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
+        
     }
 }
