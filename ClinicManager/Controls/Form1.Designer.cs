@@ -619,6 +619,7 @@ namespace Test
             this.btnVisitsEdit.Name = "btnVisitsEdit";
             this.btnVisitsEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsEdit.SmallImage")));
             this.btnVisitsEdit.Text = "Edytuj";
+            this.btnVisitsEdit.Click += new System.EventHandler(this.btnVisitsEdit_Click);
             // 
             // btnVisitsDelete
             // 
@@ -627,6 +628,7 @@ namespace Test
             this.btnVisitsDelete.Name = "btnVisitsDelete";
             this.btnVisitsDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsDelete.SmallImage")));
             this.btnVisitsDelete.Text = "Usuń";
+            this.btnVisitsDelete.Click += new System.EventHandler(this.btnVisitsDelete_Click);
             // 
             // btnVisitsRefresh
             // 
@@ -635,6 +637,7 @@ namespace Test
             this.btnVisitsRefresh.Name = "btnVisitsRefresh";
             this.btnVisitsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsRefresh.SmallImage")));
             this.btnVisitsRefresh.Text = "Odśwież";
+            this.btnVisitsRefresh.Click += new System.EventHandler(this.btnVisitsRefresh_Click);
             // 
             // btnVisitsFilter
             // 
@@ -643,6 +646,7 @@ namespace Test
             this.btnVisitsFilter.Name = "btnVisitsFilter";
             this.btnVisitsFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsFilter.SmallImage")));
             this.btnVisitsFilter.Text = "Filtruj";
+            this.btnVisitsFilter.Click += new System.EventHandler(this.btnVisitsFilter_Click);
             // 
             // ribbonTab7
             // 

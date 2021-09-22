@@ -236,8 +236,7 @@ namespace Test
 
         private void btnArticleAdd_Click(object sender, EventArgs e)
         {
-            var form = new ArticleDetails(DetailsMode.Add);
-            form.ShowDialog();
+            ArticleViewModel.AddArticle();
         }
 
         private void btnArticleShow_Click(object sender, EventArgs e)
@@ -274,13 +273,48 @@ namespace Test
 
         #endregion
 
-        
+        #region Visits
+
+        private void btnVisitsShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.RegistrationRow.ToList();
+                bsMain.DataSource = typeof(RegistrationRow);
+                bsMain.DataSource = clinicList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
 
         private void btnVisitsAdd_Click(object sender, EventArgs e)
         {
-            var form = new VisitDetails();
-            form.ShowDialog();
+            VisitViewModel.AddRegistration();
         }
+
+        private void btnVisitsEdit_Click(object sender, EventArgs e)
+        {
+            VisitViewModel.EditRegistration(_gvMain.SelectedRows[0].DataBoundItem as RegistrationRow);
+        }
+
+        private void btnVisitsDelete_Click(object sender, EventArgs e)
+        {
+            VisitViewModel.DeleteVisit(_gvMain.SelectedRows[0].DataBoundItem as RegistrationRow);
+        }
+
+        private void btnVisitsRefresh_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = VisitViewModel.RefreshVisits();
+        }
+
+        private void btnVisitsFilter_Click(object sender, EventArgs e)
+        {
+            bsMain.DataSource = VisitViewModel.Filter();
+            _gvMain.DataSource = bsMain;
+        }
+
+        #endregion
+
+        
 
         private void btnOperationsAdd_Click(object sender, EventArgs e)
         {
@@ -304,16 +338,7 @@ namespace Test
 
         
 
-        private void btnVisitsShow_Click(object sender, EventArgs e)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                var clinicList = context.RegistrationRow.ToList();
-                bsMain.DataSource = typeof(RegistrationRow);
-                bsMain.DataSource = clinicList;
-                _gvMain.DataSource = bsMain;
-            }
-        }
+        
 
         private void btnOperationsShow_Click(object sender, EventArgs e)
         {
@@ -357,6 +382,6 @@ namespace Test
             }
         }
 
-       
+        
     }
 }

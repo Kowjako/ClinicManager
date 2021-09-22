@@ -29,19 +29,23 @@ namespace ClinicManager
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.patientBox = new System.Windows.Forms.ComboBox();
+            this.employeeBox = new System.Windows.Forms.ComboBox();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this._bsRegistration = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this._bsRegistration)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this._bsRegistration, "Date", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(182, 9);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -88,39 +92,45 @@ namespace ClinicManager
             this.label4.TabIndex = 18;
             this.label4.Text = "Lekarz";
             // 
-            // comboBox1
+            // patientBox
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(182, 68);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(325, 21);
-            this.comboBox1.TabIndex = 19;
+            this.patientBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.patientBox.FormattingEnabled = true;
+            this.patientBox.Location = new System.Drawing.Point(182, 68);
+            this.patientBox.Name = "patientBox";
+            this.patientBox.Size = new System.Drawing.Size(325, 21);
+            this.patientBox.TabIndex = 19;
             // 
-            // comboBox2
+            // employeeBox
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(182, 100);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(325, 21);
-            this.comboBox2.TabIndex = 20;
+            this.employeeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.employeeBox.FormattingEnabled = true;
+            this.employeeBox.Location = new System.Drawing.Point(182, 100);
+            this.employeeBox.Name = "employeeBox";
+            this.employeeBox.Size = new System.Drawing.Size(325, 21);
+            this.employeeBox.TabIndex = 20;
             // 
-            // button1
+            // saveBtn
             // 
-            this.button1.Location = new System.Drawing.Point(12, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(495, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Zatwierdź";
-            this.button1.UseVisualStyleBackColor = true;
+            this.saveBtn.Location = new System.Drawing.Point(12, 127);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(495, 23);
+            this.saveBtn.TabIndex = 26;
+            this.saveBtn.Text = "Zatwierdź";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsRegistration, "Time", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox1.Location = new System.Drawing.Point(182, 40);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 27;
+            // 
+            // _bsRegistration
+            // 
+            this._bsRegistration.DataSource = typeof(ClinicManager.DataAccessLayer.Registrations);
             // 
             // VisitDetails
             // 
@@ -128,9 +138,9 @@ namespace ClinicManager
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(514, 156);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.saveBtn);
+            this.Controls.Add(this.employeeBox);
+            this.Controls.Add(this.patientBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -141,6 +151,7 @@ namespace ClinicManager
             this.MinimizeBox = false;
             this.Name = "VisitDetails";
             this.Text = "Szczególy wizyty";
+            ((System.ComponentModel.ISupportInitialize)(this._bsRegistration)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,9 +164,10 @@ namespace ClinicManager
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox patientBox;
+        private System.Windows.Forms.ComboBox employeeBox;
+        private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.BindingSource _bsRegistration;
     }
 }
