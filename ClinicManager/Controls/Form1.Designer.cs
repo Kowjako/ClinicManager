@@ -547,6 +547,7 @@ namespace Test
             this.btnArticleEdit.Name = "btnArticleEdit";
             this.btnArticleEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleEdit.SmallImage")));
             this.btnArticleEdit.Text = "Edytuj";
+            this.btnArticleEdit.Click += new System.EventHandler(this.btnArticleEdit_Click);
             // 
             // btnArticleDelete
             // 
@@ -555,6 +556,7 @@ namespace Test
             this.btnArticleDelete.Name = "btnArticleDelete";
             this.btnArticleDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleDelete.SmallImage")));
             this.btnArticleDelete.Text = "Usuń";
+            this.btnArticleDelete.Click += new System.EventHandler(this.btnArticleDelete_Click);
             // 
             // btnArticleRefresh
             // 
@@ -563,6 +565,7 @@ namespace Test
             this.btnArticleRefresh.Name = "btnArticleRefresh";
             this.btnArticleRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleRefresh.SmallImage")));
             this.btnArticleRefresh.Text = "Odśwież";
+            this.btnArticleRefresh.Click += new System.EventHandler(this.btnArticleRefresh_Click);
             // 
             // btnArticleFilter
             // 
@@ -571,6 +574,7 @@ namespace Test
             this.btnArticleFilter.Name = "btnArticleFilter";
             this.btnArticleFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleFilter.SmallImage")));
             this.btnArticleFilter.Text = "Filtruj";
+            this.btnArticleFilter.Click += new System.EventHandler(this.btnArticleFilter_Click);
             // 
             // ribbonTab6
             // 

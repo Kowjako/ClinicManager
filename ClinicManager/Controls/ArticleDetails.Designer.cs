@@ -29,6 +29,7 @@ namespace ClinicManager
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,13 +44,16 @@ namespace ClinicManager
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.unitCombo = new System.Windows.Forms.ComboBox();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this._bsArticle = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsArticle)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsArticle, "Name", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox1.Location = new System.Drawing.Point(182, 10);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
@@ -77,6 +81,7 @@ namespace ClinicManager
             // 
             // numericUpDown1
             // 
+            this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this._bsArticle, "Percentage", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.numericUpDown1.Location = new System.Drawing.Point(182, 40);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(325, 20);
@@ -93,6 +98,7 @@ namespace ClinicManager
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this._bsArticle, "ExpireDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(182, 100);
             this.dateTimePicker2.Name = "dateTimePicker2";
@@ -111,6 +117,7 @@ namespace ClinicManager
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this._bsArticle, "ProductionDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(182, 71);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -140,6 +147,7 @@ namespace ClinicManager
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this._bsArticle, "IsPsychotropic", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBox1.Location = new System.Drawing.Point(182, 136);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(45, 17);
@@ -169,36 +177,42 @@ namespace ClinicManager
             // 
             // textBox2
             // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsArticle, "AvailableAmount", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox2.Location = new System.Drawing.Point(182, 161);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(325, 20);
             this.textBox2.TabIndex = 23;
             // 
-            // comboBox1
+            // unitCombo
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(182, 189);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(325, 21);
-            this.comboBox1.TabIndex = 24;
+            this.unitCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.unitCombo.FormattingEnabled = true;
+            this.unitCombo.Location = new System.Drawing.Point(182, 189);
+            this.unitCombo.Name = "unitCombo";
+            this.unitCombo.Size = new System.Drawing.Size(325, 21);
+            this.unitCombo.TabIndex = 24;
             // 
-            // button1
+            // saveBtn
             // 
-            this.button1.Location = new System.Drawing.Point(12, 216);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(495, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Zatwierdź";
-            this.button1.UseVisualStyleBackColor = true;
+            this.saveBtn.Location = new System.Drawing.Point(12, 216);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(495, 23);
+            this.saveBtn.TabIndex = 25;
+            this.saveBtn.Text = "Zatwierdź";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // _bsArticle
+            // 
+            this._bsArticle.DataSource = typeof(ClinicManager.DataAccessLayer.Drugs);
             // 
             // ArticleDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 246);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.saveBtn);
+            this.Controls.Add(this.unitCombo);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -219,6 +233,7 @@ namespace ClinicManager
             this.Name = "ArticleDetails";
             this.Text = "Szczegóły leku";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsArticle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,7 +255,8 @@ namespace ClinicManager
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox unitCombo;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.BindingSource _bsArticle;
     }
 }

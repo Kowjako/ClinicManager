@@ -232,13 +232,49 @@ namespace Test
 
         #endregion
 
-
+        #region Drugs
 
         private void btnArticleAdd_Click(object sender, EventArgs e)
         {
-            var form = new ArticleDetails();
+            var form = new ArticleDetails(DetailsMode.Add);
             form.ShowDialog();
         }
+
+        private void btnArticleShow_Click(object sender, EventArgs e)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var articleList = context.DrugRow.ToList();
+                bsMain.DataSource = typeof(DrugRow);
+                bsMain.DataSource = articleList;
+                _gvMain.DataSource = bsMain;
+            }
+        }
+
+        private void btnArticleEdit_Click(object sender, EventArgs e)
+        {
+            ArticleViewModel.EditArticle(_gvMain.SelectedRows[0].DataBoundItem as DrugRow);
+        }
+
+        private void btnArticleDelete_Click(object sender, EventArgs e)
+        {
+            ArticleViewModel.DeleteArticle(_gvMain.SelectedRows[0].DataBoundItem as DrugRow);
+        }
+
+        private void btnArticleRefresh_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = ArticleViewModel.RefreshArticles();
+        }
+
+        private void btnArticleFilter_Click(object sender, EventArgs e)
+        {
+            bsMain.DataSource = ArticleViewModel.Filter();
+            _gvMain.DataSource = bsMain;
+        }
+
+        #endregion
+
+        
 
         private void btnVisitsAdd_Click(object sender, EventArgs e)
         {
@@ -266,16 +302,7 @@ namespace Test
 
         
 
-        private void btnArticleShow_Click(object sender, EventArgs e)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                var clinicList = context.DrugRow.ToList();
-                bsMain.DataSource = typeof(DrugRow);
-                bsMain.DataSource = clinicList;
-                _gvMain.DataSource = bsMain;
-            }
-        }
+        
 
         private void btnVisitsShow_Click(object sender, EventArgs e)
         {
@@ -330,6 +357,6 @@ namespace Test
             }
         }
 
-        
+       
     }
 }
