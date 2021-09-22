@@ -13,6 +13,7 @@ namespace ClinicManager
         public Dictionary<int, LocalizationRow> LocalizationList { get; set; }
         public Dictionary<int, OperationRow> OperationList { get; set; }
         public Dictionary<int, string> UnitList { get; set; }
+        public Dictionary<int, PatientRow> PatientList { get; set; }
 
         public StaticDictionaries()
         {
@@ -20,12 +21,14 @@ namespace ClinicManager
             EmployeeList = new Dictionary<int, EmployeeRow>();
             OperationList = new Dictionary<int, OperationRow>();
             UnitList = new Dictionary<int, string>();
+            PatientList = new Dictionary<int, PatientRow>();
 
             using(var context = new ClinicDataEntities())
             {
                 var tmpLocalizationList = context.LocalizationRow.ToList();
                 var tmpEmployeeList = context.EmployeeRow.ToList();
                 var tmpOperationList = context.OperationRow.ToList();
+                var tmpPatientList = context.PatientRow.ToList();
 
                 foreach(var obj in tmpLocalizationList)
                 {
@@ -38,6 +41,11 @@ namespace ClinicManager
                 foreach(var obj in tmpOperationList)
                 {
                     OperationList.Add(obj.Id, obj);
+                }
+
+                foreach(var obj in tmpPatientList)
+                {
+                    PatientList.Add(obj.Id, obj);
                 }
             }
 
