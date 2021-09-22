@@ -12,12 +12,14 @@ namespace ClinicManager
         public Dictionary<int, EmployeeRow> EmployeeList { get; set; }
         public Dictionary<int, LocalizationRow> LocalizationList { get; set; }
         public Dictionary<int, OperationRow> OperationList { get; set; }
+        public Dictionary<int, string> UnitList { get; set; }
 
         public StaticDictionaries()
         {
             LocalizationList = new Dictionary<int, LocalizationRow>();
             EmployeeList = new Dictionary<int, EmployeeRow>();
             OperationList = new Dictionary<int, OperationRow>();
+            UnitList = new Dictionary<int, string>();
 
             using(var context = new ClinicDataEntities())
             {
@@ -38,6 +40,18 @@ namespace ClinicManager
                     OperationList.Add(obj.Id, obj);
                 }
             }
+
+            InitializeEnumDictionary();
+        }
+
+        private void InitializeEnumDictionary()
+        {
+            UnitList.Add(1, "opakowanie");
+            UnitList.Add(2, "tabletka");
+            UnitList.Add(3, "krem");
+            UnitList.Add(4, "butelka");
+            UnitList.Add(5, "gram");
+            UnitList.Add(6, "ml");
         }
     }
 }
