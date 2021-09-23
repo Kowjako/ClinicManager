@@ -33,10 +33,12 @@ namespace ClinicManager
 
             EmployeeViewModel = new EmployeeViewModel();
 
+            var operationList = new List<OperationRow>();
             foreach (var operation in Dictionaries.OperationList)
             {
-                operationBox.Items.Add(operation.Value.Nazwa + " - " + operation.Value.Typ);
+                operationList.Add(operation.Value);
             }
+            _bsOperations.DataSource = operationList;
         }
 
         public List<Employees> BindingSource
@@ -54,8 +56,9 @@ namespace ClinicManager
 
         public void SetSpecificProperties()
         {
-            var opId = (_bsEmployees.DataSource as List<Employees>).First().OperationId;
-            operationBox.SelectedIndex = Dictionaries.OperationList.Values.Where(p => p.Id == opId).First().Id - 1;
+            operationBox.SelectedItem = Dictionaries.OperationList
+                                                    .Where(p => p.Value.Id == (_bsEmployees.DataSource as List<Employees>)
+                                                    .First().OperationId).First().Value;
             /* Ustawienie plci */
             if((_bsEmployeeData.DataSource as Data).Gender == "M")
             {
@@ -80,7 +83,7 @@ namespace ClinicManager
                 newData = _bsEmployeeData.DataSource as Data;
             }
             newData.Gender = _maleBtn.Checked ? "M" : "K";
-            newEmployeeData.OperationId = operationBox.SelectedIndex + 1;
+            newEmployeeData.OperationId = (operationBox.SelectedItem as OperationRow).Id;
             EmployeeViewModel.SaveEmployee(newEmployeeData, newData, Mode);
             this.Close();
         }

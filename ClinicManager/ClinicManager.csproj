@@ -317,6 +317,7 @@
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.EmployeeRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Employees.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.LocalizationRow.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.OperationRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.PatientRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Patients.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Registrations.datasource" />

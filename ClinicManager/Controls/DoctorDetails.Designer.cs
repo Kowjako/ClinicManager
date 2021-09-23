@@ -52,8 +52,10 @@ namespace ClinicManager
             this._maleBtn = new System.Windows.Forms.RadioButton();
             this._femaleBtn = new System.Windows.Forms.RadioButton();
             this.saveBtn = new System.Windows.Forms.Button();
+            this._bsOperations = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployeeData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsOperations)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -213,12 +215,15 @@ namespace ClinicManager
             // 
             // operationBox
             // 
+            this.operationBox.DataSource = this._bsOperations;
+            this.operationBox.DisplayMember = "Nazwa";
             this.operationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.operationBox.FormattingEnabled = true;
             this.operationBox.Location = new System.Drawing.Point(172, 209);
             this.operationBox.Name = "operationBox";
             this.operationBox.Size = new System.Drawing.Size(368, 21);
             this.operationBox.TabIndex = 18;
+            this.operationBox.ValueMember = "Id";
             // 
             // _maleBtn
             // 
@@ -252,6 +257,10 @@ namespace ClinicManager
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // _bsOperations
+            // 
+            this._bsOperations.DataSource = typeof(ClinicManager.DataAccessLayer.OperationRow);
+            // 
             // DoctorDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,6 +293,7 @@ namespace ClinicManager
             this.Text = "Szczegóły lekarza";
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployeeData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsOperations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,5 +323,6 @@ namespace ClinicManager
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.BindingSource _bsEmployees;
         private System.Windows.Forms.BindingSource _bsEmployeeData;
+        private System.Windows.Forms.BindingSource _bsOperations;
     }
 }
