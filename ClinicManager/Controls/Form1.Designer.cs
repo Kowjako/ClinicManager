@@ -110,6 +110,23 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.ribbonPanel13 = new System.Windows.Forms.RibbonPanel();
+            this.btnDoctorsEnroll = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel14 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel15 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel16 = new System.Windows.Forms.RibbonPanel();
+            this.btnArticleAddUnit = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel17 = new System.Windows.Forms.RibbonPanel();
+            this.ribbonPanel18 = new System.Windows.Forms.RibbonPanel();
+            this.btnOperationAddType = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel19 = new System.Windows.Forms.RibbonPanel();
+            this.btnSupplierLocalizationAdd = new System.Windows.Forms.RibbonButton();
+            this.btnSupplierShow = new System.Windows.Forms.RibbonButton();
+            this.btnSupplierAdd = new System.Windows.Forms.RibbonButton();
+            this.btnSupplierEdit = new System.Windows.Forms.RibbonButton();
+            this.btnSupplierDelete = new System.Windows.Forms.RibbonButton();
+            this.btnSupplierRefresh = new System.Windows.Forms.RibbonButton();
+            this.btnSupplierFilter = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -240,7 +257,7 @@ namespace Test
             this.ribbonPanel12.ButtonMoreVisible = false;
             this.ribbonPanel12.Items.Add(this.btnLocalizationAdd);
             this.ribbonPanel12.Name = "ribbonPanel12";
-            this.ribbonPanel12.Text = "Tworzenie lokalizacji";
+            this.ribbonPanel12.Text = "Ogólne";
             // 
             // btnLocalizationAdd
             // 
@@ -292,6 +309,7 @@ namespace Test
             // 
             this.ribbonTab2.Name = "ribbonTab2";
             this.ribbonTab2.Panels.Add(this.ribbonPanel3);
+            this.ribbonTab2.Panels.Add(this.ribbonPanel13);
             this.ribbonTab2.Text = "Lekarze";
             // 
             // ribbonPanel3
@@ -364,6 +382,7 @@ namespace Test
             // 
             this.ribbonTab3.Name = "ribbonTab3";
             this.ribbonTab3.Panels.Add(this.ribbonPanel4);
+            this.ribbonTab3.Panels.Add(this.ribbonPanel16);
             this.ribbonTab3.Text = "Pacjenci";
             // 
             // ribbonPanel4
@@ -436,6 +455,7 @@ namespace Test
             // 
             this.ribbonTab4.Name = "ribbonTab4";
             this.ribbonTab4.Panels.Add(this.ribbonPanel5);
+            this.ribbonTab4.Panels.Add(this.ribbonPanel15);
             this.ribbonTab4.Text = "Narzędzia";
             // 
             // ribbonPanel5
@@ -508,6 +528,7 @@ namespace Test
             // 
             this.ribbonTab5.Name = "ribbonTab5";
             this.ribbonTab5.Panels.Add(this.ribbonPanel6);
+            this.ribbonTab5.Panels.Add(this.ribbonPanel14);
             this.ribbonTab5.Text = "Leki";
             // 
             // ribbonPanel6
@@ -580,6 +601,7 @@ namespace Test
             // 
             this.ribbonTab6.Name = "ribbonTab6";
             this.ribbonTab6.Panels.Add(this.ribbonPanel7);
+            this.ribbonTab6.Panels.Add(this.ribbonPanel18);
             this.ribbonTab6.Text = "Wizyty";
             // 
             // ribbonPanel7
@@ -652,6 +674,7 @@ namespace Test
             // 
             this.ribbonTab7.Name = "ribbonTab7";
             this.ribbonTab7.Panels.Add(this.ribbonPanel8);
+            this.ribbonTab7.Panels.Add(this.ribbonPanel17);
             this.ribbonTab7.Text = "Operacje";
             // 
             // ribbonPanel8
@@ -792,13 +815,20 @@ namespace Test
             // 
             this.ribbonTab9.Name = "ribbonTab9";
             this.ribbonTab9.Panels.Add(this.ribbonPanel10);
+            this.ribbonTab9.Panels.Add(this.ribbonPanel19);
             this.ribbonTab9.Text = "Producenci";
             // 
             // ribbonPanel10
             // 
             this.ribbonPanel10.ButtonMoreVisible = false;
+            this.ribbonPanel10.Items.Add(this.btnSupplierShow);
+            this.ribbonPanel10.Items.Add(this.btnSupplierAdd);
+            this.ribbonPanel10.Items.Add(this.btnSupplierEdit);
+            this.ribbonPanel10.Items.Add(this.btnSupplierDelete);
+            this.ribbonPanel10.Items.Add(this.btnSupplierRefresh);
+            this.ribbonPanel10.Items.Add(this.btnSupplierFilter);
             this.ribbonPanel10.Name = "ribbonPanel10";
-            this.ribbonPanel10.Text = "Zarządzanie bazą";
+            this.ribbonPanel10.Text = "Zarządzanie - Producenci";
             // 
             // ribbonTab10
             // 
@@ -848,6 +878,126 @@ namespace Test
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
+            // 
+            // ribbonPanel13
+            // 
+            this.ribbonPanel13.Items.Add(this.btnDoctorsEnroll);
+            this.ribbonPanel13.Name = "ribbonPanel13";
+            this.ribbonPanel13.Text = "Ogólne";
+            // 
+            // btnDoctorsEnroll
+            // 
+            this.btnDoctorsEnroll.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctorsEnroll.Image")));
+            this.btnDoctorsEnroll.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsEnroll.LargeImage")));
+            this.btnDoctorsEnroll.Name = "btnDoctorsEnroll";
+            this.btnDoctorsEnroll.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsEnroll.SmallImage")));
+            this.btnDoctorsEnroll.Text = "Zatrudnij";
+            // 
+            // ribbonPanel14
+            // 
+            this.ribbonPanel14.Items.Add(this.btnArticleAddUnit);
+            this.ribbonPanel14.Name = "ribbonPanel14";
+            this.ribbonPanel14.Text = "Ogólne";
+            // 
+            // ribbonPanel15
+            // 
+            this.ribbonPanel15.Name = "ribbonPanel15";
+            this.ribbonPanel15.Text = "Ogólne";
+            // 
+            // ribbonPanel16
+            // 
+            this.ribbonPanel16.Name = "ribbonPanel16";
+            this.ribbonPanel16.Text = "Ogólne";
+            // 
+            // btnArticleAddUnit
+            // 
+            this.btnArticleAddUnit.Image = ((System.Drawing.Image)(resources.GetObject("btnArticleAddUnit.Image")));
+            this.btnArticleAddUnit.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnArticleAddUnit.LargeImage")));
+            this.btnArticleAddUnit.Name = "btnArticleAddUnit";
+            this.btnArticleAddUnit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleAddUnit.SmallImage")));
+            this.btnArticleAddUnit.Text = "Jednostka";
+            // 
+            // ribbonPanel17
+            // 
+            this.ribbonPanel17.Items.Add(this.btnOperationAddType);
+            this.ribbonPanel17.Name = "ribbonPanel17";
+            this.ribbonPanel17.Text = "Ogólne";
+            // 
+            // ribbonPanel18
+            // 
+            this.ribbonPanel18.Name = "ribbonPanel18";
+            this.ribbonPanel18.Text = "Ogólne";
+            // 
+            // btnOperationAddType
+            // 
+            this.btnOperationAddType.Image = ((System.Drawing.Image)(resources.GetObject("btnOperationAddType.Image")));
+            this.btnOperationAddType.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOperationAddType.LargeImage")));
+            this.btnOperationAddType.Name = "btnOperationAddType";
+            this.btnOperationAddType.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationAddType.SmallImage")));
+            this.btnOperationAddType.Text = "Typy";
+            // 
+            // ribbonPanel19
+            // 
+            this.ribbonPanel19.Items.Add(this.btnSupplierLocalizationAdd);
+            this.ribbonPanel19.Name = "ribbonPanel19";
+            this.ribbonPanel19.Text = "Ogólne";
+            // 
+            // btnSupplierLocalizationAdd
+            // 
+            this.btnSupplierLocalizationAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplierLocalizationAdd.Image")));
+            this.btnSupplierLocalizationAdd.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierLocalizationAdd.LargeImage")));
+            this.btnSupplierLocalizationAdd.Name = "btnSupplierLocalizationAdd";
+            this.btnSupplierLocalizationAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierLocalizationAdd.SmallImage")));
+            this.btnSupplierLocalizationAdd.Text = "Lokalizacja";
+            this.btnSupplierLocalizationAdd.Click += new System.EventHandler(this.btnLocalizationAdd_Click);
+            // 
+            // btnSupplierShow
+            // 
+            this.btnSupplierShow.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplierShow.Image")));
+            this.btnSupplierShow.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierShow.LargeImage")));
+            this.btnSupplierShow.Name = "btnSupplierShow";
+            this.btnSupplierShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierShow.SmallImage")));
+            this.btnSupplierShow.Text = "Wyświetl";
+            // 
+            // btnSupplierAdd
+            // 
+            this.btnSupplierAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplierAdd.Image")));
+            this.btnSupplierAdd.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierAdd.LargeImage")));
+            this.btnSupplierAdd.Name = "btnSupplierAdd";
+            this.btnSupplierAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierAdd.SmallImage")));
+            this.btnSupplierAdd.Text = "Dodaj";
+            // 
+            // btnSupplierEdit
+            // 
+            this.btnSupplierEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplierEdit.Image")));
+            this.btnSupplierEdit.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierEdit.LargeImage")));
+            this.btnSupplierEdit.Name = "btnSupplierEdit";
+            this.btnSupplierEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierEdit.SmallImage")));
+            this.btnSupplierEdit.Text = "Edytuj";
+            // 
+            // btnSupplierDelete
+            // 
+            this.btnSupplierDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplierDelete.Image")));
+            this.btnSupplierDelete.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierDelete.LargeImage")));
+            this.btnSupplierDelete.Name = "btnSupplierDelete";
+            this.btnSupplierDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierDelete.SmallImage")));
+            this.btnSupplierDelete.Text = "Usuń";
+            // 
+            // btnSupplierRefresh
+            // 
+            this.btnSupplierRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplierRefresh.Image")));
+            this.btnSupplierRefresh.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierRefresh.LargeImage")));
+            this.btnSupplierRefresh.Name = "btnSupplierRefresh";
+            this.btnSupplierRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierRefresh.SmallImage")));
+            this.btnSupplierRefresh.Text = "Odśwież";
+            // 
+            // btnSupplierFilter
+            // 
+            this.btnSupplierFilter.Image = ((System.Drawing.Image)(resources.GetObject("btnSupplierFilter.Image")));
+            this.btnSupplierFilter.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierFilter.LargeImage")));
+            this.btnSupplierFilter.Name = "btnSupplierFilter";
+            this.btnSupplierFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierFilter.SmallImage")));
+            this.btnSupplierFilter.Text = "Filtruj";
             // 
             // Form1
             // 
@@ -950,6 +1100,23 @@ namespace Test
         private System.Windows.Forms.RibbonPanel ribbonPanel11;
         private System.Windows.Forms.RibbonButton btnConfigurationShowDBScript;
         private System.Windows.Forms.RibbonButton btnConfigurationInsertDBData;
+        private System.Windows.Forms.RibbonPanel ribbonPanel13;
+        private System.Windows.Forms.RibbonButton btnDoctorsEnroll;
+        private System.Windows.Forms.RibbonPanel ribbonPanel16;
+        private System.Windows.Forms.RibbonPanel ribbonPanel15;
+        private System.Windows.Forms.RibbonPanel ribbonPanel14;
+        private System.Windows.Forms.RibbonButton btnArticleAddUnit;
+        private System.Windows.Forms.RibbonPanel ribbonPanel18;
+        private System.Windows.Forms.RibbonPanel ribbonPanel17;
+        private System.Windows.Forms.RibbonButton btnOperationAddType;
+        private System.Windows.Forms.RibbonButton btnSupplierShow;
+        private System.Windows.Forms.RibbonButton btnSupplierAdd;
+        private System.Windows.Forms.RibbonButton btnSupplierEdit;
+        private System.Windows.Forms.RibbonButton btnSupplierDelete;
+        private System.Windows.Forms.RibbonButton btnSupplierRefresh;
+        private System.Windows.Forms.RibbonButton btnSupplierFilter;
+        private System.Windows.Forms.RibbonPanel ribbonPanel19;
+        private System.Windows.Forms.RibbonButton btnSupplierLocalizationAdd;
     }
 }
 
