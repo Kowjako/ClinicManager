@@ -313,14 +313,17 @@
     <None Include="Properties\DataSources\ClinicDetails.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Clinics.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Data.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.DrugRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Drugs.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.EmployeeRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Employees.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.LocalizationRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.OperationRow.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Operations.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.PatientRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Patients.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Registrations.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.ToolRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Tools.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
