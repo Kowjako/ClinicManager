@@ -43,6 +43,10 @@
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -310,8 +314,11 @@
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Clinics.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Data.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Drugs.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.EmployeeRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Employees.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.PatientRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Patients.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Registrations.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Tools.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

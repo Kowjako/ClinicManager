@@ -40,7 +40,11 @@ namespace ClinicManager
             this.saveBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this._bsRegistration = new System.Windows.Forms.BindingSource(this.components);
+            this._bsEmployees = new System.Windows.Forms.BindingSource(this.components);
+            this._bsPatients = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._bsRegistration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsPatients)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -94,21 +98,27 @@ namespace ClinicManager
             // 
             // patientBox
             // 
+            this.patientBox.DataSource = this._bsPatients;
+            this.patientBox.DisplayMember = "Pacjent";
             this.patientBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.patientBox.FormattingEnabled = true;
             this.patientBox.Location = new System.Drawing.Point(182, 68);
             this.patientBox.Name = "patientBox";
             this.patientBox.Size = new System.Drawing.Size(325, 21);
             this.patientBox.TabIndex = 19;
+            this.patientBox.ValueMember = "Id";
             // 
             // employeeBox
             // 
+            this.employeeBox.DataSource = this._bsEmployees;
+            this.employeeBox.DisplayMember = "Lekarz";
             this.employeeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.employeeBox.FormattingEnabled = true;
             this.employeeBox.Location = new System.Drawing.Point(182, 100);
             this.employeeBox.Name = "employeeBox";
             this.employeeBox.Size = new System.Drawing.Size(325, 21);
             this.employeeBox.TabIndex = 20;
+            this.employeeBox.ValueMember = "Id";
             // 
             // saveBtn
             // 
@@ -132,6 +142,14 @@ namespace ClinicManager
             // 
             this._bsRegistration.DataSource = typeof(ClinicManager.DataAccessLayer.Registrations);
             // 
+            // _bsEmployees
+            // 
+            this._bsEmployees.DataSource = typeof(ClinicManager.DataAccessLayer.EmployeeRow);
+            // 
+            // _bsPatients
+            // 
+            this._bsPatients.DataSource = typeof(ClinicManager.DataAccessLayer.PatientRow);
+            // 
             // VisitDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,6 +170,8 @@ namespace ClinicManager
             this.Name = "VisitDetails";
             this.Text = "Szczególy wizyty";
             ((System.ComponentModel.ISupportInitialize)(this._bsRegistration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsPatients)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +189,7 @@ namespace ClinicManager
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.BindingSource _bsRegistration;
+        private System.Windows.Forms.BindingSource _bsPatients;
+        private System.Windows.Forms.BindingSource _bsEmployees;
     }
 }

@@ -1,4 +1,6 @@
-﻿using ClinicManager.Interfaces;
+﻿using ClinicManager.DataAccessLayer;
+using ClinicManager.Interfaces;
+using ClinicManager.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,11 +23,53 @@ namespace ClinicManager
         public VisitDetails(DetailsMode mode)
         {
             InitializeComponent();
+
+            Mode = mode;   /* 1 - Add, 2 - Edit */
+            Dictionaries = new StaticDictionaries();
+
+            if (mode == DetailsMode.Add)
+            {
+                _bsRegistration.DataSource = new List<Registrations> { new Registrations() };
+            }
+
+            VisitViewModel = new VisitViewModel();
+
+            var empList = new List<EmployeeRow>();
+            foreach (var employee in Dictionaries.EmployeeList)
+            {
+                empList.Add(employee.Value);
+            }
+            _bsEmployees.DataSource = empList;
+
+            var patientList = new List<PatientRow>();
+            foreach (var patient in Dictionaries.PatientList)
+            {
+                patientList.Add(patient.Value);
+            }
+            _bsPatients.DataSource = patientList;
+        }
+
+        public List<Registrations> BindingSource
+        {
+            set
+            {
+                _bsRegistration.DataSource = value;
+            }
+        }
+
+        public void SetSpecificProperties()
+        {
+            employeeBox.SelectedItem = Dictionaries.EmployeeList.Where(p => p.Value.Id == (_bsRegistration.DataSource as List<Registrations>).First().EmployeeId).First().Value;
+            patientBox.SelectedItem = Dictionaries.PatientList.Where(p => p.Value.Id == (_bsRegistration.DataSource as List<Registrations>).First().PatientId).First().Value;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-
+            var newRegistrationData = (_bsRegistration.DataSource as List<Registrations>).First();
+            newRegistrationData.PatientId = (patientBox.SelectedItem as PatientRow).Id;
+            newRegistrationData.EmployeeId = (employeeBox.SelectedItem as EmployeeRow).Id;
+            VisitViewModel.SaveVisit(newRegistrationData, Mode);
+            this.Close();
         }
     }
 }
