@@ -33,14 +33,19 @@ namespace ClinicManager
 
             ClinicViewModel = new ClinicViewModel();
 
+            var empList = new List<EmployeeRow>();
             foreach (var employee in Dictionaries.EmployeeList)
             {
-                employeeBox.Items.Add(employee.Value.Lekarz);
+                empList.Add(employee.Value);
             }
+            _bsEmployees.DataSource = empList;
+
+            var locList = new List<LocalizationRow>();
             foreach (var localization in Dictionaries.LocalizationList)
             {
-                localizationBox.Items.Add(localization.Value.Kraj + ", " + localization.Value.Miasto + ", " + localization.Value.Budynek);
+                locList.Add(localization.Value);
             }
+            _bsLocalizations.DataSource = locList;
         }
 
         public List<Clinics> BindingSource
@@ -50,17 +55,19 @@ namespace ClinicManager
         
         public void SetSpecificProperties()
         {
-            var locId = (_bsDetails.DataSource as List<Clinics>).First().LocalizationId;
-            var empId = (_bsDetails.DataSource as List<Clinics>).First().EmployeeId;
-            employeeBox.SelectedIndex = Dictionaries.EmployeeList.Values.Where(p => p.Id == empId).First().Id - 1;
-            localizationBox.SelectedIndex = Dictionaries.LocalizationList.Values.Where(p => p.Id == locId).First().Id - 1;
+            employeeBox.SelectedItem = Dictionaries.EmployeeList
+                                                   .Where(p => p.Value.Id == (_bsDetails.DataSource as List<Clinics>)
+                                                   .First().EmployeeId).First().Value;
+            localizationBox.SelectedItem = Dictionaries.LocalizationList
+                                                       .Where(p => p.Value.Id == (_bsDetails.DataSource as List<Clinics>)
+                                                       .First().LocalizationId).First().Value;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
             var newClinicData = (_bsDetails.DataSource as List<Clinics>).First();
-            newClinicData.LocalizationId = localizationBox.SelectedIndex + 1;
-            newClinicData.EmployeeId = employeeBox.SelectedIndex + 1;
+            newClinicData.LocalizationId = (localizationBox.SelectedItem as LocalizationRow).Id;
+            newClinicData.EmployeeId = (employeeBox.SelectedItem as EmployeeRow).Id;
             ClinicViewModel.SaveClinics(newClinicData, Mode);
             this.Close();
         }

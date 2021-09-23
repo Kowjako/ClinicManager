@@ -36,13 +36,17 @@ namespace ClinicManager
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this._bsDetails = new System.Windows.Forms.BindingSource(this.components);
             this.openDatePicker = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.employeeBox = new System.Windows.Forms.ComboBox();
             this.localizationBox = new System.Windows.Forms.ComboBox();
             this.saveBtn = new System.Windows.Forms.Button();
-            this._bsDetails = new System.Windows.Forms.BindingSource(this.components);
+            this._bsEmployees = new System.Windows.Forms.BindingSource(this.components);
+            this._bsLocalizations = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._bsDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsLocalizations)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -103,6 +107,10 @@ namespace ClinicManager
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 5;
             // 
+            // _bsDetails
+            // 
+            this._bsDetails.DataSource = typeof(ClinicManager.DataAccessLayer.Clinics);
+            // 
             // openDatePicker
             // 
             this.openDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this._bsDetails, "OpenDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -125,21 +133,27 @@ namespace ClinicManager
             // 
             // employeeBox
             // 
+            this.employeeBox.DataSource = this._bsEmployees;
+            this.employeeBox.DisplayMember = "Lekarz";
             this.employeeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.employeeBox.FormattingEnabled = true;
             this.employeeBox.Location = new System.Drawing.Point(182, 96);
             this.employeeBox.Name = "employeeBox";
             this.employeeBox.Size = new System.Drawing.Size(325, 21);
             this.employeeBox.TabIndex = 8;
+            this.employeeBox.ValueMember = "Id";
             // 
             // localizationBox
             // 
+            this.localizationBox.DataSource = this._bsLocalizations;
+            this.localizationBox.DisplayMember = "Kraj";
             this.localizationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.localizationBox.FormattingEnabled = true;
             this.localizationBox.Location = new System.Drawing.Point(182, 123);
             this.localizationBox.Name = "localizationBox";
             this.localizationBox.Size = new System.Drawing.Size(325, 21);
             this.localizationBox.TabIndex = 9;
+            this.localizationBox.ValueMember = "Id";
             // 
             // saveBtn
             // 
@@ -151,9 +165,13 @@ namespace ClinicManager
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // _bsDetails
+            // _bsEmployees
             // 
-            this._bsDetails.DataSource = typeof(ClinicManager.DataAccessLayer.Clinics);
+            this._bsEmployees.DataSource = typeof(ClinicManager.DataAccessLayer.EmployeeRow);
+            // 
+            // _bsLocalizations
+            // 
+            this._bsLocalizations.DataSource = typeof(ClinicManager.DataAccessLayer.LocalizationRow);
             // 
             // ClinicDetails
             // 
@@ -178,6 +196,8 @@ namespace ClinicManager
             this.Name = "ClinicDetails";
             this.Text = "Szczególy przychodni";
             ((System.ComponentModel.ISupportInitialize)(this._bsDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsLocalizations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +217,7 @@ namespace ClinicManager
         private System.Windows.Forms.ComboBox localizationBox;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.BindingSource _bsDetails;
+        private System.Windows.Forms.BindingSource _bsEmployees;
+        private System.Windows.Forms.BindingSource _bsLocalizations;
     }
 }

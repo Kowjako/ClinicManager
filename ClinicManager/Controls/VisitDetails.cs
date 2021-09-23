@@ -59,8 +59,12 @@ namespace ClinicManager
 
         public void SetSpecificProperties()
         {
-            employeeBox.SelectedItem = Dictionaries.EmployeeList.Where(p => p.Value.Id == (_bsRegistration.DataSource as List<Registrations>).First().EmployeeId).First().Value;
-            patientBox.SelectedItem = Dictionaries.PatientList.Where(p => p.Value.Id == (_bsRegistration.DataSource as List<Registrations>).First().PatientId).First().Value;
+            employeeBox.SelectedItem = Dictionaries.EmployeeList
+                                                   .Where(p => p.Value.Id == (_bsRegistration.DataSource as List<Registrations>)
+                                                   .First().EmployeeId).First().Value;
+            patientBox.SelectedItem = Dictionaries.PatientList
+                                                  .Where(p => p.Value.Id == (_bsRegistration.DataSource as List<Registrations>)
+                                                  .First().PatientId).First().Value;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
