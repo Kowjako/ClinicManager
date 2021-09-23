@@ -34,10 +34,12 @@ namespace ClinicManager
 
             PatientsViewModel = new PatientViewModel();
 
+            var opList = new List<OperationRow>();
             foreach (var operation in Dictionaries.OperationList)
             {
-                operationBox.Items.Add(operation.Value.Nazwa + " - " + operation.Value.Typ);
+                opList.Add(operation.Value);
             }
+            _bsOperations.DataSource = opList;
         }
 
         public List<Patients> BindingSource
@@ -55,8 +57,9 @@ namespace ClinicManager
 
         public void SetSpecificProperties()
         {
-            var opId = (_bsPatients.DataSource as List<Patients>).First().OperationId;
-            operationBox.SelectedIndex = Dictionaries.OperationList.Values.Where(p => p.Id == opId).First().Id - 1;
+            operationBox.SelectedItem= Dictionaries.OperationList
+                                                     .Where(p => p.Value.Id == (_bsPatients.DataSource as List<Patients>)
+                                                     .First().OperationId).First().Value;
             /* Ustawienie plci */
             if ((_bsPatientsData.DataSource as Data).Gender == "M")
             {
@@ -81,7 +84,7 @@ namespace ClinicManager
                 newData = _bsPatientsData.DataSource as Data;
             }
             newData.Gender = _maleBtn.Checked ? "M" : "K";
-            newPatientData.OperationId = operationBox.SelectedIndex + 1;
+            newPatientData.OperationId = (operationBox.SelectedItem as OperationRow).Id;
             PatientsViewModel.SavePatient(newPatientData, newData, Mode);
             this.Close();
         }
