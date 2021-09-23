@@ -29,27 +29,39 @@ namespace ClinicManager
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this._bsOperation = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.typeBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.toolBox = new System.Windows.Forms.ComboBox();
+            this._bsTools = new System.Windows.Forms.BindingSource(this.components);
+            this.drugBox = new System.Windows.Forms.ComboBox();
+            this._bsDrugs = new System.Windows.Forms.BindingSource(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.saveBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this._bsOperation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsTools)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsDrugs)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsOperation, "Name", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox1.Location = new System.Drawing.Point(182, 10);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 28;
+            // 
+            // _bsOperation
+            // 
+            this._bsOperation.DataSource = typeof(ClinicManager.DataAccessLayer.Operations);
             // 
             // label1
             // 
@@ -71,13 +83,14 @@ namespace ClinicManager
             this.label2.TabIndex = 29;
             this.label2.Text = "Typ";
             // 
-            // comboBox1
+            // typeBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(182, 38);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(325, 21);
-            this.comboBox1.TabIndex = 30;
+            this.typeBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.typeBox.FormattingEnabled = true;
+            this.typeBox.Location = new System.Drawing.Point(182, 38);
+            this.typeBox.Name = "typeBox";
+            this.typeBox.Size = new System.Drawing.Size(325, 21);
+            this.typeBox.TabIndex = 30;
             // 
             // label3
             // 
@@ -92,6 +105,7 @@ namespace ClinicManager
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this._bsOperation, "IsAnesthesia", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBox1.Location = new System.Drawing.Point(182, 72);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(45, 17);
@@ -129,23 +143,37 @@ namespace ClinicManager
             this.label6.TabIndex = 35;
             this.label6.Text = "Opis";
             // 
-            // comboBox2
+            // toolBox
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(182, 98);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(325, 21);
-            this.comboBox2.TabIndex = 36;
+            this.toolBox.DataSource = this._bsTools;
+            this.toolBox.DisplayMember = "Nazwa";
+            this.toolBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.toolBox.FormattingEnabled = true;
+            this.toolBox.Location = new System.Drawing.Point(182, 98);
+            this.toolBox.Name = "toolBox";
+            this.toolBox.Size = new System.Drawing.Size(325, 21);
+            this.toolBox.TabIndex = 36;
+            this.toolBox.ValueMember = "Id";
             // 
-            // comboBox3
+            // _bsTools
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(182, 125);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(325, 21);
-            this.comboBox3.TabIndex = 37;
+            this._bsTools.DataSource = typeof(ClinicManager.DataAccessLayer.ToolRow);
+            // 
+            // drugBox
+            // 
+            this.drugBox.DataSource = this._bsDrugs;
+            this.drugBox.DisplayMember = "Nazwa";
+            this.drugBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.drugBox.FormattingEnabled = true;
+            this.drugBox.Location = new System.Drawing.Point(182, 125);
+            this.drugBox.Name = "drugBox";
+            this.drugBox.Size = new System.Drawing.Size(325, 21);
+            this.drugBox.TabIndex = 37;
+            this.drugBox.ValueMember = "Id";
+            // 
+            // _bsDrugs
+            // 
+            this._bsDrugs.DataSource = typeof(ClinicManager.DataAccessLayer.DrugRow);
             // 
             // textBox2
             // 
@@ -154,30 +182,31 @@ namespace ClinicManager
             this.textBox2.Size = new System.Drawing.Size(325, 20);
             this.textBox2.TabIndex = 38;
             // 
-            // button1
+            // saveBtn
             // 
-            this.button1.Location = new System.Drawing.Point(12, 178);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(495, 23);
-            this.button1.TabIndex = 39;
-            this.button1.Text = "Zatwierdź";
-            this.button1.UseVisualStyleBackColor = true;
+            this.saveBtn.Location = new System.Drawing.Point(12, 178);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(495, 23);
+            this.saveBtn.TabIndex = 39;
+            this.saveBtn.Text = "Zatwierdź";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // OperationDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(519, 205);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.drugBox);
+            this.Controls.Add(this.toolBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.typeBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
@@ -186,6 +215,9 @@ namespace ClinicManager
             this.MinimizeBox = false;
             this.Name = "OperationDetails";
             this.Text = "Szczególy operacji";
+            ((System.ComponentModel.ISupportInitialize)(this._bsOperation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsTools)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsDrugs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,15 +227,18 @@ namespace ClinicManager
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox typeBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox toolBox;
+        private System.Windows.Forms.ComboBox drugBox;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.BindingSource _bsOperation;
+        private System.Windows.Forms.BindingSource _bsTools;
+        private System.Windows.Forms.BindingSource _bsDrugs;
     }
 }

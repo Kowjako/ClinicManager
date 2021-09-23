@@ -691,6 +691,7 @@ namespace Test
             this.btnOperationsEdit.Name = "btnOperationsEdit";
             this.btnOperationsEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsEdit.SmallImage")));
             this.btnOperationsEdit.Text = "Edytuj";
+            this.btnOperationsEdit.Click += new System.EventHandler(this.btnOperationsEdit_Click);
             // 
             // btnOperationsDelete
             // 
@@ -699,6 +700,7 @@ namespace Test
             this.btnOperationsDelete.Name = "btnOperationsDelete";
             this.btnOperationsDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsDelete.SmallImage")));
             this.btnOperationsDelete.Text = "Usuń";
+            this.btnOperationsDelete.Click += new System.EventHandler(this.btnOperationsDelete_Click);
             // 
             // btnOperationsRefresh
             // 
@@ -707,6 +709,7 @@ namespace Test
             this.btnOperationsRefresh.Name = "btnOperationsRefresh";
             this.btnOperationsRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsRefresh.SmallImage")));
             this.btnOperationsRefresh.Text = "Odśwież";
+            this.btnOperationsRefresh.Click += new System.EventHandler(this.btnOperationsRefresh_Click);
             // 
             // btnOperationsFilter
             // 
@@ -715,6 +718,7 @@ namespace Test
             this.btnOperationsFilter.Name = "btnOperationsFilter";
             this.btnOperationsFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationsFilter.SmallImage")));
             this.btnOperationsFilter.Text = "Filtruj";
+            this.btnOperationsFilter.Click += new System.EventHandler(this.btnOperationsFilter_Click);
             // 
             // ribbonTab8
             // 

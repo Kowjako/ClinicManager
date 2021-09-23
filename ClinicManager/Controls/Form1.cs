@@ -314,31 +314,12 @@ namespace Test
 
         #endregion
 
-        
+        #region Operations
 
         private void btnOperationsAdd_Click(object sender, EventArgs e)
         {
-            var form = new OperationDetails();
-            form.ShowDialog();
+            OperationViewModel.AddOperation();
         }
-
-        private void btnPriceAdd_Click(object sender, EventArgs e)
-        {
-            var form = new CostDetails();
-            form.ShowDialog();
-        }
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
 
         private void btnOperationsShow_Click(object sender, EventArgs e)
         {
@@ -350,6 +331,38 @@ namespace Test
                 _gvMain.DataSource = bsMain;
             }
         }
+
+        private void btnOperationsEdit_Click(object sender, EventArgs e)
+        {
+            OperationViewModel.EditOperation(_gvMain.SelectedRows[0].DataBoundItem as OperationRow);
+        }
+
+        private void btnOperationsDelete_Click(object sender, EventArgs e)
+        {
+            OperationViewModel.DeleteOperation(_gvMain.SelectedRows[0].DataBoundItem as OperationRow);
+        }
+
+        private void btnOperationsRefresh_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = OperationViewModel.RefreshOperations();
+        }
+
+        private void btnOperationsFilter_Click(object sender, EventArgs e)
+        {
+            bsMain.DataSource = OperationViewModel.Filter();
+            _gvMain.DataSource = bsMain;
+        }
+
+        #endregion
+
+
+
+        private void btnPriceAdd_Click(object sender, EventArgs e)
+        {
+            var form = new CostDetails();
+            form.ShowDialog();
+        }
+
 
         private void btnPriceShow_Click(object sender, EventArgs e)
         {
