@@ -330,11 +330,13 @@
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.EmployeeRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Employees.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.LocalizationRow.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Localizations.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.OperationRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Operations.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.PatientRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Patients.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.ProducentRow.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Producents.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Registrations.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.ToolRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Tools.datasource" />

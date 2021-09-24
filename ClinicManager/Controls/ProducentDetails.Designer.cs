@@ -29,13 +29,12 @@ namespace ClinicManager.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.saveBtn = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
             this.operationBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this._femaleBtn = new System.Windows.Forms.RadioButton();
@@ -53,21 +52,27 @@ namespace ClinicManager.Controls
             this.label1 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.bsProducents = new System.Windows.Forms.BindingSource(this.components);
+            this.bsData = new System.Windows.Forms.BindingSource(this.components);
+            this.bsLocalizations = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bsProducents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLocalizations)).BeginInit();
             this.SuspendLayout();
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(17, 336);
+            this.saveBtn.Location = new System.Drawing.Point(17, 309);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(528, 23);
+            this.saveBtn.Size = new System.Drawing.Size(525, 23);
             this.saveBtn.TabIndex = 64;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(174, 310);
+            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProducents, "Email", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox5.Location = new System.Drawing.Point(174, 283);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(368, 20);
             this.textBox5.TabIndex = 63;
@@ -76,7 +81,7 @@ namespace ClinicManager.Controls
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(14, 309);
+            this.label10.Location = new System.Drawing.Point(14, 282);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 18);
             this.label10.TabIndex = 62;
@@ -84,8 +89,9 @@ namespace ClinicManager.Controls
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsProducents, "OpenDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(174, 283);
+            this.dateTimePicker2.Location = new System.Drawing.Point(174, 256);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(368, 20);
             this.dateTimePicker2.TabIndex = 61;
@@ -94,47 +100,16 @@ namespace ClinicManager.Controls
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(14, 280);
+            this.label9.Location = new System.Drawing.Point(14, 253);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 18);
             this.label9.TabIndex = 60;
             this.label9.Text = "Data otwarcia";
             // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(174, 252);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(368, 20);
-            this.numericUpDown1.TabIndex = 59;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(14, 249);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 18);
-            this.label8.TabIndex = 58;
-            this.label8.Text = "Priorytet";
-            // 
             // operationBox
             // 
-            this.operationBox.DisplayMember = "Nazwa";
+            this.operationBox.DataSource = this.bsLocalizations;
+            this.operationBox.DisplayMember = "Country";
             this.operationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.operationBox.FormattingEnabled = true;
             this.operationBox.Location = new System.Drawing.Point(174, 187);
@@ -177,6 +152,7 @@ namespace ClinicManager.Controls
             // 
             // textBox4
             // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsData, "Email", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox4.Location = new System.Drawing.Point(174, 156);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(368, 20);
@@ -184,6 +160,7 @@ namespace ClinicManager.Controls
             // 
             // textBox3
             // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsData, "Phone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox3.Location = new System.Drawing.Point(174, 125);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(368, 20);
@@ -191,6 +168,7 @@ namespace ClinicManager.Controls
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsData, "BirthDate", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(174, 69);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -199,6 +177,7 @@ namespace ClinicManager.Controls
             // 
             // textBox2
             // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsData, "Surname", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox2.Location = new System.Drawing.Point(174, 43);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(368, 20);
@@ -206,6 +185,7 @@ namespace ClinicManager.Controls
             // 
             // textBox1
             // 
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsData, "Name", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox1.Location = new System.Drawing.Point(174, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(368, 20);
@@ -273,6 +253,7 @@ namespace ClinicManager.Controls
             // 
             // textBox6
             // 
+            this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProducents, "Name", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.textBox6.Location = new System.Drawing.Point(175, 223);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(368, 20);
@@ -282,17 +263,29 @@ namespace ClinicManager.Controls
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(15, 222);
+            this.label11.Location = new System.Drawing.Point(12, 222);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(137, 18);
             this.label11.TabIndex = 65;
             this.label11.Text = "Nazwa producenta";
             // 
+            // bsProducents
+            // 
+            this.bsProducents.DataSource = typeof(ClinicManager.DataAccessLayer.Producents);
+            // 
+            // bsData
+            // 
+            this.bsData.DataSource = typeof(ClinicManager.DataAccessLayer.Data);
+            // 
+            // bsLocalizations
+            // 
+            this.bsLocalizations.DataSource = typeof(ClinicManager.DataAccessLayer.Localizations);
+            // 
             // ProducentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 371);
+            this.ClientSize = new System.Drawing.Size(552, 341);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.saveBtn);
@@ -300,8 +293,6 @@ namespace ClinicManager.Controls
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.operationBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this._femaleBtn);
@@ -322,7 +313,9 @@ namespace ClinicManager.Controls
             this.MinimizeBox = false;
             this.Name = "ProducentDetails";
             this.Text = "Szczegóły producenta";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProducents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLocalizations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,8 +328,6 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox operationBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton _femaleBtn;
@@ -354,5 +345,8 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.BindingSource bsProducents;
+        private System.Windows.Forms.BindingSource bsLocalizations;
+        private System.Windows.Forms.BindingSource bsData;
     }
 }
