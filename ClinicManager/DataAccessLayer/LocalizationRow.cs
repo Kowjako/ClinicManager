@@ -15,11 +15,6 @@ namespace ClinicManager.DataAccessLayer
     public partial class LocalizationRow
     {
         public int Id { get; set; }
-        public string Kraj { get; set; }
-        public string Miasto { get; set; }
-        public string Ulica { get; set; }
-        public byte Budynek { get; set; }
-        public byte Mieszkanie { get; set; }
-        public string Kod_pocztowy { get; set; }
+        public string Adres { get; set; }
     }
 }

@@ -217,20 +217,9 @@ warning 6002: The table/view 'ClinicData.dbo.LocalizationRow' does not have a pr
         <EntityType Name="LocalizationRow">
           <Key>
             <PropertyRef Name="Id" />
-            <PropertyRef Name="Kraj" />
-            <PropertyRef Name="Miasto" />
-            <PropertyRef Name="Ulica" />
-            <PropertyRef Name="Budynek" />
-            <PropertyRef Name="Mieszkanie" />
-            <PropertyRef Name="Kod pocztowy" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Kraj" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="Miasto" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="Ulica" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="Budynek" Type="tinyint" Nullable="false" />
-          <Property Name="Mieszkanie" Type="tinyint" Nullable="false" />
-          <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="1088" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ClinicData.dbo.OperationRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -597,12 +586,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <EntitySet Name="LocalizationRow" EntityType="Self.LocalizationRow" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [LocalizationRow].[Id] AS [Id], 
-    [LocalizationRow].[Kraj] AS [Kraj], 
-    [LocalizationRow].[Miasto] AS [Miasto], 
-    [LocalizationRow].[Ulica] AS [Ulica], 
-    [LocalizationRow].[Budynek] AS [Budynek], 
-    [LocalizationRow].[Mieszkanie] AS [Mieszkanie], 
-    [LocalizationRow].[Kod pocztowy] AS [Kod pocztowy]
+    [LocalizationRow].[Adres] AS [Adres]
     FROM [dbo].[LocalizationRow] AS [LocalizationRow]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="OperationRow" EntityType="Self.OperationRow" store:Type="Views" store:Schema="dbo">
@@ -964,20 +948,9 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
         <EntityType Name="LocalizationRow">
           <Key>
             <PropertyRef Name="Id" />
-            <PropertyRef Name="Kraj" />
-            <PropertyRef Name="Miasto" />
-            <PropertyRef Name="Ulica" />
-            <PropertyRef Name="Budynek" />
-            <PropertyRef Name="Mieszkanie" />
-            <PropertyRef Name="Kod_pocztowy" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Kraj" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Miasto" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Ulica" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Budynek" Type="Byte" Nullable="false" />
-          <Property Name="Mieszkanie" Type="Byte" Nullable="false" />
-          <Property Name="Kod_pocztowy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Adres" Type="String" MaxLength="1088" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OperationRow">
           <Key>
@@ -1571,12 +1544,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
             <EntityTypeMapping TypeName="ClinicDataModel.LocalizationRow">
               <MappingFragment StoreEntitySet="LocalizationRow">
                 <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Kraj" ColumnName="Kraj" />
-                <ScalarProperty Name="Miasto" ColumnName="Miasto" />
-                <ScalarProperty Name="Ulica" ColumnName="Ulica" />
-                <ScalarProperty Name="Budynek" ColumnName="Budynek" />
-                <ScalarProperty Name="Mieszkanie" ColumnName="Mieszkanie" />
-                <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
