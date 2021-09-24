@@ -17,7 +17,7 @@ namespace ClinicManager.DataAccessLayer
         public int Id { get; set; }
         public string Nazwa_producenta { get; set; }
         public string Email { get; set; }
-        public Nullable<byte> Siedziba_firmy { get; set; }
+        public string Siedziba_firmy { get; set; }
         public string Kierownik { get; set; }
     }
 }

@@ -290,7 +290,7 @@ warning 6002: The table/view 'ClinicData.dbo.ProducentRow' does not have a prima
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Nazwa producenta" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Email" Type="nvarchar" MaxLength="255" />
-          <Property Name="Siedziba firmy" Type="tinyint" />
+          <Property Name="Siedziba firmy" Type="nvarchar" MaxLength="542" />
           <Property Name="Kierownik" Type="nvarchar" MaxLength="511" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -1029,7 +1029,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_producenta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="Siedziba_firmy" Type="Byte" />
+          <Property Name="Siedziba_firmy" Type="String" MaxLength="542" FixedLength="false" Unicode="true" />
           <Property Name="Kierownik" Type="String" MaxLength="511" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="RegistrationRow">
