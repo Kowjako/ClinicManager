@@ -427,7 +427,7 @@ namespace Test
 
         private void btnSupplierRefresh_Click(object sender, EventArgs e)
         {
-            bsMain = ProducentViewModel.RefreshProducents();
+            _gvMain.DataSource = ProducentViewModel.RefreshProducents();
         }
 
         private void btnSupplierFilter_Click(object sender, EventArgs e)

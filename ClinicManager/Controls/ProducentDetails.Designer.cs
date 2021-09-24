@@ -68,6 +68,7 @@ namespace ClinicManager.Controls
             this.saveBtn.TabIndex = 64;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // textBox5
             // 
@@ -113,7 +114,7 @@ namespace ClinicManager.Controls
             // localizationBox
             // 
             this.localizationBox.DataSource = this.bsLocalizations;
-            this.localizationBox.DisplayMember = "Country";
+            this.localizationBox.DisplayMember = "Adres";
             this.localizationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.localizationBox.FormattingEnabled = true;
             this.localizationBox.Location = new System.Drawing.Point(169, 186);
@@ -124,7 +125,7 @@ namespace ClinicManager.Controls
             // 
             // bsLocalizations
             // 
-            this.bsLocalizations.DataSource = typeof(ClinicManager.DataAccessLayer.Localizations);
+            this.bsLocalizations.DataSource = typeof(ClinicManager.DataAccessLayer.LocalizationRow);
             // 
             // label7
             // 
@@ -346,7 +347,7 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.BindingSource bsProducents;
-        private System.Windows.Forms.BindingSource bsLocalizations;
         private System.Windows.Forms.BindingSource bsData;
+        private System.Windows.Forms.BindingSource bsLocalizations;
     }
 }

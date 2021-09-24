@@ -31,23 +31,23 @@ namespace ClinicManager
         {
             this.components = new System.ComponentModel.Container();
             this.drugsBox = new System.Windows.Forms.ComboBox();
+            this.bsDrugs = new System.Windows.Forms.BindingSource(this.components);
             this.producentBox = new System.Windows.Forms.ComboBox();
+            this.bsProducent = new System.Windows.Forms.BindingSource(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bsCosts = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.bsCosts = new System.Windows.Forms.BindingSource(this.components);
-            this.bsProducent = new System.Windows.Forms.BindingSource(this.components);
-            this.bsDrugs = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCosts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProducent)).BeginInit();
+            this.saveBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsDrugs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProducent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCosts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // drugsBox
@@ -61,6 +61,10 @@ namespace ClinicManager
             this.drugsBox.Size = new System.Drawing.Size(325, 21);
             this.drugsBox.TabIndex = 24;
             // 
+            // bsDrugs
+            // 
+            this.bsDrugs.DataSource = typeof(ClinicManager.DataAccessLayer.DrugRow);
+            // 
             // producentBox
             // 
             this.producentBox.DataSource = this.bsProducent;
@@ -71,6 +75,10 @@ namespace ClinicManager
             this.producentBox.Name = "producentBox";
             this.producentBox.Size = new System.Drawing.Size(325, 21);
             this.producentBox.TabIndex = 23;
+            // 
+            // bsProducent
+            // 
+            this.bsProducent.DataSource = typeof(ClinicManager.DataAccessLayer.ProducentRow);
             // 
             // label4
             // 
@@ -99,6 +107,10 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 29;
+            // 
+            // bsCosts
+            // 
+            this.bsCosts.DataSource = typeof(ClinicManager.DataAccessLayer.Costs);
             // 
             // label1
             // 
@@ -146,33 +158,22 @@ namespace ClinicManager
             this.numericUpDown1.Size = new System.Drawing.Size(325, 20);
             this.numericUpDown1.TabIndex = 33;
             // 
-            // button1
+            // saveBtn
             // 
-            this.button1.Location = new System.Drawing.Point(12, 144);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(495, 23);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Zatwierdź";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // bsCosts
-            // 
-            this.bsCosts.DataSource = typeof(ClinicManager.DataAccessLayer.Costs);
-            // 
-            // bsProducent
-            // 
-            this.bsProducent.DataSource = typeof(ClinicManager.DataAccessLayer.ProducentRow);
-            // 
-            // bsDrugs
-            // 
-            this.bsDrugs.DataSource = typeof(ClinicManager.DataAccessLayer.DrugRow);
+            this.saveBtn.Location = new System.Drawing.Point(12, 144);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(495, 23);
+            this.saveBtn.TabIndex = 40;
+            this.saveBtn.Text = "Zatwierdź";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // CostDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 173);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox2);
@@ -188,10 +189,10 @@ namespace ClinicManager
             this.MinimizeBox = false;
             this.Name = "CostDetails";
             this.Text = "Szczególy cennika";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCosts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProducent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDrugs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProducent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCosts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,7 +210,7 @@ namespace ClinicManager
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.BindingSource bsCosts;
         private System.Windows.Forms.BindingSource bsProducent;
         private System.Windows.Forms.BindingSource bsDrugs;

@@ -40,10 +40,10 @@ namespace ClinicManager
             this.openDatePicker = new System.Windows.Forms.DateTimePicker();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.employeeBox = new System.Windows.Forms.ComboBox();
-            this.localizationBox = new System.Windows.Forms.ComboBox();
-            this.saveBtn = new System.Windows.Forms.Button();
             this._bsEmployees = new System.Windows.Forms.BindingSource(this.components);
+            this.localizationBox = new System.Windows.Forms.ComboBox();
             this._bsLocalizations = new System.Windows.Forms.BindingSource(this.components);
+            this.saveBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._bsDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsLocalizations)).BeginInit();
@@ -143,10 +143,14 @@ namespace ClinicManager
             this.employeeBox.TabIndex = 8;
             this.employeeBox.ValueMember = "Id";
             // 
+            // _bsEmployees
+            // 
+            this._bsEmployees.DataSource = typeof(ClinicManager.DataAccessLayer.EmployeeRow);
+            // 
             // localizationBox
             // 
             this.localizationBox.DataSource = this._bsLocalizations;
-            this.localizationBox.DisplayMember = "Kraj";
+            this.localizationBox.DisplayMember = "Adres";
             this.localizationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.localizationBox.FormattingEnabled = true;
             this.localizationBox.Location = new System.Drawing.Point(182, 123);
@@ -154,6 +158,10 @@ namespace ClinicManager
             this.localizationBox.Size = new System.Drawing.Size(325, 21);
             this.localizationBox.TabIndex = 9;
             this.localizationBox.ValueMember = "Id";
+            // 
+            // _bsLocalizations
+            // 
+            this._bsLocalizations.DataSource = typeof(ClinicManager.DataAccessLayer.LocalizationRow);
             // 
             // saveBtn
             // 
@@ -164,14 +172,6 @@ namespace ClinicManager
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
-            // _bsEmployees
-            // 
-            this._bsEmployees.DataSource = typeof(ClinicManager.DataAccessLayer.EmployeeRow);
-            // 
-            // _bsLocalizations
-            // 
-            this._bsLocalizations.DataSource = typeof(ClinicManager.DataAccessLayer.LocalizationRow);
             // 
             // ClinicDetails
             // 
