@@ -241,7 +241,7 @@ JOIN Clinics c ON (o.ClinicId = c.Id)
 GO
 
 CREATE VIEW LocalizationRow AS
-SELECT l.Id 'Id', l.Country 'Kraj', l.City 'Miasto', l.Street 'Ulica', l.House 'Budynek', l.Flat 'Mieszkanie', l.PostalCode 'Kod pocztowy'
+SELECT l.Id 'Id', l.Country + '/' + l.City + '/' + l.Street + '/' + CAST(l.House as NVARCHAR) + '/' + CAST(l.Flat as NVARCHAR) + ' -> ' + l.PostalCode 'Adres'
 FROM Localizations l
 GO
 
