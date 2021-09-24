@@ -422,7 +422,7 @@ namespace Test
 
         private void btnSupplierDelete_Click(object sender, EventArgs e)
         {
-            ProducentViewModel.DeleteProducent(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow)
+            ProducentViewModel.DeleteProducent(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
         }
 
         private void btnSupplierRefresh_Click(object sender, EventArgs e)

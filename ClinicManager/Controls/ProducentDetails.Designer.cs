@@ -32,14 +32,17 @@ namespace ClinicManager.Controls
             this.components = new System.ComponentModel.Container();
             this.saveBtn = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.bsProducents = new System.Windows.Forms.BindingSource(this.components);
             this.label10 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.operationBox = new System.Windows.Forms.ComboBox();
+            this.localizationBox = new System.Windows.Forms.ComboBox();
+            this.bsLocalizations = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this._femaleBtn = new System.Windows.Forms.RadioButton();
             this._maleBtn = new System.Windows.Forms.RadioButton();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.bsData = new System.Windows.Forms.BindingSource(this.components);
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -52,12 +55,9 @@ namespace ClinicManager.Controls
             this.label1 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.bsProducents = new System.Windows.Forms.BindingSource(this.components);
-            this.bsData = new System.Windows.Forms.BindingSource(this.components);
-            this.bsLocalizations = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsProducents)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLocalizations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsData)).BeginInit();
             this.SuspendLayout();
             // 
             // saveBtn
@@ -76,6 +76,10 @@ namespace ClinicManager.Controls
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(368, 20);
             this.textBox5.TabIndex = 63;
+            // 
+            // bsProducents
+            // 
+            this.bsProducents.DataSource = typeof(ClinicManager.DataAccessLayer.Producents);
             // 
             // label10
             // 
@@ -106,17 +110,21 @@ namespace ClinicManager.Controls
             this.label9.TabIndex = 60;
             this.label9.Text = "Data otwarcia";
             // 
-            // operationBox
+            // localizationBox
             // 
-            this.operationBox.DataSource = this.bsLocalizations;
-            this.operationBox.DisplayMember = "Country";
-            this.operationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.operationBox.FormattingEnabled = true;
-            this.operationBox.Location = new System.Drawing.Point(169, 186);
-            this.operationBox.Name = "operationBox";
-            this.operationBox.Size = new System.Drawing.Size(368, 21);
-            this.operationBox.TabIndex = 57;
-            this.operationBox.ValueMember = "Id";
+            this.localizationBox.DataSource = this.bsLocalizations;
+            this.localizationBox.DisplayMember = "Country";
+            this.localizationBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.localizationBox.FormattingEnabled = true;
+            this.localizationBox.Location = new System.Drawing.Point(169, 186);
+            this.localizationBox.Name = "localizationBox";
+            this.localizationBox.Size = new System.Drawing.Size(368, 21);
+            this.localizationBox.TabIndex = 57;
+            this.localizationBox.ValueMember = "Id";
+            // 
+            // bsLocalizations
+            // 
+            this.bsLocalizations.DataSource = typeof(ClinicManager.DataAccessLayer.Localizations);
             // 
             // label7
             // 
@@ -157,6 +165,10 @@ namespace ClinicManager.Controls
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(368, 20);
             this.textBox4.TabIndex = 53;
+            // 
+            // bsData
+            // 
+            this.bsData.DataSource = typeof(ClinicManager.DataAccessLayer.Data);
             // 
             // textBox3
             // 
@@ -269,18 +281,6 @@ namespace ClinicManager.Controls
             this.label11.TabIndex = 65;
             this.label11.Text = "Nazwa producenta";
             // 
-            // bsProducents
-            // 
-            this.bsProducents.DataSource = typeof(ClinicManager.DataAccessLayer.Producents);
-            // 
-            // bsData
-            // 
-            this.bsData.DataSource = typeof(ClinicManager.DataAccessLayer.Data);
-            // 
-            // bsLocalizations
-            // 
-            this.bsLocalizations.DataSource = typeof(ClinicManager.DataAccessLayer.Localizations);
-            // 
             // ProducentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,7 +293,7 @@ namespace ClinicManager.Controls
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.operationBox);
+            this.Controls.Add(this.localizationBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this._femaleBtn);
             this.Controls.Add(this._maleBtn);
@@ -314,8 +314,8 @@ namespace ClinicManager.Controls
             this.Name = "ProducentDetails";
             this.Text = "Szczegóły producenta";
             ((System.ComponentModel.ISupportInitialize)(this.bsProducents)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLocalizations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,7 +328,7 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox operationBox;
+        private System.Windows.Forms.ComboBox localizationBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton _femaleBtn;
         private System.Windows.Forms.RadioButton _maleBtn;
