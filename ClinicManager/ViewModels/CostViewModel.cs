@@ -17,7 +17,7 @@ namespace ClinicManager.ViewModels
     {
         public void AddCost()
         {
-            var form = new ClinicDetails(DetailsMode.Add);
+            var form = new CostDetails(DetailsMode.Add);
             form.ShowDialog();
         }
 
