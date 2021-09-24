@@ -33,7 +33,7 @@ namespace ClinicManager.Controls
             this.bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.bsClinics = new System.Windows.Forms.BindingSource(this.components);
             this.clinicBox = new System.Windows.Forms.ComboBox();
-            this.patientBox = new System.Windows.Forms.ComboBox();
+            this.empBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this._isManager = new System.Windows.Forms.CheckBox();
@@ -62,16 +62,16 @@ namespace ClinicManager.Controls
             this.clinicBox.Size = new System.Drawing.Size(365, 21);
             this.clinicBox.TabIndex = 53;
             // 
-            // patientBox
+            // empBox
             // 
-            this.patientBox.DataSource = this.bsEmployees;
-            this.patientBox.DisplayMember = "Lekarz";
-            this.patientBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.patientBox.FormattingEnabled = true;
-            this.patientBox.Location = new System.Drawing.Point(167, 12);
-            this.patientBox.Name = "patientBox";
-            this.patientBox.Size = new System.Drawing.Size(365, 21);
-            this.patientBox.TabIndex = 52;
+            this.empBox.DataSource = this.bsEmployees;
+            this.empBox.DisplayMember = "Lekarz";
+            this.empBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.empBox.FormattingEnabled = true;
+            this.empBox.Location = new System.Drawing.Point(167, 12);
+            this.empBox.Name = "empBox";
+            this.empBox.Size = new System.Drawing.Size(365, 21);
+            this.empBox.TabIndex = 52;
             // 
             // label2
             // 
@@ -132,7 +132,7 @@ namespace ClinicManager.Controls
             this.Controls.Add(this.label3);
             this.Controls.Add(this._isManager);
             this.Controls.Add(this.clinicBox);
-            this.Controls.Add(this.patientBox);
+            this.Controls.Add(this.empBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -152,7 +152,7 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.BindingSource bsEmployees;
         private System.Windows.Forms.BindingSource bsClinics;
         private System.Windows.Forms.ComboBox clinicBox;
-        private System.Windows.Forms.ComboBox patientBox;
+        private System.Windows.Forms.ComboBox empBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox _isManager;
