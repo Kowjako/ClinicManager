@@ -37,6 +37,7 @@ namespace Test
         IOperationDetailsViewModel OperationViewModel;
         ICostDetailsViewModel CostViewModel;
         IDoctorDetailsViewModel EmployeeViewModel;
+        IProducentDetailsViewModel ProducentViewModel;
 
         #endregion
 
@@ -53,6 +54,7 @@ namespace Test
             OperationViewModel = new OperationViewModel();
             CostViewModel = new CostViewModel();
             EmployeeViewModel = new EmployeeViewModel();
+            ProducentViewModel = new ProducentViewModel();
         }
 
         #endregion
@@ -399,32 +401,39 @@ namespace Test
         #region Producents
         private void btnSupplierShow_Click(object sender, EventArgs e)
         {
-
+            using (var context = new ClinicDataEntities())
+            {
+                var prodList = context.ProducentRow.ToList();
+                bsMain.DataSource = typeof(ProducentRow);
+                bsMain.DataSource = prodList;
+                _gvMain.DataSource = bsMain;
+            }
         }
 
         private void btnSupplierAdd_Click(object sender, EventArgs e)
         {
-
+            ProducentViewModel.AddProducent();
         }
 
         private void btnSupplierEdit_Click(object sender, EventArgs e)
         {
-
+            ProducentViewModel.EditProducent(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
         }
 
         private void btnSupplierDelete_Click(object sender, EventArgs e)
         {
-
+            ProducentViewModel.DeleteProducent(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow)
         }
 
         private void btnSupplierRefresh_Click(object sender, EventArgs e)
         {
-
+            bsMain = ProducentViewModel.RefreshProducents();
         }
 
         private void btnSupplierFilter_Click(object sender, EventArgs e)
         {
-
+            bsMain.DataSource = ProducentViewModel.Filter();
+            _gvMain.DataSource = bsMain;
         }
         #endregion
 
@@ -452,6 +461,5 @@ namespace Test
 
         #endregion
 
-        
     }
 }
