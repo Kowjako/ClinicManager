@@ -17,5 +17,6 @@ namespace ClinicManager.Interfaces
         List<DrugRow> Filter();
         void EditArticle(DrugRow row);
         void AddArticle();
+        void AddUnit();
     }
 }

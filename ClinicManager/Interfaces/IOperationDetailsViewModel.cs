@@ -17,5 +17,6 @@ namespace ClinicManager.Interfaces
         List<OperationRow> Filter();
         void EditOperation(OperationRow row);
         void AddOperation();
+        void AddOperationType();
     }
 }

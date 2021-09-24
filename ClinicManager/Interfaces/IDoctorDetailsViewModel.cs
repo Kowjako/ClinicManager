@@ -17,5 +17,6 @@ namespace ClinicManager.Interfaces
         List<EmployeeRow> Filter();
         void EditEmployee(EmployeeRow row);
         void AddEmployee();
+        void Enroll();
     }
 }
