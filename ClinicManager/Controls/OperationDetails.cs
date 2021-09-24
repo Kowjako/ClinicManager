@@ -48,7 +48,7 @@ namespace ClinicManager
             }
             _bsDrugs.DataSource = drugList;
 
-            foreach(var item in Dictionaries.TypeOperationList.Value)
+            foreach(var item in Dictionaries.TypeOperationList)
             {
                 typeBox.Items.Add(item.Value);
             }
