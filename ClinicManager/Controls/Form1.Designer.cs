@@ -304,6 +304,7 @@ namespace Test
             this.btnOpinionAdd.Name = "btnOpinionAdd";
             this.btnOpinionAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionAdd.SmallImage")));
             this.btnOpinionAdd.Text = "Dodaj opinię";
+            this.btnOpinionAdd.Click += new System.EventHandler(this.btnOpinionAdd_Click);
             // 
             // ribbonTab2
             // 

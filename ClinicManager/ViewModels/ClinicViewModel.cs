@@ -22,6 +22,12 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public void AddOpinion()
+        {
+            var form = new OpinionDetails();
+            form.ShowDialog();
+        }
+
         public void DeleteClinics(ClinicRow clinic)
         {
             using (var context = new ClinicDataEntities())

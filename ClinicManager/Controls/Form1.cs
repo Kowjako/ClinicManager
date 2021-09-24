@@ -87,6 +87,11 @@ namespace Test
             _gvMain.DataSource = ClinicViewModel.GetOpinions(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
         }
 
+        private void btnOpinionAdd_Click(object sender, EventArgs e)
+        {
+            ClinicViewModel.AddOpinion();
+        }
+
         private void btnLocalizationAdd_Click(object sender, EventArgs e)
         {
             var form = new LocalizationDetails();
@@ -461,5 +466,6 @@ namespace Test
 
         #endregion
 
+        
     }
 }

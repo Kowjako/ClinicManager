@@ -134,6 +134,12 @@
     <Compile Include="Controls\OperationDetails.Designer.cs">
       <DependentUpon>OperationDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\OpinionDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\OpinionDetails.Designer.cs">
+      <DependentUpon>OpinionDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PatientDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -291,6 +297,9 @@
     <EmbeddedResource Include="Controls\OperationDetails.resx">
       <DependentUpon>OperationDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OpinionDetails.resx">
+      <DependentUpon>OpinionDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\PatientDetails.resx">
       <DependentUpon>PatientDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +331,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ClinicDetails.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.ClinicRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Clinics.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Costs.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Data.datasource" />
@@ -367,6 +377,8 @@
       <DependentUpon>Clinic.edmx</DependentUpon>
       <LastGenOutput>Clinic.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\17999_bookmark_favorite_star_icon.png" />
+    <None Include="Resources\2006569_bookmark_media_social_star_icon.png" />
     <Content Include="SQL\ClinicBase.sql" />
     <Content Include="SQL\ClinicData.sql" />
   </ItemGroup>
