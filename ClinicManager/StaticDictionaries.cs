@@ -17,6 +17,7 @@ namespace ClinicManager
         public Dictionary<int, string> TypeOperationList { get; set; }
         public Dictionary<int, ToolRow> ToolList { get; set; }
         public Dictionary<int, DrugRow> DrugList { get; set; }
+        public Dictionary<int, ProducentRow> ProducentList { get; set; }
 
         public StaticDictionaries()
         {
@@ -28,6 +29,7 @@ namespace ClinicManager
             TypeOperationList = new Dictionary<int, string>();
             ToolList = new Dictionary<int, ToolRow>();
             DrugList = new Dictionary<int, DrugRow>();
+            ProducentList = new Dictionary<int, ProducentRow>();
 
             using(var context = new ClinicDataEntities())
             {
@@ -37,6 +39,7 @@ namespace ClinicManager
                 var tmpPatientList = context.PatientRow.ToList();
                 var tmpToolList = context.ToolRow.ToList();
                 var tmpDrugList = context.DrugRow.ToList();
+                var tmpProducentList = context.ProducentRow.ToList();
 
                 foreach(var obj in tmpLocalizationList)
                 {
@@ -61,6 +64,10 @@ namespace ClinicManager
                 foreach (var obj in tmpDrugList)
                 {
                     DrugList.Add(obj.Id, obj);
+                }
+                foreach (var obj in tmpProducentList)
+                {
+                    ProducentList.Add(obj.Id, obj);
                 }
             }
 
