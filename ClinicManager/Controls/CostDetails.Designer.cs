@@ -52,6 +52,8 @@ namespace ClinicManager
             // 
             // drugsBox
             // 
+            this.drugsBox.DataSource = this.bsDrugs;
+            this.drugsBox.DisplayMember = "Nazwa";
             this.drugsBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drugsBox.FormattingEnabled = true;
             this.drugsBox.Location = new System.Drawing.Point(182, 34);
@@ -61,6 +63,8 @@ namespace ClinicManager
             // 
             // producentBox
             // 
+            this.producentBox.DataSource = this.bsProducent;
+            this.producentBox.DisplayMember = "Nazwa_producenta";
             this.producentBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.producentBox.FormattingEnabled = true;
             this.producentBox.Location = new System.Drawing.Point(182, 6);
