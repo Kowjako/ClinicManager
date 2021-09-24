@@ -34,7 +34,7 @@ namespace ClinicManager
             EmployeeViewModel = new EmployeeViewModel();
 
             var operationList = new List<OperationRow>();
-            foreach (var operation in Dictionaries.OperationList)
+            foreach (var operation in Dictionaries.OperationList.Value)
             {
                 operationList.Add(operation.Value);
             }
@@ -56,7 +56,7 @@ namespace ClinicManager
 
         public void SetSpecificProperties()
         {
-            operationBox.SelectedItem = Dictionaries.OperationList
+            operationBox.SelectedItem = Dictionaries.OperationList.Value
                                                     .Where(p => p.Value.Id == (_bsEmployees.DataSource as List<Employees>)
                                                     .First().OperationId).First().Value;
             /* Ustawienie plci */

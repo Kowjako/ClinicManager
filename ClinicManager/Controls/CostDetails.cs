@@ -34,14 +34,14 @@ namespace ClinicManager
             CostViewModel = new CostViewModel();
 
             var producentList = new List<ProducentRow>();
-            foreach (var operation in Dictionaries.ProducentList)
+            foreach (var operation in Dictionaries.ProducentList.Value)
             {
                 producentList.Add(operation.Value);
             }
             bsProducent.DataSource = producentList;
 
             var drugList = new List<DrugRow>();
-            foreach(var drug in Dictionaries.DrugList)
+            foreach(var drug in Dictionaries.DrugList.Value)
             {
                 drugList.Add(drug.Value);
             }
@@ -58,10 +58,10 @@ namespace ClinicManager
 
         public void SetSpecificProperties()
         {
-            drugsBox.SelectedItem = Dictionaries.DrugList
+            drugsBox.SelectedItem = Dictionaries.DrugList.Value
                                                     .Where(p => p.Value.Id == (bsCosts.DataSource as List<Costs>)
                                                     .First().DrugId).First().Value;
-            producentBox.SelectedItem = Dictionaries.ProducentList
+            producentBox.SelectedItem = Dictionaries.ProducentList.Value
                                                     .Where(p => p.Value.Id == (bsCosts.DataSource as List<Costs>)
                                                     .First().ProducentId).First().Value;
 

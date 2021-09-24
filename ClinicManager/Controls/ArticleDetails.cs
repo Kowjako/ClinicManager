@@ -34,7 +34,7 @@ namespace ClinicManager
 
             ArticleDetailsViewModel = new ArticleViewModel();
 
-            foreach (var operation in Dictionaries.UnitList)
+            foreach (var operation in Dictionaries.UnitList.Value)
             {
                 unitCombo.Items.Add(operation.Value);
             }
@@ -51,13 +51,13 @@ namespace ClinicManager
         public void SetSpecificProperties()
         {
             var unitId = (_bsArticle.DataSource as List<Drugs>).First().Unit;
-            unitCombo.SelectedIndex = Dictionaries.UnitList.Where(p => p.Value == unitId).First().Key - 1;
+            unitCombo.SelectedIndex = Dictionaries.UnitList.Value.Where(p => p.Value == unitId).First().Key - 1;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
             var newDrugData = (_bsArticle.DataSource as List<Drugs>).First();
-            newDrugData.Unit = Dictionaries.UnitList.Where(p => p.Key == unitCombo.SelectedIndex + 1).First().Value;
+            newDrugData.Unit = Dictionaries.UnitList.Value.Where(p => p.Key == unitCombo.SelectedIndex + 1).First().Value;
             ArticleDetailsViewModel.SaveArticle(newDrugData, Mode);
             this.Close();
         }

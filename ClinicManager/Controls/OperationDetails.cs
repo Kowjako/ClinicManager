@@ -35,20 +35,20 @@ namespace ClinicManager
             OperationViewModel = new OperationViewModel();
 
             var toolList = new List<ToolRow>();
-            foreach (var operation in Dictionaries.ToolList)
+            foreach (var operation in Dictionaries.ToolList.Value)
             {
                 toolList.Add(operation.Value);
             }
             _bsTools.DataSource = toolList;
 
             var drugList = new List<DrugRow>();
-            foreach (var operation in Dictionaries.DrugList)
+            foreach (var operation in Dictionaries.DrugList.Value)
             {
                 drugList.Add(operation.Value);
             }
             _bsDrugs.DataSource = drugList;
 
-            foreach(var item in Dictionaries.TypeOperationList)
+            foreach(var item in Dictionaries.TypeOperationList.Value)
             {
                 typeBox.Items.Add(item.Value);
             }
@@ -64,10 +64,10 @@ namespace ClinicManager
 
         public void SetSpecificProperties()
         {
-            drugBox.SelectedItem = Dictionaries.DrugList
+            drugBox.SelectedItem = Dictionaries.DrugList.Value
                                                      .Where(p => p.Value.Id == (_bsOperation.DataSource as List<Operations>)
                                                      .First().DrugId).First().Value;
-            toolBox.SelectedItem = Dictionaries.ToolList
+            toolBox.SelectedItem = Dictionaries.ToolList.Value
                                                      .Where(p => p.Value.Id == (_bsOperation.DataSource as List<Operations>)
                                                      .First().ToolId).First().Value;
             typeBox.SelectedItem = (_bsOperation.DataSource as List<Operations>).First().Type;

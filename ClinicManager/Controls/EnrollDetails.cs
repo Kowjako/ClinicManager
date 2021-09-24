@@ -22,14 +22,14 @@ namespace ClinicManager.Controls
             Dictionaries = new StaticDictionaries();
 
             var empList = new List<EmployeeRow>();
-            foreach (var obj in Dictionaries.EmployeeList)
+            foreach (var obj in Dictionaries.EmployeeList.Value)
             {
                 empList.Add(obj.Value);
             }
             bsEmployees.DataSource = empList;
 
             var clinicList = new List<ClinicRow>();
-            foreach (var obj in Dictionaries.ClinicList)
+            foreach (var obj in Dictionaries.ClinicList.Value)
             {
                 clinicList.Add(obj.Value);
             }

@@ -36,7 +36,7 @@ namespace ClinicManager.Controls
             ProducentViewModel = new ProducentViewModel();
 
             var locList = new List<LocalizationRow>();
-            foreach (var operation in Dictionaries.LocalizationList)
+            foreach (var operation in Dictionaries.LocalizationList.Value)
             {
                 locList.Add(operation.Value);
             }
@@ -58,7 +58,7 @@ namespace ClinicManager.Controls
 
         public void SetSpecificProperties()
         {
-            localizationBox.SelectedItem = Dictionaries.LocalizationList
+            localizationBox.SelectedItem = Dictionaries.LocalizationList.Value
                                                      .Where(p => p.Value.Id == (bsProducents.DataSource as List<Producents>)
                                                      .First().LocalizationId).First().Value;
             /* Ustawienie plci */

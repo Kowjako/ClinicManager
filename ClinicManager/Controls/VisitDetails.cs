@@ -35,14 +35,14 @@ namespace ClinicManager
             VisitViewModel = new VisitViewModel();
 
             var empList = new List<EmployeeRow>();
-            foreach (var employee in Dictionaries.EmployeeList)
+            foreach (var employee in Dictionaries.EmployeeList.Value)
             {
                 empList.Add(employee.Value);
             }
             _bsEmployees.DataSource = empList;
 
             var patientList = new List<PatientRow>();
-            foreach (var patient in Dictionaries.PatientList)
+            foreach (var patient in Dictionaries.PatientList.Value)
             {
                 patientList.Add(patient.Value);
             }
@@ -59,10 +59,10 @@ namespace ClinicManager
 
         public void SetSpecificProperties()
         {
-            employeeBox.SelectedItem = Dictionaries.EmployeeList
+            employeeBox.SelectedItem = Dictionaries.EmployeeList.Value
                                                    .Where(p => p.Value.Id == (_bsRegistration.DataSource as List<Registrations>)
                                                    .First().EmployeeId).First().Value;
-            patientBox.SelectedItem = Dictionaries.PatientList
+            patientBox.SelectedItem = Dictionaries.PatientList.Value
                                                   .Where(p => p.Value.Id == (_bsRegistration.DataSource as List<Registrations>)
                                                   .First().PatientId).First().Value;
         }

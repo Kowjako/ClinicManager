@@ -41,7 +41,7 @@ namespace ClinicManager
             _bsEmployees.DataSource = empList;
 
             var locList = new List<LocalizationRow>();
-            foreach (var localization in Dictionaries.LocalizationList)
+            foreach (var localization in Dictionaries.LocalizationList.Value)
             {
                 locList.Add(localization.Value);
             }
@@ -55,10 +55,10 @@ namespace ClinicManager
         
         public void SetSpecificProperties()
         {
-            employeeBox.SelectedItem = Dictionaries.EmployeeList
+            employeeBox.SelectedItem = Dictionaries.EmployeeList.Value
                                                    .Where(p => p.Value.Id == (_bsDetails.DataSource as List<Clinics>)
                                                    .First().EmployeeId).First().Value;
-            localizationBox.SelectedItem = Dictionaries.LocalizationList
+            localizationBox.SelectedItem = Dictionaries.LocalizationList.Value
                                                        .Where(p => p.Value.Id == (_bsDetails.DataSource as List<Clinics>)
                                                        .First().LocalizationId).First().Value;
         }
