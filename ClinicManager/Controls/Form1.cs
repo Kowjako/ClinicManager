@@ -84,7 +84,14 @@ namespace Test
 
         private void btnOpinionShow_Click(object sender, EventArgs e)
         {
-            _gvMain.DataSource = ClinicViewModel.GetOpinions(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
+            try
+            {
+                _gvMain.DataSource = ClinicViewModel.GetOpinions(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
+            }
+            catch(ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show(null, "Nalezy wybrac przychodnie", "Blad");
+            }
         }
 
         private void btnOpinionAdd_Click(object sender, EventArgs e)
@@ -153,6 +160,11 @@ namespace Test
         {
             bsMain.DataSource = EmployeeViewModel.Filter();
             _gvMain.DataSource = bsMain;
+        }
+
+        private void btnDoctorsEnroll_Click(object sender, EventArgs e)
+        {
+            EmployeeViewModel.Enroll();
         }
 
         #endregion
@@ -463,6 +475,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
 
         #endregion
 

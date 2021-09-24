@@ -392,6 +392,7 @@ namespace Test
             this.btnDoctorsEnroll.Name = "btnDoctorsEnroll";
             this.btnDoctorsEnroll.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsEnroll.SmallImage")));
             this.btnDoctorsEnroll.Text = "Zatrudnij";
+            this.btnDoctorsEnroll.Click += new System.EventHandler(this.btnDoctorsEnroll_Click);
             // 
             // ribbonTab3
             // 
@@ -1004,6 +1005,7 @@ namespace Test
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
+            this._gvMain.MultiSelect = false;
             this._gvMain.Name = "_gvMain";
             this._gvMain.ReadOnly = true;
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
