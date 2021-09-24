@@ -25,6 +25,12 @@ namespace Test
             Edit = 2
         }
 
+        public enum AddValues
+        {
+            Unit = 1,
+            Operation = 2
+        }
+
         #endregion
 
         #region ViewModels
@@ -290,6 +296,11 @@ namespace Test
             _gvMain.DataSource = bsMain;
         }
 
+        private void btnArticleAddUnit_Click(object sender, EventArgs e)
+        {
+            ArticleViewModel.AddUnit();
+        }
+
         #endregion
 
         #region Visits
@@ -370,6 +381,11 @@ namespace Test
         {
             bsMain.DataSource = OperationViewModel.Filter();
             _gvMain.DataSource = bsMain;
+        }
+
+        private void btnOperationAddType_Click(object sender, EventArgs e)
+        {
+            OperationViewModel.AddOperationType();
         }
 
         #endregion
@@ -475,6 +491,8 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
+
 
 
         #endregion

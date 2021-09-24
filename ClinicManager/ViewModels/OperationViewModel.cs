@@ -21,6 +21,12 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public void AddOperationType()
+        {
+            var form = new UnitDetails(AddValues.Operation);
+            form.ShowDialog();
+        }
+
         public void DeleteOperation(OperationRow op)
         {
             using (var context = new ClinicDataEntities())

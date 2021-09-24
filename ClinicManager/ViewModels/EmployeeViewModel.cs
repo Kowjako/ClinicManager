@@ -44,6 +44,12 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public void Enroll()
+        {
+            var form = new EnrollDetails();
+            form.ShowDialog();
+        }
+
         public List<EmployeeRow> Filter()
         {
             var parameters = new string[] { "OperationCount", "OperationId", "ClinicId", "Rank", "Cost" };

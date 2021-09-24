@@ -21,6 +21,12 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public void AddUnit()
+        {
+            var form = new UnitDetails(AddValues.Unit);
+            form.ShowDialog();
+        }
+
         public void DeleteArticle(DrugRow drug)
         {
             using (var context = new ClinicDataEntities())

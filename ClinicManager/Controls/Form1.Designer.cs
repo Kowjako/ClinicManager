@@ -636,6 +636,7 @@ namespace Test
             this.btnArticleAddUnit.Name = "btnArticleAddUnit";
             this.btnArticleAddUnit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleAddUnit.SmallImage")));
             this.btnArticleAddUnit.Text = "Jednostka";
+            this.btnArticleAddUnit.Click += new System.EventHandler(this.btnArticleAddUnit_Click);
             // 
             // ribbonTab6
             // 
@@ -801,6 +802,7 @@ namespace Test
             this.btnOperationAddType.Name = "btnOperationAddType";
             this.btnOperationAddType.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationAddType.SmallImage")));
             this.btnOperationAddType.Text = "Typy";
+            this.btnOperationAddType.Click += new System.EventHandler(this.btnOperationAddType_Click);
             // 
             // ribbonTab8
             // 

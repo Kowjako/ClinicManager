@@ -34,7 +34,7 @@ namespace ClinicManager
             ClinicViewModel = new ClinicViewModel();
 
             var empList = new List<EmployeeRow>();
-            foreach (var employee in Dictionaries.EmployeeList)
+            foreach (var employee in Dictionaries.EmployeeList.Value)
             {
                 empList.Add(employee.Value);
             }
