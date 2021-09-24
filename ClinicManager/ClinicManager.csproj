@@ -140,6 +140,12 @@
     <Compile Include="Controls\PatientDetails.Designer.cs">
       <DependentUpon>PatientDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ProducentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ProducentDetails.Designer.cs">
+      <DependentUpon>ProducentDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ScriptForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,7 @@
     <Compile Include="Interfaces\IFixedAssetViewModel.cs" />
     <Compile Include="Interfaces\IOperationDetailsViewModel.cs" />
     <Compile Include="Interfaces\IPatientDetailsViewModel.cs" />
+    <Compile Include="Interfaces\IProducentDetailsViewModel.cs" />
     <Compile Include="Interfaces\IVisitDetailsViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -254,6 +261,7 @@
     <Compile Include="ViewModels\FixedAssetViewModel.cs" />
     <Compile Include="ViewModels\OperationViewModel.cs" />
     <Compile Include="ViewModels\PatientViewModel.cs" />
+    <Compile Include="ViewModels\ProducentViewModel.cs" />
     <Compile Include="ViewModels\VisitViewModel.cs" />
     <EmbeddedResource Include="Controls\ArticleDetails.resx">
       <DependentUpon>ArticleDetails.cs</DependentUpon>
@@ -285,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\PatientDetails.resx">
       <DependentUpon>PatientDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ProducentDetails.resx">
+      <DependentUpon>ProducentDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ScriptForm.resx">
       <DependentUpon>ScriptForm.cs</DependentUpon>

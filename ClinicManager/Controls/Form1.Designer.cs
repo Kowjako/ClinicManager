@@ -898,6 +898,7 @@ namespace Test
             this.btnSupplierShow.Name = "btnSupplierShow";
             this.btnSupplierShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierShow.SmallImage")));
             this.btnSupplierShow.Text = "Wyświetl";
+            this.btnSupplierShow.Click += new System.EventHandler(this.btnSupplierShow_Click);
             // 
             // btnSupplierAdd
             // 
@@ -906,6 +907,7 @@ namespace Test
             this.btnSupplierAdd.Name = "btnSupplierAdd";
             this.btnSupplierAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierAdd.SmallImage")));
             this.btnSupplierAdd.Text = "Dodaj";
+            this.btnSupplierAdd.Click += new System.EventHandler(this.btnSupplierAdd_Click);
             // 
             // btnSupplierEdit
             // 
@@ -914,6 +916,7 @@ namespace Test
             this.btnSupplierEdit.Name = "btnSupplierEdit";
             this.btnSupplierEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierEdit.SmallImage")));
             this.btnSupplierEdit.Text = "Edytuj";
+            this.btnSupplierEdit.Click += new System.EventHandler(this.btnSupplierEdit_Click);
             // 
             // btnSupplierDelete
             // 
@@ -922,6 +925,7 @@ namespace Test
             this.btnSupplierDelete.Name = "btnSupplierDelete";
             this.btnSupplierDelete.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierDelete.SmallImage")));
             this.btnSupplierDelete.Text = "Usuń";
+            this.btnSupplierDelete.Click += new System.EventHandler(this.btnSupplierDelete_Click);
             // 
             // btnSupplierRefresh
             // 
@@ -930,6 +934,7 @@ namespace Test
             this.btnSupplierRefresh.Name = "btnSupplierRefresh";
             this.btnSupplierRefresh.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierRefresh.SmallImage")));
             this.btnSupplierRefresh.Text = "Odśwież";
+            this.btnSupplierRefresh.Click += new System.EventHandler(this.btnSupplierRefresh_Click);
             // 
             // btnSupplierFilter
             // 
@@ -938,6 +943,7 @@ namespace Test
             this.btnSupplierFilter.Name = "btnSupplierFilter";
             this.btnSupplierFilter.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierFilter.SmallImage")));
             this.btnSupplierFilter.Text = "Filtruj";
+            this.btnSupplierFilter.Click += new System.EventHandler(this.btnSupplierFilter_Click);
             // 
             // ribbonPanel19
             // 

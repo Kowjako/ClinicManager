@@ -396,6 +396,38 @@ namespace Test
 
         #endregion
 
+        #region Producents
+        private void btnSupplierShow_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSupplierAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSupplierEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSupplierDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSupplierRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSupplierFilter_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
         #region Configuration
 
         private void btnConfigurationShowDBScript_Click(object sender, EventArgs e)
@@ -419,5 +451,7 @@ namespace Test
         }
 
         #endregion
+
+        
     }
 }
