@@ -355,12 +355,10 @@ namespace Test
 
         #endregion
 
-
-
+        #region Prices
         private void btnPriceAdd_Click(object sender, EventArgs e)
         {
-            var form = new CostDetails();
-            form.ShowDialog();
+            CostViewModel.AddCost();
         }
 
 
@@ -375,9 +373,34 @@ namespace Test
             }
         }
 
+        private void btnPriceEdit_Click(object sender, EventArgs e)
+        {
+            CostViewModel.EditCost(_gvMain.SelectedRows[0].DataBoundItem as CostRow);
+        }
+
+        private void btnPriceDelete_Click(object sender, EventArgs e)
+        {
+            CostViewModel.DeleteCost(_gvMain.SelectedRows[0].DataBoundItem as CostRow);
+        }
+
+        private void btnPriceRefresh_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = CostViewModel.RefreshCosts();
+        }
+
+        private void btnPriceFilter_Click(object sender, EventArgs e)
+        {
+            bsMain.DataSource = CostViewModel.Filter();
+            _gvMain.DataSource = bsMain;
+        }
+
+        #endregion
+
+        #region Configuration
+
         private void btnConfigurationShowDBScript_Click(object sender, EventArgs e)
         {
-            if(((RibbonButton)sender).Name == "btnConfigurationShowDBScript")
+            if (((RibbonButton)sender).Name == "btnConfigurationShowDBScript")
             {
                 var form = new ScriptForm();
                 form.HeaderText = "Poniższy skrypt należy uruchomić na bazie danych do tworzenia struktury:";
@@ -395,6 +418,6 @@ namespace Test
             }
         }
 
-        
+        #endregion
     }
 }
