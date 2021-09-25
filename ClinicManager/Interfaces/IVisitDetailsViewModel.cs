@@ -17,5 +17,6 @@ namespace ClinicManager.Interfaces
         List<RegistrationRow> Filter();
         void EditRegistration(RegistrationRow row);
         void AddRegistration();
+        void GetSchedule();
     }
 }

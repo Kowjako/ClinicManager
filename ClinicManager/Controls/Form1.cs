@@ -352,6 +352,11 @@ namespace Test
             _gvMain.DataSource = bsMain;
         }
 
+        private void btnVisitsSchedule_Click(object sender, EventArgs e)
+        {
+            VisitViewModel.GetSchedule();
+        }
+
         #endregion
 
         #region Operations
@@ -514,8 +519,7 @@ namespace Test
 
 
 
-        #endregion
 
-       
+        #endregion
     }
 }

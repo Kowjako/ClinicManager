@@ -72,6 +72,12 @@ namespace ClinicManager.ViewModels
             return null;
         }
 
+        public void GetSchedule()
+        {
+            var form = new Schedule();
+            form.ShowDialog();
+        }
+
         public BindingSource RefreshVisits()
         {
             var bsMain = new BindingSource();

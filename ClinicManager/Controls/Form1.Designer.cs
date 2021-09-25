@@ -130,6 +130,7 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.btnVisitsSchedule = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -736,6 +737,7 @@ namespace Test
             // 
             // ribbonPanel18
             // 
+            this.ribbonPanel18.Items.Add(this.btnVisitsSchedule);
             this.ribbonPanel18.Name = "ribbonPanel18";
             this.ribbonPanel18.Text = "Ogólne";
             // 
@@ -1047,6 +1049,15 @@ namespace Test
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
             // 
+            // btnVisitsSchedule
+            // 
+            this.btnVisitsSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitsSchedule.Image")));
+            this.btnVisitsSchedule.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsSchedule.LargeImage")));
+            this.btnVisitsSchedule.Name = "btnVisitsSchedule";
+            this.btnVisitsSchedule.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsSchedule.SmallImage")));
+            this.btnVisitsSchedule.Text = "Rozkład";
+            this.btnVisitsSchedule.Click += new System.EventHandler(this.btnVisitsSchedule_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1168,6 +1179,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnDoctorsShowContact;
         private System.Windows.Forms.RibbonButton btnPatientShowContact;
         private System.Windows.Forms.RibbonButton btnProducentShowContact;
+        private System.Windows.Forms.RibbonButton btnVisitsSchedule;
     }
 }
 
