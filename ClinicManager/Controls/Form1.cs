@@ -173,6 +173,11 @@ namespace Test
             EmployeeViewModel.Enroll();
         }
 
+        private void btnDoctorsShowContact_Click(object sender, EventArgs e)
+        {
+            EmployeeViewModel.ShowContact(_gvMain.SelectedRows[0].DataBoundItem as EmployeeRow);
+        }
+
         #endregion
 
         #region Patients
@@ -212,6 +217,11 @@ namespace Test
         {
             bsMain.DataSource = PatientViewModel.Filter();
             _gvMain.DataSource = bsMain;
+        }
+
+        private void btnPatientShowContact_Click(object sender, EventArgs e)
+        {
+            PatientViewModel.ShowContact(_gvMain.SelectedRows[0].DataBoundItem as PatientRow);
         }
 
         #endregion
@@ -468,6 +478,12 @@ namespace Test
             bsMain.DataSource = ProducentViewModel.Filter();
             _gvMain.DataSource = bsMain;
         }
+
+        private void btnProducentShowContact_Click(object sender, EventArgs e)
+        {
+            ProducentViewModel.ShowContact(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
+        }
+
         #endregion
 
         #region Configuration
@@ -495,8 +511,11 @@ namespace Test
 
 
 
+
+
+
         #endregion
 
-        
+       
     }
 }

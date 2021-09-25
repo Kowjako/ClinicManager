@@ -56,6 +56,7 @@ namespace Test
             this.btnDoctorsFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel13 = new System.Windows.Forms.RibbonPanel();
             this.btnDoctorsEnroll = new System.Windows.Forms.RibbonButton();
+            this.btnDoctorsShowContact = new System.Windows.Forms.RibbonButton();
             this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
             this.btnClientsShow = new System.Windows.Forms.RibbonButton();
@@ -65,6 +66,7 @@ namespace Test
             this.btnClientsRefresh = new System.Windows.Forms.RibbonButton();
             this.btnClientsFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel16 = new System.Windows.Forms.RibbonPanel();
+            this.btnPatientShowContact = new System.Windows.Forms.RibbonButton();
             this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
             this.btnAssetsShow = new System.Windows.Forms.RibbonButton();
@@ -121,6 +123,7 @@ namespace Test
             this.btnSupplierFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel19 = new System.Windows.Forms.RibbonPanel();
             this.btnSupplierLocalizationAdd = new System.Windows.Forms.RibbonButton();
+            this.btnProducentShowContact = new System.Windows.Forms.RibbonButton();
             this.ribbonTab10 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
             this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
@@ -382,6 +385,7 @@ namespace Test
             // ribbonPanel13
             // 
             this.ribbonPanel13.Items.Add(this.btnDoctorsEnroll);
+            this.ribbonPanel13.Items.Add(this.btnDoctorsShowContact);
             this.ribbonPanel13.Name = "ribbonPanel13";
             this.ribbonPanel13.Text = "Ogólne";
             // 
@@ -393,6 +397,15 @@ namespace Test
             this.btnDoctorsEnroll.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsEnroll.SmallImage")));
             this.btnDoctorsEnroll.Text = "Zatrudnij";
             this.btnDoctorsEnroll.Click += new System.EventHandler(this.btnDoctorsEnroll_Click);
+            // 
+            // btnDoctorsShowContact
+            // 
+            this.btnDoctorsShowContact.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctorsShowContact.Image")));
+            this.btnDoctorsShowContact.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsShowContact.LargeImage")));
+            this.btnDoctorsShowContact.Name = "btnDoctorsShowContact";
+            this.btnDoctorsShowContact.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsShowContact.SmallImage")));
+            this.btnDoctorsShowContact.Text = "Kontakt";
+            this.btnDoctorsShowContact.Click += new System.EventHandler(this.btnDoctorsShowContact_Click);
             // 
             // ribbonTab3
             // 
@@ -469,8 +482,18 @@ namespace Test
             // 
             // ribbonPanel16
             // 
+            this.ribbonPanel16.Items.Add(this.btnPatientShowContact);
             this.ribbonPanel16.Name = "ribbonPanel16";
             this.ribbonPanel16.Text = "Ogólne";
+            // 
+            // btnPatientShowContact
+            // 
+            this.btnPatientShowContact.Image = ((System.Drawing.Image)(resources.GetObject("btnPatientShowContact.Image")));
+            this.btnPatientShowContact.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPatientShowContact.LargeImage")));
+            this.btnPatientShowContact.Name = "btnPatientShowContact";
+            this.btnPatientShowContact.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPatientShowContact.SmallImage")));
+            this.btnPatientShowContact.Text = "Kontakt";
+            this.btnPatientShowContact.Click += new System.EventHandler(this.btnPatientShowContact_Click);
             // 
             // ribbonTab4
             // 
@@ -952,6 +975,7 @@ namespace Test
             // ribbonPanel19
             // 
             this.ribbonPanel19.Items.Add(this.btnSupplierLocalizationAdd);
+            this.ribbonPanel19.Items.Add(this.btnProducentShowContact);
             this.ribbonPanel19.Name = "ribbonPanel19";
             this.ribbonPanel19.Text = "Ogólne";
             // 
@@ -963,6 +987,15 @@ namespace Test
             this.btnSupplierLocalizationAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnSupplierLocalizationAdd.SmallImage")));
             this.btnSupplierLocalizationAdd.Text = "Lokalizacja";
             this.btnSupplierLocalizationAdd.Click += new System.EventHandler(this.btnLocalizationAdd_Click);
+            // 
+            // btnProducentShowContact
+            // 
+            this.btnProducentShowContact.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentShowContact.Image")));
+            this.btnProducentShowContact.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentShowContact.LargeImage")));
+            this.btnProducentShowContact.Name = "btnProducentShowContact";
+            this.btnProducentShowContact.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentShowContact.SmallImage")));
+            this.btnProducentShowContact.Text = "Kontakt";
+            this.btnProducentShowContact.Click += new System.EventHandler(this.btnProducentShowContact_Click);
             // 
             // ribbonTab10
             // 
@@ -1132,6 +1165,9 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnSupplierFilter;
         private System.Windows.Forms.RibbonPanel ribbonPanel19;
         private System.Windows.Forms.RibbonButton btnSupplierLocalizationAdd;
+        private System.Windows.Forms.RibbonButton btnDoctorsShowContact;
+        private System.Windows.Forms.RibbonButton btnPatientShowContact;
+        private System.Windows.Forms.RibbonButton btnProducentShowContact;
     }
 }
 
