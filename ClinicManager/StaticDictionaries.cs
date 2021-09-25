@@ -25,15 +25,15 @@ namespace ClinicManager
 
         #endregion
 
-        #region Constant Dictionaries
+        #region Binary Dictionaries
 
         public Dictionary<int, string> TypeOperationList { get; set; } = new Dictionary<int, string>();
         public Dictionary<int, string> UnitList { get; set; } = new Dictionary<int, string>();
 
         #endregion
 
-        const string typePath = "types.bin";
-        const string operationPath = "path.bin";
+        const string typePath = @"..\..\BinaryEnums\type.bin";
+        const string operationPath = @"..\..\BinaryEnums\operation.bin";
 
         public StaticDictionaries()
         {
@@ -42,39 +42,41 @@ namespace ClinicManager
 
         private void InitializeEnumDictionary()
         {
-
-            using(var bw = new BinaryWriter(File.Open(typePath, FileMode.OpenOrCreate))
+            var i = 1;
+            using (var bw = new BinaryReader(File.Open(typePath, FileMode.Open)))
             {
-
+                while (bw.PeekChar() > -1)
+                {
+                    UnitList.Add(i, bw.ReadString());
+                    i++;
+                }
             }
+            i = 1;
 
-            UnitList.Add(1, "opakowanie");
-            UnitList.Add(2, "tabletka");
-            UnitList.Add(3, "krem");
-            UnitList.Add(4, "butelka");
-            UnitList.Add(5, "gram");
-            UnitList.Add(6, "ml");
-
-            TypeOperationList.Add(1, "Chirurgia");
-            TypeOperationList.Add(2, "Kardiologia");
-            TypeOperationList.Add(3, "Kardiochirurgia");
-            TypeOperationList.Add(4, "Neurochirurgia");
-            TypeOperationList.Add(5, "Laryngologia");
-            TypeOperationList.Add(6, "Ortopedia");
-            TypeOperationList.Add(7, "Fizjoterapia");
-            TypeOperationList.Add(8, "Kosmetologia");
+            using(var bw = new BinaryReader(File.Open(operationPath, FileMode.Open)))
+            {
+                while(bw.PeekChar() > -1)
+                {
+                    TypeOperationList.Add(i, bw.ReadString());
+                    i++;
+                }
+            }
         }
 
         public void AddUnit(string newUnit)
         {
-            int lastKey = UnitList.Keys.Last();
-            UnitList.Add(lastKey + 1, newUnit);
+            using (var bw = new BinaryWriter(File.Open(typePath, FileMode.Append)))
+            {
+                bw.Write(newUnit);
+            }
         }
 
         public void AddOperationType(string newOperation)
         {
-            int lastKey = TypeOperationList.Keys.Last();
-            TypeOperationList.Add(lastKey + 1, newOperation);
+            using (var bw = new BinaryWriter(File.Open(operationPath, FileMode.Append)))
+            {
+                bw.Write(newOperation);
+            }
         }
 
         private static Dictionary<int, T> InitializeDictionary<T>() where T : class

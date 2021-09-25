@@ -344,6 +344,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Clinic.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="BinaryEnums\operation.bin" />
+    <None Include="BinaryEnums\type.bin" />
     <None Include="DataAccessLayer\Clinic.edmx.diagram">
       <DependentUpon>Clinic.edmx</DependentUpon>
     </None>
