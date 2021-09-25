@@ -92,6 +92,12 @@
     <Compile Include="Controls\ClinicDetails.Designer.cs">
       <DependentUpon>ClinicDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\ContactDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ContactDetails.Designer.cs">
+      <DependentUpon>ContactDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\CostDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ClinicDetails.resx">
       <DependentUpon>ClinicDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ContactDetails.resx">
+      <DependentUpon>ContactDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\CostDetails.resx">
       <DependentUpon>CostDetails.cs</DependentUpon>

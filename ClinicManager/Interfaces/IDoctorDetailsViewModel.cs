@@ -18,5 +18,6 @@ namespace ClinicManager.Interfaces
         void EditEmployee(EmployeeRow row);
         void AddEmployee();
         void Enroll();
+        void ShowContact(EmployeeRow row);
     }
 }

@@ -17,5 +17,6 @@ namespace ClinicManager.Interfaces
         List<PatientRow> Filter();
         void EditPatient(PatientRow row);
         void AddPatient();
+        void ShowContact(PatientRow row);
     }
 }

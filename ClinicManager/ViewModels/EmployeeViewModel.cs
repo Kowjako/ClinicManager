@@ -119,5 +119,17 @@ namespace ClinicManager.ViewModels
                 }
             }
         }
+
+        public void ShowContact(EmployeeRow row)
+        {
+            Employees employee = null;
+            using(var context = new ClinicDataEntities())
+            {
+                employee = context.Employees.Find(row.Id);
+            }
+            var form = new ContactDetails();
+            form.InitializeData<Employees>(employee);
+            form.ShowDialog();
+        }
     }
 }

@@ -114,5 +114,17 @@ namespace ClinicManager.ViewModels
                 }
             }
         }
+
+        public void ShowContact(PatientRow row)
+        {
+            Patients patient = null;
+            using (var context = new ClinicDataEntities())
+            {
+                patient = context.Patients.Find(row.Id);
+            }
+            var form = new ContactDetails();
+            form.InitializeData<Patients>(patient);
+            form.ShowDialog();
+        }
     }
 }

@@ -17,5 +17,6 @@ namespace ClinicManager.Interfaces
         List<ProducentRow> Filter();
         void EditProducent(ProducentRow row);
         void AddProducent();
+        void ShowContact(ProducentRow row);
     }
 }

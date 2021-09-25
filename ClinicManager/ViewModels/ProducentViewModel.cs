@@ -114,5 +114,17 @@ namespace ClinicManager.ViewModels
                 }
             }
         }
+
+        public void ShowContact(ProducentRow row)
+        {
+            Producents producent = null;
+            using (var context = new ClinicDataEntities())
+            {
+                producent = context.Producents.Find(row.Id);
+            }
+            var form = new ContactDetails();
+            form.InitializeData<Producents>(producent);
+            form.ShowDialog();
+        }
     }
 }
