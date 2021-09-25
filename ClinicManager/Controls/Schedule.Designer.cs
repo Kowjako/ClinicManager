@@ -29,9 +29,9 @@ namespace ClinicManager.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.startDate = new System.Windows.Forms.DateTimePicker();
@@ -103,23 +103,25 @@ namespace ClinicManager.Controls
             // 
             // scheduleChart
             // 
-            chartArea2.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea2.Name = "ChartArea1";
-            this.scheduleChart.ChartAreas.Add(chartArea2);
+            chartArea1.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.Name = "ChartArea1";
+            this.scheduleChart.ChartAreas.Add(chartArea1);
             this.scheduleChart.Location = new System.Drawing.Point(15, 84);
             this.scheduleChart.Name = "scheduleChart";
             this.scheduleChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend2";
-            series2.Name = "SeriesData";
-            series2.YValuesPerPoint = 2;
-            this.scheduleChart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend2";
+            series1.Name = "SeriesData";
+            series1.YValuesPerPoint = 2;
+            this.scheduleChart.Series.Add(series1);
             this.scheduleChart.Size = new System.Drawing.Size(809, 437);
             this.scheduleChart.TabIndex = 7;
             this.scheduleChart.Text = "chart1";
-            title2.Name = "Title1";
-            title2.Text = "Częstotliwość wizyt w zależności od dnia tygodnia";
-            this.scheduleChart.Titles.Add(title2);
+            title1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title1.Name = "Title1";
+            title1.Text = "Częstotliwość wizyt w zależności od dnia tygodnia";
+            this.scheduleChart.Titles.Add(title1);
             this.scheduleChart.Visible = false;
             // 
             // Schedule
