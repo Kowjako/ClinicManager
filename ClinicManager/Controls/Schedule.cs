@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClinicManager.DataAccessLayer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,22 +16,40 @@ namespace ClinicManager.Controls
         public Schedule()
         {
             InitializeComponent();
-            startDate.Value = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
-            endDate.Value = startDate.Value.AddDays(7);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (startDate.Value.Date.DayOfWeek != DayOfWeek.Monday)
+            if (startDate.Value.Date >= endDate.Value.Date)
             {
-                MessageBox.Show(null, "Nalezy wybrac poniedzialek aby wyswietlic rozklad na tydzien!", "Blad");
-                startDate.Value = DateTime.Today.AddDays(-(int)DateTime.Today.DayOfWeek + (int)DayOfWeek.Monday);
-                endDate.Value = startDate.Value.AddDays(7);
+                MessageBox.Show(null, "Data poczatkowa musi byc mniejsza niz koncowa", "Błąd");
+                return;
             }
-            else
+            scheduleChart.Visible = true;
+
+            List<Registrations> regs = null;
+            using (var context = new ClinicDataEntities())
             {
-                endDate.Value = startDate.Value.AddDays(7);
+                regs = context.Registrations.ToList();
             }
+            scheduleChart.Series["SeriesData"].Points.AddXY("Poniedziałek",
+                                                            regs.Where(p => ((p.Date.Date <= endDate.Value && p.Date.Date >= startDate.Value)
+                                                            && p.Date.Date.DayOfWeek == DayOfWeek.Monday)).Count());
+            scheduleChart.Series["SeriesData"].Points.AddXY("Wtorek",
+                                                            regs.Where(p => ((p.Date.Date <= endDate.Value && p.Date.Date >= startDate.Value)
+                                                            && p.Date.Date.DayOfWeek == DayOfWeek.Tuesday)).Count());
+            scheduleChart.Series["SeriesData"].Points.AddXY("Środa",
+                                                            regs.Where(p => ((p.Date.Date <= endDate.Value && p.Date.Date >= startDate.Value)
+                                                            && p.Date.Date.DayOfWeek == DayOfWeek.Wednesday)).Count());
+            scheduleChart.Series["SeriesData"].Points.AddXY("Czwartek",
+                                                            regs.Where(p => ((p.Date.Date <= endDate.Value && p.Date.Date >= startDate.Value)
+                                                            && p.Date.Date.DayOfWeek == DayOfWeek.Thursday)).Count());
+            scheduleChart.Series["SeriesData"].Points.AddXY("Piątek",
+                                                            regs.Where(p => ((p.Date.Date <= endDate.Value && p.Date.Date >= startDate.Value)
+                                                            && p.Date.Date.DayOfWeek == DayOfWeek.Friday)).Count());
+            scheduleChart.Series["SeriesData"].Points.AddXY("Sobota",
+                                                            regs.Where(p => ((p.Date.Date <= endDate.Value && p.Date.Date >= startDate.Value)
+                                                            && p.Date.Date.DayOfWeek == DayOfWeek.Saturday)).Count());
         }
     }
 }

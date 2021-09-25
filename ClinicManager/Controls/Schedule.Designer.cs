@@ -29,12 +29,17 @@ namespace ClinicManager.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.startDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.endDate = new System.Windows.Forms.DateTimePicker();
+            this.scheduleChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleChart)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -50,6 +55,7 @@ namespace ClinicManager.Controls
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(454, 44);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(371, 23);
@@ -69,38 +75,59 @@ namespace ClinicManager.Controls
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.DarkRed;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 18);
+            this.label2.Size = new System.Drawing.Size(125, 20);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Wybierz początek tygodnia";
+            this.label2.Text = "Data początkowa";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label3.Location = new System.Drawing.Point(12, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(189, 18);
+            this.label3.Size = new System.Drawing.Size(104, 20);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Koniec wybranego tygodnia";
+            this.label3.Text = "Data końcowa";
             // 
             // endDate
             // 
-            this.endDate.Enabled = false;
             this.endDate.Location = new System.Drawing.Point(227, 44);
             this.endDate.Name = "endDate";
             this.endDate.Size = new System.Drawing.Size(200, 20);
             this.endDate.TabIndex = 6;
+            // 
+            // scheduleChart
+            // 
+            chartArea2.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea2.Name = "ChartArea1";
+            this.scheduleChart.ChartAreas.Add(chartArea2);
+            this.scheduleChart.Location = new System.Drawing.Point(15, 84);
+            this.scheduleChart.Name = "scheduleChart";
+            this.scheduleChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend2";
+            series2.Name = "SeriesData";
+            series2.YValuesPerPoint = 2;
+            this.scheduleChart.Series.Add(series2);
+            this.scheduleChart.Size = new System.Drawing.Size(809, 437);
+            this.scheduleChart.TabIndex = 7;
+            this.scheduleChart.Text = "chart1";
+            title2.Name = "Title1";
+            title2.Text = "Częstotliwość wizyt w zależności od dnia tygodnia";
+            this.scheduleChart.Titles.Add(title2);
+            this.scheduleChart.Visible = false;
             // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 533);
+            this.Controls.Add(this.scheduleChart);
             this.Controls.Add(this.endDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -111,7 +138,8 @@ namespace ClinicManager.Controls
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Schedule";
-            this.Text = "Rozkład wizyt na tydzień";
+            this.Text = "Rozkład ilości wizyt w zależności od dnia";
+            ((System.ComponentModel.ISupportInitialize)(this.scheduleChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -125,5 +153,6 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker endDate;
+        private System.Windows.Forms.DataVisualization.Charting.Chart scheduleChart;
     }
 }
