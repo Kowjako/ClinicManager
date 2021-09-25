@@ -2,6 +2,7 @@
 using ClinicManager.Properties;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Resources;
 using System.Text;
@@ -31,6 +32,9 @@ namespace ClinicManager
 
         #endregion
 
+        const string typePath = "types.bin";
+        const string operationPath = "path.bin";
+
         public StaticDictionaries()
         {
             InitializeEnumDictionary();
@@ -38,6 +42,12 @@ namespace ClinicManager
 
         private void InitializeEnumDictionary()
         {
+
+            using(var bw = new BinaryWriter(File.Open(typePath, FileMode.OpenOrCreate))
+            {
+
+            }
+
             UnitList.Add(1, "opakowanie");
             UnitList.Add(2, "tabletka");
             UnitList.Add(3, "krem");
