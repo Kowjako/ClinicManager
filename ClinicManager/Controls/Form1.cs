@@ -129,7 +129,7 @@ namespace Test
 
         private void btnClinicsSort_Click(object sender, EventArgs e)
         {
-            ClinicViewModel.Sort(_gvMain);
+            ClinicViewModel.Sort(_gvMain, bsMain);
         }
 
         #endregion
