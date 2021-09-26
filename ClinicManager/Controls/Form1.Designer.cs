@@ -1119,6 +1119,7 @@ namespace Test
             this.btnToolsSort.Name = "btnToolsSort";
             this.btnToolsSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnToolsSort.SmallImage")));
             this.btnToolsSort.Text = "Sortuj";
+            this.btnToolsSort.Click += new System.EventHandler(this.btnToolsSort_Click);
             // 
             // btnArticleSort
             // 

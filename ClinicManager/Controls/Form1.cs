@@ -281,6 +281,11 @@ namespace Test
             _gvMain.DataSource = bsMain;
         }
 
+        private void btnToolsSort_Click(object sender, EventArgs e)
+        {
+            FixedAssetViewModel.Sort(_gvMain, bsMain);
+        }
+
         #endregion
 
         #region Drugs
@@ -528,6 +533,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
 
 
 
