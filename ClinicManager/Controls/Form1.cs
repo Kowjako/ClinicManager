@@ -530,6 +530,11 @@ namespace Test
             ProducentViewModel.ShowContact(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
         }
 
+        private void btnProducentsSort_Click(object sender, EventArgs e)
+        {
+            ProducentViewModel.Sort(_gvMain, bsMain);
+        }
+
         #endregion
 
         #region Configuration
@@ -568,8 +573,9 @@ namespace Test
 
 
 
+
         #endregion
 
-       
+        
     }
 }

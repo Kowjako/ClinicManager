@@ -126,5 +126,23 @@ namespace ClinicManager.ViewModels
             form.InitializeData<Producents>(producent);
             form.ShowDialog();
         }
+
+        public void Sort(DataGridView grid, BindingSource list)
+        {
+            var form = new SortDetails();
+            form.SetParameters(grid, list);
+            form.ShowDialog();
+
+            var newBs = new BindingSource();
+
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.ProducentRow.SqlQuery($"SELECT Id, [Nazwa producenta] AS Nazwa_producenta, Email, [Siedziba firmy] AS Siedziba_firmy" +
+                                                          $",Kierownik FROM ProducentRow ORDER BY {list.Sort}").ToList();
+                newBs.DataSource = typeof(CostRow);
+                newBs.DataSource = clinicList;
+                grid.DataSource = newBs;
+            }
+        }
     }
 }
