@@ -42,6 +42,7 @@ namespace Test
             this.btnHospitalFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
             this.btnLocalizationAdd = new System.Windows.Forms.RibbonButton();
+            this.btnClinicsSort = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.btnHospitalOpinions = new System.Windows.Forms.RibbonButton();
             this.btnOpinionShow = new System.Windows.Forms.RibbonButton();
@@ -131,7 +132,7 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this.btnClinicsSort = new System.Windows.Forms.RibbonButton();
+            this.btnDoctorsSort = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -274,6 +275,15 @@ namespace Test
             this.btnLocalizationAdd.Text = "Lokalizacja";
             this.btnLocalizationAdd.Click += new System.EventHandler(this.btnLocalizationAdd_Click);
             // 
+            // btnClinicsSort
+            // 
+            this.btnClinicsSort.Image = ((System.Drawing.Image)(resources.GetObject("btnClinicsSort.Image")));
+            this.btnClinicsSort.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsSort.LargeImage")));
+            this.btnClinicsSort.Name = "btnClinicsSort";
+            this.btnClinicsSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsSort.SmallImage")));
+            this.btnClinicsSort.Text = "Sortuj";
+            this.btnClinicsSort.Click += new System.EventHandler(this.btnClinicsSort_Click);
+            // 
             // ribbonPanel2
             // 
             this.ribbonPanel2.ButtonMoreVisible = false;
@@ -389,6 +399,7 @@ namespace Test
             // 
             this.ribbonPanel13.Items.Add(this.btnDoctorsEnroll);
             this.ribbonPanel13.Items.Add(this.btnDoctorsShowContact);
+            this.ribbonPanel13.Items.Add(this.btnDoctorsSort);
             this.ribbonPanel13.Name = "ribbonPanel13";
             this.ribbonPanel13.Text = "Ogólne";
             // 
@@ -1060,14 +1071,14 @@ namespace Test
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
             // 
-            // btnClinicsSort
+            // btnDoctorsSort
             // 
-            this.btnClinicsSort.Image = ((System.Drawing.Image)(resources.GetObject("btnClinicsSort.Image")));
-            this.btnClinicsSort.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsSort.LargeImage")));
-            this.btnClinicsSort.Name = "btnClinicsSort";
-            this.btnClinicsSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsSort.SmallImage")));
-            this.btnClinicsSort.Text = "Sortuj";
-            this.btnClinicsSort.Click += new System.EventHandler(this.btnClinicsSort_Click);
+            this.btnDoctorsSort.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctorsSort.Image")));
+            this.btnDoctorsSort.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsSort.LargeImage")));
+            this.btnDoctorsSort.Name = "btnDoctorsSort";
+            this.btnDoctorsSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsSort.SmallImage")));
+            this.btnDoctorsSort.Text = "Sortuj";
+            this.btnDoctorsSort.Click += new System.EventHandler(this.btnDoctorsSort_Click);
             // 
             // Form1
             // 
@@ -1192,6 +1203,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnProducentShowContact;
         private System.Windows.Forms.RibbonButton btnVisitsSchedule;
         private System.Windows.Forms.RibbonButton btnClinicsSort;
+        private System.Windows.Forms.RibbonButton btnDoctorsSort;
     }
 }
 

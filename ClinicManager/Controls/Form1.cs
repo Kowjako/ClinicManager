@@ -183,6 +183,11 @@ namespace Test
             EmployeeViewModel.ShowContact(_gvMain.SelectedRows[0].DataBoundItem as EmployeeRow);
         }
 
+        private void btnDoctorsSort_Click(object sender, EventArgs e)
+        {
+            EmployeeViewModel.Sort(_gvMain, bsMain);
+        }
+
 
         #endregion
 
@@ -526,8 +531,9 @@ namespace Test
 
 
 
+
         #endregion
 
-        
+       
     }
 }
