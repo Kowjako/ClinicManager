@@ -134,6 +134,13 @@ namespace Test
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
             this.btnDoctorsSort = new System.Windows.Forms.RibbonButton();
             this.btnPatientSort = new System.Windows.Forms.RibbonButton();
+            this.btnToolsSort = new System.Windows.Forms.RibbonButton();
+            this.btnArticleSort = new System.Windows.Forms.RibbonButton();
+            this.btnVisitSort = new System.Windows.Forms.RibbonButton();
+            this.btnOperationSort = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel20 = new System.Windows.Forms.RibbonPanel();
+            this.btnCostSort = new System.Windows.Forms.RibbonButton();
+            this.btnProducentsSort = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -305,6 +312,7 @@ namespace Test
             // 
             // btnOpinionShow
             // 
+            this.btnOpinionShow.DrawDropDownIconsBar = false;
             this.btnOpinionShow.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
             this.btnOpinionShow.Image = ((System.Drawing.Image)(resources.GetObject("btnOpinionShow.Image")));
             this.btnOpinionShow.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionShow.LargeImage")));
@@ -398,6 +406,7 @@ namespace Test
             // 
             // ribbonPanel13
             // 
+            this.ribbonPanel13.ButtonMoreVisible = false;
             this.ribbonPanel13.Items.Add(this.btnDoctorsEnroll);
             this.ribbonPanel13.Items.Add(this.btnDoctorsShowContact);
             this.ribbonPanel13.Items.Add(this.btnDoctorsSort);
@@ -497,6 +506,7 @@ namespace Test
             // 
             // ribbonPanel16
             // 
+            this.ribbonPanel16.ButtonMoreVisible = false;
             this.ribbonPanel16.Items.Add(this.btnPatientShowContact);
             this.ribbonPanel16.Items.Add(this.btnPatientSort);
             this.ribbonPanel16.Name = "ribbonPanel16";
@@ -586,6 +596,8 @@ namespace Test
             // 
             // ribbonPanel15
             // 
+            this.ribbonPanel15.ButtonMoreVisible = false;
+            this.ribbonPanel15.Items.Add(this.btnToolsSort);
             this.ribbonPanel15.Name = "ribbonPanel15";
             this.ribbonPanel15.Text = "Ogólne";
             // 
@@ -664,7 +676,9 @@ namespace Test
             // 
             // ribbonPanel14
             // 
+            this.ribbonPanel14.ButtonMoreVisible = false;
             this.ribbonPanel14.Items.Add(this.btnArticleAddUnit);
+            this.ribbonPanel14.Items.Add(this.btnArticleSort);
             this.ribbonPanel14.Name = "ribbonPanel14";
             this.ribbonPanel14.Text = "Ogólne";
             // 
@@ -752,7 +766,9 @@ namespace Test
             // 
             // ribbonPanel18
             // 
+            this.ribbonPanel18.ButtonMoreVisible = false;
             this.ribbonPanel18.Items.Add(this.btnVisitsSchedule);
+            this.ribbonPanel18.Items.Add(this.btnVisitSort);
             this.ribbonPanel18.Name = "ribbonPanel18";
             this.ribbonPanel18.Text = "Ogólne";
             // 
@@ -840,7 +856,9 @@ namespace Test
             // 
             // ribbonPanel17
             // 
+            this.ribbonPanel17.ButtonMoreVisible = false;
             this.ribbonPanel17.Items.Add(this.btnOperationAddType);
+            this.ribbonPanel17.Items.Add(this.btnOperationSort);
             this.ribbonPanel17.Name = "ribbonPanel17";
             this.ribbonPanel17.Text = "Ogólne";
             // 
@@ -857,6 +875,7 @@ namespace Test
             // 
             this.ribbonTab8.Name = "ribbonTab8";
             this.ribbonTab8.Panels.Add(this.ribbonPanel9);
+            this.ribbonTab8.Panels.Add(this.ribbonPanel20);
             this.ribbonTab8.Text = "Cennik leków";
             // 
             // ribbonPanel9
@@ -1000,8 +1019,10 @@ namespace Test
             // 
             // ribbonPanel19
             // 
+            this.ribbonPanel19.ButtonMoreVisible = false;
             this.ribbonPanel19.Items.Add(this.btnSupplierLocalizationAdd);
             this.ribbonPanel19.Items.Add(this.btnProducentShowContact);
+            this.ribbonPanel19.Items.Add(this.btnProducentsSort);
             this.ribbonPanel19.Name = "ribbonPanel19";
             this.ribbonPanel19.Text = "Ogólne";
             // 
@@ -1090,6 +1111,61 @@ namespace Test
             this.btnPatientSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPatientSort.SmallImage")));
             this.btnPatientSort.Text = "Sortuj";
             this.btnPatientSort.Click += new System.EventHandler(this.btnPatientSort_Click);
+            // 
+            // btnToolsSort
+            // 
+            this.btnToolsSort.Image = ((System.Drawing.Image)(resources.GetObject("btnToolsSort.Image")));
+            this.btnToolsSort.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnToolsSort.LargeImage")));
+            this.btnToolsSort.Name = "btnToolsSort";
+            this.btnToolsSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnToolsSort.SmallImage")));
+            this.btnToolsSort.Text = "Sortuj";
+            // 
+            // btnArticleSort
+            // 
+            this.btnArticleSort.Image = ((System.Drawing.Image)(resources.GetObject("btnArticleSort.Image")));
+            this.btnArticleSort.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnArticleSort.LargeImage")));
+            this.btnArticleSort.Name = "btnArticleSort";
+            this.btnArticleSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleSort.SmallImage")));
+            this.btnArticleSort.Text = "Sortuj";
+            // 
+            // btnVisitSort
+            // 
+            this.btnVisitSort.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitSort.Image")));
+            this.btnVisitSort.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitSort.LargeImage")));
+            this.btnVisitSort.Name = "btnVisitSort";
+            this.btnVisitSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitSort.SmallImage")));
+            this.btnVisitSort.Text = "Sortuj";
+            // 
+            // btnOperationSort
+            // 
+            this.btnOperationSort.Image = ((System.Drawing.Image)(resources.GetObject("btnOperationSort.Image")));
+            this.btnOperationSort.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOperationSort.LargeImage")));
+            this.btnOperationSort.Name = "btnOperationSort";
+            this.btnOperationSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationSort.SmallImage")));
+            this.btnOperationSort.Text = "Sortuj";
+            // 
+            // ribbonPanel20
+            // 
+            this.ribbonPanel20.ButtonMoreVisible = false;
+            this.ribbonPanel20.Items.Add(this.btnCostSort);
+            this.ribbonPanel20.Name = "ribbonPanel20";
+            this.ribbonPanel20.Text = "Ogólne";
+            // 
+            // btnCostSort
+            // 
+            this.btnCostSort.Image = ((System.Drawing.Image)(resources.GetObject("btnCostSort.Image")));
+            this.btnCostSort.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCostSort.LargeImage")));
+            this.btnCostSort.Name = "btnCostSort";
+            this.btnCostSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCostSort.SmallImage")));
+            this.btnCostSort.Text = "Sortuj";
+            // 
+            // btnProducentsSort
+            // 
+            this.btnProducentsSort.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsSort.Image")));
+            this.btnProducentsSort.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsSort.LargeImage")));
+            this.btnProducentsSort.Name = "btnProducentsSort";
+            this.btnProducentsSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsSort.SmallImage")));
+            this.btnProducentsSort.Text = "Sortuj";
             // 
             // Form1
             // 
@@ -1216,6 +1292,13 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnClinicsSort;
         private System.Windows.Forms.RibbonButton btnDoctorsSort;
         private System.Windows.Forms.RibbonButton btnPatientSort;
+        private System.Windows.Forms.RibbonButton btnToolsSort;
+        private System.Windows.Forms.RibbonButton btnArticleSort;
+        private System.Windows.Forms.RibbonButton btnVisitSort;
+        private System.Windows.Forms.RibbonButton btnOperationSort;
+        private System.Windows.Forms.RibbonPanel ribbonPanel20;
+        private System.Windows.Forms.RibbonButton btnCostSort;
+        private System.Windows.Forms.RibbonButton btnProducentsSort;
     }
 }
 
