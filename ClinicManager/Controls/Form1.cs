@@ -127,6 +127,11 @@ namespace Test
             _gvMain.DataSource = ClinicViewModel.RefreshClinics();
         }
 
+        private void btnClinicsSort_Click(object sender, EventArgs e)
+        {
+            ClinicViewModel.Sort(_gvMain);
+        }
+
         #endregion
 
         #region Employees
@@ -177,6 +182,7 @@ namespace Test
         {
             EmployeeViewModel.ShowContact(_gvMain.SelectedRows[0].DataBoundItem as EmployeeRow);
         }
+
 
         #endregion
 
@@ -521,5 +527,7 @@ namespace Test
 
 
         #endregion
+
+        
     }
 }

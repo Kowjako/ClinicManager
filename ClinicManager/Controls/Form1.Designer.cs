@@ -95,6 +95,7 @@ namespace Test
             this.btnVisitsRefresh = new System.Windows.Forms.RibbonButton();
             this.btnVisitsFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel18 = new System.Windows.Forms.RibbonPanel();
+            this.btnVisitsSchedule = new System.Windows.Forms.RibbonButton();
             this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
             this.btnOperationsShow = new System.Windows.Forms.RibbonButton();
@@ -130,7 +131,7 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this.btnVisitsSchedule = new System.Windows.Forms.RibbonButton();
+            this.btnClinicsSort = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -260,6 +261,7 @@ namespace Test
             // 
             this.ribbonPanel12.ButtonMoreVisible = false;
             this.ribbonPanel12.Items.Add(this.btnLocalizationAdd);
+            this.ribbonPanel12.Items.Add(this.btnClinicsSort);
             this.ribbonPanel12.Name = "ribbonPanel12";
             this.ribbonPanel12.Text = "Ogólne";
             // 
@@ -741,6 +743,15 @@ namespace Test
             this.ribbonPanel18.Name = "ribbonPanel18";
             this.ribbonPanel18.Text = "Ogólne";
             // 
+            // btnVisitsSchedule
+            // 
+            this.btnVisitsSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitsSchedule.Image")));
+            this.btnVisitsSchedule.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsSchedule.LargeImage")));
+            this.btnVisitsSchedule.Name = "btnVisitsSchedule";
+            this.btnVisitsSchedule.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsSchedule.SmallImage")));
+            this.btnVisitsSchedule.Text = "Rozkład";
+            this.btnVisitsSchedule.Click += new System.EventHandler(this.btnVisitsSchedule_Click);
+            // 
             // ribbonTab7
             // 
             this.ribbonTab7.Name = "ribbonTab7";
@@ -1049,14 +1060,14 @@ namespace Test
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
             // 
-            // btnVisitsSchedule
+            // btnClinicsSort
             // 
-            this.btnVisitsSchedule.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitsSchedule.Image")));
-            this.btnVisitsSchedule.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsSchedule.LargeImage")));
-            this.btnVisitsSchedule.Name = "btnVisitsSchedule";
-            this.btnVisitsSchedule.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitsSchedule.SmallImage")));
-            this.btnVisitsSchedule.Text = "Rozkład";
-            this.btnVisitsSchedule.Click += new System.EventHandler(this.btnVisitsSchedule_Click);
+            this.btnClinicsSort.Image = ((System.Drawing.Image)(resources.GetObject("btnClinicsSort.Image")));
+            this.btnClinicsSort.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsSort.LargeImage")));
+            this.btnClinicsSort.Name = "btnClinicsSort";
+            this.btnClinicsSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsSort.SmallImage")));
+            this.btnClinicsSort.Text = "Sortuj";
+            this.btnClinicsSort.Click += new System.EventHandler(this.btnClinicsSort_Click);
             // 
             // Form1
             // 
@@ -1180,6 +1191,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnPatientShowContact;
         private System.Windows.Forms.RibbonButton btnProducentShowContact;
         private System.Windows.Forms.RibbonButton btnVisitsSchedule;
+        private System.Windows.Forms.RibbonButton btnClinicsSort;
     }
 }
 

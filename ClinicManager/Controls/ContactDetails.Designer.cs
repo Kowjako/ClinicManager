@@ -46,6 +46,7 @@ namespace ClinicManager.Controls
             // textBox4
             // 
             this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsData, "Email", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(169, 103);
             this.textBox4.Name = "textBox4";
             this.textBox4.ReadOnly = true;
@@ -55,6 +56,7 @@ namespace ClinicManager.Controls
             // textBox3
             // 
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsData, "Phone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(169, 72);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -64,6 +66,7 @@ namespace ClinicManager.Controls
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsData, "Surname", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(169, 43);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -73,6 +76,7 @@ namespace ClinicManager.Controls
             // textBox1
             // 
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsData, "Name", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(169, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -126,6 +130,7 @@ namespace ClinicManager.Controls
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(526, 23);
             this.closeBtn.TabIndex = 32;
+            this.closeBtn.TabStop = false;
             this.closeBtn.Text = "OK";
             this.closeBtn.UseVisualStyleBackColor = true;
             // 

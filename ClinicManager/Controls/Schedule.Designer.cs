@@ -120,7 +120,7 @@ namespace ClinicManager.Controls
             this.scheduleChart.Text = "chart1";
             title1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             title1.Name = "Title1";
-            title1.Text = "Częstotliwość wizyt w zależności od dnia tygodnia";
+            title1.Text = "Ilość wizyt w zależności od dnia tygodnia";
             this.scheduleChart.Titles.Add(title1);
             this.scheduleChart.Visible = false;
             // 

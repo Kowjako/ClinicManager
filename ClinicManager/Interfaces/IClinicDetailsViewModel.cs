@@ -19,5 +19,6 @@ namespace ClinicManager.Interfaces
         void AddClinic();
         BindingSource GetOpinions(ClinicRow row);
         void AddOpinion();
+        void Sort(DataGridView grid);
     }
 }
