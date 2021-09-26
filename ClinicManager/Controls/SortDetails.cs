@@ -60,7 +60,6 @@ namespace ClinicManager.Controls
             filter = def.ToString();
         }
 
-
         private void ascSort_Click(object sender, EventArgs e)
         {
             string[] sortParams = null;
@@ -70,17 +69,17 @@ namespace ClinicManager.Controls
 
             list.Sort = filterDefinition;
             this.Close();
-            
         }
-
-        
 
         private void descSort_Click(object sender, EventArgs e)
         {
             string[] sortParams = null;
+            string filterDefinition = null;
             PrepareParameters(out sortParams);
-            this.Close();
+            PrepareFilterDefinition(sortParams, out filterDefinition, SortOrder.Descending);
 
+            list.Sort = filterDefinition;
+            this.Close();
         }
     }
 }
