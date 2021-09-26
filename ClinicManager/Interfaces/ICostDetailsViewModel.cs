@@ -17,5 +17,6 @@ namespace ClinicManager.Interfaces
         List<CostRow> Filter();
         void EditCost(CostRow row);
         void AddCost();
+        void Sort(DataGridView grid, BindingSource list);
     }
 }

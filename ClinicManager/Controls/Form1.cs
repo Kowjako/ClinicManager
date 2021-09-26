@@ -480,6 +480,11 @@ namespace Test
             _gvMain.DataSource = bsMain;
         }
 
+        private void btnCostSort_Click(object sender, EventArgs e)
+        {
+            CostViewModel.Sort(_gvMain, bsMain);
+        }
+
         #endregion
 
         #region Producents
@@ -562,8 +567,9 @@ namespace Test
 
 
 
+
         #endregion
 
-        
+       
     }
 }

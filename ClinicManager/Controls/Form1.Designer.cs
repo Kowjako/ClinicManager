@@ -1162,6 +1162,7 @@ namespace Test
             this.btnCostSort.Name = "btnCostSort";
             this.btnCostSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCostSort.SmallImage")));
             this.btnCostSort.Text = "Sortuj";
+            this.btnCostSort.Click += new System.EventHandler(this.btnCostSort_Click);
             // 
             // btnProducentsSort
             // 
