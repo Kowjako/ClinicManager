@@ -17,6 +17,7 @@ namespace ClinicManager.Controls
         {
             InitializeComponent();
         }
+        
 
         public void InitializeData<T>(T person)
         {

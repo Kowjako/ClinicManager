@@ -188,6 +188,12 @@
     <Compile Include="Controls\ScriptForm.Designer.cs">
       <DependentUpon>ScriptForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SortDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\SortDetails.Designer.cs">
+      <DependentUpon>SortDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\UnitDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\ScriptForm.resx">
       <DependentUpon>ScriptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SortDetails.resx">
+      <DependentUpon>SortDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\UnitDetails.resx">
       <DependentUpon>UnitDetails.cs</DependentUpon>
