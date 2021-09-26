@@ -126,5 +126,22 @@ namespace ClinicManager.ViewModels
             form.InitializeData<Patients>(patient);
             form.ShowDialog();
         }
+
+        public void Sort(DataGridView grid, BindingSource list)
+        {
+            var form = new SortDetails();
+            form.SetParameters(grid, list);
+            form.ShowDialog();
+
+            var newBs = new BindingSource();
+
+            using (var context = new ClinicDataEntities())
+            {
+                var clinicList = context.PatientRow.SqlQuery($"SELECT Id, Pacjent, Operacja, [Planowana data] AS Planowana_data, Priorytet FROM PatientRow ORDER BY {list.Sort}").ToList();
+                newBs.DataSource = typeof(ClinicRow);
+                newBs.DataSource = clinicList;
+                grid.DataSource = newBs;
+            }
+        }
     }
 }

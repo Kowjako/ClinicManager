@@ -133,6 +133,7 @@ namespace Test
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
             this.btnDoctorsSort = new System.Windows.Forms.RibbonButton();
+            this.btnPatientSort = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -497,6 +498,7 @@ namespace Test
             // ribbonPanel16
             // 
             this.ribbonPanel16.Items.Add(this.btnPatientShowContact);
+            this.ribbonPanel16.Items.Add(this.btnPatientSort);
             this.ribbonPanel16.Name = "ribbonPanel16";
             this.ribbonPanel16.Text = "Ogólne";
             // 
@@ -1080,6 +1082,15 @@ namespace Test
             this.btnDoctorsSort.Text = "Sortuj";
             this.btnDoctorsSort.Click += new System.EventHandler(this.btnDoctorsSort_Click);
             // 
+            // btnPatientSort
+            // 
+            this.btnPatientSort.Image = ((System.Drawing.Image)(resources.GetObject("btnPatientSort.Image")));
+            this.btnPatientSort.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPatientSort.LargeImage")));
+            this.btnPatientSort.Name = "btnPatientSort";
+            this.btnPatientSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPatientSort.SmallImage")));
+            this.btnPatientSort.Text = "Sortuj";
+            this.btnPatientSort.Click += new System.EventHandler(this.btnPatientSort_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1204,6 +1215,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnVisitsSchedule;
         private System.Windows.Forms.RibbonButton btnClinicsSort;
         private System.Windows.Forms.RibbonButton btnDoctorsSort;
+        private System.Windows.Forms.RibbonButton btnPatientSort;
     }
 }
 

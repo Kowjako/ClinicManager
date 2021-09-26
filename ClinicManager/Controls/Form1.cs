@@ -235,6 +235,11 @@ namespace Test
             PatientViewModel.ShowContact(_gvMain.SelectedRows[0].DataBoundItem as PatientRow);
         }
 
+        private void btnPatientSort_Click(object sender, EventArgs e)
+        {
+            PatientViewModel.Sort(_gvMain, bsMain);
+        }
+
         #endregion
 
         #region FixedAssets
@@ -532,8 +537,9 @@ namespace Test
 
 
 
+
         #endregion
 
-       
+        
     }
 }
