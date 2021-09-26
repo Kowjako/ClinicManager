@@ -18,5 +18,6 @@ namespace ClinicManager.Interfaces
         void EditArticle(DrugRow row);
         void AddArticle();
         void AddUnit();
+        void Sort(DataGridView grid, BindingSource list);
     }
 }

@@ -332,6 +332,11 @@ namespace Test
             ArticleViewModel.AddUnit();
         }
 
+        private void btnArticleSort_Click(object sender, EventArgs e)
+        {
+            ArticleViewModel.Sort(_gvMain, bsMain);
+        }
+
         #endregion
 
         #region Visits
@@ -533,6 +538,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
 
 
 

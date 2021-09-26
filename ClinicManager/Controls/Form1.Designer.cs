@@ -1128,6 +1128,7 @@ namespace Test
             this.btnArticleSort.Name = "btnArticleSort";
             this.btnArticleSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleSort.SmallImage")));
             this.btnArticleSort.Text = "Sortuj";
+            this.btnArticleSort.Click += new System.EventHandler(this.btnArticleSort_Click);
             // 
             // btnVisitSort
             // 
