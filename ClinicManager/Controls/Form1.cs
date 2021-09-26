@@ -434,6 +434,11 @@ namespace Test
             OperationViewModel.AddOperationType();
         }
 
+        private void btnOperationSort_Click(object sender, EventArgs e)
+        {
+            OperationViewModel.Sort(_gvMain, bsMain);
+        }
+
         #endregion
 
         #region Prices
@@ -543,6 +548,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
 
 
 

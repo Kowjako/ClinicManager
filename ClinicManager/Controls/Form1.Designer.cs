@@ -1146,6 +1146,7 @@ namespace Test
             this.btnOperationSort.Name = "btnOperationSort";
             this.btnOperationSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOperationSort.SmallImage")));
             this.btnOperationSort.Text = "Sortuj";
+            this.btnOperationSort.Click += new System.EventHandler(this.btnOperationSort_Click);
             // 
             // ribbonPanel20
             // 
