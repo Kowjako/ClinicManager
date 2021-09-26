@@ -383,6 +383,11 @@ namespace Test
             VisitViewModel.GetSchedule();
         }
 
+        private void btnVisitSort_Click(object sender, EventArgs e)
+        {
+            VisitViewModel.Sort(_gvMain, bsMain);
+        }
+
         #endregion
 
         #region Operations
@@ -538,6 +543,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
 
 
 

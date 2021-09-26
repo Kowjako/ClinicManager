@@ -18,5 +18,6 @@ namespace ClinicManager.Interfaces
         void EditRegistration(RegistrationRow row);
         void AddRegistration();
         void GetSchedule();
+        void Sort(DataGridView grid, BindingSource list);
     }
 }
