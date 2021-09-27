@@ -103,8 +103,11 @@ namespace ClinicManager.Controls
             // 
             // scheduleChart
             // 
+            this.scheduleChart.BackColor = System.Drawing.SystemColors.Control;
+            this.scheduleChart.BackSecondaryColor = System.Drawing.SystemColors.Control;
             chartArea1.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
             chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.BackColor = System.Drawing.SystemColors.Control;
             chartArea1.Name = "ChartArea1";
             this.scheduleChart.ChartAreas.Add(chartArea1);
             this.scheduleChart.Location = new System.Drawing.Point(15, 84);
