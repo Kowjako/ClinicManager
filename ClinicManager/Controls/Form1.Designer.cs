@@ -30,8 +30,8 @@ namespace Test
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
@@ -143,6 +143,7 @@ namespace Test
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
             this.btnArticleRemoveExpired = new System.Windows.Forms.RibbonButton();
+            this.btnToolsInventarize = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -618,6 +619,7 @@ namespace Test
             // 
             this.ribbonPanel15.ButtonMoreVisible = false;
             this.ribbonPanel15.Items.Add(this.btnToolsSort);
+            this.ribbonPanel15.Items.Add(this.btnToolsInventarize);
             this.ribbonPanel15.Name = "ribbonPanel15";
             this.ribbonPanel15.Text = "Ogólne";
             // 
@@ -1167,14 +1169,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SandyBrown;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SandyBrown;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
             this._gvMain.MultiSelect = false;
@@ -1192,6 +1194,15 @@ namespace Test
             this.btnArticleRemoveExpired.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleRemoveExpired.SmallImage")));
             this.btnArticleRemoveExpired.Text = "Inwentaryzuj";
             this.btnArticleRemoveExpired.Click += new System.EventHandler(this.btnArticleRemoveExpired_Click);
+            // 
+            // btnToolsInventarize
+            // 
+            this.btnToolsInventarize.Image = ((System.Drawing.Image)(resources.GetObject("btnToolsInventarize.Image")));
+            this.btnToolsInventarize.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnToolsInventarize.LargeImage")));
+            this.btnToolsInventarize.Name = "btnToolsInventarize";
+            this.btnToolsInventarize.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnToolsInventarize.SmallImage")));
+            this.btnToolsInventarize.Text = "Inwentaryzuj";
+            this.btnToolsInventarize.Click += new System.EventHandler(this.btnToolsInventarize_Click);
             // 
             // Form1
             // 
@@ -1326,6 +1337,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnCostSort;
         private System.Windows.Forms.RibbonButton btnProducentsSort;
         private System.Windows.Forms.RibbonButton btnArticleRemoveExpired;
+        private System.Windows.Forms.RibbonButton btnToolsInventarize;
     }
 }
 

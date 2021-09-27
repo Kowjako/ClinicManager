@@ -71,6 +71,24 @@ namespace ClinicManager.ViewModels
             return null;
         }
 
+        public void Inventarize()
+        {
+            var dr = MessageBox.Show(null, "Po wykonaniu tej operacji zostana usuniete wszystkie narzedzia data waznosci ktorych juz minela", "Uwaga", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                using (var context = new ClinicDataEntities())
+                {
+                    var entites = context.Tools.Where(p => p.ExpireDate < DateTime.Now);
+                    context.Tools.RemoveRange(entites);
+                    context.SaveChanges();
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
         public BindingSource RefreshFixedAssets()
         {
             var bsMain = new BindingSource();

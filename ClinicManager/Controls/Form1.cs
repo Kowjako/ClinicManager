@@ -290,6 +290,11 @@ namespace Test
             FixedAssetViewModel.Sort(_gvMain, bsMain);
         }
 
+        private void btnToolsInventarize_Click(object sender, EventArgs e)
+        {
+            FixedAssetViewModel.Inventarize();
+        }
+
         #endregion
 
         #region Drugs
@@ -572,6 +577,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
 
 
 
