@@ -190,7 +190,7 @@ LEFT JOIN Data d ON (e.DataId = d.Id)
 GO
 
 CREATE VIEW OperationRow AS
-SELECT o.Id 'Id', o.Name 'Nazwa', o.Type 'Typ', o.IsAnesthesia 'Znieczulenie', t.Name 'Narz?dzie', d.Name 'Lek'
+SELECT o.Id 'Id', o.Name 'Nazwa', o.Type 'Typ', o.IsAnesthesia 'Znieczulenie', t.Name 'Narzedzie', d.Name 'Lek'
 FROM Operations o
 JOIN Tools t ON (o.ToolId = t.Id)
 JOIN Drugs d ON (o.DrugId = d.Id)
@@ -207,7 +207,7 @@ CREATE VIEW RegistrationRow AS
 SELECT r.Id 'Id',
 (SELECT Name + ' ' + Surname FROM Data WHERE Id = (SELECT DataId FROM Patients p WHERE p.Id = r.PatientId)) 'Pacjent',
 (SELECT Name + ' ' + Surname FROM Data WHERE Id = (SELECT DataId FROM Employees e WHERE e.Id = r.EmployeeId)) 'Lekarz',
-r.Date 'Data operacji', r.Time 'Czas rozpocz?cia' 
+r.Date 'Data operacji', r.Time 'Czas rozpoczecia' 
 FROM Registrations r
 GO
 
@@ -220,7 +220,7 @@ LEFT JOIN Clinics c ON (e.ClinicId = c.Id)
 GO
 
 CREATE VIEW CostRow AS
-SELECT c.Id 'Id', d.Name 'Nazwa leku', c.MinPrice 'Minimalna cena', c.MaxPrice 'Maksymalna cena', c.TransportDays 'Czas dostawy (dni)', p.Name 'Producent'
+SELECT c.Id 'Id', d.Name 'Nazwa leku', c.MinPrice 'Minimalna cena', c.MaxPrice 'Maksymalna cena', c.TransportDays 'Czas dostawy dni', p.Name 'Producent'
 FROM Costs c
 JOIN Drugs d ON (c.DrugId = d.Id)
 JOIN Producents p ON (c.ProducentId = p.Id)
@@ -234,7 +234,7 @@ JOIN Data d ON (p.DataId = d.Id)
 GO
 
 CREATE VIEW OpinionRow AS
-SELECT o.Id 'Id', o.Mark 'Ocena', d.Name + ' ' + d.Surname 'Wystawiaj?cy', c.Name 'Przychodnia'
+SELECT o.Id 'Id', o.Mark 'Ocena', d.Name + ' ' + d.Surname 'Wystawiajacy', c.Name 'Przychodnia'
 FROM Opinions o
 JOIN Data d ON (o.DataId = d.Id)
 JOIN Clinics c ON (o.ClinicId = c.Id)
@@ -246,13 +246,13 @@ FROM Localizations l
 GO
 
 CREATE VIEW ToolRow AS
-SELECT t.Id 'Id', t.Name 'Nazwa', t.AvailableCount 'Ilo?? dost?pna', t.ProductionDate 'Data produkcji', t.ExpireDate 'Data wa?no?ci', t.Description 'Opis'
+SELECT t.Id 'Id', t.Name 'Nazwa', t.AvailableCount 'Ilosc dostepna', t.ProductionDate 'Data produkcji', t.ExpireDate 'Data wazno?ci', t.Description 'Opis'
 FROM Tools t
 GO
 
 CREATE VIEW DrugRow AS
-SELECT d.Id 'Id', d.Name 'Nazwa', d.Percentage 'Dawka', d.ProductionDate 'Data produkcji', d.ExpireDate 'Data wa?no?ci',
-d.IsPsychotropic 'Psychotropowe', d.AvailableAmount 'Ilo?? dost?pna', d.Unit 'Jednostka'
+SELECT d.Id 'Id', d.Name 'Nazwa', d.Percentage 'Dawka', d.ProductionDate 'Data produkcji', d.ExpireDate 'Data waznosci',
+d.IsPsychotropic 'Psychotropowe', d.AvailableAmount 'Ilosc dostepna', d.Unit 'Jednostka'
 FROM Drugs d
 GO
 
