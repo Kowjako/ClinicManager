@@ -79,6 +79,7 @@ namespace Test
 
         private void btnHospitalShowList_Click(object sender, EventArgs e)
         {
+            bsMain.Sort = string.Empty;
             using (var context = new ClinicDataEntities())
             {
                 var clinicList = context.ClinicRow.ToList();
@@ -143,6 +144,7 @@ namespace Test
 
         private void btnDoctorsShow_Click(object sender, EventArgs e)
         {
+            bsMain.Sort = string.Empty;
             using (var context = new ClinicDataEntities())
             {
                 var clinicList = context.EmployeeRow.ToList();
@@ -200,6 +202,7 @@ namespace Test
 
         private void btnClientsShow_Click(object sender, EventArgs e)
         {
+            bsMain.Sort = string.Empty;
             using (var context = new ClinicDataEntities())
             {
                 var clinicList = context.PatientRow.ToList();
@@ -251,6 +254,7 @@ namespace Test
 
         private void btnAssetsShow_Click(object sender, EventArgs e)
         {
+            bsMain.Sort = string.Empty;
             using (var context = new ClinicDataEntities())
             {
                 var clinicList = context.ToolRow.ToList();
@@ -297,6 +301,7 @@ namespace Test
 
         private void btnArticleShow_Click(object sender, EventArgs e)
         {
+            bsMain.Sort = string.Empty;
             using (var context = new ClinicDataEntities())
             {
                 var articleList = context.DrugRow.ToList();
@@ -343,6 +348,7 @@ namespace Test
 
         private void btnVisitsShow_Click(object sender, EventArgs e)
         {
+            bsMain.Sort = string.Empty;
             using (var context = new ClinicDataEntities())
             {
                 var clinicList = context.RegistrationRow.ToList();
@@ -399,6 +405,7 @@ namespace Test
 
         private void btnOperationsShow_Click(object sender, EventArgs e)
         {
+            bsMain.Sort = string.Empty;
             using (var context = new ClinicDataEntities())
             {
                 var clinicList = context.OperationRow.ToList();
@@ -450,6 +457,7 @@ namespace Test
 
         private void btnPriceShow_Click(object sender, EventArgs e)
         {
+            bsMain.Sort = string.Empty;
             using (var context = new ClinicDataEntities())
             {
                 var clinicList = context.CostRow.ToList();
@@ -490,6 +498,7 @@ namespace Test
         #region Producents
         private void btnSupplierShow_Click(object sender, EventArgs e)
         {
+            bsMain.Sort = string.Empty;
             using (var context = new ClinicDataEntities())
             {
                 var prodList = context.ProducentRow.ToList();

@@ -12,13 +12,12 @@ namespace ClinicManager.DataAccessLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class ToolRow
+    public partial class sysdiagrams
     {
-        public int Id { get; set; }
-        public string Nazwa { get; set; }
-        public byte Ilosc_dostepna { get; set; }
-        public System.DateTime Data_produkcji { get; set; }
-        public System.DateTime Data_waznosci { get; set; }
-        public string Opis { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

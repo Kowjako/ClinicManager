@@ -36,6 +36,7 @@ namespace ClinicManager.DataAccessLayer
         public virtual DbSet<Patients> Patients { get; set; }
         public virtual DbSet<Producents> Producents { get; set; }
         public virtual DbSet<Registrations> Registrations { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Tools> Tools { get; set; }
         public virtual DbSet<ClinicRow> ClinicRow { get; set; }
         public virtual DbSet<CostRow> CostRow { get; set; }
