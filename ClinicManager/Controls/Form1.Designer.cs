@@ -60,6 +60,7 @@ namespace Test
             this.btnDoctorsEnroll = new System.Windows.Forms.RibbonButton();
             this.btnDoctorsShowContact = new System.Windows.Forms.RibbonButton();
             this.btnDoctorsSort = new System.Windows.Forms.RibbonButton();
+            this.btnDoctorsHistory = new System.Windows.Forms.RibbonButton();
             this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
             this.btnClientsShow = new System.Windows.Forms.RibbonButton();
@@ -81,6 +82,7 @@ namespace Test
             this.btnAssetsFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel15 = new System.Windows.Forms.RibbonPanel();
             this.btnToolsSort = new System.Windows.Forms.RibbonButton();
+            this.btnToolsInventarize = new System.Windows.Forms.RibbonButton();
             this.ribbonTab5 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
             this.btnArticleShow = new System.Windows.Forms.RibbonButton();
@@ -92,6 +94,7 @@ namespace Test
             this.ribbonPanel14 = new System.Windows.Forms.RibbonPanel();
             this.btnArticleAddUnit = new System.Windows.Forms.RibbonButton();
             this.btnArticleSort = new System.Windows.Forms.RibbonButton();
+            this.btnArticleRemoveExpired = new System.Windows.Forms.RibbonButton();
             this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
             this.btnVisitsShow = new System.Windows.Forms.RibbonButton();
@@ -142,8 +145,6 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this.btnArticleRemoveExpired = new System.Windows.Forms.RibbonButton();
-            this.btnToolsInventarize = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -413,6 +414,7 @@ namespace Test
             this.ribbonPanel13.Items.Add(this.btnDoctorsEnroll);
             this.ribbonPanel13.Items.Add(this.btnDoctorsShowContact);
             this.ribbonPanel13.Items.Add(this.btnDoctorsSort);
+            this.ribbonPanel13.Items.Add(this.btnDoctorsHistory);
             this.ribbonPanel13.Name = "ribbonPanel13";
             this.ribbonPanel13.Text = "Ogólne";
             // 
@@ -442,6 +444,15 @@ namespace Test
             this.btnDoctorsSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsSort.SmallImage")));
             this.btnDoctorsSort.Text = "Sortuj";
             this.btnDoctorsSort.Click += new System.EventHandler(this.btnDoctorsSort_Click);
+            // 
+            // btnDoctorsHistory
+            // 
+            this.btnDoctorsHistory.Image = ((System.Drawing.Image)(resources.GetObject("btnDoctorsHistory.Image")));
+            this.btnDoctorsHistory.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsHistory.LargeImage")));
+            this.btnDoctorsHistory.Name = "btnDoctorsHistory";
+            this.btnDoctorsHistory.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnDoctorsHistory.SmallImage")));
+            this.btnDoctorsHistory.Text = "Historia";
+            this.btnDoctorsHistory.Click += new System.EventHandler(this.btnDoctorsHistory_Click);
             // 
             // ribbonTab3
             // 
@@ -632,6 +643,15 @@ namespace Test
             this.btnToolsSort.Text = "Sortuj";
             this.btnToolsSort.Click += new System.EventHandler(this.btnToolsSort_Click);
             // 
+            // btnToolsInventarize
+            // 
+            this.btnToolsInventarize.Image = ((System.Drawing.Image)(resources.GetObject("btnToolsInventarize.Image")));
+            this.btnToolsInventarize.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnToolsInventarize.LargeImage")));
+            this.btnToolsInventarize.Name = "btnToolsInventarize";
+            this.btnToolsInventarize.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnToolsInventarize.SmallImage")));
+            this.btnToolsInventarize.Text = "Inwentaryzuj";
+            this.btnToolsInventarize.Click += new System.EventHandler(this.btnToolsInventarize_Click);
+            // 
             // ribbonTab5
             // 
             this.ribbonTab5.Name = "ribbonTab5";
@@ -731,6 +751,15 @@ namespace Test
             this.btnArticleSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleSort.SmallImage")));
             this.btnArticleSort.Text = "Sortuj";
             this.btnArticleSort.Click += new System.EventHandler(this.btnArticleSort_Click);
+            // 
+            // btnArticleRemoveExpired
+            // 
+            this.btnArticleRemoveExpired.Image = ((System.Drawing.Image)(resources.GetObject("btnArticleRemoveExpired.Image")));
+            this.btnArticleRemoveExpired.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnArticleRemoveExpired.LargeImage")));
+            this.btnArticleRemoveExpired.Name = "btnArticleRemoveExpired";
+            this.btnArticleRemoveExpired.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleRemoveExpired.SmallImage")));
+            this.btnArticleRemoveExpired.Text = "Inwentaryzuj";
+            this.btnArticleRemoveExpired.Click += new System.EventHandler(this.btnArticleRemoveExpired_Click);
             // 
             // ribbonTab6
             // 
@@ -1186,24 +1215,6 @@ namespace Test
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
             // 
-            // btnArticleRemoveExpired
-            // 
-            this.btnArticleRemoveExpired.Image = ((System.Drawing.Image)(resources.GetObject("btnArticleRemoveExpired.Image")));
-            this.btnArticleRemoveExpired.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnArticleRemoveExpired.LargeImage")));
-            this.btnArticleRemoveExpired.Name = "btnArticleRemoveExpired";
-            this.btnArticleRemoveExpired.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleRemoveExpired.SmallImage")));
-            this.btnArticleRemoveExpired.Text = "Inwentaryzuj";
-            this.btnArticleRemoveExpired.Click += new System.EventHandler(this.btnArticleRemoveExpired_Click);
-            // 
-            // btnToolsInventarize
-            // 
-            this.btnToolsInventarize.Image = ((System.Drawing.Image)(resources.GetObject("btnToolsInventarize.Image")));
-            this.btnToolsInventarize.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnToolsInventarize.LargeImage")));
-            this.btnToolsInventarize.Name = "btnToolsInventarize";
-            this.btnToolsInventarize.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnToolsInventarize.SmallImage")));
-            this.btnToolsInventarize.Text = "Inwentaryzuj";
-            this.btnToolsInventarize.Click += new System.EventHandler(this.btnToolsInventarize_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1338,6 +1349,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnProducentsSort;
         private System.Windows.Forms.RibbonButton btnArticleRemoveExpired;
         private System.Windows.Forms.RibbonButton btnToolsInventarize;
+        private System.Windows.Forms.RibbonButton btnDoctorsHistory;
     }
 }
 

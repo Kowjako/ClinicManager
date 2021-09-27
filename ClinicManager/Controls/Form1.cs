@@ -190,6 +190,10 @@ namespace Test
             EmployeeViewModel.Sort(_gvMain, bsMain);
         }
 
+        private void btnDoctorsHistory_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = EmployeeViewModel.ShowHistory(_gvMain.SelectedRows[0].DataBoundItem as EmployeeRow);
+        }
 
         #endregion
 
@@ -577,6 +581,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
 
 
 

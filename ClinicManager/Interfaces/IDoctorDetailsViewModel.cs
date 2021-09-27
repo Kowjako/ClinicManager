@@ -20,5 +20,6 @@ namespace ClinicManager.Interfaces
         void Enroll();
         void ShowContact(EmployeeRow row);
         void Sort(DataGridView grid, BindingSource list);
+        BindingSource ShowHistory(EmployeeRow row);
     }
 }
