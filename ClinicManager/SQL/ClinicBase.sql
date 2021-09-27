@@ -246,7 +246,7 @@ FROM Localizations l
 GO
 
 CREATE VIEW ToolRow AS
-SELECT t.Id 'Id', t.Name 'Nazwa', t.AvailableCount 'Ilosc dostepna', t.ProductionDate 'Data produkcji', t.ExpireDate 'Data wazno?ci', t.Description 'Opis'
+SELECT t.Id 'Id', t.Name 'Nazwa', t.AvailableCount 'Ilosc dostepna', t.ProductionDate 'Data produkcji', t.ExpireDate 'Data waznosci', t.Description 'Opis'
 FROM Tools t
 GO
 
