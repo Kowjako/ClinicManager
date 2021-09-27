@@ -78,6 +78,24 @@ namespace ClinicManager.ViewModels
             return null;
         }
 
+        public void Inventarize()
+        {
+            var dr = MessageBox.Show(null, "Po wykonaniu tej operacji zostana usuniete wszystkie leki data waznosci ktorych juz minela", "Uwaga", MessageBoxButtons.YesNo);
+            if(dr == DialogResult.Yes)
+            {
+                using (var context = new ClinicDataEntities())
+                {
+                    var entites = context.Drugs.Where(p => p.ExpireDate < DateTime.Now);
+                    context.Drugs.RemoveRange(entites);
+                    context.SaveChanges();
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
         public BindingSource RefreshArticles()
         {
             var bsMain = new BindingSource();

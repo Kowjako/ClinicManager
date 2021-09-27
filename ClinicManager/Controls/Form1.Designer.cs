@@ -30,8 +30,8 @@ namespace Test
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
@@ -142,6 +142,7 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.btnArticleRemoveExpired = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -707,6 +708,7 @@ namespace Test
             this.ribbonPanel14.ButtonMoreVisible = false;
             this.ribbonPanel14.Items.Add(this.btnArticleAddUnit);
             this.ribbonPanel14.Items.Add(this.btnArticleSort);
+            this.ribbonPanel14.Items.Add(this.btnArticleRemoveExpired);
             this.ribbonPanel14.Name = "ribbonPanel14";
             this.ribbonPanel14.Text = "Ogólne";
             // 
@@ -1165,14 +1167,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SandyBrown;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SandyBrown;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle2;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
             this._gvMain.MultiSelect = false;
@@ -1181,6 +1183,15 @@ namespace Test
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
+            // 
+            // btnArticleRemoveExpired
+            // 
+            this.btnArticleRemoveExpired.Image = ((System.Drawing.Image)(resources.GetObject("btnArticleRemoveExpired.Image")));
+            this.btnArticleRemoveExpired.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnArticleRemoveExpired.LargeImage")));
+            this.btnArticleRemoveExpired.Name = "btnArticleRemoveExpired";
+            this.btnArticleRemoveExpired.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnArticleRemoveExpired.SmallImage")));
+            this.btnArticleRemoveExpired.Text = "Inwentaryzuj";
+            this.btnArticleRemoveExpired.Click += new System.EventHandler(this.btnArticleRemoveExpired_Click);
             // 
             // Form1
             // 
@@ -1314,6 +1325,7 @@ namespace Test
         private System.Windows.Forms.RibbonPanel ribbonPanel20;
         private System.Windows.Forms.RibbonButton btnCostSort;
         private System.Windows.Forms.RibbonButton btnProducentsSort;
+        private System.Windows.Forms.RibbonButton btnArticleRemoveExpired;
     }
 }
 

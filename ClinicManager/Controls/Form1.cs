@@ -342,6 +342,11 @@ namespace Test
             ArticleViewModel.Sort(_gvMain, bsMain);
         }
 
+        private void btnArticleRemoveExpired_Click(object sender, EventArgs e)
+        {
+            ArticleViewModel.Inventarize();
+        }
+
         #endregion
 
         #region Visits
@@ -567,6 +572,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
 
 
 

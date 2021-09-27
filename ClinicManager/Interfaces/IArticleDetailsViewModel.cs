@@ -19,5 +19,6 @@ namespace ClinicManager.Interfaces
         void AddArticle();
         void AddUnit();
         void Sort(DataGridView grid, BindingSource list);
+        void Inventarize();
     }
 }
