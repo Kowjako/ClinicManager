@@ -366,7 +366,6 @@
     <EmbeddedResource Include="Controls\UnitDetails.resx">
       <DependentUpon>UnitDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -380,12 +379,12 @@
     <EmbeddedResource Include="Controls\VisitDetails.resx">
       <DependentUpon>VisitDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BinaryEnums\operation.bin" />
+    <None Include="BinaryEnums\type.bin" />
     <EntityDeploy Include="DataAccessLayer\Clinic.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Clinic.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="BinaryEnums\operation.bin" />
-    <None Include="BinaryEnums\type.bin" />
     <None Include="DataAccessLayer\Clinic.edmx.diagram">
       <DependentUpon>Clinic.edmx</DependentUpon>
     </None>
@@ -427,6 +426,8 @@
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\17999_bookmark_favorite_star_icon.png" />
+    <None Include="Resources\2006569_bookmark_media_social_star_icon.png" />
     <Content Include="DataAccessLayer\Clinic.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Clinic.edmx</DependentUpon>
@@ -437,8 +438,6 @@
       <DependentUpon>Clinic.edmx</DependentUpon>
       <LastGenOutput>Clinic.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\17999_bookmark_favorite_star_icon.png" />
-    <None Include="Resources\2006569_bookmark_media_social_star_icon.png" />
     <Content Include="SQL\ClinicBase.sql" />
     <Content Include="SQL\ClinicData.sql" />
   </ItemGroup>

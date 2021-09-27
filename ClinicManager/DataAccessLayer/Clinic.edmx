@@ -171,7 +171,7 @@ warning 6002: The table/view 'ClinicData.dbo.CostRow' does not have a primary ke
           <Property Name="Nazwa leku" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Minimalna cena" Type="int" />
           <Property Name="Maksymalna cena" Type="int" />
-          <Property Name="Czas dostawy (dni)" Type="tinyint" />
+          <Property Name="Czas dostawy dni" Type="tinyint" />
           <Property Name="Producent" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -181,18 +181,18 @@ warning 6002: The table/view 'ClinicData.dbo.DrugRow' does not have a primary ke
             <PropertyRef Name="Id" />
             <PropertyRef Name="Nazwa" />
             <PropertyRef Name="Data produkcji" />
-            <PropertyRef Name="Data ważności" />
+            <PropertyRef Name="Data waznosci" />
             <PropertyRef Name="Psychotropowe" />
-            <PropertyRef Name="Ilość dostępna" />
+            <PropertyRef Name="Ilosc dostepna" />
             <PropertyRef Name="Jednostka" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Dawka" Type="tinyint" />
           <Property Name="Data produkcji" Type="datetime" Nullable="false" />
-          <Property Name="Data ważności" Type="datetime" Nullable="false" />
+          <Property Name="Data waznosci" Type="datetime" Nullable="false" />
           <Property Name="Psychotropowe" Type="bit" Nullable="false" />
-          <Property Name="Ilość dostępna" Type="tinyint" Nullable="false" />
+          <Property Name="Ilosc dostepna" Type="tinyint" Nullable="false" />
           <Property Name="Jednostka" Type="nvarchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -229,14 +229,14 @@ warning 6002: The table/view 'ClinicData.dbo.OperationRow' does not have a prima
             <PropertyRef Name="Nazwa" />
             <PropertyRef Name="Typ" />
             <PropertyRef Name="Znieczulenie" />
-            <PropertyRef Name="Narzędzie" />
+            <PropertyRef Name="Narzedzie" />
             <PropertyRef Name="Lek" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Nazwa" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Typ" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Znieczulenie" Type="bit" Nullable="false" />
-          <Property Name="Narzędzie" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Narzedzie" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Lek" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -245,12 +245,12 @@ warning 6002: The table/view 'ClinicData.dbo.OpinionRow' does not have a primary
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="Ocena" />
-            <PropertyRef Name="Wystawiający" />
+            <PropertyRef Name="Wystawiajacy" />
             <PropertyRef Name="Przychodnia" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Ocena" Type="tinyint" Nullable="false" />
-          <Property Name="Wystawiający" Type="nvarchar" MaxLength="511" Nullable="false" />
+          <Property Name="Wystawiajacy" Type="nvarchar" MaxLength="511" Nullable="false" />
           <Property Name="Przychodnia" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -288,13 +288,13 @@ warning 6002: The table/view 'ClinicData.dbo.RegistrationRow' does not have a pr
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="Data operacji" />
-            <PropertyRef Name="Czas rozpocz?cia" />
+            <PropertyRef Name="Czas rozpoczecia" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Pacjent" Type="nvarchar" MaxLength="511" />
           <Property Name="Lekarz" Type="nvarchar" MaxLength="511" />
           <Property Name="Data operacji" Type="datetime" Nullable="false" />
-          <Property Name="Czas rozpocz?cia" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Czas rozpoczecia" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -302,15 +302,15 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="Nazwa" />
-            <PropertyRef Name="Ilość dostępna" />
+            <PropertyRef Name="Ilosc dostepna" />
             <PropertyRef Name="Data produkcji" />
-            <PropertyRef Name="Data ważności" />
+            <PropertyRef Name="Data wazno?ci" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa" Type="nvarchar" MaxLength="255" Nullable="false" />
-          <Property Name="Ilość dostępna" Type="tinyint" Nullable="false" />
+          <Property Name="Ilosc dostepna" Type="tinyint" Nullable="false" />
           <Property Name="Data produkcji" Type="datetime" Nullable="false" />
-          <Property Name="Data ważności" Type="datetime" Nullable="false" />
+          <Property Name="Data wazno?ci" Type="datetime" Nullable="false" />
           <Property Name="Opis" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <Association Name="FK__Clinics_EmployeeId">
@@ -557,7 +557,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
     [CostRow].[Nazwa leku] AS [Nazwa leku], 
     [CostRow].[Minimalna cena] AS [Minimalna cena], 
     [CostRow].[Maksymalna cena] AS [Maksymalna cena], 
-    [CostRow].[Czas dostawy (dni)] AS [Czas dostawy (dni)], 
+    [CostRow].[Czas dostawy dni] AS [Czas dostawy dni], 
     [CostRow].[Producent] AS [Producent]
     FROM [dbo].[CostRow] AS [CostRow]</DefiningQuery>
           </EntitySet>
@@ -567,9 +567,9 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
     [DrugRow].[Nazwa] AS [Nazwa], 
     [DrugRow].[Dawka] AS [Dawka], 
     [DrugRow].[Data produkcji] AS [Data produkcji], 
-    [DrugRow].[Data ważności] AS [Data ważności], 
+    [DrugRow].[Data waznosci] AS [Data waznosci], 
     [DrugRow].[Psychotropowe] AS [Psychotropowe], 
-    [DrugRow].[Ilość dostępna] AS [Ilość dostępna], 
+    [DrugRow].[Ilosc dostepna] AS [Ilosc dostepna], 
     [DrugRow].[Jednostka] AS [Jednostka]
     FROM [dbo].[DrugRow] AS [DrugRow]</DefiningQuery>
           </EntitySet>
@@ -595,7 +595,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
     [OperationRow].[Nazwa] AS [Nazwa], 
     [OperationRow].[Typ] AS [Typ], 
     [OperationRow].[Znieczulenie] AS [Znieczulenie], 
-    [OperationRow].[Narzędzie] AS [Narzędzie], 
+    [OperationRow].[Narzedzie] AS [Narzedzie], 
     [OperationRow].[Lek] AS [Lek]
     FROM [dbo].[OperationRow] AS [OperationRow]</DefiningQuery>
           </EntitySet>
@@ -603,7 +603,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
             <DefiningQuery>SELECT 
     [OpinionRow].[Id] AS [Id], 
     [OpinionRow].[Ocena] AS [Ocena], 
-    [OpinionRow].[Wystawiający] AS [Wystawiający], 
+    [OpinionRow].[Wystawiajacy] AS [Wystawiajacy], 
     [OpinionRow].[Przychodnia] AS [Przychodnia]
     FROM [dbo].[OpinionRow] AS [OpinionRow]</DefiningQuery>
           </EntitySet>
@@ -631,16 +631,16 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
     [RegistrationRow].[Pacjent] AS [Pacjent], 
     [RegistrationRow].[Lekarz] AS [Lekarz], 
     [RegistrationRow].[Data operacji] AS [Data operacji], 
-    [RegistrationRow].[Czas rozpocz?cia] AS [Czas rozpocz?cia]
+    [RegistrationRow].[Czas rozpoczecia] AS [Czas rozpoczecia]
     FROM [dbo].[RegistrationRow] AS [RegistrationRow]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ToolRow" EntityType="Self.ToolRow" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [ToolRow].[Id] AS [Id], 
     [ToolRow].[Nazwa] AS [Nazwa], 
-    [ToolRow].[Ilość dostępna] AS [Ilość dostępna], 
+    [ToolRow].[Ilosc dostepna] AS [Ilosc dostepna], 
     [ToolRow].[Data produkcji] AS [Data produkcji], 
-    [ToolRow].[Data ważności] AS [Data ważności], 
+    [ToolRow].[Data wazno?ci] AS [Data wazno?ci], 
     [ToolRow].[Opis] AS [Opis]
     FROM [dbo].[ToolRow] AS [ToolRow]</DefiningQuery>
           </EntitySet>
@@ -908,7 +908,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Property Name="Nazwa_leku" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Minimalna_cena" Type="Int32" />
           <Property Name="Maksymalna_cena" Type="Int32" />
-          <Property Name="Czas_dostawy__dni_" Type="Byte" />
+          <Property Name="Czas_dostawy_dni" Type="Byte" />
           <Property Name="Producent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="DrugRow">
@@ -916,18 +916,18 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
             <PropertyRef Name="Id" />
             <PropertyRef Name="Nazwa" />
             <PropertyRef Name="Data_produkcji" />
-            <PropertyRef Name="Data_ważności" />
+            <PropertyRef Name="Data_waznosci" />
             <PropertyRef Name="Psychotropowe" />
-            <PropertyRef Name="Ilość_dostępna" />
+            <PropertyRef Name="Ilosc_dostepna" />
             <PropertyRef Name="Jednostka" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Dawka" Type="Byte" />
           <Property Name="Data_produkcji" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Data_ważności" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Data_waznosci" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Psychotropowe" Type="Boolean" Nullable="false" />
-          <Property Name="Ilość_dostępna" Type="Byte" Nullable="false" />
+          <Property Name="Ilosc_dostepna" Type="Byte" Nullable="false" />
           <Property Name="Jednostka" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="EmployeeRow">
@@ -958,26 +958,26 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
             <PropertyRef Name="Nazwa" />
             <PropertyRef Name="Typ" />
             <PropertyRef Name="Znieczulenie" />
-            <PropertyRef Name="Narzędzie" />
+            <PropertyRef Name="Narzedzie" />
             <PropertyRef Name="Lek" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Nazwa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Typ" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Znieczulenie" Type="Boolean" Nullable="false" />
-          <Property Name="Narzędzie" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Narzedzie" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Lek" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="OpinionRow">
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="Ocena" />
-            <PropertyRef Name="Wystawiający" />
+            <PropertyRef Name="Wystawiajacy" />
             <PropertyRef Name="Przychodnia" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Ocena" Type="Byte" Nullable="false" />
-          <Property Name="Wystawiający" Type="String" MaxLength="511" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Wystawiajacy" Type="String" MaxLength="511" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Przychodnia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="PatientRow">
@@ -1009,27 +1009,27 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="Data_operacji" />
-            <PropertyRef Name="Czas_rozpocz_cia" />
+            <PropertyRef Name="Czas_rozpoczecia" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Pacjent" Type="String" MaxLength="511" FixedLength="false" Unicode="true" />
           <Property Name="Lekarz" Type="String" MaxLength="511" FixedLength="false" Unicode="true" />
           <Property Name="Data_operacji" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Czas_rozpocz_cia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Czas_rozpoczecia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="ToolRow">
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="Nazwa" />
-            <PropertyRef Name="Ilość_dostępna" />
+            <PropertyRef Name="Ilosc_dostepna" />
             <PropertyRef Name="Data_produkcji" />
-            <PropertyRef Name="Data_ważności" />
+            <PropertyRef Name="Data_wazno_ci" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Ilość_dostępna" Type="Byte" Nullable="false" />
+          <Property Name="Ilosc_dostepna" Type="Byte" Nullable="false" />
           <Property Name="Data_produkcji" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Data_ważności" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Data_wazno_ci" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Opis" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="FK__Clinics_EmployeeId">
@@ -1509,7 +1509,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
                 <ScalarProperty Name="Nazwa_leku" ColumnName="Nazwa leku" />
                 <ScalarProperty Name="Minimalna_cena" ColumnName="Minimalna cena" />
                 <ScalarProperty Name="Maksymalna_cena" ColumnName="Maksymalna cena" />
-                <ScalarProperty Name="Czas_dostawy__dni_" ColumnName="Czas dostawy (dni)" />
+                <ScalarProperty Name="Czas_dostawy_dni" ColumnName="Czas dostawy dni" />
                 <ScalarProperty Name="Producent" ColumnName="Producent" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1521,9 +1521,9 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="Dawka" ColumnName="Dawka" />
                 <ScalarProperty Name="Data_produkcji" ColumnName="Data produkcji" />
-                <ScalarProperty Name="Data_ważności" ColumnName="Data ważności" />
+                <ScalarProperty Name="Data_waznosci" ColumnName="Data waznosci" />
                 <ScalarProperty Name="Psychotropowe" ColumnName="Psychotropowe" />
-                <ScalarProperty Name="Ilość_dostępna" ColumnName="Ilość dostępna" />
+                <ScalarProperty Name="Ilosc_dostepna" ColumnName="Ilosc dostepna" />
                 <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1555,7 +1555,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="Typ" ColumnName="Typ" />
                 <ScalarProperty Name="Znieczulenie" ColumnName="Znieczulenie" />
-                <ScalarProperty Name="Narzędzie" ColumnName="Narzędzie" />
+                <ScalarProperty Name="Narzedzie" ColumnName="Narzedzie" />
                 <ScalarProperty Name="Lek" ColumnName="Lek" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1565,7 +1565,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
               <MappingFragment StoreEntitySet="OpinionRow">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Ocena" ColumnName="Ocena" />
-                <ScalarProperty Name="Wystawiający" ColumnName="Wystawiający" />
+                <ScalarProperty Name="Wystawiajacy" ColumnName="Wystawiajacy" />
                 <ScalarProperty Name="Przychodnia" ColumnName="Przychodnia" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1599,7 +1599,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
                 <ScalarProperty Name="Pacjent" ColumnName="Pacjent" />
                 <ScalarProperty Name="Lekarz" ColumnName="Lekarz" />
                 <ScalarProperty Name="Data_operacji" ColumnName="Data operacji" />
-                <ScalarProperty Name="Czas_rozpocz_cia" ColumnName="Czas rozpocz?cia" />
+                <ScalarProperty Name="Czas_rozpoczecia" ColumnName="Czas rozpoczecia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1608,9 +1608,9 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
               <MappingFragment StoreEntitySet="ToolRow">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
-                <ScalarProperty Name="Ilość_dostępna" ColumnName="Ilość dostępna" />
+                <ScalarProperty Name="Ilosc_dostepna" ColumnName="Ilosc dostepna" />
                 <ScalarProperty Name="Data_produkcji" ColumnName="Data produkcji" />
-                <ScalarProperty Name="Data_ważności" ColumnName="Data ważności" />
+                <ScalarProperty Name="Data_wazno_ci" ColumnName="Data wazno?ci" />
                 <ScalarProperty Name="Opis" ColumnName="Opis" />
               </MappingFragment>
             </EntityTypeMapping>

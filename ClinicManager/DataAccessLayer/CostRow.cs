@@ -18,7 +18,7 @@ namespace ClinicManager.DataAccessLayer
         public string Nazwa_leku { get; set; }
         public Nullable<int> Minimalna_cena { get; set; }
         public Nullable<int> Maksymalna_cena { get; set; }
-        public Nullable<byte> Czas_dostawy__dni_ { get; set; }
+        public Nullable<byte> Czas_dostawy_dni { get; set; }
         public string Producent { get; set; }
     }
 }

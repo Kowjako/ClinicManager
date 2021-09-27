@@ -123,7 +123,7 @@ namespace ClinicManager.ViewModels
 
             using (var context = new ClinicDataEntities())
             {
-                var clinicList = context.OperationRow.SqlQuery($"SELECT Id, Nazwa, Typ, Znieczulenie, [Narzędzie] AS Narzędzie, Lek FROM OperationRow ORDER BY {list.Sort}").ToList();
+                var clinicList = context.OperationRow.SqlQuery($"SELECT Id, Nazwa, Typ, Znieczulenie, [Narzedzie] AS Narzedzie, Lek FROM OperationRow ORDER BY {list.Sort}").ToList();
                 newBs.DataSource = typeof(OperationRow);
                 newBs.DataSource = clinicList;
                 grid.DataSource = newBs;

@@ -16,7 +16,7 @@ namespace ClinicManager.DataAccessLayer
     {
         public int Id { get; set; }
         public byte Ocena { get; set; }
-        public string Wystawiający { get; set; }
+        public string Wystawiajacy { get; set; }
         public string Przychodnia { get; set; }
     }
 }

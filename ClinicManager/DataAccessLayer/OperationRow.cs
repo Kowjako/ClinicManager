@@ -18,7 +18,7 @@ namespace ClinicManager.DataAccessLayer
         public string Nazwa { get; set; }
         public string Typ { get; set; }
         public bool Znieczulenie { get; set; }
-        public string Narzędzie { get; set; }
+        public string Narzedzie { get; set; }
         public string Lek { get; set; }
     }
 }

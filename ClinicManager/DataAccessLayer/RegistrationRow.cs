@@ -18,6 +18,6 @@ namespace ClinicManager.DataAccessLayer
         public string Pacjent { get; set; }
         public string Lekarz { get; set; }
         public System.DateTime Data_operacji { get; set; }
-        public string Czas_rozpocz_cia { get; set; }
+        public string Czas_rozpoczecia { get; set; }
     }
 }

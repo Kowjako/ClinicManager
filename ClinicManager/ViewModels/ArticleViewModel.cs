@@ -125,8 +125,8 @@ namespace ClinicManager.ViewModels
 
             using (var context = new ClinicDataEntities())
             {
-                var clinicList = context.DrugRow.SqlQuery($"SELECT Id, Nazwa, Dawka, [Data produkcji] AS Data_produkcji, [Data ważności] AS Data_ważności, Psychotropowe, " +
-                                                          $"[Ilość dostępna] AS Ilość_dostępna, Jednostka FROM DrugRow ORDER BY {list.Sort}").ToList();
+                var clinicList = context.DrugRow.SqlQuery($"SELECT Id, Nazwa, Dawka, [Data produkcji] AS Data_produkcji, [Data waznosci] AS Data_waznosci, Psychotropowe, " +
+                                                          $"[Ilosc dostępna] AS Ilosc_dostepna, Jednostka FROM DrugRow ORDER BY {list.Sort}").ToList();
                 newBs.DataSource = typeof(ClinicRow);
                 newBs.DataSource = clinicList;
                 grid.DataSource = newBs;

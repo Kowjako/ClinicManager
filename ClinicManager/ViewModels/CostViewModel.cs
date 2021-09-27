@@ -118,7 +118,7 @@ namespace ClinicManager.ViewModels
             using (var context = new ClinicDataEntities())
             {
                 var clinicList = context.CostRow.SqlQuery($"SELECT Id, [Nazwa leku] AS Nazwa_leku, [Minimalna cena] AS Minimalna_cena, [Maksymalna cena] AS Maksymalna_cena" +
-                                                          $",[Czas dostawy (dni)] AS Czas_dostawy__dni_, Producent FROM CostRow ORDER BY {list.Sort}").ToList();
+                                                          $",[Czas dostawy dni] AS Czas_dostawy_dni, Producent FROM CostRow ORDER BY {list.Sort}").ToList();
                 newBs.DataSource = typeof(CostRow);
                 newBs.DataSource = clinicList;
                 grid.DataSource = newBs;

@@ -16,9 +16,9 @@ namespace ClinicManager.DataAccessLayer
     {
         public int Id { get; set; }
         public string Nazwa { get; set; }
-        public byte Ilość_dostępna { get; set; }
+        public byte Ilosc_dostepna { get; set; }
         public System.DateTime Data_produkcji { get; set; }
-        public System.DateTime Data_ważności { get; set; }
+        public System.DateTime Data_wazno_ci { get; set; }
         public string Opis { get; set; }
     }
 }

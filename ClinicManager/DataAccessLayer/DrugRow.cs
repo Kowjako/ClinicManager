@@ -18,9 +18,9 @@ namespace ClinicManager.DataAccessLayer
         public string Nazwa { get; set; }
         public Nullable<byte> Dawka { get; set; }
         public System.DateTime Data_produkcji { get; set; }
-        public System.DateTime Data_ważności { get; set; }
+        public System.DateTime Data_waznosci { get; set; }
         public bool Psychotropowe { get; set; }
-        public byte Ilość_dostępna { get; set; }
+        public byte Ilosc_dostepna { get; set; }
         public string Jednostka { get; set; }
     }
 }

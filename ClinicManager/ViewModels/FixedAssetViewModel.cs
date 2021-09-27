@@ -118,7 +118,7 @@ namespace ClinicManager.ViewModels
 
             using (var context = new ClinicDataEntities())
             {
-                var clinicList = context.ToolRow.SqlQuery($"SELECT Id, Nazwa,[Ilość dostępna] as Ilość_dostępna, [Data produkcji] AS Data_produkcji, [Data ważności] AS Data_ważności, Opis FROM ToolRow ORDER BY {list.Sort}").ToList();
+                var clinicList = context.ToolRow.SqlQuery($"SELECT Id, Nazwa,[Ilosc dostepna] as Ilosc_dostepna, [Data produkcji] AS Data_produkcji, [Data waznosci] AS Data_waznosci, Opis FROM ToolRow ORDER BY {list.Sort}").ToList();
                 newBs.DataSource = typeof(ClinicRow);
                 newBs.DataSource = clinicList;
                 grid.DataSource = newBs;
