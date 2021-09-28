@@ -284,4 +284,12 @@ CREATE TABLE Orders (
 	CONSTRAINT FK__Orders_ProducentId FOREIGN KEY (ProducentId) REFERENCES Producents(Id) ON DELETE NO ACTION
 );
 
+GO
 
+CREATE VIEW OrderRow AS
+SELECT o.Id 'Id', o.Amount 'Ilosc', o.Unit 'Jednostka', c.Name 'Przychodnia', d.Name 'Lek', p.Name 'Producent'
+FROM Orders o
+JOIN Clinics c ON o.ClinicId = c.Id
+JOIN Drugs d ON o.DrugId = d.Id
+JOIN Producents p ON o.ProducentId = p.Id
+GO
