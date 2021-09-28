@@ -15,7 +15,6 @@ namespace ClinicManager.ViewModels
 {
     public class ClinicViewModel : IClinicDetailsViewModel
     {
-
         public void AddClinic()
         {
             var form = new ClinicDetails(DetailsMode.Add);
@@ -134,6 +133,13 @@ namespace ClinicManager.ViewModels
                     }
                 }
             }
+        }
+
+        public void ShowHierarchy(ClinicRow row)
+        {
+            var form = new HierarchyControl();
+            form.SetHierarchy(row);
+            form.ShowDialog();
         }
 
         public void Sort(DataGridView grid, BindingSource list)

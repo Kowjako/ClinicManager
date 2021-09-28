@@ -271,3 +271,5 @@ r.Status 'Status'
 FROM Registrations r
 GO
 
+
+

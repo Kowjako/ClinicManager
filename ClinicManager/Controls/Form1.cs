@@ -72,6 +72,11 @@ namespace Test
             ClinicViewModel.AddClinic();
         }
 
+        private void btnClinicsStructure_Click(object sender, EventArgs e)
+        {
+            ClinicViewModel.ShowHierarchy(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
+        }
+
         private void btnHospitalEdit_Click(object sender, EventArgs e)
         {
             ClinicViewModel.EditClinic(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
@@ -605,6 +610,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
 
 
 

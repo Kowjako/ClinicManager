@@ -31,7 +31,7 @@ namespace Test
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
@@ -44,6 +44,7 @@ namespace Test
             this.ribbonPanel12 = new System.Windows.Forms.RibbonPanel();
             this.btnLocalizationAdd = new System.Windows.Forms.RibbonButton();
             this.btnClinicsSort = new System.Windows.Forms.RibbonButton();
+            this.btnClinicsStructure = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.btnHospitalOpinions = new System.Windows.Forms.RibbonButton();
             this.btnOpinionShow = new System.Windows.Forms.RibbonButton();
@@ -72,6 +73,7 @@ namespace Test
             this.ribbonPanel16 = new System.Windows.Forms.RibbonPanel();
             this.btnPatientShowContact = new System.Windows.Forms.RibbonButton();
             this.btnPatientSort = new System.Windows.Forms.RibbonButton();
+            this.btnPatientVisits = new System.Windows.Forms.RibbonButton();
             this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
             this.btnAssetsShow = new System.Windows.Forms.RibbonButton();
@@ -106,6 +108,9 @@ namespace Test
             this.ribbonPanel18 = new System.Windows.Forms.RibbonPanel();
             this.btnVisitsSchedule = new System.Windows.Forms.RibbonButton();
             this.btnVisitSort = new System.Windows.Forms.RibbonButton();
+            this.btnVisitAccept = new System.Windows.Forms.RibbonButton();
+            this.btnVisitRealize = new System.Windows.Forms.RibbonButton();
+            this.btnVisitUndo = new System.Windows.Forms.RibbonButton();
             this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
             this.btnOperationsShow = new System.Windows.Forms.RibbonButton();
@@ -145,10 +150,6 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this.btnVisitAccept = new System.Windows.Forms.RibbonButton();
-            this.btnVisitRealize = new System.Windows.Forms.RibbonButton();
-            this.btnVisitUndo = new System.Windows.Forms.RibbonButton();
-            this.btnPatientVisits = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -279,6 +280,7 @@ namespace Test
             this.ribbonPanel12.ButtonMoreVisible = false;
             this.ribbonPanel12.Items.Add(this.btnLocalizationAdd);
             this.ribbonPanel12.Items.Add(this.btnClinicsSort);
+            this.ribbonPanel12.Items.Add(this.btnClinicsStructure);
             this.ribbonPanel12.Name = "ribbonPanel12";
             this.ribbonPanel12.Text = "Ogólne";
             // 
@@ -299,6 +301,15 @@ namespace Test
             this.btnClinicsSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsSort.SmallImage")));
             this.btnClinicsSort.Text = "Sortuj";
             this.btnClinicsSort.Click += new System.EventHandler(this.btnClinicsSort_Click);
+            // 
+            // btnClinicsStructure
+            // 
+            this.btnClinicsStructure.Image = ((System.Drawing.Image)(resources.GetObject("btnClinicsStructure.Image")));
+            this.btnClinicsStructure.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsStructure.LargeImage")));
+            this.btnClinicsStructure.Name = "btnClinicsStructure";
+            this.btnClinicsStructure.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsStructure.SmallImage")));
+            this.btnClinicsStructure.Text = "Struktura";
+            this.btnClinicsStructure.Click += new System.EventHandler(this.btnClinicsStructure_Click);
             // 
             // ribbonPanel2
             // 
@@ -559,6 +570,15 @@ namespace Test
             this.btnPatientSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPatientSort.SmallImage")));
             this.btnPatientSort.Text = "Sortuj";
             this.btnPatientSort.Click += new System.EventHandler(this.btnPatientSort_Click);
+            // 
+            // btnPatientVisits
+            // 
+            this.btnPatientVisits.Image = ((System.Drawing.Image)(resources.GetObject("btnPatientVisits.Image")));
+            this.btnPatientVisits.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPatientVisits.LargeImage")));
+            this.btnPatientVisits.Name = "btnPatientVisits";
+            this.btnPatientVisits.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPatientVisits.SmallImage")));
+            this.btnPatientVisits.Text = "Rejestracje";
+            this.btnPatientVisits.Click += new System.EventHandler(this.btnPatientVisits_Click);
             // 
             // ribbonTab4
             // 
@@ -869,6 +889,33 @@ namespace Test
             this.btnVisitSort.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitSort.SmallImage")));
             this.btnVisitSort.Text = "Sortuj";
             this.btnVisitSort.Click += new System.EventHandler(this.btnVisitSort_Click);
+            // 
+            // btnVisitAccept
+            // 
+            this.btnVisitAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitAccept.Image")));
+            this.btnVisitAccept.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitAccept.LargeImage")));
+            this.btnVisitAccept.Name = "btnVisitAccept";
+            this.btnVisitAccept.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitAccept.SmallImage")));
+            this.btnVisitAccept.Text = "Potwierdź";
+            this.btnVisitAccept.Click += new System.EventHandler(this.btnVisitAccept_Click);
+            // 
+            // btnVisitRealize
+            // 
+            this.btnVisitRealize.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitRealize.Image")));
+            this.btnVisitRealize.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitRealize.LargeImage")));
+            this.btnVisitRealize.Name = "btnVisitRealize";
+            this.btnVisitRealize.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitRealize.SmallImage")));
+            this.btnVisitRealize.Text = "Realizuj";
+            this.btnVisitRealize.Click += new System.EventHandler(this.btnVisitRealize_Click);
+            // 
+            // btnVisitUndo
+            // 
+            this.btnVisitUndo.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitUndo.Image")));
+            this.btnVisitUndo.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitUndo.LargeImage")));
+            this.btnVisitUndo.Name = "btnVisitUndo";
+            this.btnVisitUndo.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitUndo.SmallImage")));
+            this.btnVisitUndo.Text = "Anuluj";
+            this.btnVisitUndo.Click += new System.EventHandler(this.btnVisitUndo_Click);
             // 
             // ribbonTab7
             // 
@@ -1208,14 +1255,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
             this._gvMain.MultiSelect = false;
@@ -1224,42 +1271,6 @@ namespace Test
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
-            // 
-            // btnVisitAccept
-            // 
-            this.btnVisitAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitAccept.Image")));
-            this.btnVisitAccept.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitAccept.LargeImage")));
-            this.btnVisitAccept.Name = "btnVisitAccept";
-            this.btnVisitAccept.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitAccept.SmallImage")));
-            this.btnVisitAccept.Text = "Potwierdź";
-            this.btnVisitAccept.Click += new System.EventHandler(this.btnVisitAccept_Click);
-            // 
-            // btnVisitRealize
-            // 
-            this.btnVisitRealize.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitRealize.Image")));
-            this.btnVisitRealize.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitRealize.LargeImage")));
-            this.btnVisitRealize.Name = "btnVisitRealize";
-            this.btnVisitRealize.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitRealize.SmallImage")));
-            this.btnVisitRealize.Text = "Realizuj";
-            this.btnVisitRealize.Click += new System.EventHandler(this.btnVisitRealize_Click);
-            // 
-            // btnVisitUndo
-            // 
-            this.btnVisitUndo.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitUndo.Image")));
-            this.btnVisitUndo.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitUndo.LargeImage")));
-            this.btnVisitUndo.Name = "btnVisitUndo";
-            this.btnVisitUndo.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitUndo.SmallImage")));
-            this.btnVisitUndo.Text = "Anuluj";
-            this.btnVisitUndo.Click += new System.EventHandler(this.btnVisitUndo_Click);
-            // 
-            // btnPatientVisits
-            // 
-            this.btnPatientVisits.Image = ((System.Drawing.Image)(resources.GetObject("btnPatientVisits.Image")));
-            this.btnPatientVisits.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPatientVisits.LargeImage")));
-            this.btnPatientVisits.Name = "btnPatientVisits";
-            this.btnPatientVisits.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPatientVisits.SmallImage")));
-            this.btnPatientVisits.Text = "Rejestracje";
-            this.btnPatientVisits.Click += new System.EventHandler(this.btnPatientVisits_Click);
             // 
             // Form1
             // 
@@ -1400,6 +1411,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnVisitRealize;
         private System.Windows.Forms.RibbonButton btnVisitUndo;
         private System.Windows.Forms.RibbonButton btnPatientVisits;
+        private System.Windows.Forms.RibbonButton btnClinicsStructure;
     }
 }
 
