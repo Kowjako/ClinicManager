@@ -19,5 +19,9 @@ namespace ClinicManager.Interfaces
         void AddRegistration();
         void GetSchedule();
         void Sort(DataGridView grid, BindingSource list);
+        void AcceptVisit(RegistrationRow row);
+        void RealizeVisit(RegistrationRow row);
+        void UndoVisit(RegistrationRow row);
+        void CheckRegistrationStatus(DataGridView gridView);
     }
 }

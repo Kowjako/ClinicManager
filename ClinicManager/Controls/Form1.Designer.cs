@@ -30,8 +30,8 @@ namespace Test
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
@@ -145,6 +145,9 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.btnVisitAccept = new System.Windows.Forms.RibbonButton();
+            this.btnVisitRealize = new System.Windows.Forms.RibbonButton();
+            this.btnVisitUndo = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -320,6 +323,7 @@ namespace Test
             this.btnOpinionShow.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
             this.btnOpinionShow.Image = ((System.Drawing.Image)(resources.GetObject("btnOpinionShow.Image")));
             this.btnOpinionShow.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionShow.LargeImage")));
+            this.btnOpinionShow.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Overflow;
             this.btnOpinionShow.Name = "btnOpinionShow";
             this.btnOpinionShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionShow.SmallImage")));
             this.btnOpinionShow.Text = "Wyświetl opinie";
@@ -330,6 +334,7 @@ namespace Test
             this.btnOpinionAdd.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
             this.btnOpinionAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnOpinionAdd.Image")));
             this.btnOpinionAdd.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionAdd.LargeImage")));
+            this.btnOpinionAdd.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Overflow;
             this.btnOpinionAdd.Name = "btnOpinionAdd";
             this.btnOpinionAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionAdd.SmallImage")));
             this.btnOpinionAdd.Text = "Dodaj opinię";
@@ -839,6 +844,9 @@ namespace Test
             this.ribbonPanel18.ButtonMoreVisible = false;
             this.ribbonPanel18.Items.Add(this.btnVisitsSchedule);
             this.ribbonPanel18.Items.Add(this.btnVisitSort);
+            this.ribbonPanel18.Items.Add(this.btnVisitAccept);
+            this.ribbonPanel18.Items.Add(this.btnVisitRealize);
+            this.ribbonPanel18.Items.Add(this.btnVisitUndo);
             this.ribbonPanel18.Name = "ribbonPanel18";
             this.ribbonPanel18.Text = "Ogólne";
             // 
@@ -1198,14 +1206,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SandyBrown;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle4;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
             this._gvMain.MultiSelect = false;
@@ -1214,6 +1222,33 @@ namespace Test
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
+            // 
+            // btnVisitAccept
+            // 
+            this.btnVisitAccept.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitAccept.Image")));
+            this.btnVisitAccept.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitAccept.LargeImage")));
+            this.btnVisitAccept.Name = "btnVisitAccept";
+            this.btnVisitAccept.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitAccept.SmallImage")));
+            this.btnVisitAccept.Text = "Potwierdź";
+            this.btnVisitAccept.Click += new System.EventHandler(this.btnVisitAccept_Click);
+            // 
+            // btnVisitRealize
+            // 
+            this.btnVisitRealize.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitRealize.Image")));
+            this.btnVisitRealize.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitRealize.LargeImage")));
+            this.btnVisitRealize.Name = "btnVisitRealize";
+            this.btnVisitRealize.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitRealize.SmallImage")));
+            this.btnVisitRealize.Text = "Realizuj";
+            this.btnVisitRealize.Click += new System.EventHandler(this.btnVisitRealize_Click);
+            // 
+            // btnVisitUndo
+            // 
+            this.btnVisitUndo.Image = ((System.Drawing.Image)(resources.GetObject("btnVisitUndo.Image")));
+            this.btnVisitUndo.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnVisitUndo.LargeImage")));
+            this.btnVisitUndo.Name = "btnVisitUndo";
+            this.btnVisitUndo.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitUndo.SmallImage")));
+            this.btnVisitUndo.Text = "Anuluj";
+            this.btnVisitUndo.Click += new System.EventHandler(this.btnVisitUndo_Click);
             // 
             // Form1
             // 
@@ -1350,6 +1385,9 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnArticleRemoveExpired;
         private System.Windows.Forms.RibbonButton btnToolsInventarize;
         private System.Windows.Forms.RibbonButton btnDoctorsHistory;
+        private System.Windows.Forms.RibbonButton btnVisitAccept;
+        private System.Windows.Forms.RibbonButton btnVisitRealize;
+        private System.Windows.Forms.RibbonButton btnVisitUndo;
     }
 }
 

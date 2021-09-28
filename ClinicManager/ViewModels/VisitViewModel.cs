@@ -4,6 +4,7 @@ using ClinicManager.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +16,43 @@ namespace ClinicManager.ViewModels
 {
     public class VisitViewModel : IVisitDetailsViewModel
     {
+        public void AcceptVisit(RegistrationRow row)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var editedVisit = context.Registrations.Find(row.Id);
+                editedVisit.Status = "Zaakceptowana";
+                context.Entry(editedVisit).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
+
         public void AddRegistration()
         {
             var form = new VisitDetails(DetailsMode.Add);
             form.ShowDialog();
+        }
+
+        public void CheckRegistrationStatus(DataGridView gridView)
+        {
+            foreach (DataGridViewRow row in gridView.Rows)
+            {
+                if (row.Cells[5].Value != null)
+                {
+                    if (row.Cells[5].Value.ToString() == "Zaakceptowana")
+                    {
+                        row.DefaultCellStyle.ForeColor = Color.Blue;
+                    }
+                    else if (row.Cells[5].Value.ToString() == "Zrealizowana")
+                    {
+                        row.DefaultCellStyle.ForeColor = Color.Green;
+                    }
+                    else
+                    {
+                        row.DefaultCellStyle.ForeColor = Color.Red;
+                    }
+                }
+            }
         }
 
         public void DeleteVisit(RegistrationRow visit)
@@ -78,6 +112,22 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public void RealizeVisit(RegistrationRow row)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var editedVisit = context.Registrations.Find(row.Id);
+                if(editedVisit.Status != "Zaakceptowana")
+                {
+                    MessageBox.Show(null, "Nie mozna zrealizowac niezaakceptowanej wizyty", "Blad");
+                    return;
+                }
+                editedVisit.Status = "Zrealizowana";
+                context.Entry(editedVisit).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
+
         public BindingSource RefreshVisits()
         {
             var bsMain = new BindingSource();
@@ -124,10 +174,21 @@ namespace ClinicManager.ViewModels
 
             using (var context = new ClinicDataEntities())
             {
-                var clinicList = context.RegistrationRow.SqlQuery($"SELECT Id, Pacjent, Lekarz, [Data operacji] AS Data_operacji, [Czas rozpoczecia] AS Czas_rozpoczecia FROM registrationRow ORDER BY {list.Sort}").ToList();
+                var clinicList = context.RegistrationRow.SqlQuery($"SELECT Id, Pacjent, Lekarz, [Data operacji] AS Data_operacji, [Czas rozpoczecia] AS Czas_rozpoczecia, Status FROM registrationRow ORDER BY {list.Sort}").ToList();
                 newBs.DataSource = typeof(ClinicRow);
                 newBs.DataSource = clinicList;
                 grid.DataSource = newBs;
+            }
+        }
+
+        public void UndoVisit(RegistrationRow row)
+        {
+            using (var context = new ClinicDataEntities())
+            {
+                var editedVisit = context.Registrations.Find(row.Id);
+                editedVisit.Status = "Anulowana";
+                context.Entry(editedVisit).State = System.Data.Entity.EntityState.Modified;
+                context.SaveChanges();
             }
         }
     }

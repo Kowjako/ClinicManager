@@ -370,6 +370,8 @@ namespace Test
                 bsMain.DataSource = clinicList;
                 _gvMain.DataSource = bsMain;
             }
+
+            VisitViewModel.CheckRegistrationStatus(_gvMain);
         }
 
         private void btnVisitsAdd_Click(object sender, EventArgs e)
@@ -390,6 +392,7 @@ namespace Test
         private void btnVisitsRefresh_Click(object sender, EventArgs e)
         {
             _gvMain.DataSource = VisitViewModel.RefreshVisits();
+            VisitViewModel.CheckRegistrationStatus(_gvMain);
         }
 
         private void btnVisitsFilter_Click(object sender, EventArgs e)
@@ -406,6 +409,21 @@ namespace Test
         private void btnVisitSort_Click(object sender, EventArgs e)
         {
             VisitViewModel.Sort(_gvMain, bsMain);
+        }
+
+        private void btnVisitAccept_Click(object sender, EventArgs e)
+        {
+            VisitViewModel.AcceptVisit(_gvMain.SelectedRows[0].DataBoundItem as RegistrationRow);
+        }
+
+        private void btnVisitRealize_Click(object sender, EventArgs e)
+        {
+            VisitViewModel.RealizeVisit(_gvMain.SelectedRows[0].DataBoundItem as RegistrationRow);
+        }
+
+        private void btnVisitUndo_Click(object sender, EventArgs e)
+        {
+            VisitViewModel.UndoVisit(_gvMain.SelectedRows[0].DataBoundItem as RegistrationRow);
         }
 
         #endregion
@@ -600,8 +618,10 @@ namespace Test
 
 
 
-        #endregion
 
-        
+
+
+        #endregion
+ 
     }
 }
