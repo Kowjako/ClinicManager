@@ -257,3 +257,17 @@ FROM Drugs d
 GO
 
 
+--Rozszerzalnosc istniejacych modulow
+ALTER TABLE Registrations
+ADD Status NVARCHAR(20)
+GO
+
+ALTER VIEW RegistrationRow AS
+SELECT r.Id 'Id',
+(SELECT Name + ' ' + Surname FROM Data WHERE Id = (SELECT DataId FROM Patients p WHERE p.Id = r.PatientId)) 'Pacjent',
+(SELECT Name + ' ' + Surname FROM Data WHERE Id = (SELECT DataId FROM Employees e WHERE e.Id = r.EmployeeId)) 'Lekarz',
+r.Date 'Data operacji', r.Time 'Czas rozpoczecia',
+r.Status 'Status'
+FROM Registrations r
+GO
+
