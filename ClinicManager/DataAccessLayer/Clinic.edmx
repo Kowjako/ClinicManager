@@ -129,6 +129,7 @@
           <Property Name="Time" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="EmployeeId" Type="int" Nullable="false" />
           <Property Name="PatientId" Type="int" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -298,13 +299,14 @@ warning 6002: The table/view 'ClinicData.dbo.RegistrationRow' does not have a pr
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="Data operacji" />
-            <PropertyRef Name="Czas rozpocz?cia" />
+            <PropertyRef Name="Czas rozpoczecia" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Pacjent" Type="nvarchar" MaxLength="511" />
           <Property Name="Lekarz" Type="nvarchar" MaxLength="511" />
           <Property Name="Data operacji" Type="datetime" Nullable="false" />
-          <Property Name="Czas rozpocz?cia" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Czas rozpoczecia" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -642,7 +644,8 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
     [RegistrationRow].[Pacjent] AS [Pacjent], 
     [RegistrationRow].[Lekarz] AS [Lekarz], 
     [RegistrationRow].[Data operacji] AS [Data operacji], 
-    [RegistrationRow].[Czas rozpocz?cia] AS [Czas rozpocz?cia]
+    [RegistrationRow].[Czas rozpoczecia] AS [Czas rozpoczecia], 
+    [RegistrationRow].[Status] AS [Status]
     FROM [dbo].[RegistrationRow] AS [RegistrationRow]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ToolRow" EntityType="Self.ToolRow" store:Type="Views" store:Schema="dbo">
@@ -878,6 +881,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Property Name="Time" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="EmployeeId" Type="Int32" Nullable="false" />
           <Property Name="PatientId" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employees" Relationship="Self.FK__Registrations_EmployeeId" FromRole="Registrations" ToRole="Employees" />
           <NavigationProperty Name="Patients" Relationship="Self.FK__Registrations_PatientId" FromRole="Registrations" ToRole="Patients" />
         </EntityType>
@@ -1030,13 +1034,14 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Key>
             <PropertyRef Name="Id" />
             <PropertyRef Name="Data_operacji" />
-            <PropertyRef Name="Czas_rozpocz_cia" />
+            <PropertyRef Name="Czas_rozpoczecia" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Pacjent" Type="String" MaxLength="511" FixedLength="false" Unicode="true" />
           <Property Name="Lekarz" Type="String" MaxLength="511" FixedLength="false" Unicode="true" />
           <Property Name="Data_operacji" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Czas_rozpocz_cia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Czas_rozpoczecia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ToolRow">
           <Key>
@@ -1496,6 +1501,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
                 <ScalarProperty Name="Time" ColumnName="Time" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
                 <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1632,7 +1638,8 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
                 <ScalarProperty Name="Pacjent" ColumnName="Pacjent" />
                 <ScalarProperty Name="Lekarz" ColumnName="Lekarz" />
                 <ScalarProperty Name="Data_operacji" ColumnName="Data operacji" />
-                <ScalarProperty Name="Czas_rozpocz_cia" ColumnName="Czas rozpocz?cia" />
+                <ScalarProperty Name="Czas_rozpoczecia" ColumnName="Czas rozpoczecia" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -19,6 +19,7 @@ namespace ClinicManager.DataAccessLayer
         public string Time { get; set; }
         public int EmployeeId { get; set; }
         public int PatientId { get; set; }
+        public string Status { get; set; }
     
         public virtual Employees Employees { get; set; }
         public virtual Patients Patients { get; set; }
