@@ -247,6 +247,12 @@ namespace Test
             PatientViewModel.Sort(_gvMain, bsMain);
         }
 
+        private void btnPatientVisits_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = PatientViewModel.ShowVisits(_gvMain.SelectedRows[0].DataBoundItem as PatientRow);
+            VisitViewModel.CheckRegistrationStatus(_gvMain);
+        }
+
         #endregion
 
         #region FixedAssets
@@ -622,6 +628,7 @@ namespace Test
 
 
         #endregion
- 
+
+        
     }
 }

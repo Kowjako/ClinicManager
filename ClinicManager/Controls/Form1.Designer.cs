@@ -30,8 +30,8 @@ namespace Test
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
@@ -148,6 +148,7 @@ namespace Test
             this.btnVisitAccept = new System.Windows.Forms.RibbonButton();
             this.btnVisitRealize = new System.Windows.Forms.RibbonButton();
             this.btnVisitUndo = new System.Windows.Forms.RibbonButton();
+            this.btnPatientVisits = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -537,6 +538,7 @@ namespace Test
             this.ribbonPanel16.ButtonMoreVisible = false;
             this.ribbonPanel16.Items.Add(this.btnPatientShowContact);
             this.ribbonPanel16.Items.Add(this.btnPatientSort);
+            this.ribbonPanel16.Items.Add(this.btnPatientVisits);
             this.ribbonPanel16.Name = "ribbonPanel16";
             this.ribbonPanel16.Text = "Ogólne";
             // 
@@ -1206,14 +1208,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle2;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
             this._gvMain.MultiSelect = false;
@@ -1249,6 +1251,15 @@ namespace Test
             this.btnVisitUndo.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnVisitUndo.SmallImage")));
             this.btnVisitUndo.Text = "Anuluj";
             this.btnVisitUndo.Click += new System.EventHandler(this.btnVisitUndo_Click);
+            // 
+            // btnPatientVisits
+            // 
+            this.btnPatientVisits.Image = ((System.Drawing.Image)(resources.GetObject("btnPatientVisits.Image")));
+            this.btnPatientVisits.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPatientVisits.LargeImage")));
+            this.btnPatientVisits.Name = "btnPatientVisits";
+            this.btnPatientVisits.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPatientVisits.SmallImage")));
+            this.btnPatientVisits.Text = "Rejestracje";
+            this.btnPatientVisits.Click += new System.EventHandler(this.btnPatientVisits_Click);
             // 
             // Form1
             // 
@@ -1388,6 +1399,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnVisitAccept;
         private System.Windows.Forms.RibbonButton btnVisitRealize;
         private System.Windows.Forms.RibbonButton btnVisitUndo;
+        private System.Windows.Forms.RibbonButton btnPatientVisits;
     }
 }
 

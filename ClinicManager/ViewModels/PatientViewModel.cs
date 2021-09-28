@@ -127,6 +127,22 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public BindingSource ShowVisits(PatientRow row)
+        {
+            var bs = new BindingSource();
+            using (var context = new ClinicDataEntities())
+            {
+                bs.DataSource = typeof(RegistrationRow);
+                var registrationList = context.Registrations.Where(p => p.PatientId == row.Id).ToList();
+
+                var regRows = context.RegistrationRow.AsEnumerable()
+                                                     .Where(p => registrationList.Any(x => x.Id == p.Id))
+                                                     .OrderBy(x => x.Data_operacji).ToList();
+                bs.DataSource = regRows;
+            }
+            return bs;
+        }
+
         public void Sort(DataGridView grid, BindingSource list)
         {
             var form = new SortDetails();
