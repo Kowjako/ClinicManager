@@ -19,6 +19,7 @@ namespace ClinicManager.DataAccessLayer
         {
             this.Costs = new HashSet<Costs>();
             this.Operations = new HashSet<Operations>();
+            this.Orders = new HashSet<Orders>();
         }
     
         public int Id { get; set; }
@@ -34,5 +35,7 @@ namespace ClinicManager.DataAccessLayer
         public virtual ICollection<Costs> Costs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Operations> Operations { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

@@ -266,6 +266,12 @@
     <Compile Include="DataAccessLayer\Opinions.cs">
       <DependentUpon>Clinic.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\OrderRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Orders.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\PatientRow.cs">
       <DependentUpon>Clinic.tt</DependentUpon>
     </Compile>

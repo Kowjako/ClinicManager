@@ -588,6 +588,11 @@ namespace Test
             ProducentViewModel.Sort(_gvMain, bsMain);
         }
 
+        private void btnProducentsOrders_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = ProducentViewModel.GetRelatedOrders(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
+        }
+
         #endregion
 
         #region Configuration
@@ -611,6 +616,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
 
 
 

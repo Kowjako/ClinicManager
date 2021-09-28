@@ -18,6 +18,7 @@ namespace ClinicManager.DataAccessLayer
         public Producents()
         {
             this.Costs = new HashSet<Costs>();
+            this.Orders = new HashSet<Orders>();
         }
     
         public int Id { get; set; }
@@ -31,5 +32,7 @@ namespace ClinicManager.DataAccessLayer
         public virtual ICollection<Costs> Costs { get; set; }
         public virtual Data Data { get; set; }
         public virtual Localizations Localizations { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

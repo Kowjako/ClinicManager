@@ -144,13 +144,13 @@ namespace Test
             this.btnSupplierLocalizationAdd = new System.Windows.Forms.RibbonButton();
             this.btnProducentShowContact = new System.Windows.Forms.RibbonButton();
             this.btnProducentsSort = new System.Windows.Forms.RibbonButton();
+            this.btnProducentsOrders = new System.Windows.Forms.RibbonButton();
             this.ribbonTab10 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
             this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this.btnProducentsOrders = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -1216,6 +1216,15 @@ namespace Test
             this.btnProducentsSort.Text = "Sortuj";
             this.btnProducentsSort.Click += new System.EventHandler(this.btnProducentsSort_Click);
             // 
+            // btnProducentsOrders
+            // 
+            this.btnProducentsOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.Image")));
+            this.btnProducentsOrders.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.LargeImage")));
+            this.btnProducentsOrders.Name = "btnProducentsOrders";
+            this.btnProducentsOrders.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.SmallImage")));
+            this.btnProducentsOrders.Text = "Zamówienia";
+            this.btnProducentsOrders.Click += new System.EventHandler(this.btnProducentsOrders_Click);
+            // 
             // ribbonTab10
             // 
             this.ribbonTab10.Name = "ribbonTab10";
@@ -1273,14 +1282,6 @@ namespace Test
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
-            // 
-            // btnProducentsOrders
-            // 
-            this.btnProducentsOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.Image")));
-            this.btnProducentsOrders.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.LargeImage")));
-            this.btnProducentsOrders.Name = "btnProducentsOrders";
-            this.btnProducentsOrders.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.SmallImage")));
-            this.btnProducentsOrders.Text = "Zamówienia";
             // 
             // Form1
             // 

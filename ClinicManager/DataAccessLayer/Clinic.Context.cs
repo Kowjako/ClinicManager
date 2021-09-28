@@ -33,6 +33,7 @@ namespace ClinicManager.DataAccessLayer
         public virtual DbSet<Localizations> Localizations { get; set; }
         public virtual DbSet<Operations> Operations { get; set; }
         public virtual DbSet<Opinions> Opinions { get; set; }
+        public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Patients> Patients { get; set; }
         public virtual DbSet<Producents> Producents { get; set; }
         public virtual DbSet<Registrations> Registrations { get; set; }
@@ -45,6 +46,7 @@ namespace ClinicManager.DataAccessLayer
         public virtual DbSet<LocalizationRow> LocalizationRow { get; set; }
         public virtual DbSet<OperationRow> OperationRow { get; set; }
         public virtual DbSet<OpinionRow> OpinionRow { get; set; }
+        public virtual DbSet<OrderRow> OrderRow { get; set; }
         public virtual DbSet<PatientRow> PatientRow { get; set; }
         public virtual DbSet<ProducentRow> ProducentRow { get; set; }
         public virtual DbSet<RegistrationRow> RegistrationRow { get; set; }
