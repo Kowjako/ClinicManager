@@ -198,6 +198,7 @@ namespace Test
         private void btnDoctorsHistory_Click(object sender, EventArgs e)
         {
             _gvMain.DataSource = EmployeeViewModel.ShowHistory(_gvMain.SelectedRows[0].DataBoundItem as EmployeeRow);
+            VisitViewModel.CheckRegistrationStatus(_gvMain);
         }
 
         #endregion

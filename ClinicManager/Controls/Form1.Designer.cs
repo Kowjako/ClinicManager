@@ -150,6 +150,7 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.btnProducentsOrders = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -1184,6 +1185,7 @@ namespace Test
             this.ribbonPanel19.Items.Add(this.btnSupplierLocalizationAdd);
             this.ribbonPanel19.Items.Add(this.btnProducentShowContact);
             this.ribbonPanel19.Items.Add(this.btnProducentsSort);
+            this.ribbonPanel19.Items.Add(this.btnProducentsOrders);
             this.ribbonPanel19.Name = "ribbonPanel19";
             this.ribbonPanel19.Text = "Ogólne";
             // 
@@ -1271,6 +1273,14 @@ namespace Test
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
+            // 
+            // btnProducentsOrders
+            // 
+            this.btnProducentsOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.Image")));
+            this.btnProducentsOrders.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.LargeImage")));
+            this.btnProducentsOrders.Name = "btnProducentsOrders";
+            this.btnProducentsOrders.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.SmallImage")));
+            this.btnProducentsOrders.Text = "Zamówienia";
             // 
             // Form1
             // 
@@ -1412,6 +1422,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnVisitUndo;
         private System.Windows.Forms.RibbonButton btnPatientVisits;
         private System.Windows.Forms.RibbonButton btnClinicsStructure;
+        private System.Windows.Forms.RibbonButton btnProducentsOrders;
     }
 }
 
