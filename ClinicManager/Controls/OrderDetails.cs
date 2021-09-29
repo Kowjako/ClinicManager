@@ -71,6 +71,7 @@ namespace ClinicManager.Controls
             if (amount.Value == 0)
             {
                 MessageBox.Show(null, "Ilosc musi byc wieksza od zera", "Blad");
+                return;
             }
             ClinicViewModel.SaveOrder(newOrderData);
             this.Close();
