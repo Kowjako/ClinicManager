@@ -67,6 +67,13 @@ namespace ClinicManager
 
         }
 
+        public void SetSpecificProducent(ProducentRow prod)
+        {
+            producentBox.SelectedItem = Dictionaries.ProducentList.Value
+                                                     .Where(p => p.Value.Id == prod.Id).First().Value;
+            producentBox.Enabled = false;
+        }
+
         private void saveBtn_Click(object sender, EventArgs e)
         {
             var newCostData = (bsCosts.DataSource as List<Costs>).First();

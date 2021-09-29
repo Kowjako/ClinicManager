@@ -598,6 +598,11 @@ namespace Test
             _gvMain.DataSource = ProducentViewModel.GetRelatedOrders(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
         }
 
+        private void btnProducentsAddPrice_Click(object sender, EventArgs e)
+        {
+            CostViewModel.AddCost(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
+        }
+
         #endregion
 
         #region Configuration
@@ -646,8 +651,9 @@ namespace Test
 
 
 
+
         #endregion
 
-       
+        
     }
 }

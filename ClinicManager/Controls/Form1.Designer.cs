@@ -152,6 +152,7 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.btnProducentsAddPrice = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -1197,6 +1198,7 @@ namespace Test
             this.ribbonPanel19.Items.Add(this.btnProducentShowContact);
             this.ribbonPanel19.Items.Add(this.btnProducentsSort);
             this.ribbonPanel19.Items.Add(this.btnProducentsOrders);
+            this.ribbonPanel19.Items.Add(this.btnProducentsAddPrice);
             this.ribbonPanel19.Name = "ribbonPanel19";
             this.ribbonPanel19.Text = "Ogólne";
             // 
@@ -1293,6 +1295,15 @@ namespace Test
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
+            // 
+            // btnProducentsAddPrice
+            // 
+            this.btnProducentsAddPrice.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsAddPrice.Image")));
+            this.btnProducentsAddPrice.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsAddPrice.LargeImage")));
+            this.btnProducentsAddPrice.Name = "btnProducentsAddPrice";
+            this.btnProducentsAddPrice.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsAddPrice.SmallImage")));
+            this.btnProducentsAddPrice.Text = "Cennik";
+            this.btnProducentsAddPrice.Click += new System.EventHandler(this.btnProducentsAddPrice_Click);
             // 
             // Form1
             // 
@@ -1436,6 +1447,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnClinicsStructure;
         private System.Windows.Forms.RibbonButton btnProducentsOrders;
         private System.Windows.Forms.RibbonButton btnClinicsOrder;
+        private System.Windows.Forms.RibbonButton btnProducentsAddPrice;
     }
 }
 

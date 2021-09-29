@@ -21,6 +21,13 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public void AddCost(ProducentRow producent)
+        {
+            var form = new CostDetails(DetailsMode.Add);
+            form.SetSpecificProducent(producent);
+            form.ShowDialog();
+        }
+
         public void DeleteCost(CostRow cost)
         {
             using (var context = new ClinicDataEntities())
