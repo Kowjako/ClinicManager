@@ -96,6 +96,12 @@ namespace ClinicManager.ViewModels
             }
         }
 
+        public void MakeOrder()
+        {
+            var form = new OrderDetails(DetailsMode.Add);
+            form.ShowDialog();
+        }
+
         public BindingSource RefreshClinics()
         {
             var bsMain = new BindingSource();
@@ -132,6 +138,15 @@ namespace ClinicManager.ViewModels
                         MessageBox.Show(null, "Wybrana lokalizacja jest już zajęta. Prosze stworzyc nowa", "Błąd!");
                     }
                 }
+            }
+        }
+
+        public void SaveOrder(Orders order)
+        {
+            using(var context = new ClinicDataEntities())
+            {
+                context.Orders.Add(order);
+                context.SaveChanges();
             }
         }
 

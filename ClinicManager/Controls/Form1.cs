@@ -138,6 +138,11 @@ namespace Test
             ClinicViewModel.Sort(_gvMain, bsMain);
         }
 
+        private void btnClinicsOrder_Click(object sender, EventArgs e)
+        {
+            ClinicViewModel.MakeOrder();
+        }
+
         #endregion
 
         #region Employees
@@ -640,8 +645,9 @@ namespace Test
 
 
 
+
         #endregion
 
-        
+       
     }
 }

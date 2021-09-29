@@ -21,5 +21,7 @@ namespace ClinicManager.Interfaces
         void AddOpinion();
         void Sort(DataGridView grid, BindingSource list);
         void ShowHierarchy(ClinicRow row);
+        void MakeOrder();
+        void SaveOrder(Orders order);
     }
 }

@@ -45,6 +45,7 @@ namespace Test
             this.btnLocalizationAdd = new System.Windows.Forms.RibbonButton();
             this.btnClinicsSort = new System.Windows.Forms.RibbonButton();
             this.btnClinicsStructure = new System.Windows.Forms.RibbonButton();
+            this.btnClinicsOrder = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.btnHospitalOpinions = new System.Windows.Forms.RibbonButton();
             this.btnOpinionShow = new System.Windows.Forms.RibbonButton();
@@ -151,7 +152,6 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this.btnClinicsOrder = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -313,6 +313,15 @@ namespace Test
             this.btnClinicsStructure.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsStructure.SmallImage")));
             this.btnClinicsStructure.Text = "Struktura";
             this.btnClinicsStructure.Click += new System.EventHandler(this.btnClinicsStructure_Click);
+            // 
+            // btnClinicsOrder
+            // 
+            this.btnClinicsOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder.Image")));
+            this.btnClinicsOrder.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder.LargeImage")));
+            this.btnClinicsOrder.Name = "btnClinicsOrder";
+            this.btnClinicsOrder.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder.SmallImage")));
+            this.btnClinicsOrder.Text = "Zamów ";
+            this.btnClinicsOrder.Click += new System.EventHandler(this.btnClinicsOrder_Click);
             // 
             // ribbonPanel2
             // 
@@ -1284,14 +1293,6 @@ namespace Test
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
-            // 
-            // btnClinicsOrder
-            // 
-            this.btnClinicsOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder.Image")));
-            this.btnClinicsOrder.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder.LargeImage")));
-            this.btnClinicsOrder.Name = "btnClinicsOrder";
-            this.btnClinicsOrder.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder.SmallImage")));
-            this.btnClinicsOrder.Text = "Zamów ";
             // 
             // Form1
             // 

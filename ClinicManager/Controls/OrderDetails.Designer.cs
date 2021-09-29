@@ -32,24 +32,24 @@ namespace ClinicManager.Controls
             this.components = new System.ComponentModel.Container();
             this.saveBtn = new System.Windows.Forms.Button();
             this.clinicBox = new System.Windows.Forms.ComboBox();
+            this.bsClinic = new System.Windows.Forms.BindingSource(this.components);
             this.drugBox = new System.Windows.Forms.ComboBox();
+            this.bsDrugs = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.producentBox = new System.Windows.Forms.ComboBox();
+            this.bsProducent = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.amount = new System.Windows.Forms.NumericUpDown();
-            this.unitBox = new System.Windows.Forms.ComboBox();
             this.bsOrder = new System.Windows.Forms.BindingSource(this.components);
-            this.bsDrugs = new System.Windows.Forms.BindingSource(this.components);
-            this.bsClinic = new System.Windows.Forms.BindingSource(this.components);
-            this.bsProducent = new System.Windows.Forms.BindingSource(this.components);
+            this.unitBox = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.bsClinic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDrugs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProducent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrder)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDrugs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsClinic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProducent)).BeginInit();
             this.SuspendLayout();
             // 
             // saveBtn
@@ -60,10 +60,12 @@ namespace ClinicManager.Controls
             this.saveBtn.TabIndex = 21;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // clinicBox
             // 
-            this.clinicBox.DisplayMember = "Adres";
+            this.clinicBox.DataSource = this.bsClinic;
+            this.clinicBox.DisplayMember = "Nazwa";
             this.clinicBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clinicBox.FormattingEnabled = true;
             this.clinicBox.Location = new System.Drawing.Point(182, 38);
@@ -72,9 +74,14 @@ namespace ClinicManager.Controls
             this.clinicBox.TabIndex = 20;
             this.clinicBox.ValueMember = "Id";
             // 
+            // bsClinic
+            // 
+            this.bsClinic.DataSource = typeof(ClinicManager.DataAccessLayer.ClinicRow);
+            // 
             // drugBox
             // 
-            this.drugBox.DisplayMember = "Lekarz";
+            this.drugBox.DataSource = this.bsDrugs;
+            this.drugBox.DisplayMember = "Nazwa";
             this.drugBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.drugBox.FormattingEnabled = true;
             this.drugBox.Location = new System.Drawing.Point(182, 9);
@@ -82,6 +89,10 @@ namespace ClinicManager.Controls
             this.drugBox.Size = new System.Drawing.Size(325, 21);
             this.drugBox.TabIndex = 19;
             this.drugBox.ValueMember = "Id";
+            // 
+            // bsDrugs
+            // 
+            this.bsDrugs.DataSource = typeof(ClinicManager.DataAccessLayer.DrugRow);
             // 
             // label5
             // 
@@ -125,7 +136,8 @@ namespace ClinicManager.Controls
             // 
             // producentBox
             // 
-            this.producentBox.DisplayMember = "Adres";
+            this.producentBox.DataSource = this.bsProducent;
+            this.producentBox.DisplayMember = "Nazwa_producenta";
             this.producentBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.producentBox.FormattingEnabled = true;
             this.producentBox.Location = new System.Drawing.Point(182, 65);
@@ -133,6 +145,10 @@ namespace ClinicManager.Controls
             this.producentBox.Size = new System.Drawing.Size(325, 21);
             this.producentBox.TabIndex = 23;
             this.producentBox.ValueMember = "Id";
+            // 
+            // bsProducent
+            // 
+            this.bsProducent.DataSource = typeof(ClinicManager.DataAccessLayer.ProducentRow);
             // 
             // label3
             // 
@@ -152,6 +168,10 @@ namespace ClinicManager.Controls
             this.amount.Size = new System.Drawing.Size(324, 20);
             this.amount.TabIndex = 24;
             // 
+            // bsOrder
+            // 
+            this.bsOrder.DataSource = typeof(ClinicManager.DataAccessLayer.Orders);
+            // 
             // unitBox
             // 
             this.unitBox.DisplayMember = "Adres";
@@ -162,22 +182,6 @@ namespace ClinicManager.Controls
             this.unitBox.Size = new System.Drawing.Size(325, 21);
             this.unitBox.TabIndex = 25;
             this.unitBox.ValueMember = "Id";
-            // 
-            // bsOrder
-            // 
-            this.bsOrder.DataSource = typeof(ClinicManager.DataAccessLayer.Orders);
-            // 
-            // bsDrugs
-            // 
-            this.bsDrugs.DataSource = typeof(ClinicManager.DataAccessLayer.DrugRow);
-            // 
-            // bsClinic
-            // 
-            this.bsClinic.DataSource = typeof(ClinicManager.DataAccessLayer.ClinicRow);
-            // 
-            // bsProducent
-            // 
-            this.bsProducent.DataSource = typeof(ClinicManager.DataAccessLayer.ProducentRow);
             // 
             // OrderDetails
             // 
@@ -200,11 +204,11 @@ namespace ClinicManager.Controls
             this.MinimizeBox = false;
             this.Name = "OrderDetails";
             this.Text = "Zamówienie towaru dla przychodni";
+            ((System.ComponentModel.ISupportInitialize)(this.bsClinic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDrugs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProducent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.amount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrder)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDrugs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsClinic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProducent)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
