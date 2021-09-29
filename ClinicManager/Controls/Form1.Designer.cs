@@ -151,6 +151,7 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.btnClinicsOrder = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -282,6 +283,7 @@ namespace Test
             this.ribbonPanel12.Items.Add(this.btnLocalizationAdd);
             this.ribbonPanel12.Items.Add(this.btnClinicsSort);
             this.ribbonPanel12.Items.Add(this.btnClinicsStructure);
+            this.ribbonPanel12.Items.Add(this.btnClinicsOrder);
             this.ribbonPanel12.Name = "ribbonPanel12";
             this.ribbonPanel12.Text = "Ogólne";
             // 
@@ -1283,6 +1285,14 @@ namespace Test
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
             // 
+            // btnClinicsOrder
+            // 
+            this.btnClinicsOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder.Image")));
+            this.btnClinicsOrder.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder.LargeImage")));
+            this.btnClinicsOrder.Name = "btnClinicsOrder";
+            this.btnClinicsOrder.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder.SmallImage")));
+            this.btnClinicsOrder.Text = "Zamów ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1424,6 +1434,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnPatientVisits;
         private System.Windows.Forms.RibbonButton btnClinicsStructure;
         private System.Windows.Forms.RibbonButton btnProducentsOrders;
+        private System.Windows.Forms.RibbonButton btnClinicsOrder;
     }
 }
 
