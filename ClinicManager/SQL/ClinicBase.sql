@@ -301,3 +301,25 @@ GO
 ALTER TABLE Tools
 	ADD CONSTRAINT FK__Tools_ProducentId FOREIGN KEY (ProducentId) REFERENCES Producents(Id) ON DELETE SET NULL
 GO
+
+CREATE TABLE OrdersTools (
+	Id INT IDENTITY(1,1),
+	ToolId INT NOT NULL,
+	ClinicId INT NOT NULL,
+	ProducentId INT NOT NULL,
+	Amount TINYINT,
+	CONSTRAINT PK__OrdersTools_Id PRIMARY KEY CLUSTERED(Id),
+	CONSTRAINT FK__OrdersTools_ToolId FOREIGN KEY (ToolId) REFERENCES Tools(Id) ON DELETE CASCADE,
+	CONSTRAINT FK__OrdersTools_ClinicId FOREIGN KEY (ClinicId) REFERENCES Clinics(Id) ON DELETE CASCADE,
+	CONSTRAINT FK__OrdersTools_ProducentId FOREIGN KEY (ProducentId) REFERENCES Producents(Id) ON DELETE NO ACTION
+);
+GO
+
+
+CREATE VIEW OrderToolRow AS
+SELECT o.Id 'Id', o.Amount 'Ilosc', c.Name 'Przychodnia', t.Name 'Narzedzie', p.Name 'Producent'
+FROM OrdersTools o
+JOIN Clinics c ON o.ClinicId = c.Id
+JOIN Tools t ON o.ToolId = t.Id
+JOIN Producents p ON o.ProducentId = p.Id
+GO
