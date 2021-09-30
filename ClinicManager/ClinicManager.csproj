@@ -278,6 +278,12 @@
     <Compile Include="DataAccessLayer\Orders.cs">
       <DependentUpon>Clinic.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\OrdersTools.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\OrderToolRow.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\PatientRow.cs">
       <DependentUpon>Clinic.tt</DependentUpon>
     </Compile>

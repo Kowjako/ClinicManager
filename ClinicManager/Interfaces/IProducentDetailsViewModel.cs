@@ -20,5 +20,6 @@ namespace ClinicManager.Interfaces
         void ShowContact(ProducentRow row);
         void Sort(DataGridView grid, BindingSource list);
         BindingSource GetRelatedOrders(ProducentRow row);
+        BindingSource GetRelatedOrdersTools(ProducentRow row);
     }
 }

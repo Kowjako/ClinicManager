@@ -85,6 +85,18 @@ namespace ClinicManager.ViewModels
             }
         }
 
+        public BindingSource GetRelatedOrdersTools(ProducentRow row)
+        {
+            var bs = new BindingSource();
+            using(var context = new ClinicDataEntities())
+            {
+                var orderToolsList = context.OrderToolRow.Where(p => p.Producent == row.Nazwa_producenta).ToList();
+                bs.DataSource = typeof(OrderToolRow);
+                bs.DataSource = orderToolsList;
+                return bs;
+            }
+        }
+
         public BindingSource RefreshProducents()
         {
             var bsMain = new BindingSource();

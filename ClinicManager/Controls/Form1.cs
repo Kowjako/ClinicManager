@@ -598,6 +598,11 @@ namespace Test
             _gvMain.DataSource = ProducentViewModel.GetRelatedOrders(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
         }
 
+        private void btnProducentsOrdersTools_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = ProducentViewModel.GetRelatedOrdersTools(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
+        }
+
         private void btnProducentsAddPrice_Click(object sender, EventArgs e)
         {
             CostViewModel.AddCost(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
@@ -626,6 +631,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
 
 
 
