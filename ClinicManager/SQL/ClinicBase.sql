@@ -294,13 +294,6 @@ JOIN Drugs d ON o.DrugId = d.Id
 JOIN Producents p ON o.ProducentId = p.Id
 GO
 
-ALTER TABLE Tools 
-	ADD ProducentId INT
-GO
-
-ALTER TABLE Tools
-	ADD CONSTRAINT FK__Tools_ProducentId FOREIGN KEY (ProducentId) REFERENCES Producents(Id) ON DELETE SET NULL
-GO
 
 CREATE TABLE OrdersTools (
 	Id INT IDENTITY(1,1),
@@ -314,7 +307,6 @@ CREATE TABLE OrdersTools (
 	CONSTRAINT FK__OrdersTools_ProducentId FOREIGN KEY (ProducentId) REFERENCES Producents(Id) ON DELETE NO ACTION
 );
 GO
-
 
 CREATE VIEW OrderToolRow AS
 SELECT o.Id 'Id', o.Amount 'Ilosc', c.Name 'Przychodnia', t.Name 'Narzedzie', p.Name 'Producent'
