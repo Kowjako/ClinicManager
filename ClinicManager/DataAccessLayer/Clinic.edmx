@@ -109,6 +109,16 @@
           <Property Name="Amount" Type="tinyint" />
           <Property Name="Unit" Type="nvarchar" MaxLength="20" />
         </EntityType>
+        <EntityType Name="OrdersTools">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ToolId" Type="int" Nullable="false" />
+          <Property Name="ClinicId" Type="int" Nullable="false" />
+          <Property Name="ProducentId" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="tinyint" />
+        </EntityType>
         <EntityType Name="Patients">
           <Key>
             <PropertyRef Name="Id" />
@@ -162,6 +172,7 @@
           <Property Name="ProductionDate" Type="datetime" Nullable="false" />
           <Property Name="ExpireDate" Type="datetime" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProducentId" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ClinicData.dbo.ClinicRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -289,6 +300,21 @@ warning 6002: The table/view 'ClinicData.dbo.OrderRow' does not have a primary k
           <Property Name="Jednostka" Type="nvarchar" MaxLength="20" />
           <Property Name="Przychodnia" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Lek" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Producent" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ClinicData.dbo.OrderToolRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OrderToolRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Przychodnia" />
+            <PropertyRef Name="Narzedzie" />
+            <PropertyRef Name="Producent" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Ilosc" Type="tinyint" />
+          <Property Name="Przychodnia" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Narzedzie" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Producent" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -524,6 +550,46 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__OrdersTools_ClinicId">
+          <End Role="Clinics" Type="Self.Clinics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrdersTools" Type="Self.OrdersTools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clinics">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrdersTools">
+              <PropertyRef Name="ClinicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdersTools_ProducentId">
+          <End Role="Producents" Type="Self.Producents" Multiplicity="1" />
+          <End Role="OrdersTools" Type="Self.OrdersTools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producents">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrdersTools">
+              <PropertyRef Name="ProducentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdersTools_ToolId">
+          <End Role="Tools" Type="Self.Tools" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrdersTools" Type="Self.OrdersTools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tools">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrdersTools">
+              <PropertyRef Name="ToolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Patients_DataId">
           <End Role="Data" Type="Self.Data" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -606,6 +672,18 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Tools_ProducentId">
+          <End Role="Producents" Type="Self.Producents" Multiplicity="0..1" />
+          <End Role="Tools" Type="Self.Tools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producents">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tools">
+              <PropertyRef Name="ProducentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ClinicDataModelStoreContainer">
           <EntitySet Name="Clinics" EntityType="Self.Clinics" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Costs" EntityType="Self.Costs" Schema="dbo" store:Type="Tables" />
@@ -616,6 +694,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <EntitySet Name="Operations" EntityType="Self.Operations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Opinions" EntityType="Self.Opinions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrdersTools" EntityType="Self.OrdersTools" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producents" EntityType="Self.Producents" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Registrations" EntityType="Self.Registrations" Schema="dbo" store:Type="Tables" />
@@ -697,6 +776,15 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
     [OrderRow].[Lek] AS [Lek], 
     [OrderRow].[Producent] AS [Producent]
     FROM [dbo].[OrderRow] AS [OrderRow]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OrderToolRow" EntityType="Self.OrderToolRow" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OrderToolRow].[Id] AS [Id], 
+    [OrderToolRow].[Ilosc] AS [Ilosc], 
+    [OrderToolRow].[Przychodnia] AS [Przychodnia], 
+    [OrderToolRow].[Narzedzie] AS [Narzedzie], 
+    [OrderToolRow].[Producent] AS [Producent]
+    FROM [dbo].[OrderToolRow] AS [OrderToolRow]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="PatientRow" EntityType="Self.PatientRow" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -788,6 +876,18 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
             <End Role="Producents" EntitySet="Producents" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
+          <AssociationSet Name="FK__OrdersTools_ClinicId" Association="Self.FK__OrdersTools_ClinicId">
+            <End Role="Clinics" EntitySet="Clinics" />
+            <End Role="OrdersTools" EntitySet="OrdersTools" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdersTools_ProducentId" Association="Self.FK__OrdersTools_ProducentId">
+            <End Role="Producents" EntitySet="Producents" />
+            <End Role="OrdersTools" EntitySet="OrdersTools" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdersTools_ToolId" Association="Self.FK__OrdersTools_ToolId">
+            <End Role="Tools" EntitySet="Tools" />
+            <End Role="OrdersTools" EntitySet="OrdersTools" />
+          </AssociationSet>
           <AssociationSet Name="FK__Patients_DataId" Association="Self.FK__Patients_DataId">
             <End Role="Data" EntitySet="Data" />
             <End Role="Patients" EntitySet="Patients" />
@@ -812,6 +912,10 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
             <End Role="Patients" EntitySet="Patients" />
             <End Role="Registrations" EntitySet="Registrations" />
           </AssociationSet>
+          <AssociationSet Name="FK__Tools_ProducentId" Association="Self.FK__Tools_ProducentId">
+            <End Role="Producents" EntitySet="Producents" />
+            <End Role="Tools" EntitySet="Tools" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -834,6 +938,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <NavigationProperty Name="Employees1" Relationship="Self.FK__Employees_ClinicId" FromRole="Clinics" ToRole="Employees" />
           <NavigationProperty Name="Opinions" Relationship="Self.FK__Opinions_ClinicId" FromRole="Clinics" ToRole="Opinions" />
           <NavigationProperty Name="Orders" Relationship="Self.FK__Orders_ClinicId" FromRole="Clinics" ToRole="Orders" />
+          <NavigationProperty Name="OrdersTools" Relationship="Self.FK__OrdersTools_ClinicId" FromRole="Clinics" ToRole="OrdersTools" />
         </EntityType>
         <EntityType Name="Costs">
           <Key>
@@ -950,6 +1055,19 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <NavigationProperty Name="Drugs" Relationship="Self.FK__Orders_DrugId" FromRole="Orders" ToRole="Drugs" />
           <NavigationProperty Name="Producents" Relationship="Self.FK__Orders_ProducentId" FromRole="Orders" ToRole="Producents" />
         </EntityType>
+        <EntityType Name="OrdersTools">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ToolId" Type="Int32" Nullable="false" />
+          <Property Name="ClinicId" Type="Int32" Nullable="false" />
+          <Property Name="ProducentId" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Byte" />
+          <NavigationProperty Name="Clinics" Relationship="Self.FK__OrdersTools_ClinicId" FromRole="OrdersTools" ToRole="Clinics" />
+          <NavigationProperty Name="Producents" Relationship="Self.FK__OrdersTools_ProducentId" FromRole="OrdersTools" ToRole="Producents" />
+          <NavigationProperty Name="Tools" Relationship="Self.FK__OrdersTools_ToolId" FromRole="OrdersTools" ToRole="Tools" />
+        </EntityType>
         <EntityType Name="Patients">
           <Key>
             <PropertyRef Name="Id" />
@@ -978,6 +1096,8 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <NavigationProperty Name="Data" Relationship="Self.FK__Producents_DataId" FromRole="Producents" ToRole="Data" />
           <NavigationProperty Name="Localizations" Relationship="Self.FK__Producents_LocalizationID" FromRole="Producents" ToRole="Localizations" />
           <NavigationProperty Name="Orders" Relationship="Self.FK__Orders_ProducentId" FromRole="Producents" ToRole="Orders" />
+          <NavigationProperty Name="OrdersTools" Relationship="Self.FK__OrdersTools_ProducentId" FromRole="Producents" ToRole="OrdersTools" />
+          <NavigationProperty Name="Tools" Relationship="Self.FK__Tools_ProducentId" FromRole="Producents" ToRole="Tools" />
         </EntityType>
         <EntityType Name="Registrations">
           <Key>
@@ -1012,7 +1132,10 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Property Name="ProductionDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ExpireDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ProducentId" Type="Int32" />
           <NavigationProperty Name="Operations" Relationship="Self.FK__Operations_ToolId" FromRole="Tools" ToRole="Operations" />
+          <NavigationProperty Name="OrdersTools" Relationship="Self.FK__OrdersTools_ToolId" FromRole="Tools" ToRole="OrdersTools" />
+          <NavigationProperty Name="Producents" Relationship="Self.FK__Tools_ProducentId" FromRole="Tools" ToRole="Producents" />
         </EntityType>
         <EntityType Name="ClinicRow">
           <Key>
@@ -1124,6 +1247,19 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Property Name="Jednostka" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Przychodnia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Lek" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Producent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderToolRow">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Przychodnia" />
+            <PropertyRef Name="Narzedzie" />
+            <PropertyRef Name="Producent" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc" Type="Byte" />
+          <Property Name="Przychodnia" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Narzedzie" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Producent" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="PatientRow">
@@ -1241,6 +1377,20 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="Orders">
+              <PropertyRef Name="ClinicId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdersTools_ClinicId">
+          <End Role="Clinics" Type="Self.Clinics" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrdersTools" Type="Self.OrdersTools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clinics">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrdersTools">
               <PropertyRef Name="ClinicId" />
             </Dependent>
           </ReferentialConstraint>
@@ -1421,6 +1571,32 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__OrdersTools_ProducentId">
+          <End Role="Producents" Type="Self.Producents" Multiplicity="1" />
+          <End Role="OrdersTools" Type="Self.OrdersTools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producents">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrdersTools">
+              <PropertyRef Name="ProducentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrdersTools_ToolId">
+          <End Role="Tools" Type="Self.Tools" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="OrdersTools" Type="Self.OrdersTools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tools">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="OrdersTools">
+              <PropertyRef Name="ToolId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Registrations_PatientId">
           <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
           <End Role="Registrations" Type="Self.Registrations" Multiplicity="*" />
@@ -1430,6 +1606,18 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
             </Principal>
             <Dependent Role="Registrations">
               <PropertyRef Name="PatientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tools_ProducentId">
+          <End Role="Producents" Type="Self.Producents" Multiplicity="0..1" />
+          <End Role="Tools" Type="Self.Tools" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producents">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Tools">
+              <PropertyRef Name="ProducentId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1443,6 +1631,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <EntitySet Name="Operations" EntityType="Self.Operations" />
           <EntitySet Name="Opinions" EntityType="Self.Opinions" />
           <EntitySet Name="Orders" EntityType="Self.Orders" />
+          <EntitySet Name="OrdersTools" EntityType="Self.OrdersTools" />
           <EntitySet Name="Patients" EntityType="Self.Patients" />
           <EntitySet Name="Producents" EntityType="Self.Producents" />
           <EntitySet Name="Registrations" EntityType="Self.Registrations" />
@@ -1456,6 +1645,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <EntitySet Name="OperationRow" EntityType="Self.OperationRow" />
           <EntitySet Name="OpinionRow" EntityType="Self.OpinionRow" />
           <EntitySet Name="OrderRow" EntityType="Self.OrderRow" />
+          <EntitySet Name="OrderToolRow" EntityType="Self.OrderToolRow" />
           <EntitySet Name="PatientRow" EntityType="Self.PatientRow" />
           <EntitySet Name="ProducentRow" EntityType="Self.ProducentRow" />
           <EntitySet Name="RegistrationRow" EntityType="Self.RegistrationRow" />
@@ -1479,6 +1669,10 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <AssociationSet Name="FK__Orders_ClinicId" Association="Self.FK__Orders_ClinicId">
             <End Role="Clinics" EntitySet="Clinics" />
             <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdersTools_ClinicId" Association="Self.FK__OrdersTools_ClinicId">
+            <End Role="Clinics" EntitySet="Clinics" />
+            <End Role="OrdersTools" EntitySet="OrdersTools" />
           </AssociationSet>
           <AssociationSet Name="FK__Costs_DrugId" Association="Self.FK__Costs_DrugId">
             <End Role="Drugs" EntitySet="Drugs" />
@@ -1532,9 +1726,21 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
             <End Role="Producents" EntitySet="Producents" />
             <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
+          <AssociationSet Name="FK__OrdersTools_ProducentId" Association="Self.FK__OrdersTools_ProducentId">
+            <End Role="Producents" EntitySet="Producents" />
+            <End Role="OrdersTools" EntitySet="OrdersTools" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrdersTools_ToolId" Association="Self.FK__OrdersTools_ToolId">
+            <End Role="Tools" EntitySet="Tools" />
+            <End Role="OrdersTools" EntitySet="OrdersTools" />
+          </AssociationSet>
           <AssociationSet Name="FK__Registrations_PatientId" Association="Self.FK__Registrations_PatientId">
             <End Role="Patients" EntitySet="Patients" />
             <End Role="Registrations" EntitySet="Registrations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tools_ProducentId" Association="Self.FK__Tools_ProducentId">
+            <End Role="Producents" EntitySet="Producents" />
+            <End Role="Tools" EntitySet="Tools" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -1656,6 +1862,17 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="OrdersTools">
+            <EntityTypeMapping TypeName="ClinicDataModel.OrdersTools">
+              <MappingFragment StoreEntitySet="OrdersTools">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ToolId" ColumnName="ToolId" />
+                <ScalarProperty Name="ClinicId" ColumnName="ClinicId" />
+                <ScalarProperty Name="ProducentId" ColumnName="ProducentId" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Patients">
             <EntityTypeMapping TypeName="ClinicDataModel.Patients">
               <MappingFragment StoreEntitySet="Patients">
@@ -1712,6 +1929,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
                 <ScalarProperty Name="ProductionDate" ColumnName="ProductionDate" />
                 <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProducentId" ColumnName="ProducentId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1804,6 +2022,17 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
                 <ScalarProperty Name="Jednostka" ColumnName="Jednostka" />
                 <ScalarProperty Name="Przychodnia" ColumnName="Przychodnia" />
                 <ScalarProperty Name="Lek" ColumnName="Lek" />
+                <ScalarProperty Name="Producent" ColumnName="Producent" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderToolRow">
+            <EntityTypeMapping TypeName="ClinicDataModel.OrderToolRow">
+              <MappingFragment StoreEntitySet="OrderToolRow">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+                <ScalarProperty Name="Przychodnia" ColumnName="Przychodnia" />
+                <ScalarProperty Name="Narzedzie" ColumnName="Narzedzie" />
                 <ScalarProperty Name="Producent" ColumnName="Producent" />
               </MappingFragment>
             </EntityTypeMapping>
