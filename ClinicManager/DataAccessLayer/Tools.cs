@@ -27,12 +27,10 @@ namespace ClinicManager.DataAccessLayer
         public System.DateTime ProductionDate { get; set; }
         public System.DateTime ExpireDate { get; set; }
         public string Description { get; set; }
-        public Nullable<int> ProducentId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Operations> Operations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrdersTools> OrdersTools { get; set; }
-        public virtual Producents Producents { get; set; }
     }
 }

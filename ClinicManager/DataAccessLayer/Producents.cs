@@ -20,7 +20,6 @@ namespace ClinicManager.DataAccessLayer
             this.Costs = new HashSet<Costs>();
             this.Orders = new HashSet<Orders>();
             this.OrdersTools = new HashSet<OrdersTools>();
-            this.Tools = new HashSet<Tools>();
         }
     
         public int Id { get; set; }
@@ -38,7 +37,5 @@ namespace ClinicManager.DataAccessLayer
         public virtual ICollection<Orders> Orders { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrdersTools> OrdersTools { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Tools> Tools { get; set; }
     }
 }
