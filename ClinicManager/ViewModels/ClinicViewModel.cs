@@ -102,6 +102,12 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public void MakeOrderTool()
+        {
+            var form = new OrderToolDetails(DetailsMode.Add);
+            form.ShowDialog();
+        }
+
         public BindingSource RefreshClinics()
         {
             var bsMain = new BindingSource();
@@ -146,6 +152,15 @@ namespace ClinicManager.ViewModels
             using(var context = new ClinicDataEntities())
             {
                 context.Orders.Add(order);
+                context.SaveChanges();
+            }
+        }
+
+        public void SaveOrderTools(OrdersTools order)
+        {
+            using(var context = new ClinicDataEntities())
+            {
+                context.OrdersTools.Add(order);
                 context.SaveChanges();
             }
         }

@@ -176,6 +176,12 @@
     <Compile Include="Controls\OrderDetails.Designer.cs">
       <DependentUpon>OrderDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\OrderToolDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\OrderToolDetails.Designer.cs">
+      <DependentUpon>OrderToolDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PatientDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,6 +387,9 @@
     <EmbeddedResource Include="Controls\OrderDetails.resx">
       <DependentUpon>OrderDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\OrderToolDetails.resx">
+      <DependentUpon>OrderToolDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\PatientDetails.resx">
       <DependentUpon>PatientDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -436,6 +445,7 @@
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.OperationRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Operations.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Orders.datasource" />
+    <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.OrdersTools.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.PatientRow.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.Patients.datasource" />
     <None Include="Properties\DataSources\ClinicManager.DataAccessLayer.ProducentRow.datasource" />

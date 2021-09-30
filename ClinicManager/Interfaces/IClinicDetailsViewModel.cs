@@ -23,5 +23,7 @@ namespace ClinicManager.Interfaces
         void ShowHierarchy(ClinicRow row);
         void MakeOrder();
         void SaveOrder(Orders order);
+        void SaveOrderTools(OrdersTools order);
+        void MakeOrderTool();
     }
 }

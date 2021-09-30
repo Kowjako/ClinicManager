@@ -30,8 +30,8 @@ namespace Test
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
@@ -46,6 +46,8 @@ namespace Test
             this.btnClinicsSort = new System.Windows.Forms.RibbonButton();
             this.btnClinicsStructure = new System.Windows.Forms.RibbonButton();
             this.btnClinicsOrder = new System.Windows.Forms.RibbonButton();
+            this.btnClinicsOrder1 = new System.Windows.Forms.RibbonButton();
+            this.btnClinicOrderTool = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel2 = new System.Windows.Forms.RibbonPanel();
             this.btnHospitalOpinions = new System.Windows.Forms.RibbonButton();
             this.btnOpinionShow = new System.Windows.Forms.RibbonButton();
@@ -146,6 +148,8 @@ namespace Test
             this.btnProducentShowContact = new System.Windows.Forms.RibbonButton();
             this.btnProducentsSort = new System.Windows.Forms.RibbonButton();
             this.btnOrder = new System.Windows.Forms.RibbonButton();
+            this.btnProducentsOrders = new System.Windows.Forms.RibbonButton();
+            this.btnProducentsOrdersTools = new System.Windows.Forms.RibbonButton();
             this.btnProducentsAddPrice = new System.Windows.Forms.RibbonButton();
             this.ribbonTab10 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
@@ -153,10 +157,6 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this.btnProducentsOrders = new System.Windows.Forms.RibbonButton();
-            this.btnProducentsOrdersTools = new System.Windows.Forms.RibbonButton();
-            this.btnClinicsOrder1 = new System.Windows.Forms.RibbonButton();
-            this.btnClinicOrderTool = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -329,6 +329,26 @@ namespace Test
             this.btnClinicsOrder.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder.SmallImage")));
             this.btnClinicsOrder.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
             this.btnClinicsOrder.Text = "Zamów";
+            // 
+            // btnClinicsOrder1
+            // 
+            this.btnClinicsOrder1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.btnClinicsOrder1.Image = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder1.Image")));
+            this.btnClinicsOrder1.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder1.LargeImage")));
+            this.btnClinicsOrder1.Name = "btnClinicsOrder1";
+            this.btnClinicsOrder1.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder1.SmallImage")));
+            this.btnClinicsOrder1.Text = "Zamów lek";
+            this.btnClinicsOrder1.Click += new System.EventHandler(this.btnClinicsOrder_Click);
+            // 
+            // btnClinicOrderTool
+            // 
+            this.btnClinicOrderTool.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.btnClinicOrderTool.Image = ((System.Drawing.Image)(resources.GetObject("btnClinicOrderTool.Image")));
+            this.btnClinicOrderTool.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClinicOrderTool.LargeImage")));
+            this.btnClinicOrderTool.Name = "btnClinicOrderTool";
+            this.btnClinicOrderTool.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicOrderTool.SmallImage")));
+            this.btnClinicOrderTool.Text = "Zamów narzędzie";
+            this.btnClinicOrderTool.Click += new System.EventHandler(this.btnClinicOrderTool_Click);
             // 
             // ribbonPanel2
             // 
@@ -1246,6 +1266,26 @@ namespace Test
             this.btnOrder.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
             this.btnOrder.Text = "Zamówienia";
             // 
+            // btnProducentsOrders
+            // 
+            this.btnProducentsOrders.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.btnProducentsOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.Image")));
+            this.btnProducentsOrders.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.LargeImage")));
+            this.btnProducentsOrders.Name = "btnProducentsOrders";
+            this.btnProducentsOrders.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.SmallImage")));
+            this.btnProducentsOrders.Text = "Zamówione leki";
+            this.btnProducentsOrders.Click += new System.EventHandler(this.btnProducentsOrders_Click);
+            // 
+            // btnProducentsOrdersTools
+            // 
+            this.btnProducentsOrdersTools.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.btnProducentsOrdersTools.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrdersTools.Image")));
+            this.btnProducentsOrdersTools.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrdersTools.LargeImage")));
+            this.btnProducentsOrdersTools.Name = "btnProducentsOrdersTools";
+            this.btnProducentsOrdersTools.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrdersTools.SmallImage")));
+            this.btnProducentsOrdersTools.Text = "Zamówione narzędzia";
+            this.btnProducentsOrdersTools.Click += new System.EventHandler(this.btnProducentsOrdersTools_Click);
+            // 
             // btnProducentsAddPrice
             // 
             this.btnProducentsAddPrice.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsAddPrice.Image")));
@@ -1296,14 +1336,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
             this._gvMain.MultiSelect = false;
@@ -1312,44 +1352,6 @@ namespace Test
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
-            // 
-            // btnProducentsOrders
-            // 
-            this.btnProducentsOrders.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.btnProducentsOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.Image")));
-            this.btnProducentsOrders.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.LargeImage")));
-            this.btnProducentsOrders.Name = "btnProducentsOrders";
-            this.btnProducentsOrders.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.SmallImage")));
-            this.btnProducentsOrders.Text = "Zamówione leki";
-            this.btnProducentsOrders.Click += new System.EventHandler(this.btnProducentsOrders_Click);
-            // 
-            // btnProducentsOrdersTools
-            // 
-            this.btnProducentsOrdersTools.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.btnProducentsOrdersTools.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrdersTools.Image")));
-            this.btnProducentsOrdersTools.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrdersTools.LargeImage")));
-            this.btnProducentsOrdersTools.Name = "btnProducentsOrdersTools";
-            this.btnProducentsOrdersTools.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrdersTools.SmallImage")));
-            this.btnProducentsOrdersTools.Text = "Zamówione narzędzia";
-            this.btnProducentsOrdersTools.Click += new System.EventHandler(this.btnProducentsOrdersTools_Click);
-            // 
-            // btnClinicsOrder1
-            // 
-            this.btnClinicsOrder1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.btnClinicsOrder1.Image = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder1.Image")));
-            this.btnClinicsOrder1.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder1.LargeImage")));
-            this.btnClinicsOrder1.Name = "btnClinicsOrder1";
-            this.btnClinicsOrder1.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicsOrder1.SmallImage")));
-            this.btnClinicsOrder1.Text = "Zamów lek";
-            this.btnClinicsOrder1.Click += new System.EventHandler(this.btnClinicsOrder_Click);
-            // 
-            // btnClinicOrderTool
-            // 
-            this.btnClinicOrderTool.Image = ((System.Drawing.Image)(resources.GetObject("btnClinicOrderTool.Image")));
-            this.btnClinicOrderTool.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnClinicOrderTool.LargeImage")));
-            this.btnClinicOrderTool.Name = "btnClinicOrderTool";
-            this.btnClinicOrderTool.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnClinicOrderTool.SmallImage")));
-            this.btnClinicOrderTool.Text = "Zamów narzędzie";
             // 
             // Form1
             // 

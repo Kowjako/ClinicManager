@@ -143,6 +143,11 @@ namespace Test
             ClinicViewModel.MakeOrder();
         }
 
+        private void btnClinicOrderTool_Click(object sender, EventArgs e)
+        {
+            ClinicViewModel.MakeOrderTool();
+        }
+
         #endregion
 
         #region Employees
@@ -631,6 +636,7 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
 
 
 
