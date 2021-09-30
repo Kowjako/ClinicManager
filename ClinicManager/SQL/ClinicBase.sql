@@ -293,3 +293,11 @@ JOIN Clinics c ON o.ClinicId = c.Id
 JOIN Drugs d ON o.DrugId = d.Id
 JOIN Producents p ON o.ProducentId = p.Id
 GO
+
+ALTER TABLE Tools 
+	ADD ProducentId INT
+GO
+
+ALTER TABLE Tools
+	ADD CONSTRAINT FK__Tools_ProducentId FOREIGN KEY (ProducentId) REFERENCES Producents(Id) ON DELETE SET NULL
+GO
