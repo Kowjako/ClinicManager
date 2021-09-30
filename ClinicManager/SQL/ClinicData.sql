@@ -608,3 +608,36 @@ insert into Orders (Id, DrugId, ClinicId, ProducentId, Amount, Unit) values (98,
 insert into Orders (Id, DrugId, ClinicId, ProducentId, Amount, Unit) values (99, 28, 12, 6, 2, 'ml');
 insert into Orders (Id, DrugId, ClinicId, ProducentId, Amount, Unit) values (100, 7, 8, 14, 1, 'ml');
 SET IDENTITY_INSERT Orders OFF
+
+SET IDENTITY_INSERT OrdersTools ON
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (1, 25, 6, 10, 6);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (2, 3, 12, 3, 9);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (3, 18, 1, 6, 9);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (4, 24, 7, 6, 7);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (5, 9, 2, 9, 6);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (6, 30, 7, 12, 2);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (7, 26, 1, 9, 9);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (8, 11, 10, 11, 8);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (9, 5, 3, 8, 7);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (10, 16, 13, 1, 5);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (11, 29, 3, 8, 6);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (12, 13, 14, 9, 3);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (13, 1, 4, 14, 10);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (14, 27, 4, 11, 4);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (15, 1, 9, 15, 8);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (16, 11, 13, 3, 9);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (17, 3, 6, 8, 5);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (18, 26, 7, 5, 3);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (19, 4, 7, 6, 3);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (20, 4, 3, 12, 9);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (21, 26, 10, 11, 3);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (22, 5, 10, 15, 8);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (23, 4, 6, 6, 9);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (24, 13, 8, 7, 3);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (25, 29, 13, 9, 8);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (26, 2, 14, 13, 2);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (27, 15, 4, 6, 7);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (28, 11, 12, 15, 2);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (29, 18, 10, 13, 3);
+insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (30, 9, 13, 2, 3);
+SET IDENTITY_INSERT OrdersTools OFF
