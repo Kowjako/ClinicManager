@@ -30,8 +30,8 @@ namespace Test
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
@@ -145,14 +145,16 @@ namespace Test
             this.btnSupplierLocalizationAdd = new System.Windows.Forms.RibbonButton();
             this.btnProducentShowContact = new System.Windows.Forms.RibbonButton();
             this.btnProducentsSort = new System.Windows.Forms.RibbonButton();
-            this.btnProducentsOrders = new System.Windows.Forms.RibbonButton();
+            this.btnOrder = new System.Windows.Forms.RibbonButton();
+            this.btnProducentsAddPrice = new System.Windows.Forms.RibbonButton();
             this.ribbonTab10 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
             this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this.btnProducentsAddPrice = new System.Windows.Forms.RibbonButton();
+            this.btnProducentsOrders = new System.Windows.Forms.RibbonButton();
+            this.btnProducentsOrdersTools = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -1197,7 +1199,7 @@ namespace Test
             this.ribbonPanel19.Items.Add(this.btnSupplierLocalizationAdd);
             this.ribbonPanel19.Items.Add(this.btnProducentShowContact);
             this.ribbonPanel19.Items.Add(this.btnProducentsSort);
-            this.ribbonPanel19.Items.Add(this.btnProducentsOrders);
+            this.ribbonPanel19.Items.Add(this.btnOrder);
             this.ribbonPanel19.Items.Add(this.btnProducentsAddPrice);
             this.ribbonPanel19.Name = "ribbonPanel19";
             this.ribbonPanel19.Text = "Ogólne";
@@ -1229,14 +1231,25 @@ namespace Test
             this.btnProducentsSort.Text = "Sortuj";
             this.btnProducentsSort.Click += new System.EventHandler(this.btnProducentsSort_Click);
             // 
-            // btnProducentsOrders
+            // btnOrder
             // 
-            this.btnProducentsOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.Image")));
-            this.btnProducentsOrders.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.LargeImage")));
-            this.btnProducentsOrders.Name = "btnProducentsOrders";
-            this.btnProducentsOrders.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.SmallImage")));
-            this.btnProducentsOrders.Text = "Zamówienia";
-            this.btnProducentsOrders.Click += new System.EventHandler(this.btnProducentsOrders_Click);
+            this.btnOrder.DropDownItems.Add(this.btnProducentsOrders);
+            this.btnOrder.DropDownItems.Add(this.btnProducentsOrdersTools);
+            this.btnOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnOrder.Image")));
+            this.btnOrder.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOrder.LargeImage")));
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOrder.SmallImage")));
+            this.btnOrder.Style = System.Windows.Forms.RibbonButtonStyle.DropDown;
+            this.btnOrder.Text = "Zamówienia";
+            // 
+            // btnProducentsAddPrice
+            // 
+            this.btnProducentsAddPrice.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsAddPrice.Image")));
+            this.btnProducentsAddPrice.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsAddPrice.LargeImage")));
+            this.btnProducentsAddPrice.Name = "btnProducentsAddPrice";
+            this.btnProducentsAddPrice.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsAddPrice.SmallImage")));
+            this.btnProducentsAddPrice.Text = "Cennik";
+            this.btnProducentsAddPrice.Click += new System.EventHandler(this.btnProducentsAddPrice_Click);
             // 
             // ribbonTab10
             // 
@@ -1279,14 +1292,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle3;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
             this._gvMain.MultiSelect = false;
@@ -1296,14 +1309,24 @@ namespace Test
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
             // 
-            // btnProducentsAddPrice
+            // btnProducentsOrders
             // 
-            this.btnProducentsAddPrice.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsAddPrice.Image")));
-            this.btnProducentsAddPrice.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsAddPrice.LargeImage")));
-            this.btnProducentsAddPrice.Name = "btnProducentsAddPrice";
-            this.btnProducentsAddPrice.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsAddPrice.SmallImage")));
-            this.btnProducentsAddPrice.Text = "Cennik";
-            this.btnProducentsAddPrice.Click += new System.EventHandler(this.btnProducentsAddPrice_Click);
+            this.btnProducentsOrders.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.btnProducentsOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.Image")));
+            this.btnProducentsOrders.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.LargeImage")));
+            this.btnProducentsOrders.Name = "btnProducentsOrders";
+            this.btnProducentsOrders.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrders.SmallImage")));
+            this.btnProducentsOrders.Text = "Zamówione leki";
+            this.btnProducentsOrders.Click += new System.EventHandler(this.btnProducentsOrders_Click);
+            // 
+            // btnProducentsOrdersTools
+            // 
+            this.btnProducentsOrdersTools.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.btnProducentsOrdersTools.Image = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrdersTools.Image")));
+            this.btnProducentsOrdersTools.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrdersTools.LargeImage")));
+            this.btnProducentsOrdersTools.Name = "btnProducentsOrdersTools";
+            this.btnProducentsOrdersTools.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnProducentsOrdersTools.SmallImage")));
+            this.btnProducentsOrdersTools.Text = "Zamówione narzędzia";
             // 
             // Form1
             // 
@@ -1445,9 +1468,11 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnVisitUndo;
         private System.Windows.Forms.RibbonButton btnPatientVisits;
         private System.Windows.Forms.RibbonButton btnClinicsStructure;
-        private System.Windows.Forms.RibbonButton btnProducentsOrders;
+        private System.Windows.Forms.RibbonButton btnOrder;
         private System.Windows.Forms.RibbonButton btnClinicsOrder;
         private System.Windows.Forms.RibbonButton btnProducentsAddPrice;
+        private System.Windows.Forms.RibbonButton btnProducentsOrders;
+        private System.Windows.Forms.RibbonButton btnProducentsOrdersTools;
     }
 }
 

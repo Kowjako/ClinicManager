@@ -9,6 +9,7 @@ using static Test.Form1;
 
 namespace ClinicManager.Interfaces
 {
+
     interface ICostDetailsViewModel
     {
         void SaveCost(Costs cost, DetailsMode mode);
