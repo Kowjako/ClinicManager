@@ -17,8 +17,7 @@ namespace ClinicManager.DataAccessLayer
         public int Id { get; set; }
         public int ProducentId { get; set; }
         public int DrugId { get; set; }
-        public Nullable<int> MinPrice { get; set; }
-        public Nullable<int> MaxPrice { get; set; }
+        public Nullable<int> Price { get; set; }
         public Nullable<byte> TransportDays { get; set; }
     
         public virtual Drugs Drugs { get; set; }
