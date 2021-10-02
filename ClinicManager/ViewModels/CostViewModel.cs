@@ -54,23 +54,19 @@ namespace ClinicManager.ViewModels
 
         public List<CostRow> Filter()
         {
-            var parameters = new string[] { "ProducentId", "DrugId", "Price", "TransportDays" };
+            var parameters = new string[] { "[Nazwa leku]", "[Cena]", "[Czas dostawy dni]", "[Producent]" };
             var form = new FilterForm(parameters);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 var sqlFilter = form.ReturnFilterString();
-                var sqlQuery = $"SELECT * FROM Costs {sqlFilter}";
+                var sqlQuery = $"SELECT Id, [Nazwa leku] AS Nazwa_leku, Cena" +
+                               $",[Czas dostawy dni] AS Czas_dostawy_dni, Producent FROM CostRow {sqlFilter}";
                 using (var context = new ClinicDataEntities())
                 {
                     try
                     {
-                        var entites = context.Database.SqlQuery<Costs>(sqlQuery).ToList();
-                        var entityRows = new List<CostRow>();
-                        foreach (var obj in entites)
-                        {
-                            entityRows.Add(context.CostRow.First(p => p.Id == obj.Id));
-                        }
-                        return entityRows;
+                        var entites = context.Database.SqlQuery<CostRow>(sqlQuery).ToList();
+                        return entites;
                     }
                     catch (Exception ex)
                     {
