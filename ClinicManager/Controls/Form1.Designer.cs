@@ -1346,6 +1346,7 @@ namespace Test
             this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
+            this._gvMain.Margin = new System.Windows.Forms.Padding(0);
             this._gvMain.MultiSelect = false;
             this._gvMain.Name = "_gvMain";
             this._gvMain.ReadOnly = true;

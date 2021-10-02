@@ -90,12 +90,10 @@ CREATE TABLE Costs (
 	Id INT IDENTITY(1,1),
 	ProducentId INT NOT NULL,
 	DrugId INT NOT NULL,
-	MinPrice INT,
-	MaxPrice INT,
+	Price INT,
 	TransportDays TINYINT,
 	CONSTRAINT PK__Costs_Id PRIMARY KEY CLUSTERED (Id),
-	CONSTRAINT CK__Costs_MinPrice CHECK (MinPrice >= 0),
-	CONSTRAINT CK__Costs_MaxPrice CHECK (MaxPrice >= 0),
+	CONSTRAINT CK__Costs_Price CHECK (Price >= 0),
 	CONSTRAINT CK__Costs_TransportDays CHECK (TransportDays > 0),
 	CONSTRAINT FK__Costs_ProducentId FOREIGN KEY (ProducentId) REFERENCES Producents(Id) ON DELETE CASCADE,
 	CONSTRAINT FK__Costs_DrugId FOREIGN KEY (DrugId) REFERENCES Drugs(Id) ON DELETE CASCADE
@@ -179,7 +177,7 @@ CREATE TABLE Registrations (
 );
 GO
 
---DataRow - nie ma sensu - bo nie b?dzie dost?pu do tej bazy
+--DataRow - nie ma sensu - bo nie bedzie dostepu do tej bazy
 
 CREATE VIEW ClinicRow AS
 SELECT c.Id 'Id', c.Name 'Nazwa', c.OpenDate 'Data otwarcia', c.IsPrivate 'Prywatna', c.Usermark 'Ocena', l.Country + '/' + l.City + '/' + CAST(l.House as NVARCHAR) 'Lokalizacja', d.Name + ' ' + d.Surname 'Kierownik'
@@ -220,7 +218,7 @@ LEFT JOIN Clinics c ON (e.ClinicId = c.Id)
 GO
 
 CREATE VIEW CostRow AS
-SELECT c.Id 'Id', d.Name 'Nazwa leku', c.MinPrice 'Minimalna cena', c.MaxPrice 'Maksymalna cena', c.TransportDays 'Czas dostawy dni', p.Name 'Producent'
+SELECT c.Id 'Id', d.Name 'Nazwa leku', c.Price 'Cena', c.TransportDays 'Czas dostawy dni', p.Name 'Producent'
 FROM Costs c
 JOIN Drugs d ON (c.DrugId = d.Id)
 JOIN Producents p ON (c.ProducentId = p.Id)
@@ -315,3 +313,4 @@ JOIN Clinics c ON o.ClinicId = c.Id
 JOIN Tools t ON o.ToolId = t.Id
 JOIN Producents p ON o.ProducentId = p.Id
 GO
+
