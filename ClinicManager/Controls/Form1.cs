@@ -547,6 +547,16 @@ namespace Test
             CostViewModel.Sort(_gvMain, bsMain);
         }
 
+        private void btnCostsCheapest_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = CostViewModel.GetCheapest();
+        }
+
+        private void btnCostsFastest_Click(object sender, EventArgs e)
+        {
+            _gvMain.DataSource = CostViewModel.GetFastest();
+        }
+
         #endregion
 
         #region Producents
@@ -636,6 +646,8 @@ namespace Test
                 form.ShowDialog();
             }
         }
+
+
 
 
 

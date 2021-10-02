@@ -61,6 +61,15 @@ namespace ClinicManager.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to data source=DESKTOP-BADE515\SQLEXPRESS;initial catalog=ClinicData;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework.
+        /// </summary>
+        internal static string ConnectionString {
+            get {
+                return ResourceManager.GetString("ConnectionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CREATE DATABASE ClinicData
         ///GO
         ///

@@ -20,5 +20,7 @@ namespace ClinicManager.Interfaces
         void AddCost();
         void AddCost(ProducentRow producent);
         void Sort(DataGridView grid, BindingSource list);
+        BindingSource GetCheapest();
+        BindingSource GetFastest();
     }
 }

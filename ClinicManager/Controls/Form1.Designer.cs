@@ -30,8 +30,8 @@ namespace Test
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
@@ -1340,14 +1340,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle3;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
             this._gvMain.Margin = new System.Windows.Forms.Padding(0);
@@ -1360,6 +1360,7 @@ namespace Test
             // 
             // ribbonPanel21
             // 
+            this.ribbonPanel21.ButtonMoreVisible = false;
             this.ribbonPanel21.Items.Add(this.btnCostsCheapest);
             this.ribbonPanel21.Items.Add(this.btnCostsFastest);
             this.ribbonPanel21.Name = "ribbonPanel21";
@@ -1372,6 +1373,7 @@ namespace Test
             this.btnCostsCheapest.Name = "btnCostsCheapest";
             this.btnCostsCheapest.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCostsCheapest.SmallImage")));
             this.btnCostsCheapest.Text = "Najtańsze";
+            this.btnCostsCheapest.Click += new System.EventHandler(this.btnCostsCheapest_Click);
             // 
             // btnCostsFastest
             // 
@@ -1380,6 +1382,7 @@ namespace Test
             this.btnCostsFastest.Name = "btnCostsFastest";
             this.btnCostsFastest.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCostsFastest.SmallImage")));
             this.btnCostsFastest.Text = "Najszybsze";
+            this.btnCostsFastest.Click += new System.EventHandler(this.btnCostsFastest_Click);
             // 
             // Form1
             // 

@@ -4,12 +4,14 @@ using ClinicManager.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 using System.Windows.Forms;
 using Test;
 using static Test.Form1;
+using System.Data;
+using ClinicManager.Properties;
 
 namespace ClinicManager.ViewModels
 {
@@ -77,6 +79,35 @@ namespace ClinicManager.ViewModels
                 }
             }
             return null;
+        }
+
+        public BindingSource GetCheapest()
+        {
+            var bsMain = new BindingSource();
+            var sqlQuery = $"SELECT [Nazwa leku], MIN([Cena]) AS [Minimalna cena] " +
+                           $"FROM CostRow " +
+                           $"GROUP BY [Nazwa leku] " +
+                           $"ORDER BY [Nazwa leku]";
+
+            using (SqlConnection connection = new SqlConnection(Resources.ConnectionString))
+            {
+                connection.Open();
+                var adapter = new SqlDataAdapter(sqlQuery, connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                bsMain.DataSource = ds.Tables[0];
+                connection.Close();
+            }
+
+            return bsMain;              
+        }
+
+
+
+        public BindingSource GetFastest()
+        {
+            throw new NotImplementedException();
         }
 
         public BindingSource RefreshCosts()
