@@ -157,6 +157,9 @@ namespace Test
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
+            this.ribbonPanel21 = new System.Windows.Forms.RibbonPanel();
+            this.btnCostsCheapest = new System.Windows.Forms.RibbonButton();
+            this.btnCostsFastest = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -1060,6 +1063,7 @@ namespace Test
             this.ribbonTab8.Name = "ribbonTab8";
             this.ribbonTab8.Panels.Add(this.ribbonPanel9);
             this.ribbonTab8.Panels.Add(this.ribbonPanel20);
+            this.ribbonTab8.Panels.Add(this.ribbonPanel21);
             this.ribbonTab8.Text = "Cennik leków";
             // 
             // ribbonPanel9
@@ -1354,6 +1358,29 @@ namespace Test
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
             // 
+            // ribbonPanel21
+            // 
+            this.ribbonPanel21.Items.Add(this.btnCostsCheapest);
+            this.ribbonPanel21.Items.Add(this.btnCostsFastest);
+            this.ribbonPanel21.Name = "ribbonPanel21";
+            this.ribbonPanel21.Text = "Grupowanie";
+            // 
+            // btnCostsCheapest
+            // 
+            this.btnCostsCheapest.Image = ((System.Drawing.Image)(resources.GetObject("btnCostsCheapest.Image")));
+            this.btnCostsCheapest.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCostsCheapest.LargeImage")));
+            this.btnCostsCheapest.Name = "btnCostsCheapest";
+            this.btnCostsCheapest.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCostsCheapest.SmallImage")));
+            this.btnCostsCheapest.Text = "Najtańsze";
+            // 
+            // btnCostsFastest
+            // 
+            this.btnCostsFastest.Image = ((System.Drawing.Image)(resources.GetObject("btnCostsFastest.Image")));
+            this.btnCostsFastest.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCostsFastest.LargeImage")));
+            this.btnCostsFastest.Name = "btnCostsFastest";
+            this.btnCostsFastest.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCostsFastest.SmallImage")));
+            this.btnCostsFastest.Text = "Najszybsze";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1501,6 +1528,9 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnProducentsOrdersTools;
         private System.Windows.Forms.RibbonButton btnClinicsOrder1;
         private System.Windows.Forms.RibbonButton btnClinicOrderTool;
+        private System.Windows.Forms.RibbonPanel ribbonPanel21;
+        private System.Windows.Forms.RibbonButton btnCostsCheapest;
+        private System.Windows.Forms.RibbonButton btnCostsFastest;
     }
 }
 

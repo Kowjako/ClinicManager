@@ -39,8 +39,6 @@ namespace ClinicManager
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.bsCosts = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.saveBtn = new System.Windows.Forms.Button();
@@ -102,7 +100,7 @@ namespace ClinicManager
             // 
             // textBox1
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCosts, "MinPrice", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCosts, "Price", true));
             this.textBox1.Location = new System.Drawing.Point(182, 61);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
@@ -118,33 +116,15 @@ namespace ClinicManager
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(12, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 18);
+            this.label1.Size = new System.Drawing.Size(46, 18);
             this.label1.TabIndex = 28;
-            this.label1.Text = "Minimalna cena";
-            // 
-            // textBox2
-            // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCosts, "MaxPrice", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.textBox2.Location = new System.Drawing.Point(182, 87);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(325, 20);
-            this.textBox2.TabIndex = 31;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(12, 86);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 18);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "Maksymalna cena";
+            this.label1.Text = "Cena";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(12, 113);
+            this.label5.Location = new System.Drawing.Point(12, 87);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(140, 18);
             this.label5.TabIndex = 32;
@@ -153,14 +133,14 @@ namespace ClinicManager
             // numericUpDown1
             // 
             this.numericUpDown1.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsCosts, "TransportDays", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.numericUpDown1.Location = new System.Drawing.Point(182, 113);
+            this.numericUpDown1.Location = new System.Drawing.Point(182, 87);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(325, 20);
             this.numericUpDown1.TabIndex = 33;
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(12, 144);
+            this.saveBtn.Location = new System.Drawing.Point(12, 113);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(495, 23);
             this.saveBtn.TabIndex = 40;
@@ -172,12 +152,10 @@ namespace ClinicManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 173);
+            this.ClientSize = new System.Drawing.Size(515, 142);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.drugsBox);
@@ -206,8 +184,6 @@ namespace ClinicManager
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button saveBtn;
