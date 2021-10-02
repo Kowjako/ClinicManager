@@ -141,11 +141,11 @@
     <Compile Include="Controls\FixedAsset.Designer.cs">
       <DependentUpon>FixedAsset.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Form1.cs">
+    <Compile Include="Controls\Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Controls\Form.Designer.cs">
+      <DependentUpon>Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\HierarchyControl.cs">
       <SubType>Form</SubType>
@@ -366,8 +366,8 @@
     <EmbeddedResource Include="Controls\FixedAsset.resx">
       <DependentUpon>FixedAsset.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Controls\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\Form.resx">
+      <DependentUpon>Form.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\HierarchyControl.resx">

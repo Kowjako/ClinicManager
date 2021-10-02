@@ -79,23 +79,18 @@ namespace ClinicManager.ViewModels
 
         public List<RegistrationRow> Filter()
         {
-            var parameters = new string[] { "Date", "Time", "EmployeeId", "PatientId" };
+            var parameters = new string[] { "[Pacjent]", "[Lekarz]", "[Data operacji]", "[Czas rozpoczecia]", "[Status]" };
             var form = new FilterForm(parameters);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 var sqlFilter = form.ReturnFilterString();
-                var sqlQuery = $"SELECT * FROM Registrations {sqlFilter}";
+                var sqlQuery = $"SELECT Id, Pacjent, Lekarz, [Data operacji] AS Data_operacji, [Czas rozpoczecia] AS Czas_rozpoczecia, Status FROM RegistrationRow {sqlFilter}";
                 using (var context = new ClinicDataEntities())
                 {
                     try
                     {
-                        var entites = context.Database.SqlQuery<Registrations>(sqlQuery).ToList();
-                        var entityRows = new List<RegistrationRow>();
-                        foreach (var obj in entites)
-                        {
-                            entityRows.Add(context.RegistrationRow.First(p => p.Id == obj.Id));
-                        }
-                        return entityRows;
+                        var entites = context.Database.SqlQuery<RegistrationRow>(sqlQuery).ToList();
+                        return entites;
                     }
                     catch (Exception ex)
                     {

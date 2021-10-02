@@ -51,23 +51,18 @@ namespace ClinicManager.ViewModels
 
         public List<OperationRow> Filter()
         {
-            var parameters = new string[] { "Name", "Type", "IsAnesthesia", "Description", "ToolId", "DrugId" };
+            var parameters = new string[] { "[Nazwa]", "[Typ]", "[Znieczulenie]", "[Narzedzie]", "[Lek]"};
             var form = new FilterForm(parameters);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 var sqlFilter = form.ReturnFilterString();
-                var sqlQuery = $"SELECT * FROM Operations {sqlFilter}";
+                var sqlQuery = $"SELECT Id, Nazwa, Typ, Znieczulenie, [Narzedzie] AS Narzedzie, Lek FROM OperationRow {sqlFilter}";
                 using (var context = new ClinicDataEntities())
                 {
                     try
                     {
-                        var entites = context.Database.SqlQuery<Operations>(sqlQuery).ToList();
-                        var entityRows = new List<OperationRow>();
-                        foreach (var obj in entites)
-                        {
-                            entityRows.Add(context.OperationRow.First(p => p.Id == obj.Id));
-                        }
-                        return entityRows;
+                        var entites = context.Database.SqlQuery<OperationRow>(sqlQuery).ToList();
+                        return entites;
                     }
                     catch (Exception ex)
                     {

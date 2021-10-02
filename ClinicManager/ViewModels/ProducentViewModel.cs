@@ -46,23 +46,19 @@ namespace ClinicManager.ViewModels
 
         public List<ProducentRow> Filter()
         {
-            var parameters = new string[] { "OpenDate", "Name", "Email", "LocalizationId" };
+            var parameters = new string[] { "[Nazwa producenta]", "[Email]", "[Siedziba firmy]", "[Kierownik]" };
             var form = new FilterForm(parameters);
             if (form.ShowDialog() == DialogResult.OK)
             {
                 var sqlFilter = form.ReturnFilterString();
-                var sqlQuery = $"SELECT * FROM Producents {sqlFilter}";
+                var sqlQuery = $"SELECT Id, [Nazwa producenta] AS Nazwa_producenta, Email, [Siedziba firmy] AS Siedziba_firmy" +
+                               $",Kierownik FROM ProducentRow {sqlFilter}";
                 using (var context = new ClinicDataEntities())
                 {
                     try
                     {
-                        var entites = context.Database.SqlQuery<Producents>(sqlQuery).ToList();
-                        var entityRows = new List<ProducentRow>();
-                        foreach (var obj in entites)
-                        {
-                            entityRows.Add(context.ProducentRow.First(p => p.Id == obj.Id));
-                        }
-                        return entityRows;
+                        var entites = context.Database.SqlQuery<ProducentRow>(sqlQuery).ToList();
+                        return entites;
                     }
                     catch (Exception ex)
                     {

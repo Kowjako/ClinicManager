@@ -421,6 +421,7 @@ namespace Test
         {
             bsMain.DataSource = VisitViewModel.Filter();
             _gvMain.DataSource = bsMain;
+            VisitViewModel.CheckRegistrationStatus(_gvMain);
         }
 
         private void btnVisitsSchedule_Click(object sender, EventArgs e)
