@@ -265,21 +265,21 @@ GO
 
 SET IDENTITY_INSERT Costs ON
 GO
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (1, 1, 1, 49, 96, 19);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (2, 2, 2, 35, 60, 18);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (3, 3, 3, 57, 54, 10);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (4, 4, 4, 46, 95, 6);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (5, 5, 5, 31, 89, 17);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (6, 6, 6, 41, 96, 12);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (7, 7, 7, 45, 74, 18);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (8, 8, 8, 40, 88, 1);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (9, 9, 9, 69, 77, 13);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (10, 10, 10, 55, 72, 9);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (11, 11, 11, 31, 70, 10);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (12, 12, 12, 41, 71, 9);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (13, 13, 13, 43, 90, 19);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (14, 14, 14, 34, 82, 15);
-insert into Costs (id, ProducentId, DrugId, MinPrice, MaxPrice, TransportDays) values (15, 15, 15, 47, 70, 20);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (1, 1, 1, 50, 19);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (2, 2, 2, 60, 18);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (3, 3, 3, 65, 10);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (4, 4, 4, 45, 6);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (5, 5, 5, 30, 17);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (6, 6, 6, 40, 12);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (7, 7, 7, 46, 18);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (8, 8, 8, 80, 1);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (9, 9, 9, 60, 13);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (10, 10, 10, 55, 9);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (11, 11, 11, 30, 10);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (12, 12, 12, 40, 9);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (13, 13, 13, 45, 19);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (14, 14, 14, 35, 15);
+insert into Costs (id, ProducentId, DrugId, Price, TransportDays) values (15, 15, 15, 40, 20);
 SET IDENTITY_INSERT Costs OFF
 GO
 
