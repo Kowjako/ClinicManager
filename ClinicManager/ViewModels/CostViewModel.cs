@@ -54,7 +54,7 @@ namespace ClinicManager.ViewModels
 
         public List<CostRow> Filter()
         {
-            var parameters = new string[] { "ProducentId", "DrugId", "MinPrice", "MaxPrice", "TransportDays" };
+            var parameters = new string[] { "ProducentId", "DrugId", "Price", "TransportDays" };
             var form = new FilterForm(parameters);
             if (form.ShowDialog() == DialogResult.OK)
             {

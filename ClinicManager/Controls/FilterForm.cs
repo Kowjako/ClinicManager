@@ -15,10 +15,10 @@ namespace ClinicManager.Controls
         public FilterForm(string[] parameters)
         {
             InitializeComponent();
-            firstLogic.SelectedIndex = 0;
-            secondLogic.SelectedIndex = 0;
-            thirdLogic.SelectedIndex = 0;
-            this.parameters.Items.AddRange(parameters);
+            this.params1.Items.AddRange(parameters);
+            this.params2.Items.AddRange(parameters);
+            this.params3.Items.AddRange(parameters);
+            this.params4.Items.AddRange(parameters);
         }
 
         private void filterBtn_Click(object sender, EventArgs e)
@@ -32,22 +32,22 @@ namespace ClinicManager.Controls
             sb.Append("WHERE ");
             if(!String.IsNullOrEmpty(firstCondition.Text))
             {
-                sb.Append(firstCondition.Text + " ");
+                sb.Append(params1.SelectedItem + " " + firstCondition.Text + " ");
             }
             if(!String.IsNullOrEmpty(secondCondition.Text))
             {
-                sb.Append(firstLogic.SelectedItem + " ");
-                sb.Append(secondCondition.Text + " ");
+                sb.Append(and1.Checked ? "AND " : "OR ");
+                sb.Append(params2.SelectedItem + " " + secondCondition.Text + " ");
             }
             if (!String.IsNullOrEmpty(thirdCondition.Text))
             {
-                sb.Append(secondLogic.SelectedItem + " ");
-                sb.Append(thirdCondition.Text + " ");
+                sb.Append(and2.Checked ? "AND " : "OR ");
+                sb.Append(params3.SelectedItem + " " + thirdCondition.Text + " "); 
             }
             if (!String.IsNullOrEmpty(fourthCondition.Text))
             {
-                sb.Append(thirdLogic.SelectedItem + " ");
-                sb.Append(fourthCondition.Text + " ");
+                sb.Append(and3.Checked ? "AND " : "OR ");
+                sb.Append(params4.SelectedItem + " ");
             }
             return sb.ToString();
         }
