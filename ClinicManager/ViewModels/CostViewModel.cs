@@ -107,7 +107,24 @@ namespace ClinicManager.ViewModels
 
         public BindingSource GetFastest()
         {
-            throw new NotImplementedException();
+            var bsMain = new BindingSource();
+            var sqlQuery = $"SELECT [Nazwa leku], MIN([Czas dostawy dni]) AS [Czas dostawy] " +
+                           $"FROM CostRow " +
+                           $"GROUP BY [Nazwa leku] " +
+                           $"ORDER BY [Nazwa leku]";
+
+            using (SqlConnection connection = new SqlConnection(Resources.ConnectionString))
+            {
+                connection.Open();
+                var adapter = new SqlDataAdapter(sqlQuery, connection);
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+
+                bsMain.DataSource = ds.Tables[0];
+                connection.Close();
+            }
+
+            return bsMain;
         }
 
         public BindingSource RefreshCosts()
