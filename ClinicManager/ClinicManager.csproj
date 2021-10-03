@@ -468,6 +468,7 @@
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SQL\ClinicTrigger.sql" />
     <None Include="Resources\17999_bookmark_favorite_star_icon.png" />
     <None Include="Resources\2006569_bookmark_media_social_star_icon.png" />
     <Content Include="DataAccessLayer\Clinic.Context.tt">

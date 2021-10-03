@@ -639,11 +639,20 @@ namespace Test
                 form.ShowDialog();
             }
             else
+            if(((RibbonButton)sender).Name == "btnConfigurationInsertDBData")
             {
                 var form = new ScriptForm();
                 form.HeaderColor = Color.Blue;
                 form.ScriptText = ClinicManager.Properties.Resources.dbData;
                 form.HeaderText = "Poniższy skrypt należy uruchomić na bazie danych do wypelniania danych:";
+                form.ShowDialog();
+            }
+            else
+            {
+                var form = new ScriptForm();
+                form.HeaderText = "Poniższy skrypt należy uruchomić na bazie do tworzenia triggerów";
+                form.ScriptText = ClinicManager.Properties.Resources.dbTriggers;
+                form.HeaderColor = Color.Green;
                 form.ShowDialog();
             }
         }

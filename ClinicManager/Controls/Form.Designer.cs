@@ -30,8 +30,8 @@ namespace Test
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
@@ -135,6 +135,9 @@ namespace Test
             this.btnPriceFilter = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel20 = new System.Windows.Forms.RibbonPanel();
             this.btnCostSort = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel21 = new System.Windows.Forms.RibbonPanel();
+            this.btnCostsCheapest = new System.Windows.Forms.RibbonButton();
+            this.btnCostsFastest = new System.Windows.Forms.RibbonButton();
             this.ribbonTab9 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
             this.btnSupplierShow = new System.Windows.Forms.RibbonButton();
@@ -155,11 +158,9 @@ namespace Test
             this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
             this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
+            this.btnConfigurationShowTriggersDB = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this.ribbonPanel21 = new System.Windows.Forms.RibbonPanel();
-            this.btnCostsCheapest = new System.Windows.Forms.RibbonButton();
-            this.btnCostsFastest = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -1148,6 +1149,32 @@ namespace Test
             this.btnCostSort.Text = "Sortuj";
             this.btnCostSort.Click += new System.EventHandler(this.btnCostSort_Click);
             // 
+            // ribbonPanel21
+            // 
+            this.ribbonPanel21.ButtonMoreVisible = false;
+            this.ribbonPanel21.Items.Add(this.btnCostsCheapest);
+            this.ribbonPanel21.Items.Add(this.btnCostsFastest);
+            this.ribbonPanel21.Name = "ribbonPanel21";
+            this.ribbonPanel21.Text = "Grupowanie";
+            // 
+            // btnCostsCheapest
+            // 
+            this.btnCostsCheapest.Image = ((System.Drawing.Image)(resources.GetObject("btnCostsCheapest.Image")));
+            this.btnCostsCheapest.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCostsCheapest.LargeImage")));
+            this.btnCostsCheapest.Name = "btnCostsCheapest";
+            this.btnCostsCheapest.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCostsCheapest.SmallImage")));
+            this.btnCostsCheapest.Text = "Najtańsze";
+            this.btnCostsCheapest.Click += new System.EventHandler(this.btnCostsCheapest_Click);
+            // 
+            // btnCostsFastest
+            // 
+            this.btnCostsFastest.Image = ((System.Drawing.Image)(resources.GetObject("btnCostsFastest.Image")));
+            this.btnCostsFastest.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCostsFastest.LargeImage")));
+            this.btnCostsFastest.Name = "btnCostsFastest";
+            this.btnCostsFastest.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCostsFastest.SmallImage")));
+            this.btnCostsFastest.Text = "Najszybsze";
+            this.btnCostsFastest.Click += new System.EventHandler(this.btnCostsFastest_Click);
+            // 
             // ribbonTab9
             // 
             this.ribbonTab9.Name = "ribbonTab9";
@@ -1310,6 +1337,7 @@ namespace Test
             this.ribbonPanel11.ButtonMoreVisible = false;
             this.ribbonPanel11.Items.Add(this.btnConfigurationShowDBScript);
             this.ribbonPanel11.Items.Add(this.btnConfigurationInsertDBData);
+            this.ribbonPanel11.Items.Add(this.btnConfigurationShowTriggersDB);
             this.ribbonPanel11.Name = "ribbonPanel11";
             this.ribbonPanel11.Text = "Zarządzanie bazą";
             // 
@@ -1331,6 +1359,15 @@ namespace Test
             this.btnConfigurationInsertDBData.Text = "Wypełnij";
             this.btnConfigurationInsertDBData.Click += new System.EventHandler(this.btnConfigurationShowDBScript_Click);
             // 
+            // btnConfigurationShowTriggersDB
+            // 
+            this.btnConfigurationShowTriggersDB.Image = ((System.Drawing.Image)(resources.GetObject("btnConfigurationShowTriggersDB.Image")));
+            this.btnConfigurationShowTriggersDB.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationShowTriggersDB.LargeImage")));
+            this.btnConfigurationShowTriggersDB.Name = "btnConfigurationShowTriggersDB";
+            this.btnConfigurationShowTriggersDB.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationShowTriggersDB.SmallImage")));
+            this.btnConfigurationShowTriggersDB.Text = "Triggery";
+            this.btnConfigurationShowTriggersDB.Click += new System.EventHandler(this.btnConfigurationShowDBScript_Click);
+            // 
             // _gvMain
             // 
             this._gvMain.AllowUserToAddRows = false;
@@ -1340,14 +1377,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
             this._gvMain.Margin = new System.Windows.Forms.Padding(0);
@@ -1357,32 +1394,6 @@ namespace Test
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
-            // 
-            // ribbonPanel21
-            // 
-            this.ribbonPanel21.ButtonMoreVisible = false;
-            this.ribbonPanel21.Items.Add(this.btnCostsCheapest);
-            this.ribbonPanel21.Items.Add(this.btnCostsFastest);
-            this.ribbonPanel21.Name = "ribbonPanel21";
-            this.ribbonPanel21.Text = "Grupowanie";
-            // 
-            // btnCostsCheapest
-            // 
-            this.btnCostsCheapest.Image = ((System.Drawing.Image)(resources.GetObject("btnCostsCheapest.Image")));
-            this.btnCostsCheapest.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCostsCheapest.LargeImage")));
-            this.btnCostsCheapest.Name = "btnCostsCheapest";
-            this.btnCostsCheapest.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCostsCheapest.SmallImage")));
-            this.btnCostsCheapest.Text = "Najtańsze";
-            this.btnCostsCheapest.Click += new System.EventHandler(this.btnCostsCheapest_Click);
-            // 
-            // btnCostsFastest
-            // 
-            this.btnCostsFastest.Image = ((System.Drawing.Image)(resources.GetObject("btnCostsFastest.Image")));
-            this.btnCostsFastest.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCostsFastest.LargeImage")));
-            this.btnCostsFastest.Name = "btnCostsFastest";
-            this.btnCostsFastest.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnCostsFastest.SmallImage")));
-            this.btnCostsFastest.Text = "Najszybsze";
-            this.btnCostsFastest.Click += new System.EventHandler(this.btnCostsFastest_Click);
             // 
             // Form1
             // 
@@ -1534,6 +1545,7 @@ namespace Test
         private System.Windows.Forms.RibbonPanel ribbonPanel21;
         private System.Windows.Forms.RibbonButton btnCostsCheapest;
         private System.Windows.Forms.RibbonButton btnCostsFastest;
+        private System.Windows.Forms.RibbonButton btnConfigurationShowTriggersDB;
     }
 }
 
