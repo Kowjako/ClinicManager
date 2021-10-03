@@ -19,5 +19,6 @@ namespace ClinicManager.Interfaces
         void AddFixedAsset();
         void Sort(DataGridView grid, BindingSource list);
         void Inventarize();
+        void CheckAmountFormat(DataGridView grid);
     }
 }

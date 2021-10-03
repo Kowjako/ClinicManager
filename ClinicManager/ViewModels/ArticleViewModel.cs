@@ -27,6 +27,12 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public void CheckPercentageFormat(DataGridView grid)
+        {
+            grid.Columns[2].DefaultCellStyle.Format = @"0 \%";
+            grid.Columns[6].DefaultCellStyle.Format = "0 szt" + @"\.";
+        }
+
         public void DeleteArticle(DrugRow drug)
         {
             using (var context = new ClinicDataEntities())
@@ -140,7 +146,7 @@ namespace ClinicManager.ViewModels
             using (var context = new ClinicDataEntities())
             {
                 var clinicList = context.DrugRow.SqlQuery($"SELECT Id, Nazwa, Dawka, [Data produkcji] AS Data_produkcji, [Data waznosci] AS Data_waznosci, Psychotropowe, " +
-                                                          $"[Ilosc dostępna] AS Ilosc_dostepna, Jednostka FROM DrugRow ORDER BY {list.Sort}").ToList();
+                                                          $"[Ilosc dostepna] AS Ilosc_dostepna, Jednostka FROM DrugRow ORDER BY {list.Sort}").ToList();
                 newBs.DataSource = typeof(ClinicRow);
                 newBs.DataSource = clinicList;
                 grid.DataSource = newBs;

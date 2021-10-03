@@ -30,6 +30,12 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public void CheckCurrencyFormat(DataGridView grid)
+        {
+            grid.Columns[2].DefaultCellStyle.Format = "c";
+            grid.Columns[3].DefaultCellStyle.Format = "0 dni";
+        }
+
         public void DeleteCost(CostRow cost)
         {
             using (var context = new ClinicDataEntities())

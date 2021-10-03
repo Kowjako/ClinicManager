@@ -184,6 +184,7 @@ namespace Test
         private void btnDoctorsRefresh_Click(object sender, EventArgs e)
         {
             _gvMain.DataSource = EmployeeViewModel.RefreshEmployees();
+            EmployeeViewModel.CheckCurrencyFormat(_gvMain);
         }
 
         private void btnDoctorsFilter_Click(object sender, EventArgs e)
@@ -290,6 +291,8 @@ namespace Test
                 bsMain.DataSource = clinicList;
                 _gvMain.DataSource = bsMain;
             }
+
+            FixedAssetViewModel.CheckAmountFormat(_gvMain);
         }
 
         private void btnAssetsEdit_Click(object sender, EventArgs e)
@@ -305,12 +308,14 @@ namespace Test
         private void btnAssetsRefresh_Click(object sender, EventArgs e)
         {
             _gvMain.DataSource = FixedAssetViewModel.RefreshFixedAssets();
+            FixedAssetViewModel.CheckAmountFormat(_gvMain);
         }
 
         private void btnAssetsFilter_Click(object sender, EventArgs e)
         {
             bsMain.DataSource = FixedAssetViewModel.Filter();
             _gvMain.DataSource = bsMain;
+            FixedAssetViewModel.CheckAmountFormat(_gvMain);
         }
 
         private void btnToolsSort_Click(object sender, EventArgs e)
@@ -342,6 +347,8 @@ namespace Test
                 bsMain.DataSource = articleList;
                 _gvMain.DataSource = bsMain;
             }
+
+            ArticleViewModel.CheckPercentageFormat(_gvMain);
         }
 
         private void btnArticleEdit_Click(object sender, EventArgs e)
@@ -357,12 +364,14 @@ namespace Test
         private void btnArticleRefresh_Click(object sender, EventArgs e)
         {
             _gvMain.DataSource = ArticleViewModel.RefreshArticles();
+            ArticleViewModel.CheckPercentageFormat(_gvMain);
         }
 
         private void btnArticleFilter_Click(object sender, EventArgs e)
         {
             bsMain.DataSource = ArticleViewModel.Filter();
             _gvMain.DataSource = bsMain;
+            ArticleViewModel.CheckPercentageFormat(_gvMain);
         }
 
         private void btnArticleAddUnit_Click(object sender, EventArgs e)
@@ -522,6 +531,7 @@ namespace Test
                 bsMain.DataSource = clinicList;
                 _gvMain.DataSource = bsMain;
             }
+            CostViewModel.CheckCurrencyFormat(_gvMain);
         }
 
         private void btnPriceEdit_Click(object sender, EventArgs e)
@@ -537,12 +547,14 @@ namespace Test
         private void btnPriceRefresh_Click(object sender, EventArgs e)
         {
             _gvMain.DataSource = CostViewModel.RefreshCosts();
+            CostViewModel.CheckCurrencyFormat(_gvMain);
         }
 
         private void btnPriceFilter_Click(object sender, EventArgs e)
         {
             bsMain.DataSource = CostViewModel.Filter();
             _gvMain.DataSource = bsMain;
+            CostViewModel.CheckCurrencyFormat(_gvMain);
         }
 
         private void btnCostSort_Click(object sender, EventArgs e)

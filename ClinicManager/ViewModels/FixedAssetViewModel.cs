@@ -21,6 +21,11 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public void CheckAmountFormat(DataGridView grid)
+        {
+            grid.Columns[2].DefaultCellStyle.Format = "0 szt" + @"\.";
+        }
+
         public void DeleteFixedAsset(ToolRow tool)
         {
             using (var context = new ClinicDataEntities())

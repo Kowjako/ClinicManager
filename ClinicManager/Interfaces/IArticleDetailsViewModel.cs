@@ -20,5 +20,6 @@ namespace ClinicManager.Interfaces
         void AddUnit();
         void Sort(DataGridView grid, BindingSource list);
         void Inventarize();
+        void CheckPercentageFormat(DataGridView grid);
     }
 }

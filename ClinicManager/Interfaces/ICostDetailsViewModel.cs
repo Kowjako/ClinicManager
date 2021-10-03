@@ -22,5 +22,6 @@ namespace ClinicManager.Interfaces
         void Sort(DataGridView grid, BindingSource list);
         BindingSource GetCheapest();
         BindingSource GetFastest();
+        void CheckCurrencyFormat(DataGridView grid);
     }
 }
