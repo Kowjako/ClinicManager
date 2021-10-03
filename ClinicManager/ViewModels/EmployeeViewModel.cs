@@ -21,6 +21,11 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public void CheckCurrencyFormat(DataGridView grid)
+        {
+            grid.Columns[4].DefaultCellStyle.Format = "c";
+        }
+
         public void DeleteEmployee(EmployeeRow employee)
         {
             using (var context = new ClinicDataEntities())
@@ -65,7 +70,7 @@ namespace ClinicManager.ViewModels
                         var entites = context.Database.SqlQuery<EmployeeRow>(sqlQuery).ToList();
                         return entites;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         MessageBox.Show(null, "Niepoprawne zapytanie filtrowania", "Błąd");
                     }

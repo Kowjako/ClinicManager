@@ -100,7 +100,7 @@ namespace Test
             {
                 _gvMain.DataSource = ClinicViewModel.GetOpinions(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
             }
-            catch(ArgumentOutOfRangeException ex)
+            catch(ArgumentOutOfRangeException)
             {
                 MessageBox.Show(null, "Nalezy wybrac przychodnie", "Blad");
             }
@@ -167,6 +167,8 @@ namespace Test
                 bsMain.DataSource = clinicList;
                 _gvMain.DataSource = bsMain;
             }
+
+            EmployeeViewModel.CheckCurrencyFormat(_gvMain);
         }
 
         private void btnDoctorsEdit_Click(object sender, EventArgs e)
@@ -656,36 +658,6 @@ namespace Test
                 form.ShowDialog();
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         #endregion
 

@@ -60,7 +60,7 @@ namespace ClinicManager.ViewModels
                         var entites = context.Database.SqlQuery<ProducentRow>(sqlQuery).ToList();
                         return entites;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         MessageBox.Show(null, "Niepoprawne zapytanie filtrowania", "Błąd");
                     }
@@ -128,7 +128,7 @@ namespace ClinicManager.ViewModels
                 {
                     context.SaveChanges();
                 }
-                catch (DbUpdateException ex)
+                catch (DbUpdateException)
                 {
                     MessageBox.Show(null, "Błąd podczas zapisywania producenta", "Blad");
                 }

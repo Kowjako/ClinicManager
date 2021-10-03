@@ -21,5 +21,6 @@ namespace ClinicManager.Interfaces
         void ShowContact(EmployeeRow row);
         void Sort(DataGridView grid, BindingSource list);
         BindingSource ShowHistory(EmployeeRow row);
+        void CheckCurrencyFormat(DataGridView grid);
     }
 }

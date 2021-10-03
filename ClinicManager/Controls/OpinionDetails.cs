@@ -81,7 +81,7 @@ namespace ClinicManager.Controls
                         context.SaveChanges();
                     }
                 }
-                catch(DbUpdateException ex)
+                catch(DbUpdateException)
                 {
                     MessageBox.Show(null, "Nie udalo sie wystawic opinii", "Blad");
                 }

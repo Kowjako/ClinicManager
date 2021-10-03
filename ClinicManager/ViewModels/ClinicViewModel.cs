@@ -64,7 +64,7 @@ namespace ClinicManager.ViewModels
                         var entites = context.Database.SqlQuery<ClinicRow>(sqlQuery).ToList();
                         return entites;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         MessageBox.Show(null, "Niepoprawne zapytanie filtrowania", "Błąd");
                     }
