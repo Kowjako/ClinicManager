@@ -507,7 +507,7 @@ UPDATE Clinics SET EmployeeId = 29 WHERE Id = 14;
 UPDATE Clinics SET EmployeeId = 30 WHERE Id = 15;
 
 SET IDENTITY_INSERT Orders ON
-insert into Orders (Id, DrugId, ClinicId, ProducentId, Amount, Unit) values (1, 23, 3, 7, 28, 'opakowanie');
+insert into Orders (Id, DrugId, ClinicId, ProducentId, Amount, Unit) values (1, 23, 3, 7, 28, 'krem');
 insert into Orders (Id, DrugId, ClinicId, ProducentId, Amount, Unit) values (2, 20, 13, 4, 3, 'opakowanie');
 insert into Orders (Id, DrugId, ClinicId, ProducentId, Amount, Unit) values (3, 2, 2, 5, 22, 'krem');
 insert into Orders (Id, DrugId, ClinicId, ProducentId, Amount, Unit) values (4, 9, 13, 5, 26, 'krem');
