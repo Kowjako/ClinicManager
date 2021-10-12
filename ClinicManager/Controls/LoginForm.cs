@@ -54,12 +54,10 @@ namespace ClinicManager.Controls
                 sqlCommand.Parameters.Add(loginParam);
                 sqlCommand.Parameters.Add(passParam);
 
-
-                int number = sqlCommand.ExecuteNonQuery();
-
-                if (number == -1)
+                using(var reader = sqlCommand.ExecuteReader())
                 {
-                    isLoginSuccess = true;
+                    if(reader.HasRows) isLoginSuccess = true;
+                    reader.Close();
                 }
                 connection.Close();
             }
