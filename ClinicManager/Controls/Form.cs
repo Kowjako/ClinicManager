@@ -443,6 +443,7 @@ namespace Test
         private void btnVisitSort_Click(object sender, EventArgs e)
         {
             VisitViewModel.Sort(_gvMain, bsMain);
+            VisitViewModel.CheckRegistrationStatus(_gvMain);
         }
 
         private void btnVisitAccept_Click(object sender, EventArgs e)

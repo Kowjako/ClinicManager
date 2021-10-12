@@ -116,12 +116,19 @@ namespace ClinicManager.ViewModels
 
             var newBs = new BindingSource();
 
-            using (var context = new ClinicDataEntities())
+            if (!string.IsNullOrEmpty(list.Sort))
             {
-                var clinicList = context.OperationRow.SqlQuery($"SELECT Id, Nazwa, Typ, Znieczulenie, [Narzedzie] AS Narzedzie, Lek FROM OperationRow ORDER BY {list.Sort}").ToList();
-                newBs.DataSource = typeof(OperationRow);
-                newBs.DataSource = clinicList;
-                grid.DataSource = newBs;
+                using (var context = new ClinicDataEntities())
+                {
+                    var clinicList = context.OperationRow.SqlQuery($"SELECT Id, Nazwa, Typ, Znieczulenie, [Narzedzie] AS Narzedzie, Lek FROM OperationRow ORDER BY {list.Sort}").ToList();
+                    newBs.DataSource = typeof(OperationRow);
+                    newBs.DataSource = clinicList;
+                    grid.DataSource = newBs;
+                }
+            }
+            else
+            {
+                MessageBox.Show(null, "Nalezy zaznaczyc po czym filtrowac", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

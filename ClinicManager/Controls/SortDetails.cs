@@ -56,6 +56,11 @@ namespace ClinicManager.Controls
                     def.Append(singleParam + " " + "DESC,");
                 }
             }
+            if (string.IsNullOrEmpty(def.ToString()))
+            {
+                filter = null;
+                return;
+            }
             def.Remove(def.Length - 1, 1);
             filter = def.ToString();
         }
@@ -67,7 +72,8 @@ namespace ClinicManager.Controls
             PrepareParameters(out sortParams);
             PrepareFilterDefinition(sortParams, out filterDefinition, SortOrder.Ascending);
 
-            list.Sort = filterDefinition;
+            if (filterDefinition != null)
+                list.Sort = filterDefinition;
             this.Close();
         }
 
@@ -77,8 +83,8 @@ namespace ClinicManager.Controls
             string filterDefinition = null;
             PrepareParameters(out sortParams);
             PrepareFilterDefinition(sortParams, out filterDefinition, SortOrder.Descending);
-
-            list.Sort = filterDefinition;
+            if (filterDefinition != null)
+                list.Sort = filterDefinition;
             this.Close();
         }
     }
