@@ -314,3 +314,9 @@ JOIN Tools t ON o.ToolId = t.Id
 JOIN Producents p ON o.ProducentId = p.Id
 GO
 
+CREATE TABLE Users (
+	Id INT IDENTITY(1,1),
+	Login NVARCHAR(255) NOT NULL,
+	Password NVARCHAR(255) NOT NULL,
+	Permission TINYINT
+);

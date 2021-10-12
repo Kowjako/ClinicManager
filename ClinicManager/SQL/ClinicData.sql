@@ -641,3 +641,7 @@ insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (28, 
 insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (29, 18, 10, 13, 3);
 insert into OrdersTools (Id, ToolId, ClinicId, ProducentId, Amount) values (30, 9, 13, 2, 3);
 SET IDENTITY_INSERT OrdersTools OFF
+
+SET IDENTITY_INSERT Users ON
+INSERT INTO Users (Id, Login, Password, Permission) values (1, 'admin', 'admin', 0);
+SET IDENTITY_INSERT Users OFF
