@@ -159,6 +159,12 @@
     <Compile Include="Controls\LocalizationDetails.Designer.cs">
       <DependentUpon>LocalizationDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\OperationDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -375,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\LocalizationDetails.resx">
       <DependentUpon>LocalizationDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\OperationDetails.resx">
       <DependentUpon>OperationDetails.cs</DependentUpon>
