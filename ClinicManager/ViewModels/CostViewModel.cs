@@ -30,11 +30,24 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
-        public void CheckCurrencyFormat(DataGridView grid)
+        public void CheckCurrencyFormat(DataGridView grid, bool isCheapest = false, bool isFastest = false)
         {
-            grid.Columns[2].DefaultCellStyle.Format = "c";
-            grid.Columns[3].DefaultCellStyle.Format = "0 dni";
+            if (!isCheapest && !isFastest)
+            {
+                grid.Columns[2].DefaultCellStyle.Format = "c";
+                grid.Columns[3].DefaultCellStyle.Format = "0 dni";
+            }
+            else if(isCheapest)
+            {
+                grid.Columns[1].DefaultCellStyle.Format = "c";
+            }
+            else if(isFastest)
+            {
+                grid.Columns[1].DefaultCellStyle.Format = "0 dni";
+            }
         }
+
+
 
         public void DeleteCost(CostRow cost)
         {
