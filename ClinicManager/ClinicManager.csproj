@@ -93,6 +93,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\AddUserControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\AddUserControl.Designer.cs">
+      <DependentUpon>AddUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ArticleDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -348,6 +354,9 @@
     <Compile Include="ViewModels\PatientViewModel.cs" />
     <Compile Include="ViewModels\ProducentViewModel.cs" />
     <Compile Include="ViewModels\VisitViewModel.cs" />
+    <EmbeddedResource Include="Controls\AddUserControl.resx">
+      <DependentUpon>AddUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\ArticleDetails.resx">
       <DependentUpon>ArticleDetails.cs</DependentUpon>
     </EmbeddedResource>

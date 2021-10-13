@@ -884,7 +884,12 @@ namespace Test
             }
         }
 
-        #endregion
+        private void addUser_Click(object sender, EventArgs e)
+        {
+            var form = new AddUserControl();
+            form.ShowDialog();
+        }
 
+        #endregion
     }
 }

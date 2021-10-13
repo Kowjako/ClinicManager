@@ -30,9 +30,9 @@ namespace Test
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
@@ -160,10 +160,10 @@ namespace Test
             this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationShowTriggersDB = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel22 = new System.Windows.Forms.RibbonPanel();
+            this.addUser = new System.Windows.Forms.RibbonButton();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            this.ribbonPanel22 = new System.Windows.Forms.RibbonPanel();
-            this.ribbonButton1 = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             this.SuspendLayout();
@@ -1373,6 +1373,22 @@ namespace Test
             this.btnConfigurationShowTriggersDB.Text = "Triggery";
             this.btnConfigurationShowTriggersDB.Click += new System.EventHandler(this.btnConfigurationShowDBScript_Click);
             // 
+            // ribbonPanel22
+            // 
+            this.ribbonPanel22.ButtonMoreVisible = false;
+            this.ribbonPanel22.Items.Add(this.addUser);
+            this.ribbonPanel22.Name = "ribbonPanel22";
+            this.ribbonPanel22.Text = "Użytkownicy";
+            // 
+            // addUser
+            // 
+            this.addUser.Image = ((System.Drawing.Image)(resources.GetObject("addUser.Image")));
+            this.addUser.LargeImage = ((System.Drawing.Image)(resources.GetObject("addUser.LargeImage")));
+            this.addUser.Name = "addUser";
+            this.addUser.SmallImage = ((System.Drawing.Image)(resources.GetObject("addUser.SmallImage")));
+            this.addUser.Text = "Tworzenie";
+            this.addUser.Click += new System.EventHandler(this.addUser_Click);
+            // 
             // _gvMain
             // 
             this._gvMain.AllowUserToAddRows = false;
@@ -1382,14 +1398,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.GridColor = System.Drawing.Color.Black;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
@@ -1397,32 +1413,17 @@ namespace Test
             this._gvMain.MultiSelect = false;
             this._gvMain.Name = "_gvMain";
             this._gvMain.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._gvMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._gvMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
-            // 
-            // ribbonPanel22
-            // 
-            this.ribbonPanel22.ButtonMoreVisible = false;
-            this.ribbonPanel22.Items.Add(this.ribbonButton1);
-            this.ribbonPanel22.Name = "ribbonPanel22";
-            this.ribbonPanel22.Text = "Użytkownicy";
-            // 
-            // ribbonButton1
-            // 
-            this.ribbonButton1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.Image")));
-            this.ribbonButton1.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.LargeImage")));
-            this.ribbonButton1.Name = "ribbonButton1";
-            this.ribbonButton1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonButton1.SmallImage")));
-            this.ribbonButton1.Text = "Tworzenie";
             // 
             // Form1
             // 
@@ -1573,7 +1574,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnCostsFastest;
         private System.Windows.Forms.RibbonButton btnConfigurationShowTriggersDB;
         private System.Windows.Forms.RibbonPanel ribbonPanel22;
-        private System.Windows.Forms.RibbonButton ribbonButton1;
+        private System.Windows.Forms.RibbonButton addUser;
     }
 }
 
