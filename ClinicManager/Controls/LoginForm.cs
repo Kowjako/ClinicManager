@@ -75,8 +75,8 @@ namespace ClinicManager.Controls
             {
                 Hide();
                 var form = new Form1();
-                form.ShowDialog();
                 form.SetPermissions(permission as byte?);
+                form.ShowDialog();                
                 this.Close();
             }
             else
