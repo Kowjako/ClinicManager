@@ -63,6 +63,37 @@ namespace Test
             ProducentViewModel = new ProducentViewModel();
         }
 
+        public void SetPermissions(byte? permissionLevel)
+        {
+            switch (permissionLevel.Value)
+            {
+                case 1:
+                    clinicTab.Visible = false;
+                    costsTab.Visible = false;
+                    producentTab.Visible = false;
+                    configTab.Visible = false;
+                    break;
+                case 2:
+                    clinicTab.Visible = false;
+                    employeeTab.Visible = false;
+                    pacientTab.Visible = false;
+                    visitTab.Visible = false;
+                    operationTab.Visible = false;
+                    configTab.Visible = false;
+                    break;
+                case 3:
+                    clinicTab.Visible = false;
+                    toolTab.Visible = false;
+                    operationTab.Visible = false;
+                    costsTab.Visible = false;
+                    producentTab.Visible = false;
+                    configTab.Visible = false;
+                    break;
+                default:
+                    break;  
+            }
+        }
+
         #endregion
 
         #region Clinics & Localizations & Opinions

@@ -17,6 +17,7 @@ namespace ClinicManager.Controls
     {
         private Point lastpoint;
         private bool isLoginSuccess = false;
+        private object permission;
 
         public LoginForm()
         {
@@ -56,8 +57,11 @@ namespace ClinicManager.Controls
 
                 using(var reader = sqlCommand.ExecuteReader())
                 {
-                    if(reader.HasRows) isLoginSuccess = true;
-                    reader.Close();
+                    if (reader.HasRows && reader.Read())
+                    {
+                        isLoginSuccess = true;
+                        permission = reader.GetValue(3);
+                    }
                 }
                 connection.Close();
             }
@@ -72,6 +76,7 @@ namespace ClinicManager.Controls
                 Hide();
                 var form = new Form1();
                 form.ShowDialog();
+                form.SetPermissions(permission as byte?);
                 this.Close();
             }
             else

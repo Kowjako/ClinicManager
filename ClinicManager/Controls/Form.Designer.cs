@@ -31,10 +31,10 @@ namespace Test
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
-            this.ribbonTab1 = new System.Windows.Forms.RibbonTab();
+            this.clinicTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
             this.btnHospitalShowList = new System.Windows.Forms.RibbonButton();
             this.btnHospitalAdd = new System.Windows.Forms.RibbonButton();
@@ -53,7 +53,7 @@ namespace Test
             this.btnHospitalOpinions = new System.Windows.Forms.RibbonButton();
             this.btnOpinionShow = new System.Windows.Forms.RibbonButton();
             this.btnOpinionAdd = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab2 = new System.Windows.Forms.RibbonTab();
+            this.employeeTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.btnDoctorsShow = new System.Windows.Forms.RibbonButton();
             this.btnDoctorsAdd = new System.Windows.Forms.RibbonButton();
@@ -66,7 +66,7 @@ namespace Test
             this.btnDoctorsShowContact = new System.Windows.Forms.RibbonButton();
             this.btnDoctorsSort = new System.Windows.Forms.RibbonButton();
             this.btnDoctorsHistory = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab3 = new System.Windows.Forms.RibbonTab();
+            this.pacientTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel4 = new System.Windows.Forms.RibbonPanel();
             this.btnClientsShow = new System.Windows.Forms.RibbonButton();
             this.btnClientsAdd = new System.Windows.Forms.RibbonButton();
@@ -78,7 +78,7 @@ namespace Test
             this.btnPatientShowContact = new System.Windows.Forms.RibbonButton();
             this.btnPatientSort = new System.Windows.Forms.RibbonButton();
             this.btnPatientVisits = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab4 = new System.Windows.Forms.RibbonTab();
+            this.toolTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
             this.btnAssetsShow = new System.Windows.Forms.RibbonButton();
             this.btnAssetsAdd = new System.Windows.Forms.RibbonButton();
@@ -89,7 +89,7 @@ namespace Test
             this.ribbonPanel15 = new System.Windows.Forms.RibbonPanel();
             this.btnToolsSort = new System.Windows.Forms.RibbonButton();
             this.btnToolsInventarize = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab5 = new System.Windows.Forms.RibbonTab();
+            this.drugTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel6 = new System.Windows.Forms.RibbonPanel();
             this.btnArticleShow = new System.Windows.Forms.RibbonButton();
             this.btnArticleAdd = new System.Windows.Forms.RibbonButton();
@@ -101,7 +101,7 @@ namespace Test
             this.btnArticleAddUnit = new System.Windows.Forms.RibbonButton();
             this.btnArticleSort = new System.Windows.Forms.RibbonButton();
             this.btnArticleRemoveExpired = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab6 = new System.Windows.Forms.RibbonTab();
+            this.visitTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel7 = new System.Windows.Forms.RibbonPanel();
             this.btnVisitsShow = new System.Windows.Forms.RibbonButton();
             this.btnVisitsAdd = new System.Windows.Forms.RibbonButton();
@@ -115,7 +115,7 @@ namespace Test
             this.btnVisitAccept = new System.Windows.Forms.RibbonButton();
             this.btnVisitRealize = new System.Windows.Forms.RibbonButton();
             this.btnVisitUndo = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab7 = new System.Windows.Forms.RibbonTab();
+            this.operationTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel8 = new System.Windows.Forms.RibbonPanel();
             this.btnOperationsShow = new System.Windows.Forms.RibbonButton();
             this.btnOperationsAdd = new System.Windows.Forms.RibbonButton();
@@ -126,7 +126,7 @@ namespace Test
             this.ribbonPanel17 = new System.Windows.Forms.RibbonPanel();
             this.btnOperationAddType = new System.Windows.Forms.RibbonButton();
             this.btnOperationSort = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab8 = new System.Windows.Forms.RibbonTab();
+            this.costsTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel9 = new System.Windows.Forms.RibbonPanel();
             this.btnPriceShow = new System.Windows.Forms.RibbonButton();
             this.btnPriceAdd = new System.Windows.Forms.RibbonButton();
@@ -139,7 +139,7 @@ namespace Test
             this.ribbonPanel21 = new System.Windows.Forms.RibbonPanel();
             this.btnCostsCheapest = new System.Windows.Forms.RibbonButton();
             this.btnCostsFastest = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab9 = new System.Windows.Forms.RibbonTab();
+            this.producentTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel10 = new System.Windows.Forms.RibbonPanel();
             this.btnSupplierShow = new System.Windows.Forms.RibbonButton();
             this.btnSupplierAdd = new System.Windows.Forms.RibbonButton();
@@ -155,7 +155,7 @@ namespace Test
             this.btnProducentsOrders = new System.Windows.Forms.RibbonButton();
             this.btnProducentsOrdersTools = new System.Windows.Forms.RibbonButton();
             this.btnProducentsAddPrice = new System.Windows.Forms.RibbonButton();
-            this.ribbonTab10 = new System.Windows.Forms.RibbonTab();
+            this.configTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel11 = new System.Windows.Forms.RibbonPanel();
             this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
@@ -199,27 +199,27 @@ namespace Test
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
             this.ribbon1.Size = new System.Drawing.Size(1162, 122);
             this.ribbon1.TabIndex = 0;
-            this.ribbon1.Tabs.Add(this.ribbonTab1);
-            this.ribbon1.Tabs.Add(this.ribbonTab2);
-            this.ribbon1.Tabs.Add(this.ribbonTab3);
-            this.ribbon1.Tabs.Add(this.ribbonTab4);
-            this.ribbon1.Tabs.Add(this.ribbonTab5);
-            this.ribbon1.Tabs.Add(this.ribbonTab6);
-            this.ribbon1.Tabs.Add(this.ribbonTab7);
-            this.ribbon1.Tabs.Add(this.ribbonTab8);
-            this.ribbon1.Tabs.Add(this.ribbonTab9);
-            this.ribbon1.Tabs.Add(this.ribbonTab10);
+            this.ribbon1.Tabs.Add(this.clinicTab);
+            this.ribbon1.Tabs.Add(this.employeeTab);
+            this.ribbon1.Tabs.Add(this.pacientTab);
+            this.ribbon1.Tabs.Add(this.toolTab);
+            this.ribbon1.Tabs.Add(this.drugTab);
+            this.ribbon1.Tabs.Add(this.visitTab);
+            this.ribbon1.Tabs.Add(this.operationTab);
+            this.ribbon1.Tabs.Add(this.costsTab);
+            this.ribbon1.Tabs.Add(this.producentTab);
+            this.ribbon1.Tabs.Add(this.configTab);
             this.ribbon1.TabSpacing = 3;
             this.ribbon1.Text = "ribbon1";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue_2010;
             // 
-            // ribbonTab1
+            // clinicTab
             // 
-            this.ribbonTab1.Name = "ribbonTab1";
-            this.ribbonTab1.Panels.Add(this.ribbonPanel1);
-            this.ribbonTab1.Panels.Add(this.ribbonPanel12);
-            this.ribbonTab1.Panels.Add(this.ribbonPanel2);
-            this.ribbonTab1.Text = "Przychodnie";
+            this.clinicTab.Name = "clinicTab";
+            this.clinicTab.Panels.Add(this.ribbonPanel1);
+            this.clinicTab.Panels.Add(this.ribbonPanel12);
+            this.clinicTab.Panels.Add(this.ribbonPanel2);
+            this.clinicTab.Text = "Przychodnie";
             // 
             // ribbonPanel1
             // 
@@ -399,12 +399,12 @@ namespace Test
             this.btnOpinionAdd.Text = "Dodaj opinię";
             this.btnOpinionAdd.Click += new System.EventHandler(this.btnOpinionAdd_Click);
             // 
-            // ribbonTab2
+            // employeeTab
             // 
-            this.ribbonTab2.Name = "ribbonTab2";
-            this.ribbonTab2.Panels.Add(this.ribbonPanel3);
-            this.ribbonTab2.Panels.Add(this.ribbonPanel13);
-            this.ribbonTab2.Text = "Lekarze";
+            this.employeeTab.Name = "employeeTab";
+            this.employeeTab.Panels.Add(this.ribbonPanel3);
+            this.employeeTab.Panels.Add(this.ribbonPanel13);
+            this.employeeTab.Text = "Lekarze";
             // 
             // ribbonPanel3
             // 
@@ -518,12 +518,12 @@ namespace Test
             this.btnDoctorsHistory.Text = "Historia";
             this.btnDoctorsHistory.Click += new System.EventHandler(this.btnDoctorsHistory_Click);
             // 
-            // ribbonTab3
+            // pacientTab
             // 
-            this.ribbonTab3.Name = "ribbonTab3";
-            this.ribbonTab3.Panels.Add(this.ribbonPanel4);
-            this.ribbonTab3.Panels.Add(this.ribbonPanel16);
-            this.ribbonTab3.Text = "Pacjenci";
+            this.pacientTab.Name = "pacientTab";
+            this.pacientTab.Panels.Add(this.ribbonPanel4);
+            this.pacientTab.Panels.Add(this.ribbonPanel16);
+            this.pacientTab.Text = "Pacjenci";
             // 
             // ribbonPanel4
             // 
@@ -627,12 +627,12 @@ namespace Test
             this.btnPatientVisits.Text = "Rejestracje";
             this.btnPatientVisits.Click += new System.EventHandler(this.btnPatientVisits_Click);
             // 
-            // ribbonTab4
+            // toolTab
             // 
-            this.ribbonTab4.Name = "ribbonTab4";
-            this.ribbonTab4.Panels.Add(this.ribbonPanel5);
-            this.ribbonTab4.Panels.Add(this.ribbonPanel15);
-            this.ribbonTab4.Text = "Narzędzia";
+            this.toolTab.Name = "toolTab";
+            this.toolTab.Panels.Add(this.ribbonPanel5);
+            this.toolTab.Panels.Add(this.ribbonPanel15);
+            this.toolTab.Text = "Narzędzia";
             // 
             // ribbonPanel5
             // 
@@ -726,12 +726,12 @@ namespace Test
             this.btnToolsInventarize.Text = "Inwentaryzuj";
             this.btnToolsInventarize.Click += new System.EventHandler(this.btnToolsInventarize_Click);
             // 
-            // ribbonTab5
+            // drugTab
             // 
-            this.ribbonTab5.Name = "ribbonTab5";
-            this.ribbonTab5.Panels.Add(this.ribbonPanel6);
-            this.ribbonTab5.Panels.Add(this.ribbonPanel14);
-            this.ribbonTab5.Text = "Leki";
+            this.drugTab.Name = "drugTab";
+            this.drugTab.Panels.Add(this.ribbonPanel6);
+            this.drugTab.Panels.Add(this.ribbonPanel14);
+            this.drugTab.Text = "Leki";
             // 
             // ribbonPanel6
             // 
@@ -835,12 +835,12 @@ namespace Test
             this.btnArticleRemoveExpired.Text = "Inwentaryzuj";
             this.btnArticleRemoveExpired.Click += new System.EventHandler(this.btnArticleRemoveExpired_Click);
             // 
-            // ribbonTab6
+            // visitTab
             // 
-            this.ribbonTab6.Name = "ribbonTab6";
-            this.ribbonTab6.Panels.Add(this.ribbonPanel7);
-            this.ribbonTab6.Panels.Add(this.ribbonPanel18);
-            this.ribbonTab6.Text = "Wizyty";
+            this.visitTab.Name = "visitTab";
+            this.visitTab.Panels.Add(this.ribbonPanel7);
+            this.visitTab.Panels.Add(this.ribbonPanel18);
+            this.visitTab.Text = "Wizyty";
             // 
             // ribbonPanel7
             // 
@@ -964,12 +964,12 @@ namespace Test
             this.btnVisitUndo.Text = "Anuluj";
             this.btnVisitUndo.Click += new System.EventHandler(this.btnVisitUndo_Click);
             // 
-            // ribbonTab7
+            // operationTab
             // 
-            this.ribbonTab7.Name = "ribbonTab7";
-            this.ribbonTab7.Panels.Add(this.ribbonPanel8);
-            this.ribbonTab7.Panels.Add(this.ribbonPanel17);
-            this.ribbonTab7.Text = "Operacje";
+            this.operationTab.Name = "operationTab";
+            this.operationTab.Panels.Add(this.ribbonPanel8);
+            this.operationTab.Panels.Add(this.ribbonPanel17);
+            this.operationTab.Text = "Operacje";
             // 
             // ribbonPanel8
             // 
@@ -1063,13 +1063,13 @@ namespace Test
             this.btnOperationSort.Text = "Sortuj";
             this.btnOperationSort.Click += new System.EventHandler(this.btnOperationSort_Click);
             // 
-            // ribbonTab8
+            // costsTab
             // 
-            this.ribbonTab8.Name = "ribbonTab8";
-            this.ribbonTab8.Panels.Add(this.ribbonPanel9);
-            this.ribbonTab8.Panels.Add(this.ribbonPanel20);
-            this.ribbonTab8.Panels.Add(this.ribbonPanel21);
-            this.ribbonTab8.Text = "Cennik leków";
+            this.costsTab.Name = "costsTab";
+            this.costsTab.Panels.Add(this.ribbonPanel9);
+            this.costsTab.Panels.Add(this.ribbonPanel20);
+            this.costsTab.Panels.Add(this.ribbonPanel21);
+            this.costsTab.Text = "Cennik leków";
             // 
             // ribbonPanel9
             // 
@@ -1179,12 +1179,12 @@ namespace Test
             this.btnCostsFastest.Text = "Najszybsze";
             this.btnCostsFastest.Click += new System.EventHandler(this.btnCostsFastest_Click);
             // 
-            // ribbonTab9
+            // producentTab
             // 
-            this.ribbonTab9.Name = "ribbonTab9";
-            this.ribbonTab9.Panels.Add(this.ribbonPanel10);
-            this.ribbonTab9.Panels.Add(this.ribbonPanel19);
-            this.ribbonTab9.Text = "Producenci";
+            this.producentTab.Name = "producentTab";
+            this.producentTab.Panels.Add(this.ribbonPanel10);
+            this.producentTab.Panels.Add(this.ribbonPanel19);
+            this.producentTab.Text = "Producenci";
             // 
             // ribbonPanel10
             // 
@@ -1330,12 +1330,12 @@ namespace Test
             this.btnProducentsAddPrice.Text = "Cennik";
             this.btnProducentsAddPrice.Click += new System.EventHandler(this.btnProducentsAddPrice_Click);
             // 
-            // ribbonTab10
+            // configTab
             // 
-            this.ribbonTab10.Name = "ribbonTab10";
-            this.ribbonTab10.Panels.Add(this.ribbonPanel11);
-            this.ribbonTab10.Panels.Add(this.ribbonPanel22);
-            this.ribbonTab10.Text = "Konfiguracja";
+            this.configTab.Name = "configTab";
+            this.configTab.Panels.Add(this.ribbonPanel11);
+            this.configTab.Panels.Add(this.ribbonPanel22);
+            this.configTab.Text = "Konfiguracja";
             // 
             // ribbonPanel11
             // 
@@ -1398,14 +1398,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle3;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.GridColor = System.Drawing.Color.Black;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
@@ -1413,14 +1413,14 @@ namespace Test
             this._gvMain.MultiSelect = false;
             this._gvMain.Name = "_gvMain";
             this._gvMain.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._gvMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._gvMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
@@ -1445,19 +1445,19 @@ namespace Test
         #endregion
 
         private System.Windows.Forms.Ribbon ribbon1;
-        private System.Windows.Forms.RibbonTab ribbonTab1;
+        private System.Windows.Forms.RibbonTab clinicTab;
         private System.Windows.Forms.RibbonPanel ribbonPanel1;
-        private System.Windows.Forms.RibbonTab ribbonTab2;
+        private System.Windows.Forms.RibbonTab employeeTab;
         private System.Windows.Forms.RibbonPanel ribbonPanel3;
         private System.Windows.Forms.RibbonButton btnHospitalAdd;
         private System.Windows.Forms.RibbonButton btnHospitalRemove;
         private System.Windows.Forms.RibbonButton btnHospitalEdit;
-        private System.Windows.Forms.RibbonTab ribbonTab3;
-        private System.Windows.Forms.RibbonTab ribbonTab4;
-        private System.Windows.Forms.RibbonTab ribbonTab5;
-        private System.Windows.Forms.RibbonTab ribbonTab6;
-        private System.Windows.Forms.RibbonTab ribbonTab7;
-        private System.Windows.Forms.RibbonTab ribbonTab8;
+        private System.Windows.Forms.RibbonTab pacientTab;
+        private System.Windows.Forms.RibbonTab toolTab;
+        private System.Windows.Forms.RibbonTab drugTab;
+        private System.Windows.Forms.RibbonTab visitTab;
+        private System.Windows.Forms.RibbonTab operationTab;
+        private System.Windows.Forms.RibbonTab costsTab;
         private System.Windows.Forms.RibbonButton btnHospitalShowList;
         private System.Windows.Forms.RibbonButton btnHospitalRefresh;
         private System.Windows.Forms.RibbonButton btnDoctorsShow;
@@ -1501,7 +1501,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnPriceEdit;
         private System.Windows.Forms.RibbonButton btnPriceDelete;
         private System.Windows.Forms.RibbonButton btnPriceRefresh;
-        private System.Windows.Forms.RibbonTab ribbonTab9;
+        private System.Windows.Forms.RibbonTab producentTab;
         private System.Windows.Forms.RibbonPanel ribbonPanel10;
         private System.Windows.Forms.BindingSource bsMain;
         private System.Windows.Forms.RibbonButton btnHospitalFilter;
@@ -1519,7 +1519,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnPriceFilter;
         private System.Windows.Forms.DataGridView _gvMain;
         private System.Windows.Forms.RibbonButton btnLocalizationAdd;
-        private System.Windows.Forms.RibbonTab ribbonTab10;
+        private System.Windows.Forms.RibbonTab configTab;
         private System.Windows.Forms.RibbonPanel ribbonPanel11;
         private System.Windows.Forms.RibbonButton btnConfigurationShowDBScript;
         private System.Windows.Forms.RibbonButton btnConfigurationInsertDBData;
