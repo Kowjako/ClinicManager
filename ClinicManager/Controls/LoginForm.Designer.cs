@@ -141,17 +141,19 @@ namespace ClinicManager.Controls
             // 
             // loginBox
             // 
+            this.loginBox.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.loginBox.Location = new System.Drawing.Point(79, 47);
             this.loginBox.Name = "loginBox";
-            this.loginBox.Size = new System.Drawing.Size(399, 20);
+            this.loginBox.Size = new System.Drawing.Size(399, 22);
             this.loginBox.TabIndex = 7;
             // 
             // passBox
             // 
-            this.passBox.Location = new System.Drawing.Point(79, 82);
+            this.passBox.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passBox.Location = new System.Drawing.Point(79, 79);
             this.passBox.Name = "passBox";
             this.passBox.PasswordChar = '*';
-            this.passBox.Size = new System.Drawing.Size(399, 20);
+            this.passBox.Size = new System.Drawing.Size(399, 22);
             this.passBox.TabIndex = 8;
             // 
             // LoginForm

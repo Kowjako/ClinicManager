@@ -50,7 +50,7 @@ namespace ClinicManager.Controls
                 connection.Open();
                 var loginParam = new SqlParameter("@login", loginBox.Text);
                 var passParam = new SqlParameter("@pass", passBox.Text);
-                var sqlCommand = new SqlCommand("SELECT * FROM Users WHERE Login = @login AND Password = @pass", connection);
+                var sqlCommand = new SqlCommand("SELECT Id, Login, Password, Permission FROM Users WHERE Login = @login AND Password = @pass", connection);
                 sqlCommand.Parameters.Add(loginParam);
                 sqlCommand.Parameters.Add(passParam);
 
@@ -73,6 +73,10 @@ namespace ClinicManager.Controls
                 var form = new Form1();
                 form.ShowDialog();
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show(null, "Nie ma takiego uzytkownika", "Uwaga", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
