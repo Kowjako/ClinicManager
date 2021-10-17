@@ -72,6 +72,10 @@ namespace ClinicManager
             var newRegistrationData = (_bsRegistration.DataSource as List<Registrations>).First();
             newRegistrationData.PatientId = (patientBox.SelectedItem as PatientRow).Id;
             newRegistrationData.EmployeeId = (employeeBox.SelectedItem as EmployeeRow).Id;
+            if(newRegistrationData.Date != dateTimePicker1.Value)
+            {
+                newRegistrationData.Date = dateTimePicker1.Value;
+            }
             VisitViewModel.SaveVisit(newRegistrationData, Mode);
             this.Close();
         }

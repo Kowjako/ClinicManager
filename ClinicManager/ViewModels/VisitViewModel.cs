@@ -33,6 +33,16 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
+        public void AddRegistrationForClient(PatientRow client)
+        {
+            var form = new VisitDetails(DetailsMode.Add);
+            form.dateTimePicker1.Value = client.Planowana_data;
+            form.dateTimePicker1.Enabled = false;
+            form.patientBox.SelectedItem = form.patientBox.Items.OfType<PatientRow>().First(p => p.Id == client.Id);
+            form.patientBox.Enabled = false;
+            form.ShowDialog();
+        }
+
         public void CheckRegistrationStatus(DataGridView gridView)
         {
             foreach (DataGridViewRow row in gridView.Rows)
@@ -152,7 +162,7 @@ namespace ClinicManager.ViewModels
                 {
                     context.SaveChanges();
                 }
-                catch (DbUpdateException)
+                catch (DbUpdateException ex)
                 {
                     MessageBox.Show(null, "Nie udalo sie zapisac wizyty", "Błąd!");
                 }

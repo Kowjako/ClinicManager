@@ -31,20 +31,20 @@ namespace ClinicManager
         {
             this.components = new System.ComponentModel.Container();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this._bsRegistration = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.patientBox = new System.Windows.Forms.ComboBox();
+            this._bsPatients = new System.Windows.Forms.BindingSource(this.components);
             this.employeeBox = new System.Windows.Forms.ComboBox();
+            this._bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.saveBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this._bsRegistration = new System.Windows.Forms.BindingSource(this.components);
-            this._bsEmployees = new System.Windows.Forms.BindingSource(this.components);
-            this._bsPatients = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._bsRegistration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsPatients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -55,6 +55,10 @@ namespace ClinicManager
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(325, 20);
             this.dateTimePicker1.TabIndex = 14;
+            // 
+            // _bsRegistration
+            // 
+            this._bsRegistration.DataSource = typeof(ClinicManager.DataAccessLayer.Registrations);
             // 
             // label3
             // 
@@ -108,6 +112,10 @@ namespace ClinicManager
             this.patientBox.TabIndex = 19;
             this.patientBox.ValueMember = "Id";
             // 
+            // _bsPatients
+            // 
+            this._bsPatients.DataSource = typeof(ClinicManager.DataAccessLayer.PatientRow);
+            // 
             // employeeBox
             // 
             this.employeeBox.DataSource = this._bsEmployees;
@@ -119,6 +127,10 @@ namespace ClinicManager
             this.employeeBox.Size = new System.Drawing.Size(325, 21);
             this.employeeBox.TabIndex = 20;
             this.employeeBox.ValueMember = "Id";
+            // 
+            // _bsEmployees
+            // 
+            this._bsEmployees.DataSource = typeof(ClinicManager.DataAccessLayer.EmployeeRow);
             // 
             // saveBtn
             // 
@@ -137,18 +149,6 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 27;
-            // 
-            // _bsRegistration
-            // 
-            this._bsRegistration.DataSource = typeof(ClinicManager.DataAccessLayer.Registrations);
-            // 
-            // _bsEmployees
-            // 
-            this._bsEmployees.DataSource = typeof(ClinicManager.DataAccessLayer.EmployeeRow);
-            // 
-            // _bsPatients
-            // 
-            this._bsPatients.DataSource = typeof(ClinicManager.DataAccessLayer.PatientRow);
             // 
             // VisitDetails
             // 
@@ -170,26 +170,25 @@ namespace ClinicManager
             this.Name = "VisitDetails";
             this.Text = "Szczególy wizyty";
             ((System.ComponentModel.ISupportInitialize)(this._bsRegistration)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsPatients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox patientBox;
         private System.Windows.Forms.ComboBox employeeBox;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.BindingSource _bsRegistration;
         private System.Windows.Forms.BindingSource _bsPatients;
         private System.Windows.Forms.BindingSource _bsEmployees;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.ComboBox patientBox;
     }
 }

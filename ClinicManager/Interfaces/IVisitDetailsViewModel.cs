@@ -23,5 +23,6 @@ namespace ClinicManager.Interfaces
         void RealizeVisit(RegistrationRow row);
         void UndoVisit(RegistrationRow row);
         void CheckRegistrationStatus(DataGridView gridView);
+        void AddRegistrationForClient(PatientRow client);
     }
 }

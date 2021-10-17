@@ -135,7 +135,12 @@ namespace ClinicManager.Properties {
         ///UPDATE Tools
         ///SET AvailableCount = AvailableCount + (SELECT Amount FROM inserted)
         ///WHERE Tools.Id = (SELECT ToolId FROM inserted)
-        ///GO.
+        ///GO
+        ///
+        ///CREATE TRIGGER Employees_Insert
+        ///ON Employees
+        ///AFTER INSERT
+        ///A [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string dbTriggers {
             get {
