@@ -921,6 +921,14 @@ namespace Test
             form.ShowDialog();
         }
 
+        private void logOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            var form = new LoginForm();
+            form.ShowDialog();
+            this.Close();
+        }
+
         #endregion
     }
 }

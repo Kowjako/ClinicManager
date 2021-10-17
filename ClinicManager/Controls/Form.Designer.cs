@@ -31,8 +31,8 @@ namespace Test
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.clinicTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
@@ -162,10 +162,20 @@ namespace Test
             this.btnConfigurationShowTriggersDB = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel22 = new System.Windows.Forms.RibbonPanel();
             this.addUser = new System.Windows.Forms.RibbonButton();
-            this._gvMain = new System.Windows.Forms.DataGridView();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
+            this.ribbonOrbMenuItem1 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonOrbMenuItem2 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonOrbRecentItem1 = new System.Windows.Forms.RibbonOrbRecentItem();
+            this.ribbonOrbRecentItem2 = new System.Windows.Forms.RibbonOrbRecentItem();
+            this.ribbonOrbRecentItem3 = new System.Windows.Forms.RibbonOrbRecentItem();
+            this.ribbonOrbRecentItem4 = new System.Windows.Forms.RibbonOrbRecentItem();
+            this.ribbonOrbRecentItem5 = new System.Windows.Forms.RibbonOrbRecentItem();
+            this.ribbonOrbMenuItem3 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this._gvMain = new System.Windows.Forms.DataGridView();
+            this.ribbonPanel23 = new System.Windows.Forms.RibbonPanel();
+            this.logOut = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon1
@@ -185,10 +195,11 @@ namespace Test
             this.ribbon1.OrbDropDown.ForeColor = System.Drawing.Color.Chocolate;
             this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
             this.ribbon1.OrbDropDown.Name = "";
+            this.ribbon1.OrbDropDown.OptionItemsPadding = 5;
             this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 72);
             this.ribbon1.OrbDropDown.TabIndex = 0;
             this.ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2010;
-            this.ribbon1.OrbText = "Hello";
+            this.ribbon1.OrbText = "Wyloguj";
             this.ribbon1.OrbVisible = false;
             // 
             // 
@@ -1335,6 +1346,7 @@ namespace Test
             this.configTab.Name = "configTab";
             this.configTab.Panels.Add(this.ribbonPanel11);
             this.configTab.Panels.Add(this.ribbonPanel22);
+            this.configTab.Panels.Add(this.ribbonPanel23);
             this.configTab.Text = "Konfiguracja";
             // 
             // ribbonPanel11
@@ -1389,6 +1401,73 @@ namespace Test
             this.addUser.Text = "Tworzenie";
             this.addUser.Click += new System.EventHandler(this.addUser_Click);
             // 
+            // ribbonOrbMenuItem1
+            // 
+            this.ribbonOrbMenuItem1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem1.Image")));
+            this.ribbonOrbMenuItem1.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem1.LargeImage")));
+            this.ribbonOrbMenuItem1.Name = "ribbonOrbMenuItem1";
+            this.ribbonOrbMenuItem1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem1.SmallImage")));
+            this.ribbonOrbMenuItem1.Text = "ribbonOrbMenuItem1";
+            // 
+            // ribbonOrbMenuItem2
+            // 
+            this.ribbonOrbMenuItem2.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem2.Image")));
+            this.ribbonOrbMenuItem2.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem2.LargeImage")));
+            this.ribbonOrbMenuItem2.Name = "ribbonOrbMenuItem2";
+            this.ribbonOrbMenuItem2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem2.SmallImage")));
+            this.ribbonOrbMenuItem2.Text = "ribbonOrbMenuItem2";
+            // 
+            // ribbonOrbRecentItem1
+            // 
+            this.ribbonOrbRecentItem1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem1.Image")));
+            this.ribbonOrbRecentItem1.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem1.LargeImage")));
+            this.ribbonOrbRecentItem1.Name = "ribbonOrbRecentItem1";
+            this.ribbonOrbRecentItem1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem1.SmallImage")));
+            this.ribbonOrbRecentItem1.Text = "ribbonOrbRecentItem1";
+            // 
+            // ribbonOrbRecentItem2
+            // 
+            this.ribbonOrbRecentItem2.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem2.Image")));
+            this.ribbonOrbRecentItem2.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem2.LargeImage")));
+            this.ribbonOrbRecentItem2.Name = "ribbonOrbRecentItem2";
+            this.ribbonOrbRecentItem2.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem2.SmallImage")));
+            this.ribbonOrbRecentItem2.Text = "ribbonOrbRecentItem2";
+            // 
+            // ribbonOrbRecentItem3
+            // 
+            this.ribbonOrbRecentItem3.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem3.Image")));
+            this.ribbonOrbRecentItem3.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem3.LargeImage")));
+            this.ribbonOrbRecentItem3.Name = "ribbonOrbRecentItem3";
+            this.ribbonOrbRecentItem3.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem3.SmallImage")));
+            this.ribbonOrbRecentItem3.Text = "ribbonOrbRecentItem3";
+            // 
+            // ribbonOrbRecentItem4
+            // 
+            this.ribbonOrbRecentItem4.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem4.Image")));
+            this.ribbonOrbRecentItem4.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem4.LargeImage")));
+            this.ribbonOrbRecentItem4.Name = "ribbonOrbRecentItem4";
+            this.ribbonOrbRecentItem4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem4.SmallImage")));
+            this.ribbonOrbRecentItem4.Text = "ribbonOrbRecentItem4";
+            // 
+            // ribbonOrbRecentItem5
+            // 
+            this.ribbonOrbRecentItem5.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem5.Image")));
+            this.ribbonOrbRecentItem5.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem5.LargeImage")));
+            this.ribbonOrbRecentItem5.Name = "ribbonOrbRecentItem5";
+            this.ribbonOrbRecentItem5.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbRecentItem5.SmallImage")));
+            this.ribbonOrbRecentItem5.Text = "ribbonOrbRecentItem5";
+            // 
+            // ribbonOrbMenuItem3
+            // 
+            this.ribbonOrbMenuItem3.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem3.Image")));
+            this.ribbonOrbMenuItem3.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem3.LargeImage")));
+            this.ribbonOrbMenuItem3.Name = "ribbonOrbMenuItem3";
+            this.ribbonOrbMenuItem3.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem3.SmallImage")));
+            this.ribbonOrbMenuItem3.Text = "ribbonOrbMenuItem3";
+            // 
             // _gvMain
             // 
             this._gvMain.AllowUserToAddRows = false;
@@ -1398,14 +1477,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.GridColor = System.Drawing.Color.Black;
             this._gvMain.Location = new System.Drawing.Point(0, 122);
@@ -1413,17 +1492,33 @@ namespace Test
             this._gvMain.MultiSelect = false;
             this._gvMain.Name = "_gvMain";
             this._gvMain.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._gvMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._gvMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
+            // 
+            // ribbonPanel23
+            // 
+            this.ribbonPanel23.ButtonMoreVisible = false;
+            this.ribbonPanel23.Items.Add(this.logOut);
+            this.ribbonPanel23.Name = "ribbonPanel23";
+            this.ribbonPanel23.Text = "Logowanie";
+            // 
+            // logOut
+            // 
+            this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
+            this.logOut.LargeImage = ((System.Drawing.Image)(resources.GetObject("logOut.LargeImage")));
+            this.logOut.Name = "logOut";
+            this.logOut.SmallImage = ((System.Drawing.Image)(resources.GetObject("logOut.SmallImage")));
+            this.logOut.Text = "Wyloguj";
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
             // 
             // Form1
             // 
@@ -1436,8 +1531,8 @@ namespace Test
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "ClinicManager - Zarządzanie siecią przychodni";
-            ((System.ComponentModel.ISupportInitialize)(this._gvMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._gvMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1517,7 +1612,6 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnVisitsFilter;
         private System.Windows.Forms.RibbonButton btnOperationsFilter;
         private System.Windows.Forms.RibbonButton btnPriceFilter;
-        private System.Windows.Forms.DataGridView _gvMain;
         private System.Windows.Forms.RibbonButton btnLocalizationAdd;
         private System.Windows.Forms.RibbonTab configTab;
         private System.Windows.Forms.RibbonPanel ribbonPanel11;
@@ -1575,6 +1669,17 @@ namespace Test
         private System.Windows.Forms.RibbonButton btnConfigurationShowTriggersDB;
         private System.Windows.Forms.RibbonPanel ribbonPanel22;
         private System.Windows.Forms.RibbonButton addUser;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem1;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem2;
+        private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem1;
+        private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem2;
+        private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem3;
+        private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem4;
+        private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem5;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem3;
+        private System.Windows.Forms.DataGridView _gvMain;
+        private System.Windows.Forms.RibbonPanel ribbonPanel23;
+        private System.Windows.Forms.RibbonButton logOut;
     }
 }
 
