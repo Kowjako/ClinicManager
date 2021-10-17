@@ -23,7 +23,7 @@ namespace ClinicManager.Controls
         private void InitializeRoles()
         {
             typeBox.Items.Add("Zarząd systemu");
-            typeBox.Items.Add("Pracownik");
+            typeBox.Items.Add("Lekarz");
             typeBox.Items.Add("Producent");
             typeBox.Items.Add("Klient");
 

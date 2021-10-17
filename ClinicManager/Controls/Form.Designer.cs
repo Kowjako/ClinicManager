@@ -78,6 +78,8 @@ namespace Test
             this.btnPatientShowContact = new System.Windows.Forms.RibbonButton();
             this.btnPatientSort = new System.Windows.Forms.RibbonButton();
             this.btnPatientVisits = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel24 = new System.Windows.Forms.RibbonPanel();
+            this.btnPatientsGenerateVisit = new System.Windows.Forms.RibbonButton();
             this.toolTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel5 = new System.Windows.Forms.RibbonPanel();
             this.btnAssetsShow = new System.Windows.Forms.RibbonButton();
@@ -162,6 +164,8 @@ namespace Test
             this.btnConfigurationShowTriggersDB = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel22 = new System.Windows.Forms.RibbonPanel();
             this.addUser = new System.Windows.Forms.RibbonButton();
+            this.ribbonPanel23 = new System.Windows.Forms.RibbonPanel();
+            this.logOut = new System.Windows.Forms.RibbonButton();
             this.bsMain = new System.Windows.Forms.BindingSource(this.components);
             this.ribbonOrbMenuItem1 = new System.Windows.Forms.RibbonOrbMenuItem();
             this.ribbonOrbMenuItem2 = new System.Windows.Forms.RibbonOrbMenuItem();
@@ -172,8 +176,6 @@ namespace Test
             this.ribbonOrbRecentItem5 = new System.Windows.Forms.RibbonOrbRecentItem();
             this.ribbonOrbMenuItem3 = new System.Windows.Forms.RibbonOrbMenuItem();
             this._gvMain = new System.Windows.Forms.DataGridView();
-            this.ribbonPanel23 = new System.Windows.Forms.RibbonPanel();
-            this.logOut = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             this.SuspendLayout();
@@ -534,6 +536,7 @@ namespace Test
             this.pacientTab.Name = "pacientTab";
             this.pacientTab.Panels.Add(this.ribbonPanel4);
             this.pacientTab.Panels.Add(this.ribbonPanel16);
+            this.pacientTab.Panels.Add(this.ribbonPanel24);
             this.pacientTab.Text = "Pacjenci";
             // 
             // ribbonPanel4
@@ -637,6 +640,22 @@ namespace Test
             this.btnPatientVisits.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPatientVisits.SmallImage")));
             this.btnPatientVisits.Text = "Rejestracje";
             this.btnPatientVisits.Click += new System.EventHandler(this.btnPatientVisits_Click);
+            // 
+            // ribbonPanel24
+            // 
+            this.ribbonPanel24.ButtonMoreVisible = false;
+            this.ribbonPanel24.Items.Add(this.btnPatientsGenerateVisit);
+            this.ribbonPanel24.Name = "ribbonPanel24";
+            this.ribbonPanel24.Text = "Wizyty";
+            // 
+            // btnPatientsGenerateVisit
+            // 
+            this.btnPatientsGenerateVisit.Image = ((System.Drawing.Image)(resources.GetObject("btnPatientsGenerateVisit.Image")));
+            this.btnPatientsGenerateVisit.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPatientsGenerateVisit.LargeImage")));
+            this.btnPatientsGenerateVisit.Name = "btnPatientsGenerateVisit";
+            this.btnPatientsGenerateVisit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnPatientsGenerateVisit.SmallImage")));
+            this.btnPatientsGenerateVisit.Text = "Generuj";
+            this.btnPatientsGenerateVisit.Click += new System.EventHandler(this.btnPatientsGenerateVisit_Click);
             // 
             // toolTab
             // 
@@ -1401,6 +1420,22 @@ namespace Test
             this.addUser.Text = "Tworzenie";
             this.addUser.Click += new System.EventHandler(this.addUser_Click);
             // 
+            // ribbonPanel23
+            // 
+            this.ribbonPanel23.ButtonMoreVisible = false;
+            this.ribbonPanel23.Items.Add(this.logOut);
+            this.ribbonPanel23.Name = "ribbonPanel23";
+            this.ribbonPanel23.Text = "Logowanie";
+            // 
+            // logOut
+            // 
+            this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
+            this.logOut.LargeImage = ((System.Drawing.Image)(resources.GetObject("logOut.LargeImage")));
+            this.logOut.Name = "logOut";
+            this.logOut.SmallImage = ((System.Drawing.Image)(resources.GetObject("logOut.SmallImage")));
+            this.logOut.Text = "Wyloguj";
+            this.logOut.Click += new System.EventHandler(this.logOut_Click);
+            // 
             // ribbonOrbMenuItem1
             // 
             this.ribbonOrbMenuItem1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
@@ -1503,22 +1538,6 @@ namespace Test
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
-            // 
-            // ribbonPanel23
-            // 
-            this.ribbonPanel23.ButtonMoreVisible = false;
-            this.ribbonPanel23.Items.Add(this.logOut);
-            this.ribbonPanel23.Name = "ribbonPanel23";
-            this.ribbonPanel23.Text = "Logowanie";
-            // 
-            // logOut
-            // 
-            this.logOut.Image = ((System.Drawing.Image)(resources.GetObject("logOut.Image")));
-            this.logOut.LargeImage = ((System.Drawing.Image)(resources.GetObject("logOut.LargeImage")));
-            this.logOut.Name = "logOut";
-            this.logOut.SmallImage = ((System.Drawing.Image)(resources.GetObject("logOut.SmallImage")));
-            this.logOut.Text = "Wyloguj";
-            this.logOut.Click += new System.EventHandler(this.logOut_Click);
             // 
             // Form1
             // 
@@ -1680,6 +1699,8 @@ namespace Test
         private System.Windows.Forms.DataGridView _gvMain;
         private System.Windows.Forms.RibbonPanel ribbonPanel23;
         private System.Windows.Forms.RibbonButton logOut;
+        private System.Windows.Forms.RibbonPanel ribbonPanel24;
+        private System.Windows.Forms.RibbonButton btnPatientsGenerateVisit;
     }
 }
 

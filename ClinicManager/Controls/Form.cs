@@ -61,6 +61,7 @@ namespace Test
             CostViewModel = new CostViewModel();
             EmployeeViewModel = new EmployeeViewModel();
             ProducentViewModel = new ProducentViewModel();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         public void SetPermissions(byte? permissionLevel)
@@ -378,6 +379,11 @@ namespace Test
             {
                 MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnPatientsGenerateVisit_Click(object sender, EventArgs e)
+        {
+            VisitViewModel.AddRegistrationForClient(_gvMain.SelectedRows[0].DataBoundItem as PatientRow);
         }
 
         #endregion
@@ -929,6 +935,8 @@ namespace Test
             this.Close();
         }
 
+
         #endregion
+
     }
 }

@@ -25,6 +25,7 @@ namespace ClinicManager.Controls
                 MessageBox.Show(null, "Data poczatkowa musi byc mniejsza niz koncowa", "Błąd");
                 return;
             }
+            this.Height = 572;
             scheduleChart.Visible = true;
 
             List<Registrations> regs = null;
@@ -62,6 +63,11 @@ namespace ClinicManager.Controls
                                                             && p.Date.Date.DayOfWeek == DayOfWeek.Saturday)).Count());
             scheduleChart.Series["SeriesData"].Points[5].Color = Color.Gray;
             scheduleChart.Series["SeriesData"].Points[5].Label = Convert.ToString(scheduleChart.Series["SeriesData"].Points[5].YValues.First());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
