@@ -50,7 +50,7 @@ namespace ClinicManager.Controls
             {
                 connection.Open();
                 var loginParam = new SqlParameter("@login", loginBox.Text);
-                var passParam = new SqlParameter("@pass", passBox.Text);
+                var passParam = new SqlParameter("@pass", passwordBox.Text);
                 var sqlCommand = new SqlCommand("SELECT Id, Login, Password, Permission FROM Users WHERE Login = @login AND Password = @pass", connection);
                 sqlCommand.Parameters.Add(loginParam);
                 sqlCommand.Parameters.Add(passParam);
