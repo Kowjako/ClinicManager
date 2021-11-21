@@ -39,8 +39,9 @@
     <ApplicationIcon>
     </ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
-    <NoWin32Manifest>true</NoWin32Manifest>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.Desktop.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -324,10 +325,16 @@
     <Compile Include="DataAccessLayer\Registrations.cs">
       <DependentUpon>Clinic.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\sysdiagrams.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataAccessLayer\ToolRow.cs">
       <DependentUpon>Clinic.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Tools.cs">
+      <DependentUpon>Clinic.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\Users.cs">
       <DependentUpon>Clinic.tt</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IArticleDetailsViewModel.cs" />
@@ -489,9 +496,6 @@
     <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SQL\ClinicTrigger.sql" />
-    <None Include="Resources\17999_bookmark_favorite_star_icon.png" />
-    <None Include="Resources\2006569_bookmark_media_social_star_icon.png" />
     <Content Include="DataAccessLayer\Clinic.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Clinic.edmx</DependentUpon>
@@ -502,6 +506,9 @@
       <DependentUpon>Clinic.edmx</DependentUpon>
       <LastGenOutput>Clinic.cs</LastGenOutput>
     </Content>
+    <Content Include="SQL\ClinicTrigger.sql" />
+    <None Include="Resources\17999_bookmark_favorite_star_icon.png" />
+    <None Include="Resources\2006569_bookmark_media_social_star_icon.png" />
     <Content Include="SQL\ClinicBase.sql" />
     <Content Include="SQL\ClinicData.sql" />
   </ItemGroup>

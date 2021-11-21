@@ -25,5 +25,6 @@ namespace ClinicManager.Interfaces
         void SaveOrder(Orders order);
         void SaveOrderTools(OrdersTools order);
         void MakeOrderTool();
+        void GetHighestMark(int clinicId);
     }
 }

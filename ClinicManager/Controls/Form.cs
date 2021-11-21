@@ -128,6 +128,11 @@ namespace Test
             }
         }
 
+        private void btnGetHighestMark_Click(object sender, EventArgs e)
+        {
+            ClinicViewModel.GetHighestMark((_gvMain.SelectedRows[0].DataBoundItem as ClinicRow).Id);
+        }
+
         private void btnHospitalShowList_Click(object sender, EventArgs e)
         {
             bsMain.Sort = string.Empty;
@@ -938,5 +943,6 @@ namespace Test
 
         #endregion
 
+        
     }
 }

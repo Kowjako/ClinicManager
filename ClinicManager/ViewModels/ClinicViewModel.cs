@@ -3,6 +3,7 @@ using ClinicManager.DataAccessLayer;
 using ClinicManager.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
@@ -71,6 +72,17 @@ namespace ClinicManager.ViewModels
                 }
             }
             return null;
+        }
+
+        public void GetHighestMark(int clinicId)
+        {
+            /* Using stored procedure with Entity Framework */
+            using(var context = new ClinicDataEntities())
+            {
+                ObjectParameter mark = new ObjectParameter("Mark", typeof(float));
+                context.GetHighestMarkForClinic(clinicId, mark);
+                MessageBox.Show(null, mark.Value.ToString(),"Najlepsza ocena",MessageBoxButtons.OK);
+            }
         }
 
         public BindingSource GetOpinions(ClinicRow row)

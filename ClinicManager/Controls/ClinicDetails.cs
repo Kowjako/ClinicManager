@@ -65,7 +65,7 @@ namespace ClinicManager
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if(ValidateChildren(ValidationConstraints.Enabled))
+            if (ValidateChildren(ValidationConstraints.Enabled))
             {
                 var newClinicData = (_bsDetails.DataSource as List<Clinics>).First();
                 newClinicData.LocalizationId = (localizationBox.SelectedItem as LocalizationRow).Id;
@@ -86,7 +86,7 @@ namespace ClinicManager
             {
                 e.Cancel = false;
                 epClinic.SetError(textBox1, null);
-            }
+            } 
         }
     }
 }

@@ -176,6 +176,7 @@ namespace Test
             this.ribbonOrbRecentItem5 = new System.Windows.Forms.RibbonOrbRecentItem();
             this.ribbonOrbMenuItem3 = new System.Windows.Forms.RibbonOrbMenuItem();
             this._gvMain = new System.Windows.Forms.DataGridView();
+            this.btnGetHighestMark = new System.Windows.Forms.RibbonButton();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             this.SuspendLayout();
@@ -382,6 +383,7 @@ namespace Test
             // 
             this.btnHospitalOpinions.DropDownItems.Add(this.btnOpinionShow);
             this.btnHospitalOpinions.DropDownItems.Add(this.btnOpinionAdd);
+            this.btnHospitalOpinions.DropDownItems.Add(this.btnGetHighestMark);
             this.btnHospitalOpinions.Image = ((System.Drawing.Image)(resources.GetObject("btnHospitalOpinions.Image")));
             this.btnHospitalOpinions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalOpinions.LargeImage")));
             this.btnHospitalOpinions.Name = "btnHospitalOpinions";
@@ -1539,6 +1541,16 @@ namespace Test
             this._gvMain.Size = new System.Drawing.Size(1162, 611);
             this._gvMain.TabIndex = 1;
             // 
+            // btnGetHighestMark
+            // 
+            this.btnGetHighestMark.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.btnGetHighestMark.Image = ((System.Drawing.Image)(resources.GetObject("btnGetHighestMark.Image")));
+            this.btnGetHighestMark.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGetHighestMark.LargeImage")));
+            this.btnGetHighestMark.Name = "btnGetHighestMark";
+            this.btnGetHighestMark.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnGetHighestMark.SmallImage")));
+            this.btnGetHighestMark.Text = "Najlepsza ocena";
+            this.btnGetHighestMark.Click += new System.EventHandler(this.btnGetHighestMark_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1701,6 +1713,7 @@ namespace Test
         private System.Windows.Forms.RibbonButton logOut;
         private System.Windows.Forms.RibbonPanel ribbonPanel24;
         private System.Windows.Forms.RibbonButton btnPatientsGenerateVisit;
+        private System.Windows.Forms.RibbonButton btnGetHighestMark;
     }
 }
 

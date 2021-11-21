@@ -878,6 +878,31 @@
         tpBSHyE8UkpPyqPpvPXhIPn3n83P0GHQKPWhH3hQfxSZzDuIEPVozo6D7AAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btnGetHighestMark.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAaSURBVFhH7cEBAQAAAIIg/69uSEAAAADAuRoQIAABnXhJ
+        QwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnGetHighestMark.LargeImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAaSURBVFhH7cEBAQAAAIIg/69uSEAAAADAuRoQIAABnXhJ
+        QwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnGetHighestMark.SmallImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFBSURBVDhPrZVPSsNAFMZnrVTtEQTRjTvPEir5R8wiNxALbvQKduWVhFKQuhDpCVpvINHviy92
+        8nwmqeTBr8zM996Xmclk6roiCILDJEmOSRRFBzK8W4RhOEbxPXgBn4plHMd3WZYdSXp7wOwSRe/KxGKD
+        3EDK7EDSFJReURclZnst5c2AGDLBS/Z5wGxmxjhhzURsvoMbj0FzmTB6lTQ+9E3rwhpsXxg6t56o+YBp
+        hqVdsa00n6nYVYbPSvwPi8osz/ORIf6AmT3ybYIbS/coi6LYc2manhqizxqH+hyGF4bWAA8/cfg5s0Qf
+        mvUx5OQ6l0x6GpZYyX61j+jMldigp+FTZcZAp+3Y9DXcHpu2gy1veUzYtnJA82AzMPDXp8fklcC21n9/
+        enVAGO5yqANLG+76qoP7hYJhLlgdu/0FOPcFf3k0aYOCCiMAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btnHospitalOpinions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAABg1JREFUaEPt
