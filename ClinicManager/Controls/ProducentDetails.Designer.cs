@@ -55,9 +55,11 @@ namespace ClinicManager.Controls
             this.label1 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.erp = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsProducents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLocalizations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.SuspendLayout();
             // 
             // saveBtn
@@ -195,6 +197,7 @@ namespace ClinicManager.Controls
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(368, 20);
             this.textBox2.TabIndex = 50;
+            this.textBox2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox2_Validating);
             // 
             // textBox1
             // 
@@ -203,6 +206,7 @@ namespace ClinicManager.Controls
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(368, 20);
             this.textBox1.TabIndex = 49;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // label6
             // 
@@ -271,6 +275,7 @@ namespace ClinicManager.Controls
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(368, 20);
             this.textBox6.TabIndex = 66;
+            this.textBox6.Validating += new System.ComponentModel.CancelEventHandler(this.textBox6_Validating);
             // 
             // label11
             // 
@@ -281,6 +286,12 @@ namespace ClinicManager.Controls
             this.label11.Size = new System.Drawing.Size(137, 18);
             this.label11.TabIndex = 65;
             this.label11.Text = "Nazwa producenta";
+            // 
+            // erp
+            // 
+            this.erp.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erp.ContainerControl = this;
+            this.erp.RightToLeft = true;
             // 
             // ProducentDetails
             // 
@@ -317,6 +328,7 @@ namespace ClinicManager.Controls
             ((System.ComponentModel.ISupportInitialize)(this.bsProducents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsLocalizations)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +361,6 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.BindingSource bsProducents;
         private System.Windows.Forms.BindingSource bsData;
         private System.Windows.Forms.BindingSource bsLocalizations;
+        private System.Windows.Forms.ErrorProvider erp;
     }
 }

@@ -45,11 +45,13 @@ namespace ClinicManager.Controls
             this.amount = new System.Windows.Forms.NumericUpDown();
             this.bsOrder = new System.Windows.Forms.BindingSource(this.components);
             this.unitBox = new System.Windows.Forms.ComboBox();
+            this.erp = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsClinic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsDrugs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.SuspendLayout();
             // 
             // saveBtn
@@ -167,6 +169,7 @@ namespace ClinicManager.Controls
             this.amount.Name = "amount";
             this.amount.Size = new System.Drawing.Size(324, 20);
             this.amount.TabIndex = 24;
+            this.amount.Validating += new System.ComponentModel.CancelEventHandler(this.amount_Validating);
             // 
             // bsOrder
             // 
@@ -182,6 +185,12 @@ namespace ClinicManager.Controls
             this.unitBox.Size = new System.Drawing.Size(325, 21);
             this.unitBox.TabIndex = 25;
             this.unitBox.ValueMember = "Id";
+            this.unitBox.Validating += new System.ComponentModel.CancelEventHandler(this.unitBox_Validating);
+            // 
+            // erp
+            // 
+            this.erp.ContainerControl = this;
+            this.erp.RightToLeft = true;
             // 
             // OrderDetails
             // 
@@ -209,6 +218,7 @@ namespace ClinicManager.Controls
             ((System.ComponentModel.ISupportInitialize)(this.bsProducent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.amount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,5 +241,6 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.BindingSource bsDrugs;
         private System.Windows.Forms.BindingSource bsClinic;
         private System.Windows.Forms.BindingSource bsProducent;
+        private System.Windows.Forms.ErrorProvider erp;
     }
 }

@@ -59,12 +59,29 @@ namespace ClinicManager.Controls
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            var newOrderToolsData = (bsOrderTools.DataSource as List<OrdersTools>).First();
-            newOrderToolsData.ToolId = (toolBox.SelectedItem as ToolRow).Id;
-            newOrderToolsData.ProducentId = (producentBox.SelectedItem as ProducentRow).Id;
-            newOrderToolsData.ClinicId = (clinicBox.SelectedItem as ClinicRow).Id;
-            ClinicViewModel.SaveOrderTools(newOrderToolsData);
-            this.Close();
+            if(ValidateChildren(ValidationConstraints.Enabled))
+            {
+                var newOrderToolsData = (bsOrderTools.DataSource as List<OrdersTools>).First();
+                newOrderToolsData.ToolId = (toolBox.SelectedItem as ToolRow).Id;
+                newOrderToolsData.ProducentId = (producentBox.SelectedItem as ProducentRow).Id;
+                newOrderToolsData.ClinicId = (clinicBox.SelectedItem as ClinicRow).Id;
+                ClinicViewModel.SaveOrderTools(newOrderToolsData);
+                this.Close();
+            } 
+        }
+
+        private void amount_Validating(object sender, CancelEventArgs e)
+        {
+            if (amount.Value <= 0)
+            {
+                e.Cancel = true;
+                erp.SetError(amount, "Podaj ilosc");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(amount, null);
+            }
         }
     }
 }

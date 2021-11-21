@@ -63,18 +63,49 @@ namespace ClinicManager.Controls
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            var newOrderData = (bsOrder.DataSource as List<Orders>).First();
-            newOrderData.Unit = Dictionaries.UnitList.Where(p => p.Key == unitBox.SelectedIndex + 1).First().Value;
-            newOrderData.ProducentId = (producentBox.SelectedItem as ProducentRow).Id;
-            newOrderData.DrugId = (drugBox.SelectedItem as DrugRow).Id;
-            newOrderData.ClinicId = (clinicBox.SelectedItem as ClinicRow).Id;
-            if (amount.Value == 0)
+            if(ValidateChildren(ValidationConstraints.Enabled))
             {
-                MessageBox.Show(null, "Ilosc musi byc wieksza od zera", "Blad");
-                return;
+                var newOrderData = (bsOrder.DataSource as List<Orders>).First();
+                newOrderData.Unit = Dictionaries.UnitList.Where(p => p.Key == unitBox.SelectedIndex + 1).First().Value;
+                newOrderData.ProducentId = (producentBox.SelectedItem as ProducentRow).Id;
+                newOrderData.DrugId = (drugBox.SelectedItem as DrugRow).Id;
+                newOrderData.ClinicId = (clinicBox.SelectedItem as ClinicRow).Id;
+                if (amount.Value == 0)
+                {
+                    MessageBox.Show(null, "Ilosc musi byc wieksza od zera", "Blad");
+                    return;
+                }
+                ClinicViewModel.SaveOrder(newOrderData);
+                this.Close();
             }
-            ClinicViewModel.SaveOrder(newOrderData);
-            this.Close();
+        }
+
+        private void amount_Validating(object sender, CancelEventArgs e)
+        {
+            if(amount.Value <= 0)
+            {
+                e.Cancel = true;
+                erp.SetError(amount, "Podaj ilosc");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(amount, null);
+            }
+        }
+
+        private void unitBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (unitBox.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                erp.SetError(unitBox, "Podaj jednostke");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(unitBox, null);
+            }
         }
     }
 }

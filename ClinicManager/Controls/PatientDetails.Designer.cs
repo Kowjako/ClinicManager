@@ -33,6 +33,7 @@ namespace ClinicManager
             this._femaleBtn = new System.Windows.Forms.RadioButton();
             this._maleBtn = new System.Windows.Forms.RadioButton();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this._bsPatientsData = new System.Windows.Forms.BindingSource(this.components);
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -45,20 +46,21 @@ namespace ClinicManager
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.operationBox = new System.Windows.Forms.ComboBox();
+            this._bsOperations = new System.Windows.Forms.BindingSource(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this._bsPatients = new System.Windows.Forms.BindingSource(this.components);
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.saveBtn = new System.Windows.Forms.Button();
-            this._bsPatients = new System.Windows.Forms.BindingSource(this.components);
-            this._bsPatientsData = new System.Windows.Forms.BindingSource(this.components);
-            this._bsOperations = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._bsPatients)).BeginInit();
+            this.erp = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._bsPatientsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsOperations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsPatients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.SuspendLayout();
             // 
             // _femaleBtn
@@ -91,6 +93,10 @@ namespace ClinicManager
             this.textBox4.Size = new System.Drawing.Size(368, 20);
             this.textBox4.TabIndex = 31;
             // 
+            // _bsPatientsData
+            // 
+            this._bsPatientsData.DataSource = typeof(ClinicManager.DataAccessLayer.Data);
+            // 
             // textBox3
             // 
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._bsPatientsData, "Phone", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
@@ -115,6 +121,7 @@ namespace ClinicManager
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(368, 20);
             this.textBox2.TabIndex = 28;
+            this.textBox2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox2_Validating);
             // 
             // textBox1
             // 
@@ -123,6 +130,7 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(368, 20);
             this.textBox1.TabIndex = 27;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating_1);
             // 
             // label6
             // 
@@ -206,6 +214,10 @@ namespace ClinicManager
             this.operationBox.TabIndex = 35;
             this.operationBox.ValueMember = "Id";
             // 
+            // _bsOperations
+            // 
+            this._bsOperations.DataSource = typeof(ClinicManager.DataAccessLayer.OperationRow);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -238,6 +250,11 @@ namespace ClinicManager
             0,
             0,
             0});
+            this.numericUpDown1.Validating += new System.ComponentModel.CancelEventHandler(this.numericUpDown1_Validating);
+            // 
+            // _bsPatients
+            // 
+            this._bsPatients.DataSource = typeof(ClinicManager.DataAccessLayer.Patients);
             // 
             // dateTimePicker2
             // 
@@ -286,17 +303,11 @@ namespace ClinicManager
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // _bsPatients
+            // erp
             // 
-            this._bsPatients.DataSource = typeof(ClinicManager.DataAccessLayer.Patients);
-            // 
-            // _bsPatientsData
-            // 
-            this._bsPatientsData.DataSource = typeof(ClinicManager.DataAccessLayer.Data);
-            // 
-            // _bsOperations
-            // 
-            this._bsOperations.DataSource = typeof(ClinicManager.DataAccessLayer.OperationRow);
+            this.erp.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erp.ContainerControl = this;
+            this.erp.RightToLeft = true;
             // 
             // PatientDetails
             // 
@@ -330,10 +341,11 @@ namespace ClinicManager
             this.MinimizeBox = false;
             this.Name = "PatientDetails";
             this.Text = "Szczegóły pacjenta";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._bsPatients)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsPatientsData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsOperations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsPatients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,5 +378,6 @@ namespace ClinicManager
         private System.Windows.Forms.BindingSource _bsPatientsData;
         private System.Windows.Forms.BindingSource _bsPatients;
         private System.Windows.Forms.BindingSource _bsOperations;
+        private System.Windows.Forms.ErrorProvider erp;
     }
 }

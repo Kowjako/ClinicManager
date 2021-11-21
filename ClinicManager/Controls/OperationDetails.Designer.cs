@@ -46,9 +46,11 @@ namespace ClinicManager
             this._bsDrugs = new System.Windows.Forms.BindingSource(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.erp = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._bsOperation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsTools)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsDrugs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -58,6 +60,7 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 28;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // _bsOperation
             // 
@@ -91,6 +94,7 @@ namespace ClinicManager
             this.typeBox.Name = "typeBox";
             this.typeBox.Size = new System.Drawing.Size(325, 21);
             this.typeBox.TabIndex = 30;
+            this.typeBox.Validating += new System.ComponentModel.CancelEventHandler(this.typeBox_Validating);
             // 
             // label3
             // 
@@ -192,6 +196,12 @@ namespace ClinicManager
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // erp
+            // 
+            this.erp.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erp.ContainerControl = this;
+            this.erp.RightToLeft = true;
+            // 
             // OperationDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -218,6 +228,7 @@ namespace ClinicManager
             ((System.ComponentModel.ISupportInitialize)(this._bsOperation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsTools)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsDrugs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,5 +251,6 @@ namespace ClinicManager
         private System.Windows.Forms.BindingSource _bsOperation;
         private System.Windows.Forms.BindingSource _bsTools;
         private System.Windows.Forms.BindingSource _bsDrugs;
+        private System.Windows.Forms.ErrorProvider erp;
     }
 }

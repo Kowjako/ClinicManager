@@ -73,20 +73,65 @@ namespace ClinicManager
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            var newPatientData = (_bsPatients.DataSource as List<Patients>).First();
-            var newData = new Data();
-            if (Mode == DetailsMode.Add)
+            if(ValidateChildren(ValidationConstraints.Enabled))
             {
-                newData = (_bsPatientsData.DataSource as List<Data>).First();
+                var newPatientData = (_bsPatients.DataSource as List<Patients>).First();
+                var newData = new Data();
+                if (Mode == DetailsMode.Add)
+                {
+                    newData = (_bsPatientsData.DataSource as List<Data>).First();
+                }
+                else
+                {
+                    newData = _bsPatientsData.DataSource as Data;
+                }
+                newData.Gender = _maleBtn.Checked ? "M" : "K";
+                newPatientData.OperationId = (operationBox.SelectedItem as OperationRow).Id;
+                PatientsViewModel.SavePatient(newPatientData, newData, Mode);
+                this.Close();
+            } 
+        }
+
+        private void textBox2_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                e.Cancel = true;
+                erp.SetError(textBox2, "Wypelnij nazwisko");
             }
             else
             {
-                newData = _bsPatientsData.DataSource as Data;
+                e.Cancel = false;
+                erp.SetError(textBox2, null);
             }
-            newData.Gender = _maleBtn.Checked ? "M" : "K";
-            newPatientData.OperationId = (operationBox.SelectedItem as OperationRow).Id;
-            PatientsViewModel.SavePatient(newPatientData, newData, Mode);
-            this.Close();
+        }
+
+        private void numericUpDown1_Validating(object sender, CancelEventArgs e)
+        {
+            if(numericUpDown1.Value <= 0 || numericUpDown1.Value > 10)
+            {
+                e.Cancel = true;
+                erp.SetError(numericUpDown1, "Priorytet od 1 do 10");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(numericUpDown1, null);
+            }
+        }
+
+        private void textBox1_Validating_1(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                e.Cancel = true;
+                erp.SetError(textBox1, "Wypelnij imie");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(textBox1, null);
+            }
         }
     }
 }

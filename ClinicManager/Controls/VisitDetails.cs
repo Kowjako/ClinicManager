@@ -69,15 +69,32 @@ namespace ClinicManager
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            var newRegistrationData = (_bsRegistration.DataSource as List<Registrations>).First();
-            newRegistrationData.PatientId = (patientBox.SelectedItem as PatientRow).Id;
-            newRegistrationData.EmployeeId = (employeeBox.SelectedItem as EmployeeRow).Id;
-            if(newRegistrationData.Date != dateTimePicker1.Value)
+            if(ValidateChildren(ValidationConstraints.Enabled))
             {
-                newRegistrationData.Date = dateTimePicker1.Value;
+                var newRegistrationData = (_bsRegistration.DataSource as List<Registrations>).First();
+                newRegistrationData.PatientId = (patientBox.SelectedItem as PatientRow).Id;
+                newRegistrationData.EmployeeId = (employeeBox.SelectedItem as EmployeeRow).Id;
+                if (newRegistrationData.Date != dateTimePicker1.Value)
+                {
+                    newRegistrationData.Date = dateTimePicker1.Value;
+                }
+                VisitViewModel.SaveVisit(newRegistrationData, Mode);
+                this.Close();
             }
-            VisitViewModel.SaveVisit(newRegistrationData, Mode);
-            this.Close();
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                e.Cancel = true;
+                erp.SetError(textBox1, "Podaj godzine");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(textBox1, null);
+            }
         }
     }
 }

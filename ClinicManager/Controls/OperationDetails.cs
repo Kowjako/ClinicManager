@@ -75,12 +75,43 @@ namespace ClinicManager
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            var newOperationData = (_bsOperation.DataSource as List<Operations>).First();
-            newOperationData.ToolId = (toolBox.SelectedItem as ToolRow).Id;
-            newOperationData.DrugId = (drugBox.SelectedItem as DrugRow).Id;
-            newOperationData.Type = typeBox.SelectedItem as string;
-            OperationViewModel.SaveOperation(newOperationData, Mode);
-            this.Close();
+            if(ValidateChildren(ValidationConstraints.Enabled))
+            {
+                var newOperationData = (_bsOperation.DataSource as List<Operations>).First();
+                newOperationData.ToolId = (toolBox.SelectedItem as ToolRow).Id;
+                newOperationData.DrugId = (drugBox.SelectedItem as DrugRow).Id;
+                newOperationData.Type = typeBox.SelectedItem as string;
+                OperationViewModel.SaveOperation(newOperationData, Mode);
+                this.Close();
+            }
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                e.Cancel = true;
+                erp.SetError(textBox1, "Wypelnij nazwe");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(textBox1, null);
+            }
+        }
+
+        private void typeBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (typeBox.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                erp.SetError(typeBox, "Wypelnij typ");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(typeBox, null);
+            }
         }
     }
 }

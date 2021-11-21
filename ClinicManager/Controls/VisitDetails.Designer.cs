@@ -42,9 +42,11 @@ namespace ClinicManager
             this._bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.saveBtn = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.erp = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._bsRegistration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsPatients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -149,6 +151,13 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 27;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
+            // 
+            // erp
+            // 
+            this.erp.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erp.ContainerControl = this;
+            this.erp.RightToLeft = true;
             // 
             // VisitDetails
             // 
@@ -172,6 +181,7 @@ namespace ClinicManager
             ((System.ComponentModel.ISupportInitialize)(this._bsRegistration)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsPatients)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +200,6 @@ namespace ClinicManager
         private System.Windows.Forms.BindingSource _bsEmployees;
         public System.Windows.Forms.DateTimePicker dateTimePicker1;
         public System.Windows.Forms.ComboBox patientBox;
+        private System.Windows.Forms.ErrorProvider erp;
     }
 }

@@ -178,6 +178,7 @@ namespace ClinicManager
             // 
             // epClinic
             // 
+            this.epClinic.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epClinic.ContainerControl = this;
             this.epClinic.RightToLeft = true;
             // 

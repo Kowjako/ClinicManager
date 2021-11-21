@@ -43,11 +43,13 @@ namespace ClinicManager.Controls
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.erp = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsOrderTools)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsClinic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTools)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.amount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.SuspendLayout();
             // 
             // bsOrderTools
@@ -73,6 +75,7 @@ namespace ClinicManager.Controls
             this.amount.Name = "amount";
             this.amount.Size = new System.Drawing.Size(326, 20);
             this.amount.TabIndex = 35;
+            this.amount.Validating += new System.ComponentModel.CancelEventHandler(this.amount_Validating);
             // 
             // producentBox
             // 
@@ -160,6 +163,12 @@ namespace ClinicManager.Controls
             this.label1.TabIndex = 26;
             this.label1.Text = "Narzędzie";
             // 
+            // erp
+            // 
+            this.erp.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erp.ContainerControl = this;
+            this.erp.RightToLeft = true;
+            // 
             // OrderToolDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,6 +193,7 @@ namespace ClinicManager.Controls
             ((System.ComponentModel.ISupportInitialize)(this.bsTools)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.amount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +214,6 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider erp;
     }
 }

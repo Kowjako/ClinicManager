@@ -74,21 +74,65 @@ namespace ClinicManager.Controls
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            var newProducentData = (bsProducents.DataSource as List<Producents>).First();
-            var newData = new Data();
-            if (Mode == DetailsMode.Add)
+            if(ValidateChildren(ValidationConstraints.Enabled))
             {
-                newData = (bsData.DataSource as List<Data>).First();
+                var newProducentData = (bsProducents.DataSource as List<Producents>).First();
+                var newData = new Data();
+                if (Mode == DetailsMode.Add)
+                {
+                    newData = (bsData.DataSource as List<Data>).First();
+                }
+                else
+                {
+                    newData = bsData.DataSource as Data;
+                }
+                newData.Gender = _maleBtn.Checked ? "M" : "K";
+                newProducentData.LocalizationId = (localizationBox.SelectedItem as LocalizationRow).Id;
+                ProducentViewModel.SaveProducent(newProducentData, newData, Mode);
+                this.Close();
+            } 
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                e.Cancel = true;
+                erp.SetError(textBox1, "Wypelnij imie");
             }
             else
             {
-                newData = bsData.DataSource as Data;
+                e.Cancel = false;
+                erp.SetError(textBox1, null);
             }
-            newData.Gender = _maleBtn.Checked ? "M" : "K";
-            newProducentData.LocalizationId = (localizationBox.SelectedItem as LocalizationRow).Id;
-            ProducentViewModel.SaveProducent(newProducentData, newData, Mode);
-            this.Close();
         }
 
+        private void textBox2_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                e.Cancel = true;
+                erp.SetError(textBox2, "Wypelnij nazwisko");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(textBox2, null);
+            }
+        }
+
+        private void textBox6_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox6.Text))
+            {
+                e.Cancel = true;
+                erp.SetError(textBox6, "Wypelnij nazwe");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(textBox6, null);
+            }
+        }
     }
 }

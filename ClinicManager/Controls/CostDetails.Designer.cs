@@ -154,6 +154,7 @@ namespace ClinicManager
             // 
             // erp
             // 
+            this.erp.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.erp.ContainerControl = this;
             this.erp.RightToLeft = true;
             // 

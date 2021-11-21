@@ -31,7 +31,6 @@ namespace ClinicManager
         {
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this._bsArticle = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -48,9 +47,10 @@ namespace ClinicManager
             this.unitCombo = new System.Windows.Forms.ComboBox();
             this.saveBtn = new System.Windows.Forms.Button();
             this.erp = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this._bsArticle)).BeginInit();
+            this._bsArticle = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsArticle)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -61,10 +61,6 @@ namespace ClinicManager
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 7;
             this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
-            // 
-            // _bsArticle
-            // 
-            this._bsArticle.DataSource = typeof(ClinicManager.DataAccessLayer.Drugs);
             // 
             // label1
             // 
@@ -213,8 +209,13 @@ namespace ClinicManager
             // 
             // erp
             // 
+            this.erp.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.erp.ContainerControl = this;
             this.erp.RightToLeft = true;
+            // 
+            // _bsArticle
+            // 
+            this._bsArticle.DataSource = typeof(ClinicManager.DataAccessLayer.Drugs);
             // 
             // ArticleDetails
             // 
@@ -242,9 +243,9 @@ namespace ClinicManager
             this.MinimizeBox = false;
             this.Name = "ArticleDetails";
             this.Text = "Szczegóły leku";
-            ((System.ComponentModel.ISupportInitialize)(this._bsArticle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsArticle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
