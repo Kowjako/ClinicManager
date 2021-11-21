@@ -49,13 +49,15 @@ namespace ClinicManager
             this._bsEmployees = new System.Windows.Forms.BindingSource(this.components);
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.operationBox = new System.Windows.Forms.ComboBox();
+            this._bsOperations = new System.Windows.Forms.BindingSource(this.components);
             this._maleBtn = new System.Windows.Forms.RadioButton();
             this._femaleBtn = new System.Windows.Forms.RadioButton();
             this.saveBtn = new System.Windows.Forms.Button();
-            this._bsOperations = new System.Windows.Forms.BindingSource(this.components);
+            this.erp = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployeeData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsOperations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -155,6 +157,7 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(368, 20);
             this.textBox1.TabIndex = 9;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // _bsEmployeeData
             // 
@@ -167,6 +170,7 @@ namespace ClinicManager
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(368, 20);
             this.textBox2.TabIndex = 10;
+            this.textBox2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox2_Validating);
             // 
             // dateTimePicker1
             // 
@@ -200,6 +204,7 @@ namespace ClinicManager
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(368, 20);
             this.textBox5.TabIndex = 16;
+            this.textBox5.Validating += new System.ComponentModel.CancelEventHandler(this.textBox5_Validating);
             // 
             // _bsEmployees
             // 
@@ -212,6 +217,7 @@ namespace ClinicManager
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(368, 20);
             this.textBox6.TabIndex = 17;
+            this.textBox6.Validating += new System.ComponentModel.CancelEventHandler(this.textBox6_Validating);
             // 
             // operationBox
             // 
@@ -224,6 +230,10 @@ namespace ClinicManager
             this.operationBox.Size = new System.Drawing.Size(368, 21);
             this.operationBox.TabIndex = 18;
             this.operationBox.ValueMember = "Id";
+            // 
+            // _bsOperations
+            // 
+            this._bsOperations.DataSource = typeof(ClinicManager.DataAccessLayer.OperationRow);
             // 
             // _maleBtn
             // 
@@ -257,9 +267,10 @@ namespace ClinicManager
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // _bsOperations
+            // erp
             // 
-            this._bsOperations.DataSource = typeof(ClinicManager.DataAccessLayer.OperationRow);
+            this.erp.ContainerControl = this;
+            this.erp.RightToLeft = true;
             // 
             // DoctorDetails
             // 
@@ -294,6 +305,7 @@ namespace ClinicManager
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployeeData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsOperations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +336,6 @@ namespace ClinicManager
         private System.Windows.Forms.BindingSource _bsEmployees;
         private System.Windows.Forms.BindingSource _bsEmployeeData;
         private System.Windows.Forms.BindingSource _bsOperations;
+        private System.Windows.Forms.ErrorProvider erp;
     }
 }

@@ -42,9 +42,40 @@ namespace ClinicManager
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            var newFixedAsset = (_bsFixedAsset.DataSource as List<Tools>).First();
-            FixedAssetViewModel.SaveFixedAsset(newFixedAsset, Mode);
-            this.Close();
+            if(ValidateChildren(ValidationConstraints.Enabled))
+            {
+                var newFixedAsset = (_bsFixedAsset.DataSource as List<Tools>).First();
+                FixedAssetViewModel.SaveFixedAsset(newFixedAsset, Mode);
+                this.Close();
+            }            
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                e.Cancel = true;
+                erp.SetError(textBox1, "Wypelnij nazwe");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(textBox1, null);
+            }
+        }
+
+        private void numericUpDown1_Validating(object sender, CancelEventArgs e)
+        {
+            if (numericUpDown1.Value <= 0)
+            {
+                e.Cancel = true;
+                erp.SetError(numericUpDown1, "Podaj ilosc");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(numericUpDown1, null);
+            }
         }
     }
 }

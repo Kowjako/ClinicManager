@@ -41,8 +41,10 @@ namespace ClinicManager
             this.label5 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.erp = new System.Windows.Forms.ErrorProvider(this.components);
             this._bsFixedAsset = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsFixedAsset)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +55,7 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 7;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // label1
             // 
@@ -81,6 +84,7 @@ namespace ClinicManager
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(325, 20);
             this.numericUpDown1.TabIndex = 10;
+            this.numericUpDown1.Validating += new System.ComponentModel.CancelEventHandler(this.numericUpDown1_Validating);
             // 
             // label3
             // 
@@ -148,6 +152,11 @@ namespace ClinicManager
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // erp
+            // 
+            this.erp.ContainerControl = this;
+            this.erp.RightToLeft = true;
+            // 
             // _bsFixedAsset
             // 
             this._bsFixedAsset.DataSource = typeof(ClinicManager.DataAccessLayer.Tools);
@@ -171,6 +180,7 @@ namespace ClinicManager
             this.Name = "FixedAsset";
             this.Text = "Szczegóły środka trwałego";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsFixedAsset)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,5 +201,6 @@ namespace ClinicManager
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.BindingSource _bsFixedAsset;
+        private System.Windows.Forms.ErrorProvider erp;
     }
 }

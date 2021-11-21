@@ -72,20 +72,79 @@ namespace ClinicManager
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            var newEmployeeData = (_bsEmployees.DataSource as List<Employees>).First();
-            var newData = new Data();
-            if (Mode == DetailsMode.Add)
+            if(ValidateChildren(ValidationConstraints.Enabled))
             {
-                newData = (_bsEmployeeData.DataSource as List<Data>).First();
+                var newEmployeeData = (_bsEmployees.DataSource as List<Employees>).First();
+                var newData = new Data();
+                if (Mode == DetailsMode.Add)
+                {
+                    newData = (_bsEmployeeData.DataSource as List<Data>).First();
+                }
+                else
+                {
+                    newData = _bsEmployeeData.DataSource as Data;
+                }
+                newData.Gender = _maleBtn.Checked ? "M" : "K";
+                newEmployeeData.OperationId = (operationBox.SelectedItem as OperationRow).Id;
+                EmployeeViewModel.SaveEmployee(newEmployeeData, newData, Mode);
+                this.Close();
+            }          
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                e.Cancel = true;
+                erp.SetError(textBox1, "Wypelnij imie");
             }
             else
             {
-                newData = _bsEmployeeData.DataSource as Data;
+                e.Cancel = false;
+                erp.SetError(textBox1, null);
             }
-            newData.Gender = _maleBtn.Checked ? "M" : "K";
-            newEmployeeData.OperationId = (operationBox.SelectedItem as OperationRow).Id;
-            EmployeeViewModel.SaveEmployee(newEmployeeData, newData, Mode);
-            this.Close();
+        }
+
+        private void textBox2_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                e.Cancel = true;
+                erp.SetError(textBox2, "Wypelnij nazwisko");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(textBox2, null);
+            }
+        }
+
+        private void textBox6_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox6.Text))
+            {
+                e.Cancel = true;
+                erp.SetError(textBox6, "Wypelnij stanowisko");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(textBox6, null);
+            }
+        }
+
+        private void textBox5_Validating(object sender, CancelEventArgs e)
+        {
+            if (Int32.Parse(textBox5.Text) <= 0) 
+            {
+                e.Cancel = true;
+                erp.SetError(textBox5, "Cena musi byc wieksza od 0");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(textBox5, null);
+            }
         }
     }
 }

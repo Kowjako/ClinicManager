@@ -44,9 +44,11 @@ namespace ClinicManager
             this.localizationBox = new System.Windows.Forms.ComboBox();
             this._bsLocalizations = new System.Windows.Forms.BindingSource(this.components);
             this.saveBtn = new System.Windows.Forms.Button();
+            this.epClinic = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this._bsDetails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsLocalizations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epClinic)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -106,6 +108,7 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 5;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // _bsDetails
             // 
@@ -173,6 +176,11 @@ namespace ClinicManager
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // epClinic
+            // 
+            this.epClinic.ContainerControl = this;
+            this.epClinic.RightToLeft = true;
+            // 
             // ClinicDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,6 +206,7 @@ namespace ClinicManager
             ((System.ComponentModel.ISupportInitialize)(this._bsDetails)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsEmployees)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._bsLocalizations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epClinic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,5 +228,6 @@ namespace ClinicManager
         private System.Windows.Forms.BindingSource _bsDetails;
         private System.Windows.Forms.BindingSource _bsEmployees;
         private System.Windows.Forms.BindingSource _bsLocalizations;
+        private System.Windows.Forms.ErrorProvider epClinic;
     }
 }

@@ -42,10 +42,12 @@ namespace ClinicManager
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.erp = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsDrugs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCosts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.SuspendLayout();
             // 
             // drugsBox
@@ -105,6 +107,7 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 29;
+            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // bsCosts
             // 
@@ -137,6 +140,7 @@ namespace ClinicManager
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(325, 20);
             this.numericUpDown1.TabIndex = 33;
+            this.numericUpDown1.Validating += new System.ComponentModel.CancelEventHandler(this.numericUpDown1_Validating);
             // 
             // saveBtn
             // 
@@ -147,6 +151,11 @@ namespace ClinicManager
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // erp
+            // 
+            this.erp.ContainerControl = this;
+            this.erp.RightToLeft = true;
             // 
             // CostDetails
             // 
@@ -171,6 +180,7 @@ namespace ClinicManager
             ((System.ComponentModel.ISupportInitialize)(this.bsProducent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsCosts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +200,6 @@ namespace ClinicManager
         private System.Windows.Forms.BindingSource bsCosts;
         private System.Windows.Forms.BindingSource bsProducent;
         private System.Windows.Forms.BindingSource bsDrugs;
+        private System.Windows.Forms.ErrorProvider erp;
     }
 }

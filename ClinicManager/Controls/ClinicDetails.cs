@@ -65,11 +65,28 @@ namespace ClinicManager
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            var newClinicData = (_bsDetails.DataSource as List<Clinics>).First();
-            newClinicData.LocalizationId = (localizationBox.SelectedItem as LocalizationRow).Id;
-            newClinicData.EmployeeId = (employeeBox.SelectedItem as EmployeeRow).Id;
-            ClinicViewModel.SaveClinics(newClinicData, Mode);
-            this.Close();
+            if(ValidateChildren(ValidationConstraints.Enabled))
+            {
+                var newClinicData = (_bsDetails.DataSource as List<Clinics>).First();
+                newClinicData.LocalizationId = (localizationBox.SelectedItem as LocalizationRow).Id;
+                newClinicData.EmployeeId = (employeeBox.SelectedItem as EmployeeRow).Id;
+                ClinicViewModel.SaveClinics(newClinicData, Mode);
+                this.Close();
+            }
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if(string.IsNullOrEmpty(textBox1.Text))
+            {
+                e.Cancel = true;
+                epClinic.SetError(textBox1, "Nazwa nie moze byc pusta");
+            }
+            else
+            {
+                e.Cancel = false;
+                epClinic.SetError(textBox1, null);
+            }
         }
     }
 }

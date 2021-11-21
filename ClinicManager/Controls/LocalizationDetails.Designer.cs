@@ -29,6 +29,7 @@ namespace ClinicManager.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.saveBtn = new System.Windows.Forms.Button();
             this.countryBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +43,8 @@ namespace ClinicManager.Controls
             this.label5 = new System.Windows.Forms.Label();
             this.codeBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.erp = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).BeginInit();
             this.SuspendLayout();
             // 
             // saveBtn
@@ -60,6 +63,7 @@ namespace ClinicManager.Controls
             this.countryBox.Name = "countryBox";
             this.countryBox.Size = new System.Drawing.Size(325, 20);
             this.countryBox.TabIndex = 16;
+            this.countryBox.Validating += new System.ComponentModel.CancelEventHandler(this.countryBox_Validating);
             // 
             // label1
             // 
@@ -77,6 +81,7 @@ namespace ClinicManager.Controls
             this.cityBox.Name = "cityBox";
             this.cityBox.Size = new System.Drawing.Size(325, 20);
             this.cityBox.TabIndex = 23;
+            this.cityBox.Validating += new System.ComponentModel.CancelEventHandler(this.cityBox_Validating);
             // 
             // label2
             // 
@@ -94,6 +99,7 @@ namespace ClinicManager.Controls
             this.streetBox.Name = "streetBox";
             this.streetBox.Size = new System.Drawing.Size(325, 20);
             this.streetBox.TabIndex = 25;
+            this.streetBox.Validating += new System.ComponentModel.CancelEventHandler(this.streetBox_Validating);
             // 
             // label3
             // 
@@ -111,6 +117,7 @@ namespace ClinicManager.Controls
             this.houseBox.Name = "houseBox";
             this.houseBox.Size = new System.Drawing.Size(325, 20);
             this.houseBox.TabIndex = 27;
+            this.houseBox.Validating += new System.ComponentModel.CancelEventHandler(this.houseBox_Validating);
             // 
             // label4
             // 
@@ -128,6 +135,7 @@ namespace ClinicManager.Controls
             this.flatBox.Name = "flatBox";
             this.flatBox.Size = new System.Drawing.Size(325, 20);
             this.flatBox.TabIndex = 29;
+            this.flatBox.Validating += new System.ComponentModel.CancelEventHandler(this.flatBox_Validating);
             // 
             // label5
             // 
@@ -145,6 +153,7 @@ namespace ClinicManager.Controls
             this.codeBox.Name = "codeBox";
             this.codeBox.Size = new System.Drawing.Size(325, 20);
             this.codeBox.TabIndex = 31;
+            this.codeBox.Validating += new System.ComponentModel.CancelEventHandler(this.codeBox_Validating);
             // 
             // label6
             // 
@@ -155,6 +164,12 @@ namespace ClinicManager.Controls
             this.label6.Size = new System.Drawing.Size(105, 18);
             this.label6.TabIndex = 30;
             this.label6.Text = "Kod pocztowy";
+            // 
+            // erp
+            // 
+            this.erp.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.erp.ContainerControl = this;
+            this.erp.RightToLeft = true;
             // 
             // LocalizationDetails
             // 
@@ -179,6 +194,7 @@ namespace ClinicManager.Controls
             this.MinimizeBox = false;
             this.Name = "LocalizationDetails";
             this.Text = "Tworzenie nowej lokalizacji";
+            ((System.ComponentModel.ISupportInitialize)(this.erp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,5 +215,6 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox codeBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ErrorProvider erp;
     }
 }

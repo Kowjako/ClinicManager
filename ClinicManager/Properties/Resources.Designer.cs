@@ -61,7 +61,7 @@ namespace ClinicManager.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to data source=DESKTOP-BADE515\SQLEXPRESS;initial catalog=ClinicData;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework.
+        ///   Looks up a localized string similar to data source=WLODEKPC\SQLEXPRESS;initial catalog=ClinicData;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework.
         /// </summary>
         internal static string ConnectionString {
             get {

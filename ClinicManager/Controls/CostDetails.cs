@@ -76,11 +76,42 @@ namespace ClinicManager
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            var newCostData = (bsCosts.DataSource as List<Costs>).First();
-            newCostData.ProducentId = (producentBox.SelectedItem as ProducentRow).Id;
-            newCostData.DrugId = (drugsBox.SelectedItem as DrugRow).Id;
-            CostViewModel.SaveCost(newCostData, Mode);
-            this.Close();
+            if(ValidateChildren(ValidationConstraints.Enabled))
+            {
+                var newCostData = (bsCosts.DataSource as List<Costs>).First();
+                newCostData.ProducentId = (producentBox.SelectedItem as ProducentRow).Id;
+                newCostData.DrugId = (drugsBox.SelectedItem as DrugRow).Id;
+                CostViewModel.SaveCost(newCostData, Mode);
+                this.Close();
+            }
+        }
+
+        private void textBox1_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                e.Cancel = true;
+                erp.SetError(textBox1, "Cena musi byc wieksza od 0");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(textBox1, null);
+            }
+        }
+
+        private void numericUpDown1_Validating(object sender, CancelEventArgs e)
+        {
+            if (numericUpDown1.Value <= 0)
+            {
+                e.Cancel = true;
+                erp.SetError(numericUpDown1, "Czas dostawy nie moze byc 0");
+            }
+            else
+            {
+                e.Cancel = false;
+                erp.SetError(numericUpDown1, null);
+            }
         }
     }
 }
