@@ -61,15 +61,6 @@ namespace ClinicManager.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to data source=WLODEKPC\SQLEXPRESS;initial catalog=ClinicData;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework.
-        /// </summary>
-        internal static string ConnectionString {
-            get {
-                return ResourceManager.GetString("ConnectionString", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to CREATE DATABASE ClinicData
         ///GO
         ///
@@ -145,6 +136,26 @@ namespace ClinicManager.Properties {
         internal static string dbTriggers {
             get {
                 return ResourceManager.GetString("dbTriggers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fail {
+            get {
+                object obj = ResourceManager.GetObject("fail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ok {
+            get {
+                object obj = ResourceManager.GetObject("ok", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

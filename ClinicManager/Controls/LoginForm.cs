@@ -46,7 +46,7 @@ namespace ClinicManager.Controls
         private void loginBtn_Click(object sender, EventArgs e)
         {
 
-            using (SqlConnection connection = new SqlConnection(Resources.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ToString()))
             {
                 connection.Open();
                 var loginParam = new SqlParameter("@login", loginBox.Text);

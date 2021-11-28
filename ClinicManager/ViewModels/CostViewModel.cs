@@ -104,7 +104,7 @@ namespace ClinicManager.ViewModels
                            $"GROUP BY [Nazwa leku] " +
                            $"ORDER BY [Nazwa leku]";
 
-            using (SqlConnection connection = new SqlConnection(Resources.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString()))
             {
                 connection.Open();
                 var adapter = new SqlDataAdapter(sqlQuery, connection);
@@ -128,7 +128,7 @@ namespace ClinicManager.ViewModels
                            $"GROUP BY [Nazwa leku] " +
                            $"ORDER BY [Nazwa leku]";
 
-            using (SqlConnection connection = new SqlConnection(Resources.ConnectionString))
+            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString()))
             {
                 connection.Open();
                 var adapter = new SqlDataAdapter(sqlQuery, connection);

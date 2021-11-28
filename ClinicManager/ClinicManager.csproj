@@ -36,8 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>icons8_clinic.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -222,6 +221,12 @@
     </Compile>
     <Compile Include="Controls\ScriptForm.Designer.cs">
       <DependentUpon>ScriptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ServerControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ServerControl.Designer.cs">
+      <DependentUpon>ServerControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Controls\SortDetails.cs">
       <SubType>Form</SubType>
@@ -428,6 +433,9 @@
     <EmbeddedResource Include="Controls\ScriptForm.resx">
       <DependentUpon>ScriptForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ServerControl.resx">
+      <DependentUpon>ServerControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\SortDetails.resx">
       <DependentUpon>SortDetails.cs</DependentUpon>
     </EmbeddedResource>
@@ -492,9 +500,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="DataAccessLayer\Clinic.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -506,6 +512,11 @@
       <DependentUpon>Clinic.edmx</DependentUpon>
       <LastGenOutput>Clinic.cs</LastGenOutput>
     </Content>
+    <Content Include="icons8_clinic.ico" />
+    <Content Include="Properties\fail.png" />
+    <Content Include="Properties\ok.png" />
+    <None Include="Resources\fail.png" />
+    <None Include="Resources\ok.png" />
     <Content Include="SQL\ClinicTrigger.sql" />
     <None Include="Resources\17999_bookmark_favorite_star_icon.png" />
     <None Include="Resources\2006569_bookmark_media_social_star_icon.png" />
