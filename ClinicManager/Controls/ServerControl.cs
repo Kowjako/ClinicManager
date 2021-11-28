@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -40,7 +41,17 @@ namespace ClinicManager.Controls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Save();
+            string prevConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
+            int startIdx = prevConnectionString.IndexOf('=');
+            int finishIdx = prevConnectionString.IndexOf(';');
+            prevConnectionString = prevConnectionString.Remove(++startIdx, finishIdx - startIdx);
+            string newCString = prevConnectionString.Insert(startIdx, tbServer.Text);
+
+
+            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            var section = (ConnectionStringsSection)config.GetSection("connectionStrings");
+            section.ConnectionStrings["ConnectionString"].ConnectionString = newCString;
+            config.Save(ConfigurationSaveMode.Modified);
         }
     }
 }
