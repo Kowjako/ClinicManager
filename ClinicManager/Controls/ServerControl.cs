@@ -146,6 +146,8 @@ namespace ClinicManager.Controls
                     xRoot.AppendChild(connectionStrings[0]);
                     xRoot.AppendChild(connectionStrings[1]);
                     xDoc.Save(@"../../ClinicManager.config");
+                    MessageBox.Show(null, "Auto-kreowanie bazy danych zakonczono sukcesem", "Informacja", MessageBoxButtons.OK);
+                    this.Close();
                 }
                 catch(Exception ex)
                 {
