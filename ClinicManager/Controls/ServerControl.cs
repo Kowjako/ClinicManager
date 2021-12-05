@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace ClinicManager.Controls
 {
@@ -41,18 +42,31 @@ namespace ClinicManager.Controls
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string prevConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
-            int startIdx = prevConnectionString.IndexOf('=');
-            int finishIdx = prevConnectionString.IndexOf(';');
-            prevConnectionString = prevConnectionString.Remove(++startIdx, finishIdx - startIdx);
-            string newCString = prevConnectionString.Insert(startIdx, tbServer.Text);
+            IList<XmlElement> connectionStrings = new List<XmlElement>();
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(@"../../ClinicManager.config");
 
+            XmlElement xRoot = xDoc.DocumentElement;
 
-            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            var section = (ConnectionStringsSection)config.GetSection("connectionStrings");
-            section.ConnectionStrings["ConnectionString"].ConnectionString = newCString;
-            config.Save(ConfigurationSaveMode.Modified);
-            this.Close();
+            foreach(XmlElement elem in xRoot)
+            {
+                connectionStrings.Add(elem);
+            }
+
+            foreach(var item in connectionStrings)
+            {
+                MessageBox.Show(item.Attributes.GetNamedItem("value").Value);
+                int idx = item.Attributes.GetNamedItem("value").Value.IndexOf("data source=");
+                int lastIdx = item.Attributes.GetNamedItem("value").Value.IndexOf(';', idx);
+                string newCS = item.Attributes.GetNamedItem("value").Value.Remove(idx, lastIdx - idx);
+                newCS = newCS.Insert(idx, "data source=" + tbServer.Text);
+                item.Attributes.GetNamedItem("value").Value = newCS;
+            }
+
+            xRoot.RemoveAll();
+            xRoot.AppendChild(connectionStrings[0]);
+            xRoot.AppendChild(connectionStrings[1]);
+            xDoc.Save(@"../../ClinicManager.config");
         }
     }
 }

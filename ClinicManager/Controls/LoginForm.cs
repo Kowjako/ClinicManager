@@ -87,7 +87,8 @@ namespace ClinicManager.Controls
 
         private void btnDbManager_Click(object sender, EventArgs e)
         {
-
+            var form = new ServerControl();
+            form.ShowDialog();
         }
     }
 }

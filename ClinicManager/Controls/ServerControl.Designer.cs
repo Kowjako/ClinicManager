@@ -35,6 +35,7 @@ namespace ClinicManager.Controls
             this.btnCheckConnection = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.pbStatus = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@ namespace ClinicManager.Controls
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(2, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 0;
@@ -50,14 +51,14 @@ namespace ClinicManager.Controls
             // 
             // tbServer
             // 
-            this.tbServer.Location = new System.Drawing.Point(73, 5);
+            this.tbServer.Location = new System.Drawing.Point(63, 5);
             this.tbServer.Name = "tbServer";
             this.tbServer.Size = new System.Drawing.Size(272, 20);
             this.tbServer.TabIndex = 1;
             // 
             // btnCheckConnection
             // 
-            this.btnCheckConnection.Location = new System.Drawing.Point(15, 33);
+            this.btnCheckConnection.Location = new System.Drawing.Point(5, 33);
             this.btnCheckConnection.Name = "btnCheckConnection";
             this.btnCheckConnection.Size = new System.Drawing.Size(162, 23);
             this.btnCheckConnection.TabIndex = 2;
@@ -67,7 +68,7 @@ namespace ClinicManager.Controls
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(183, 33);
+            this.btnSave.Location = new System.Drawing.Point(173, 33);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(162, 23);
             this.btnSave.TabIndex = 3;
@@ -78,18 +79,28 @@ namespace ClinicManager.Controls
             // pbStatus
             // 
             this.pbStatus.Image = ((System.Drawing.Image)(resources.GetObject("pbStatus.Image")));
-            this.pbStatus.Location = new System.Drawing.Point(351, 5);
+            this.pbStatus.Location = new System.Drawing.Point(341, 5);
             this.pbStatus.Name = "pbStatus";
             this.pbStatus.Size = new System.Drawing.Size(56, 50);
             this.pbStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbStatus.TabIndex = 4;
             this.pbStatus.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(5, 62);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(392, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Wykreuj bazę";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ServerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 61);
+            this.ClientSize = new System.Drawing.Size(403, 90);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pbStatus);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCheckConnection);
@@ -99,7 +110,7 @@ namespace ClinicManager.Controls
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ServerControl";
-            this.Text = "Wprowadź nazwę serwera SQL";
+            this.Text = "Menadżer baz danych";
             ((System.ComponentModel.ISupportInitialize)(this.pbStatus)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -113,5 +124,6 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.Button btnCheckConnection;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.PictureBox pbStatus;
+        private System.Windows.Forms.Button button1;
     }
 }

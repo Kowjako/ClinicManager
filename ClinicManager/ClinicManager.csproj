@@ -36,7 +36,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>icons8_clinic.ico</ApplicationIcon>
+    <ApplicationIcon>appIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -515,7 +515,7 @@
       <DependentUpon>Clinic.edmx</DependentUpon>
       <LastGenOutput>Clinic.cs</LastGenOutput>
     </Content>
-    <Content Include="icons8_clinic.ico" />
+    <Content Include="appIcon.ico" />
     <Content Include="Properties\fail.png" />
     <Content Include="Properties\ok.png" />
     <None Include="Resources\fail.png" />

@@ -163,7 +163,6 @@ namespace Test
             this.btnConfigurationShowDBScript = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationInsertDBData = new System.Windows.Forms.RibbonButton();
             this.btnConfigurationShowTriggersDB = new System.Windows.Forms.RibbonButton();
-            this.btnConfigurationAddServer = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel22 = new System.Windows.Forms.RibbonPanel();
             this.addUser = new System.Windows.Forms.RibbonButton();
             this.ribbonPanel23 = new System.Windows.Forms.RibbonPanel();
@@ -1387,7 +1386,6 @@ namespace Test
             this.ribbonPanel11.Items.Add(this.btnConfigurationShowDBScript);
             this.ribbonPanel11.Items.Add(this.btnConfigurationInsertDBData);
             this.ribbonPanel11.Items.Add(this.btnConfigurationShowTriggersDB);
-            this.ribbonPanel11.Items.Add(this.btnConfigurationAddServer);
             this.ribbonPanel11.Name = "ribbonPanel11";
             this.ribbonPanel11.Text = "Zarządzanie bazą";
             // 
@@ -1417,14 +1415,6 @@ namespace Test
             this.btnConfigurationShowTriggersDB.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationShowTriggersDB.SmallImage")));
             this.btnConfigurationShowTriggersDB.Text = "Triggery";
             this.btnConfigurationShowTriggersDB.Click += new System.EventHandler(this.btnConfigurationShowDBScript_Click);
-            // 
-            // btnConfigurationAddServer
-            // 
-            this.btnConfigurationAddServer.Image = ((System.Drawing.Image)(resources.GetObject("btnConfigurationAddServer.Image")));
-            this.btnConfigurationAddServer.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationAddServer.LargeImage")));
-            this.btnConfigurationAddServer.Name = "btnConfigurationAddServer";
-            this.btnConfigurationAddServer.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationAddServer.SmallImage")));
-            this.btnConfigurationAddServer.Text = "Serwer";
             // 
             // ribbonPanel22
             // 
@@ -1724,7 +1714,6 @@ namespace Test
         private System.Windows.Forms.RibbonPanel ribbonPanel24;
         private System.Windows.Forms.RibbonButton btnPatientsGenerateVisit;
         private System.Windows.Forms.RibbonButton btnGetHighestMark;
-        private System.Windows.Forms.RibbonButton btnConfigurationAddServer;
     }
 }
 

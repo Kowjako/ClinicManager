@@ -58,7 +58,6 @@ namespace ClinicManager.Controls
             this.btnDbManager.Name = "btnDbManager";
             this.btnDbManager.Size = new System.Drawing.Size(490, 41);
             this.btnDbManager.TabIndex = 0;
-            this.btnDbManager.Click += new System.EventHandler(this.btnDbManager_Click);
             this.btnDbManager.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.btnDbManager.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -191,6 +190,7 @@ namespace ClinicManager.Controls
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.btnDbManager_Click);
             // 
             // LoginForm
             // 
