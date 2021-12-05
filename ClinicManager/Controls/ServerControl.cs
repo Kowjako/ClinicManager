@@ -1,4 +1,5 @@
 ﻿using ClinicManager.Properties;
+using ClinicManager.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,8 +7,10 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -66,6 +69,39 @@ namespace ClinicManager.Controls
             xRoot.AppendChild(connectionStrings[0]);
             xRoot.AppendChild(connectionStrings[1]);
             xDoc.Save(@"../../ClinicManager.config");
+        }
+
+        private void bCreateDatabase_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionStringHelper.ConnectionStringInstance.ConnectionString))
+            {
+                try
+                {
+                    
+                    StringBuilder sb = new StringBuilder();
+                    connection.Open();
+                    using (StreamReader sr = new StreamReader(@"../../SQL/ClinicBase.sql"))
+                    {
+                        sb.Append(sr.ReadToEnd());
+                    }
+
+                    var scripts = sb.ToString().Split(new string[] { "GO\r\n", "GO ", "GO\t" }, StringSplitOptions.RemoveEmptyEntries );
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = connection;
+                        foreach (var script in scripts)
+                        {
+                            cmd.CommandText = script;
+                            cmd.ExecuteNonQuery();
+                        } 
+                    }
+                    
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

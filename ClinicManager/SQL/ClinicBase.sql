@@ -1,7 +1,11 @@
-CREATE DATABASE ClinicData
+USE [master]
 GO
 
-USE ClinicData
+CREATE DATABASE [ClinicData]
+GO
+
+USE [ClinicData]
+GO
 
 CREATE TABLE Localizations (
 	Id INT IDENTITY(1,1) NOT NULL,
