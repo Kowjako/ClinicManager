@@ -60,7 +60,7 @@ namespace ClinicManager.Controls
             // 
             this.btnCheckConnection.Location = new System.Drawing.Point(5, 33);
             this.btnCheckConnection.Name = "btnCheckConnection";
-            this.btnCheckConnection.Size = new System.Drawing.Size(162, 23);
+            this.btnCheckConnection.Size = new System.Drawing.Size(113, 23);
             this.btnCheckConnection.TabIndex = 2;
             this.btnCheckConnection.Text = "Sprawdź połączenie";
             this.btnCheckConnection.UseVisualStyleBackColor = true;
@@ -68,9 +68,9 @@ namespace ClinicManager.Controls
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(173, 33);
+            this.btnSave.Location = new System.Drawing.Point(124, 33);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(162, 23);
+            this.btnSave.Size = new System.Drawing.Size(65, 23);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Zapisz";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -88,9 +88,9 @@ namespace ClinicManager.Controls
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(5, 62);
+            this.button1.Location = new System.Drawing.Point(195, 33);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(392, 23);
+            this.button1.Size = new System.Drawing.Size(140, 23);
             this.button1.TabIndex = 5;
             this.button1.Text = "Wykreuj bazę";
             this.button1.UseVisualStyleBackColor = true;
@@ -99,7 +99,7 @@ namespace ClinicManager.Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 90);
+            this.ClientSize = new System.Drawing.Size(403, 60);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pbStatus);
             this.Controls.Add(this.btnSave);

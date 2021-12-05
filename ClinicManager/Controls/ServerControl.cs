@@ -55,7 +55,6 @@ namespace ClinicManager.Controls
 
             foreach(var item in connectionStrings)
             {
-                MessageBox.Show(item.Attributes.GetNamedItem("value").Value);
                 int idx = item.Attributes.GetNamedItem("value").Value.IndexOf("data source=");
                 int lastIdx = item.Attributes.GetNamedItem("value").Value.IndexOf(';', idx);
                 string newCS = item.Attributes.GetNamedItem("value").Value.Remove(idx, lastIdx - idx);
