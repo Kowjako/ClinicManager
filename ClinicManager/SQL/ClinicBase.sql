@@ -1,6 +1,10 @@
 USE [master]
 GO
 
+IF EXISTS(SELECT * FROM master.sys.databases 
+          WHERE name='ClinicData')
+DROP DATABASE [ClinicData]
+
 CREATE DATABASE [ClinicData]
 GO
 

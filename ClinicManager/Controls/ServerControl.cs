@@ -95,7 +95,42 @@ namespace ClinicManager.Controls
                             cmd.ExecuteNonQuery();
                         } 
                     }
-                    
+
+                    sb.Clear();
+                    using (StreamReader sr = new StreamReader(@"../../SQL/ClinicData.sql"))
+                    {
+                        sb.Append(sr.ReadToEnd());
+                    }
+
+                    scripts = sb.ToString().Split(new string[] { "GO\r\n", "GO ", "GO\t" }, StringSplitOptions.RemoveEmptyEntries);
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = connection;
+                        foreach (var script in scripts)
+                        {
+                            cmd.CommandText = script;
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    sb.Clear();
+                    using (StreamReader sr = new StreamReader(@"../../SQL/ClinicTrigger.sql"))
+                    {
+                        sb.Append(sr.ReadToEnd());
+                    }
+
+                    scripts = sb.ToString().Split(new string[] { "GO\r\n", "GO ", "GO\t" }, StringSplitOptions.RemoveEmptyEntries);
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = connection;
+                        foreach (var script in scripts)
+                        {
+                            cmd.CommandText = script;
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+
                 }
                 catch(Exception ex)
                 {
