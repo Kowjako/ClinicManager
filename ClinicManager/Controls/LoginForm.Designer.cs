@@ -30,7 +30,7 @@ namespace ClinicManager.Controls
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDbManager = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.closeBox = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -41,22 +41,26 @@ namespace ClinicManager.Controls
             this.loginBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.passwordBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.panel1.SuspendLayout();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnDbManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // btnDbManager
             // 
-            this.panel1.BackColor = System.Drawing.Color.Navy;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.closeBox);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(490, 41);
-            this.panel1.TabIndex = 0;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.btnDbManager.BackColor = System.Drawing.Color.Navy;
+            this.btnDbManager.Controls.Add(this.pictureBox1);
+            this.btnDbManager.Controls.Add(this.label1);
+            this.btnDbManager.Controls.Add(this.closeBox);
+            this.btnDbManager.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDbManager.Location = new System.Drawing.Point(0, 0);
+            this.btnDbManager.Name = "btnDbManager";
+            this.btnDbManager.Size = new System.Drawing.Size(490, 41);
+            this.btnDbManager.TabIndex = 0;
+            this.btnDbManager.Click += new System.EventHandler(this.btnDbManager_Click);
+            this.btnDbManager.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.btnDbManager.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // label1
             // 
@@ -177,6 +181,17 @@ namespace ClinicManager.Controls
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.loginBtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(411, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,15 +206,16 @@ namespace ClinicManager.Controls
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnDbManager);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.btnDbManager.ResumeLayout(false);
+            this.btnDbManager.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,7 +223,7 @@ namespace ClinicManager.Controls
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel btnDbManager;
         private System.Windows.Forms.PictureBox closeBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -218,5 +234,6 @@ namespace ClinicManager.Controls
         private MaterialSkin.Controls.MaterialSingleLineTextField passwordBox;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

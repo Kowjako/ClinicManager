@@ -1425,7 +1425,6 @@ namespace Test
             this.btnConfigurationAddServer.Name = "btnConfigurationAddServer";
             this.btnConfigurationAddServer.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnConfigurationAddServer.SmallImage")));
             this.btnConfigurationAddServer.Text = "Serwer";
-            this.btnConfigurationAddServer.Click += new System.EventHandler(this.btnConfigurationAddServer_Click);
             // 
             // ribbonPanel22
             // 

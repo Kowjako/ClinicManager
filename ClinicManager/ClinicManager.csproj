@@ -461,6 +461,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Clinic.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ClinicManager.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="DataAccessLayer\Clinic.edmx.diagram">
       <DependentUpon>Clinic.edmx</DependentUpon>
     </None>

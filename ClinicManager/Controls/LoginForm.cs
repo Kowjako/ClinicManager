@@ -84,5 +84,10 @@ namespace ClinicManager.Controls
                 MessageBox.Show(null, "Nie ma takiego uzytkownika", "Uwaga", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void btnDbManager_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

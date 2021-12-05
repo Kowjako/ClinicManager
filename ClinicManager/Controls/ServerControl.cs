@@ -52,6 +52,7 @@ namespace ClinicManager.Controls
             var section = (ConnectionStringsSection)config.GetSection("connectionStrings");
             section.ConnectionStrings["ConnectionString"].ConnectionString = newCString;
             config.Save(ConfigurationSaveMode.Modified);
+            this.Close();
         }
     }
 }
