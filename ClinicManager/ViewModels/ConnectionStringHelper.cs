@@ -28,6 +28,6 @@ namespace ClinicManager.ViewModels
                 connectionStrings.Add(elem);
             }
         }
-        public static ConnectionStringHelper ConnectionStringInstance => _instance ?? new ConnectionStringHelper(); 
+        public static ConnectionStringHelper ConnectionStringInstance => _instance ?? (_instance = new ConnectionStringHelper());
     }
 }
