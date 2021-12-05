@@ -15,7 +15,7 @@ namespace ClinicManager.ViewModels
         public string ClinicDataEntities => connectionStrings[0].Attributes.GetNamedItem("value").Value;
 
         /* Singleton instance */
-        private ConnectionStringHelper _instance;
+        private static ConnectionStringHelper _instance;
         private ConnectionStringHelper()
         {
             XmlDocument xDoc = new XmlDocument();
@@ -28,6 +28,6 @@ namespace ClinicManager.ViewModels
                 connectionStrings.Add(elem);
             }
         }
-        public ConnectionStringHelper ConnectionStringInstance => _instance ?? new ConnectionStringHelper(); 
+        public static ConnectionStringHelper ConnectionStringInstance => _instance ?? new ConnectionStringHelper(); 
     }
 }

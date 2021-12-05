@@ -362,6 +362,7 @@
     <Compile Include="StaticDictionaries.cs" />
     <Compile Include="ViewModels\ArticleViewModel.cs" />
     <Compile Include="ViewModels\ClinicViewModel.cs" />
+    <Compile Include="ViewModels\ConnectionStringHelper.cs" />
     <Compile Include="ViewModels\CostViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="ViewModels\FixedAssetViewModel.cs" />

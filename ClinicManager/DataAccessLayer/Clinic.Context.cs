@@ -14,11 +14,12 @@ namespace ClinicManager.DataAccessLayer
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-    
+    using ClinicManager.ViewModels;
+
     public partial class ClinicDataEntities : DbContext
     {
         public ClinicDataEntities()
-            : base("name=ClinicDataEntities")
+            : base(ConnectionStringHelper.ConnectionStringInstance.ClinicDataEntities)
         {
         }
     

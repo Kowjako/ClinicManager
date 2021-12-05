@@ -1,4 +1,5 @@
 ﻿using ClinicManager.Properties;
+using ClinicManager.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,7 +47,7 @@ namespace ClinicManager.Controls
         private void loginBtn_Click(object sender, EventArgs e)
         {
 
-            using (SqlConnection connection = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString"].ToString()))
+            using (SqlConnection connection = new SqlConnection(ConnectionStringHelper.ConnectionStringInstance.ConnectionString))
             {
                 connection.Open();
                 var loginParam = new SqlParameter("@login", loginBox.Text);
@@ -55,7 +56,7 @@ namespace ClinicManager.Controls
                 sqlCommand.Parameters.Add(loginParam);
                 sqlCommand.Parameters.Add(passParam);
 
-                using(var reader = sqlCommand.ExecuteReader())
+                using (var reader = sqlCommand.ExecuteReader())
                 {
                     if (reader.HasRows && reader.Read())
                     {
