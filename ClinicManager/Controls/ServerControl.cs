@@ -75,6 +75,25 @@ namespace ClinicManager.Controls
         {
             using (SqlConnection connection = new SqlConnection(ConnectionStringHelper.ConnectionStringInstance.ConnectionString))
             {
+
+                IList<XmlElement> connectionStrings = new List<XmlElement>();
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.Load(@"../../ClinicManager.config");
+
+                XmlElement xRoot = xDoc.DocumentElement;
+
+                foreach (XmlElement elem in xRoot)
+                {
+                    connectionStrings.Add(elem);
+                }
+
+                connectionStrings[1].Attributes.GetNamedItem("value").Value = connectionStrings[1].Attributes.GetNamedItem("value").Value.Replace("initial catalog=ClinicData", "initial catalog=");
+
+                xRoot.RemoveAll();
+                xRoot.AppendChild(connectionStrings[0]);
+                xRoot.AppendChild(connectionStrings[1]);
+                xDoc.Save(@"../../ClinicManager.config");
+
                 try
                 {
                     StringBuilder sb = new StringBuilder();
@@ -129,23 +148,13 @@ namespace ClinicManager.Controls
                         }
                     }
 
-                    IList<XmlElement> connectionStrings = new List<XmlElement>();
-                    XmlDocument xDoc = new XmlDocument();
-                    xDoc.Load(@"../../ClinicManager.config");
-
-                    XmlElement xRoot = xDoc.DocumentElement;
-
-                    foreach (XmlElement elem in xRoot)
-                    {
-                        connectionStrings.Add(elem);
-                    }
-
                     connectionStrings[1].Attributes.GetNamedItem("value").Value = connectionStrings[1].Attributes.GetNamedItem("value").Value.Replace("initial catalog=", "initial catalog=ClinicData");
 
                     xRoot.RemoveAll();
                     xRoot.AppendChild(connectionStrings[0]);
                     xRoot.AppendChild(connectionStrings[1]);
                     xDoc.Save(@"../../ClinicManager.config");
+
                     MessageBox.Show(null, "Auto-kreowanie bazy danych zakonczono sukcesem", "Informacja", MessageBoxButtons.OK);
                     this.Close();
                 }
