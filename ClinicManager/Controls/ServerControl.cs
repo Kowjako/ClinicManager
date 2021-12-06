@@ -186,7 +186,7 @@ namespace ClinicManager.Controls
                 }
                 catch(Exception ex)
                 {
-                    logger.LogMessage(ex.Message, MessageSeverity.Error);
+                    logger.LogMessage(": " + ex.Message, MessageSeverity.Error);
                 }
             }
         }

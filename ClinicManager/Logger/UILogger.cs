@@ -30,5 +30,10 @@ namespace ClinicManager.Logger
         {
             mainPanel.ScrollControlIntoView(e.Control);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
