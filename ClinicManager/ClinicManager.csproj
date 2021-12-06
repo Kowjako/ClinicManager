@@ -351,6 +351,20 @@
     <Compile Include="Interfaces\IPatientDetailsViewModel.cs" />
     <Compile Include="Interfaces\IProducentDetailsViewModel.cs" />
     <Compile Include="Interfaces\IVisitDetailsViewModel.cs" />
+    <Compile Include="Logger\MessageSeverity.cs" />
+    <Compile Include="Logger\UILogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logger\UILogger.Designer.cs">
+      <DependentUpon>UILogger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logger\UILoggerMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Logger\UILoggerMessage.Designer.cs">
+      <DependentUpon>UILoggerMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logger\UILoggerViewModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controls\VisitDetails.cs">
@@ -443,6 +457,12 @@
     <EmbeddedResource Include="Controls\UnitDetails.resx">
       <DependentUpon>UnitDetails.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logger\UILogger.resx">
+      <DependentUpon>UILogger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Logger\UILoggerMessage.resx">
+      <DependentUpon>UILoggerMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -517,6 +537,10 @@
       <LastGenOutput>Clinic.cs</LastGenOutput>
     </Content>
     <Content Include="appIcon.ico" />
+    <Content Include="Logger\SeverityIcons\error.png" />
+    <Content Include="Logger\SeverityIcons\message.png" />
+    <Content Include="Logger\SeverityIcons\success.png" />
+    <Content Include="Logger\SeverityIcons\warning.png" />
     <Content Include="Properties\fail.png" />
     <Content Include="Properties\ok.png" />
     <None Include="Resources\fail.png" />

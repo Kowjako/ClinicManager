@@ -1,4 +1,5 @@
-﻿using ClinicManager.Properties;
+﻿using ClinicManager.Logger;
+using ClinicManager.Properties;
 using ClinicManager.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
@@ -76,6 +78,9 @@ namespace ClinicManager.Controls
             using (SqlConnection connection = new SqlConnection(ConnectionStringHelper.ConnectionStringInstance.ConnectionString))
             {
 
+                UILogger logger = new UILogger();
+                logger.Show();
+
                 IList<XmlElement> connectionStrings = new List<XmlElement>();
                 XmlDocument xDoc = new XmlDocument();
                 xDoc.Load(@"../../ClinicManager.config");
@@ -94,6 +99,11 @@ namespace ClinicManager.Controls
                 xRoot.AppendChild(connectionStrings[1]);
                 xDoc.Save(@"../../ClinicManager.config");
 
+                var serverName = ConnectionStringHelper.ConnectionStringInstance.ConnectionString;
+                var server = serverName.Substring(serverName.IndexOf('=') + 1, serverName.IndexOf(';') - serverName.IndexOf('=') - 1);
+
+                logger.LogMessage($": Server -> {server}", MessageSeverity.Warning);
+
                 try
                 {
                     StringBuilder sb = new StringBuilder();
@@ -106,9 +116,24 @@ namespace ClinicManager.Controls
                     var scripts = sb.ToString().Split(new string[] { "GO\r\n", "GO ", "GO\t" }, StringSplitOptions.RemoveEmptyEntries );
                     using (SqlCommand cmd = new SqlCommand())
                     {
+                        var msg = string.Empty;
                         cmd.Connection = connection;
                         foreach (var script in scripts)
                         {
+                            if (script.Contains("CREATE VIEW"))
+                            {
+                                msg = $"Tworzenie widoku ->  {script.Substring(script.IndexOf("CREATE VIEW") + 11, script.IndexOf("AS") - (script.IndexOf("CREATE VIEW") + 11))}";
+                                logger.LogMessage(": " + msg, MessageSeverity.Information);
+                                logger.Refresh();
+                                Thread.Sleep(200);
+                            }  
+                            if (script.Contains("CREATE TABLE"))
+                            {
+                                msg = $"Tworzenie tabeli ->  {script.Substring(script.IndexOf("CREATE TABLE") + 12, script.IndexOf("(") - (script.IndexOf("CREATE TABLE") + 12))}";
+                                logger.LogMessage(": " + msg, MessageSeverity.Information);
+                                logger.Refresh();
+                                Thread.Sleep(200);
+                            }
                             cmd.CommandText = script;
                             cmd.ExecuteNonQuery();
                         } 
@@ -123,6 +148,7 @@ namespace ClinicManager.Controls
                     scripts = sb.ToString().Split(new string[] { "GO\r\n", "GO ", "GO\t" }, StringSplitOptions.RemoveEmptyEntries);
                     using (SqlCommand cmd = new SqlCommand())
                     {
+                        logger.LogMessage(": " + "Wypełnianie tabel", MessageSeverity.Information);
                         cmd.Connection = connection;
                         foreach (var script in scripts)
                         {
@@ -140,6 +166,7 @@ namespace ClinicManager.Controls
                     scripts = sb.ToString().Split(new string[] { "GO\r\n", "GO ", "GO\t" }, StringSplitOptions.RemoveEmptyEntries);
                     using (SqlCommand cmd = new SqlCommand())
                     {
+                        logger.LogMessage(": " + "Tworzenie triggerów", MessageSeverity.Information);
                         cmd.Connection = connection;
                         foreach (var script in scripts)
                         {
@@ -155,12 +182,11 @@ namespace ClinicManager.Controls
                     xRoot.AppendChild(connectionStrings[1]);
                     xDoc.Save(@"../../ClinicManager.config");
 
-                    MessageBox.Show(null, "Auto-kreowanie bazy danych zakonczono sukcesem", "Informacja", MessageBoxButtons.OK);
-                    this.Close();
+                    logger.LogMessage(string.Empty, MessageSeverity.Finish);
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    logger.LogMessage(ex.Message, MessageSeverity.Error);
                 }
             }
         }
