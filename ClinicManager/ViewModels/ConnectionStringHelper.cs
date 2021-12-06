@@ -28,6 +28,20 @@ namespace ClinicManager.ViewModels
                 connectionStrings.Add(elem);
             }
         }
+
+        public void RefreshConnectionStrings()
+        {
+            connectionStrings.Clear();
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(@"../../ClinicManager.config");
+
+            XmlElement xRoot = xDoc.DocumentElement;
+
+            foreach (XmlElement elem in xRoot)
+            {
+                connectionStrings.Add(elem);
+            }
+        }
         public static ConnectionStringHelper ConnectionStringInstance => _instance ?? (_instance = new ConnectionStringHelper());
     }
 }

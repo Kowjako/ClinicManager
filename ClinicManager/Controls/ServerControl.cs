@@ -71,6 +71,7 @@ namespace ClinicManager.Controls
             xRoot.AppendChild(connectionStrings[0]);
             xRoot.AppendChild(connectionStrings[1]);
             xDoc.Save(@"../../ClinicManager.config");
+            ConnectionStringHelper.ConnectionStringInstance.RefreshConnectionStrings();
         }
 
         private void bCreateDatabase_Click(object sender, EventArgs e)
@@ -181,6 +182,8 @@ namespace ClinicManager.Controls
                     xRoot.AppendChild(connectionStrings[0]);
                     xRoot.AppendChild(connectionStrings[1]);
                     xDoc.Save(@"../../ClinicManager.config");
+
+                    ConnectionStringHelper.ConnectionStringInstance.RefreshConnectionStrings();
 
                     logger.LogMessage(string.Empty, MessageSeverity.Finish);
                 }
