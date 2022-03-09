@@ -114,7 +114,7 @@ namespace ClinicManager.Controls
                         sb.Append(sr.ReadToEnd());
                     }
 
-                    var scripts = sb.ToString().Split(new string[] { "GO\r\n", "GO ", "GO\t" }, StringSplitOptions.RemoveEmptyEntries );
+                    var scripts = Regex.Split(sb.ToString(), @"\bGO\b");
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         var msg = string.Empty;
@@ -146,7 +146,7 @@ namespace ClinicManager.Controls
                         sb.Append(sr.ReadToEnd());
                     }
 
-                    scripts = sb.ToString().Split(new string[] { "GO\r\n", "GO ", "GO\t" }, StringSplitOptions.RemoveEmptyEntries);
+                    scripts = Regex.Split(sb.ToString(), @"\bGO\b");
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         logger.LogMessage(": " + "Wypełnianie tabel", MessageSeverity.Information);
@@ -164,7 +164,7 @@ namespace ClinicManager.Controls
                         sb.Append(sr.ReadToEnd());
                     }
 
-                    scripts = sb.ToString().Split(new string[] { "GO\r\n", "GO ", "GO\t" }, StringSplitOptions.RemoveEmptyEntries);
+                    scripts = Regex.Split(sb.ToString(), @"\bGO\b");
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         logger.LogMessage(": " + "Tworzenie triggerów", MessageSeverity.Information);
