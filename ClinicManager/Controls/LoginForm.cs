@@ -49,22 +49,34 @@ namespace ClinicManager.Controls
 
             using (SqlConnection connection = new SqlConnection(ConnectionStringHelper.ConnectionStringInstance.ConnectionString))
             {
-                connection.Open();
-                var loginParam = new SqlParameter("@login", loginBox.Text);
-                var passParam = new SqlParameter("@pass", passwordBox.Text);
-                var sqlCommand = new SqlCommand("SELECT Id, Login, Password, Permission FROM Users WHERE Login = @login AND Password = @pass", connection);
-                sqlCommand.Parameters.Add(loginParam);
-                sqlCommand.Parameters.Add(passParam);
-
-                using (var reader = sqlCommand.ExecuteReader())
+                try
                 {
-                    if (reader.HasRows && reader.Read())
+                    connection.Open();
+                    var loginParam = new SqlParameter("@login", loginBox.Text);
+                    var passParam = new SqlParameter("@pass", passwordBox.Text);
+                    var sqlCommand = new SqlCommand("SELECT Id, Login, Password, Permission FROM Users WHERE Login = @login AND Password = @pass", connection);
+                    sqlCommand.Parameters.Add(loginParam);
+                    sqlCommand.Parameters.Add(passParam);
+
+                    using (var reader = sqlCommand.ExecuteReader())
                     {
-                        isLoginSuccess = true;
-                        permission = reader.GetValue(3);
+                        if (reader.HasRows && reader.Read())
+                        {
+                            isLoginSuccess = true;
+                            permission = reader.GetValue(3);
+                        }
                     }
+                    
                 }
-                connection.Close();
+                catch(SqlException ex)
+                {
+                    MessageBox.Show(this, "Akcja sie nie podwiodla. Sprawdz poprawnosc danych oraz czy baza jest wykreowana", "Blad", MessageBoxButtons.OKCancel);
+                    return;
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
 
             CheckState();
