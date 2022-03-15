@@ -11,7 +11,7 @@ namespace ClinicManager.Interfaces
 {
     interface IVisitDetailsViewModel
     {
-        void SaveVisit(Registrations visit, DetailsMode mode);
+        void SaveVisit(Registrations visit, DetailsMode mode, PatientRow patient);
         void DeleteVisit(RegistrationRow visit);
         BindingSource RefreshVisits();
         List<RegistrationRow> Filter();

@@ -328,9 +328,26 @@ CREATE TABLE Users (
 	Password NVARCHAR(255) NOT NULL,
 	Permission TINYINT
 );
+GO
 
 ALTER TABLE Registrations
 ALTER COLUMN Time NVARCHAR(255) NULL
+GO
 
 ALTER TABLE Registrations
 ALTER COLUMN Date DATETIME NULL
+GO
+
+ALTER VIEW [dbo].[RegistrationRow] AS
+SELECT r.Id 'Id',
+(SELECT Name + ' ' + Surname FROM Data WHERE Id = (SELECT DataId FROM Patients p WHERE p.Id = r.PatientId)) 'Pacjent',
+(SELECT Name + ' ' + Surname FROM Data WHERE Id = (SELECT DataId FROM Employees e WHERE e.Id = r.EmployeeId)) 'Lekarz',
+(SELECT Name FROM Clinics WHERE Id = (SELECT ClinicId FROM Employees e WHERE e.Id = r.EmployeeId)) 'Przychodnia',
+r.Date 'Data operacji', r.Time 'Czas rozpoczecia',
+r.Status 'Status'
+FROM Registrations r
+GO
+
+ALTER TABLE Registrations
+ADD IsAccepted BIT DEFAULT(0)
+GO

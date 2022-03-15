@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cabdb5d17afa425482744d44163bdac4" Name="Diagram1">
+      <Diagram DiagramId="0c23e2dd96714c9a86c3fc4ea7850aae" Name="Diagram1">
         <EntityTypeShape EntityType="ClinicDataModel.Clinics" Width="1.5" PointX="13.5" PointY="11.25" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicDataModel.Costs" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicDataModel.Data" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
@@ -18,22 +18,21 @@
         <EntityTypeShape EntityType="ClinicDataModel.Patients" Width="1.5" PointX="11.25" PointY="11.625" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicDataModel.Producents" Width="1.5" PointX="0.75" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicDataModel.Registrations" Width="1.5" PointX="16.5" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicDataModel.Tools" Width="1.5" PointX="3.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.Users" Width="1.5" PointX="4.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.ClinicRow" Width="1.5" PointX="5.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.CostRow" Width="1.5" PointX="6.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.DrugRow" Width="1.5" PointX="7.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.EmployeeRow" Width="1.5" PointX="8.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.LocalizationRow" Width="1.5" PointX="9.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.OperationRow" Width="1.5" PointX="10.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.Users" Width="1.5" PointX="2.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.ClinicRow" Width="1.5" PointX="4.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.CostRow" Width="1.5" PointX="5.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.DrugRow" Width="1.5" PointX="6.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.EmployeeRow" Width="1.5" PointX="7.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.LocalizationRow" Width="1.5" PointX="8.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.OperationRow" Width="1.5" PointX="9.75" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="ClinicDataModel.OpinionRow" Width="1.5" PointX="9.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.OrderRow" Width="1.5" PointX="11.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.OrderToolRow" Width="1.5" PointX="12.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.PatientRow" Width="1.5" PointX="3.75" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.ProducentRow" Width="1.5" PointX="5.75" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.RegistrationRow" Width="1.5" PointX="7.75" PointY="15.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="ClinicDataModel.ToolRow" Width="1.5" PointX="9.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.OrderRow" Width="1.5" PointX="10.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.OrderToolRow" Width="1.5" PointX="11.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.PatientRow" Width="1.5" PointX="12.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.ProducentRow" Width="1.5" PointX="3.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.RegistrationRow" Width="1.5" PointX="5.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClinicDataModel.ToolRow" Width="1.5" PointX="7.75" PointY="15.5" IsExpanded="true" />
         <AssociationConnector Association="ClinicDataModel.FK__Clinics_EmployeeId" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicDataModel.FK__Clinics_LocalizationId" ManuallyRouted="false" />
         <AssociationConnector Association="ClinicDataModel.FK__Employees_ClinicId" ManuallyRouted="false" />

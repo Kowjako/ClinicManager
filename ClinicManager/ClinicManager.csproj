@@ -330,9 +330,6 @@
     <Compile Include="DataAccessLayer\Registrations.cs">
       <DependentUpon>Clinic.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataAccessLayer\sysdiagrams.cs">
-      <DependentUpon>Clinic.tt</DependentUpon>
-    </Compile>
     <Compile Include="DataAccessLayer\ToolRow.cs">
       <DependentUpon>Clinic.tt</DependentUpon>
     </Compile>
@@ -478,13 +475,13 @@
     </EmbeddedResource>
     <None Include="BinaryEnums\operation.bin" />
     <None Include="BinaryEnums\type.bin" />
+    <None Include="ClinicManager.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <EntityDeploy Include="DataAccessLayer\Clinic.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Clinic.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ClinicManager.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="DataAccessLayer\Clinic.edmx.diagram">
       <DependentUpon>Clinic.edmx</DependentUpon>
     </None>
@@ -526,6 +523,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="appIcon.ico" />
     <Content Include="DataAccessLayer\Clinic.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Clinic.edmx</DependentUpon>
@@ -536,7 +534,6 @@
       <DependentUpon>Clinic.edmx</DependentUpon>
       <LastGenOutput>Clinic.cs</LastGenOutput>
     </Content>
-    <Content Include="appIcon.ico" />
     <Content Include="Logger\SeverityIcons\error.png" />
     <Content Include="Logger\SeverityIcons\message.png" />
     <Content Include="Logger\SeverityIcons\success.png" />

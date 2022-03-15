@@ -17,7 +17,8 @@ namespace ClinicManager.DataAccessLayer
         public int Id { get; set; }
         public string Pacjent { get; set; }
         public string Lekarz { get; set; }
-        public System.DateTime Data_operacji { get; set; }
+        public string Przychodnia { get; set; }
+        public Nullable<System.DateTime> Data_operacji { get; set; }
         public string Czas_rozpoczecia { get; set; }
         public string Status { get; set; }
     }

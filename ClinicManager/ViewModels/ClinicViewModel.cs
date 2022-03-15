@@ -80,7 +80,6 @@ namespace ClinicManager.ViewModels
             using(var context = new ClinicDataEntities())
             {
                 ObjectParameter mark = new ObjectParameter("Mark", typeof(float));
-                context.GetHighestMarkForClinic(clinicId, mark);
                 MessageBox.Show(null, mark.Value.ToString(),"Najlepsza ocena",MessageBoxButtons.OK);
             }
         }

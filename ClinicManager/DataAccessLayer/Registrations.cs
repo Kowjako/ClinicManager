@@ -15,7 +15,7 @@ namespace ClinicManager.DataAccessLayer
     public partial class Registrations
     {
         public int Id { get; set; }
-        public System.DateTime Date { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
         public string Time { get; set; }
         public int EmployeeId { get; set; }
         public int PatientId { get; set; }

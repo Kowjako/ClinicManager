@@ -19,6 +19,7 @@ namespace ClinicManager
         private StaticDictionaries Dictionaries;
         private DetailsMode Mode;
         private IVisitDetailsViewModel VisitViewModel;
+        public PatientRow Patient;
 
         public VisitDetails(DetailsMode mode)
         {
@@ -78,7 +79,7 @@ namespace ClinicManager
                 {
                     newRegistrationData.Date = dateTimePicker1.Value;
                 }
-                VisitViewModel.SaveVisit(newRegistrationData, Mode);
+                VisitViewModel.SaveVisit(newRegistrationData, Mode, Patient);
                 this.Close();
             }
         }

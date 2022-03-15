@@ -36,10 +36,9 @@ namespace ClinicManager.ViewModels
         public void AddRegistrationForClient(PatientRow client)
         {
             var form = new VisitDetails(DetailsMode.Add);
+            form.Patient = client;
             form.dateTimePicker1.Value = client.Planowana_data;
-            form.dateTimePicker1.Enabled = false;
             form.patientBox.SelectedItem = form.patientBox.Items.OfType<PatientRow>().First(p => p.Id == client.Id);
-            form.patientBox.Enabled = false;
             form.ShowDialog();
         }
 
@@ -47,7 +46,7 @@ namespace ClinicManager.ViewModels
         {
             foreach (DataGridViewRow row in gridView.Rows)
             {
-                if (row.Cells[5].Value != null)
+                if (row.Cells[6].Value != null)
                 {
                     if (row.Cells[5].Value.ToString() == "Zaakceptowana")
                     {
@@ -145,13 +144,14 @@ namespace ClinicManager.ViewModels
             }
         }
 
-        public void SaveVisit(Registrations visit, Form1.DetailsMode Mode)
+        public void SaveVisit(Registrations visit, Form1.DetailsMode Mode, PatientRow patientRow)
         {
             using (var context = new ClinicDataEntities())
             {
                 if (Mode == DetailsMode.Add)
                 {
-                    visit.Date = DateTime.Parse(visit.Date.ToShortDateString());
+                    visit.Date = DateTime.Parse(visit.Date.Value.ToShortDateString());
+                    visit.Status = "Zaakceptowana"; 
                     context.Registrations.Add(visit);
                 }
                 else
