@@ -153,6 +153,8 @@ namespace ClinicManager.ViewModels
                     visit.Date = DateTime.Parse(visit.Date.Value.ToShortDateString());
                     visit.Status = "Zaakceptowana"; 
                     context.Registrations.Add(visit);
+
+                    context.Patients.First(p => p.Id == patientRow.Id).IsAccepted = true;
                 }
                 else
                 {
@@ -200,6 +202,7 @@ namespace ClinicManager.ViewModels
                 var editedVisit = context.Registrations.Find(row.Id);
                 editedVisit.Status = "Anulowana";
                 context.Entry(editedVisit).State = System.Data.Entity.EntityState.Modified;
+
                 context.SaveChanges();
             }
         }

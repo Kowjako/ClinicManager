@@ -26,6 +26,7 @@ namespace ClinicManager.DataAccessLayer
         public Nullable<byte> Priority { get; set; }
         public System.DateTime OperationDate { get; set; }
         public string Description { get; set; }
+        public Nullable<bool> IsAccepted { get; set; }
     
         public virtual Data Data { get; set; }
         public virtual Operations Operations { get; set; }

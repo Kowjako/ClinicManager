@@ -128,6 +128,7 @@
           <Property Name="Priority" Type="tinyint" />
           <Property Name="OperationDate" Type="datetime" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsAccepted" Type="bit" />
         </EntityType>
         <EntityType Name="Producents">
           <Key>
@@ -150,6 +151,7 @@
           <Property Name="EmployeeId" Type="int" Nullable="false" />
           <Property Name="PatientId" Type="int" Nullable="false" />
           <Property Name="Status" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsAccepted" Type="bit" />
         </EntityType>
         <EntityType Name="Tools">
           <Key>
@@ -1067,6 +1069,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Property Name="Priority" Type="Byte" />
           <Property Name="OperationDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsAccepted" Type="Boolean" />
           <NavigationProperty Name="Data" Relationship="Self.FK__Patients_DataId" FromRole="Patients" ToRole="Data" />
           <NavigationProperty Name="Operations" Relationship="Self.FK__Patients_OperationId" FromRole="Patients" ToRole="Operations" />
           <NavigationProperty Name="Registrations" Relationship="Self.FK__Registrations_PatientId" FromRole="Patients" ToRole="Registrations" />
@@ -1097,6 +1100,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Property Name="EmployeeId" Type="Int32" Nullable="false" />
           <Property Name="PatientId" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsAccepted" Type="Boolean" />
           <NavigationProperty Name="Employees" Relationship="Self.FK__Registrations_EmployeeId" FromRole="Registrations" ToRole="Employees" />
           <NavigationProperty Name="Patients" Relationship="Self.FK__Registrations_PatientId" FromRole="Registrations" ToRole="Patients" />
         </EntityType>
@@ -1850,6 +1854,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
                 <ScalarProperty Name="Priority" ColumnName="Priority" />
                 <ScalarProperty Name="OperationDate" ColumnName="OperationDate" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1874,6 +1879,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
                 <ScalarProperty Name="PatientId" ColumnName="PatientId" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

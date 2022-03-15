@@ -338,6 +338,10 @@ ALTER TABLE Registrations
 ALTER COLUMN Date DATETIME NULL
 GO
 
+ALTER TABLE Patients
+ADD IsAccepted BIT DEFAULT(0)
+GO
+
 ALTER VIEW [dbo].[RegistrationRow] AS
 SELECT r.Id 'Id',
 (SELECT Name + ' ' + Surname FROM Data WHERE Id = (SELECT DataId FROM Patients p WHERE p.Id = r.PatientId)) 'Pacjent',
@@ -348,6 +352,10 @@ r.Status 'Status'
 FROM Registrations r
 GO
 
-ALTER TABLE Registrations
-ADD IsAccepted BIT DEFAULT(0)
+ALTER VIEW PatientRow AS
+SELECT p.Id 'Id', d.Name + ' ' + d.Surname 'Pacjent', o.Name 'Operacja', p.OperationDate 'Planowana data', p.Priority 'Priorytet' 
+FROM Patients p
+JOIN Operations o ON (p.OperationId = o.Id)
+JOIN Data d ON (p.DataId = d.Id)
+WHERE p.IsAccepted IS NULL OR p.IsAccepted = 0
 GO
