@@ -17,6 +17,8 @@ namespace Test
 {
     public partial class Form1 : Form
     {
+        private static Point lastPoint;
+
         #region Enums & values
 
         public enum DetailsMode
@@ -61,7 +63,8 @@ namespace Test
             CostViewModel = new CostViewModel();
             EmployeeViewModel = new EmployeeViewModel();
             ProducentViewModel = new ProducentViewModel();
-            this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Normal;
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
         public void SetPermissions(byte? permissionLevel)
@@ -943,5 +946,44 @@ namespace Test
 
 
         #endregion
+
+        #region Common behaviour
+
+        private void bClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void bMinimize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void headerPanel_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastPoint = new Point(e.X, e.Y);
+        }
+
+        private void headerPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Top += e.Y - lastPoint.Y;
+                this.Left += e.X - lastPoint.X;
+            }
+        }
+
+
+        #endregion
+
+
     }
 }

@@ -31,9 +31,12 @@ namespace Test
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
+            this.ribbonContext1 = new System.Windows.Forms.RibbonContext();
+            this.ribbonOrbMenuItem4 = new System.Windows.Forms.RibbonOrbMenuItem();
+            this.ribbonDescriptionMenuItem1 = new System.Windows.Forms.RibbonDescriptionMenuItem();
             this.clinicTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel1 = new System.Windows.Forms.RibbonPanel();
             this.btnHospitalShowList = new System.Windows.Forms.RibbonButton();
@@ -177,17 +180,26 @@ namespace Test
             this.ribbonOrbRecentItem5 = new System.Windows.Forms.RibbonOrbRecentItem();
             this.ribbonOrbMenuItem3 = new System.Windows.Forms.RibbonOrbMenuItem();
             this._gvMain = new System.Windows.Forms.DataGridView();
+            this.headerPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bClose = new System.Windows.Forms.PictureBox();
+            this.bMinimize = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
+            this.headerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon1
             // 
+            this.ribbon1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.ribbon1.BackColor = System.Drawing.SystemColors.Control;
             this.ribbon1.BorderMode = System.Windows.Forms.RibbonWindowMode.InsideWindow;
             this.ribbon1.CaptionBarVisible = false;
+            this.ribbon1.Contexts.Add(this.ribbonContext1);
             this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.ribbon1.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.Location = new System.Drawing.Point(0, 31);
             this.ribbon1.Minimized = false;
             this.ribbon1.Name = "ribbon1";
             // 
@@ -197,6 +209,7 @@ namespace Test
             this.ribbon1.OrbDropDown.BorderRoundness = 8;
             this.ribbon1.OrbDropDown.ForeColor = System.Drawing.Color.Chocolate;
             this.ribbon1.OrbDropDown.Location = new System.Drawing.Point(0, 0);
+            this.ribbon1.OrbDropDown.MenuItems.Add(this.ribbonOrbMenuItem4);
             this.ribbon1.OrbDropDown.Name = "";
             this.ribbon1.OrbDropDown.OptionItemsPadding = 5;
             this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 72);
@@ -207,11 +220,14 @@ namespace Test
             // 
             // 
             // 
+            this.ribbon1.QuickAccessToolbar.DropDownButtonItems.Add(this.ribbonDescriptionMenuItem1);
             this.ribbon1.QuickAccessToolbar.DropDownButtonVisible = false;
             this.ribbon1.QuickAccessToolbar.Enabled = false;
+            this.ribbon1.QuickAccessToolbar.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.Overflow;
+            this.ribbon1.QuickAccessToolbar.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Overflow;
             this.ribbon1.QuickAccessToolbar.Visible = false;
-            this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F);
-            this.ribbon1.Size = new System.Drawing.Size(1162, 122);
+            this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ribbon1.Size = new System.Drawing.Size(1300, 124);
             this.ribbon1.TabIndex = 0;
             this.ribbon1.Tabs.Add(this.clinicTab);
             this.ribbon1.Tabs.Add(this.employeeTab);
@@ -224,8 +240,31 @@ namespace Test
             this.ribbon1.Tabs.Add(this.producentTab);
             this.ribbon1.Tabs.Add(this.configTab);
             this.ribbon1.TabSpacing = 3;
-            this.ribbon1.Text = "ribbon1";
+            this.ribbon1.Text = "Clinic Manager";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue_2010;
+            // 
+            // ribbonContext1
+            // 
+            this.ribbonContext1.GlowColor = System.Drawing.Color.Empty;
+            this.ribbonContext1.Text = null;
+            // 
+            // ribbonOrbMenuItem4
+            // 
+            this.ribbonOrbMenuItem4.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonOrbMenuItem4.Image = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem4.Image")));
+            this.ribbonOrbMenuItem4.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem4.LargeImage")));
+            this.ribbonOrbMenuItem4.Name = "ribbonOrbMenuItem4";
+            this.ribbonOrbMenuItem4.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonOrbMenuItem4.SmallImage")));
+            // 
+            // ribbonDescriptionMenuItem1
+            // 
+            this.ribbonDescriptionMenuItem1.DescriptionBounds = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.ribbonDescriptionMenuItem1.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.ribbonDescriptionMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("ribbonDescriptionMenuItem1.Image")));
+            this.ribbonDescriptionMenuItem1.LargeImage = ((System.Drawing.Image)(resources.GetObject("ribbonDescriptionMenuItem1.LargeImage")));
+            this.ribbonDescriptionMenuItem1.Name = "ribbonDescriptionMenuItem1";
+            this.ribbonDescriptionMenuItem1.SmallImage = ((System.Drawing.Image)(resources.GetObject("ribbonDescriptionMenuItem1.SmallImage")));
+            this.ribbonDescriptionMenuItem1.Text = "asdasdas";
             // 
             // clinicTab
             // 
@@ -1524,46 +1563,102 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Peru;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle3;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.GridColor = System.Drawing.Color.Black;
-            this._gvMain.Location = new System.Drawing.Point(0, 122);
+            this._gvMain.Location = new System.Drawing.Point(0, 155);
             this._gvMain.Margin = new System.Windows.Forms.Padding(0);
             this._gvMain.MultiSelect = false;
             this._gvMain.Name = "_gvMain";
             this._gvMain.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._gvMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._gvMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._gvMain.Size = new System.Drawing.Size(1162, 611);
+            this._gvMain.Size = new System.Drawing.Size(1300, 745);
             this._gvMain.TabIndex = 1;
+            // 
+            // headerPanel
+            // 
+            this.headerPanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.headerPanel.Controls.Add(this.bMinimize);
+            this.headerPanel.Controls.Add(this.bClose);
+            this.headerPanel.Controls.Add(this.label1);
+            this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerPanel.Location = new System.Drawing.Point(0, 0);
+            this.headerPanel.Name = "headerPanel";
+            this.headerPanel.Size = new System.Drawing.Size(1300, 31);
+            this.headerPanel.TabIndex = 2;
+            this.headerPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.headerPanel_MouseDown);
+            this.headerPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.headerPanel_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(495, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(326, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ClinicManager - zarządzanie siecią przychodni";
+            // 
+            // bClose
+            // 
+            this.bClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bClose.Image = ((System.Drawing.Image)(resources.GetObject("bClose.Image")));
+            this.bClose.Location = new System.Drawing.Point(1269, 5);
+            this.bClose.Name = "bClose";
+            this.bClose.Size = new System.Drawing.Size(25, 25);
+            this.bClose.TabIndex = 1;
+            this.bClose.TabStop = false;
+            this.bClose.Click += new System.EventHandler(this.bClose_Click);
+            // 
+            // bMinimize
+            // 
+            this.bMinimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bMinimize.Image = ((System.Drawing.Image)(resources.GetObject("bMinimize.Image")));
+            this.bMinimize.Location = new System.Drawing.Point(1237, 5);
+            this.bMinimize.Name = "bMinimize";
+            this.bMinimize.Size = new System.Drawing.Size(25, 25);
+            this.bMinimize.TabIndex = 2;
+            this.bMinimize.TabStop = false;
+            this.bMinimize.Click += new System.EventHandler(this.bMinimize_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1162, 733);
+            this.ClientSize = new System.Drawing.Size(1300, 900);
             this.Controls.Add(this._gvMain);
             this.Controls.Add(this.ribbon1);
+            this.Controls.Add(this.headerPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "ClinicManager - Zarządzanie siecią przychodni";
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).EndInit();
+            this.headerPanel.ResumeLayout(false);
+            this.headerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1714,6 +1809,13 @@ namespace Test
         private System.Windows.Forms.RibbonPanel ribbonPanel24;
         private System.Windows.Forms.RibbonButton btnPatientsGenerateVisit;
         private System.Windows.Forms.RibbonButton btnGetHighestMark;
+        private System.Windows.Forms.RibbonDescriptionMenuItem ribbonDescriptionMenuItem1;
+        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem4;
+        private System.Windows.Forms.RibbonContext ribbonContext1;
+        private System.Windows.Forms.Panel headerPanel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox bMinimize;
+        private System.Windows.Forms.PictureBox bClose;
     }
 }
 
