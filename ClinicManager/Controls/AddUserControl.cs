@@ -1,4 +1,5 @@
 ﻿using ClinicManager.Properties;
+using ClinicManager.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,7 +34,7 @@ namespace ClinicManager.Controls
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ToString()))
+            using (SqlConnection connection = new SqlConnection(ConnectionStringHelper.ConnectionStringInstance.ConnectionString))
             {
                 connection.Open();
                 var loginParam = new SqlParameter("@login", loginBox.Text);

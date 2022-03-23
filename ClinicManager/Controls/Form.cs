@@ -72,26 +72,62 @@ namespace Test
             switch (permissionLevel.Value)
             {
                 case 1:
-                    clinicTab.Visible = false;
-                    costsTab.Visible = false;
-                    producentTab.Visible = false;
-                    configTab.Visible = false;
+                    btnHospitalAdd.Visible = false;
+                    btnHospitalEdit.Visible = false;
+                    btnHospitalRemove.Visible = false;
+                    btnHospitalOpinions.Visible = false;
+                    ribbonPanel2.Visible = false;
+                    btnDoctorsEnroll.Visible = false;
+                    btnAssetsAdd.Visible = false;
+                    btnAssetsEdit.Visible = false;
+                    btnAssetsDelete.Visible = false;
+                    btnArticleAdd.Visible = false;
+                    btnArticleEdit.Visible = false;
+                    btnArticleDelete.Visible = false;
+                    btnPriceAdd.Visible = false;
+                    btnPriceDelete.Visible = false;
+                    btnPriceEdit.Visible = false;
+                    btnSupplierAdd.Visible = false;
+                    btnSupplierEdit.Visible = false;
+                    btnSupplierDelete.Visible = false;
+                    btnProducentsAddPrice.Visible = false;
+                    btnLocalizationAdd.Visible = false;
                     break;
                 case 2:
-                    clinicTab.Visible = false;
-                    employeeTab.Visible = false;
-                    pacientTab.Visible = false;
+                    btnArticleRemoveExpired.Visible = false;
                     visitTab.Visible = false;
+                    employeeTab.Visible = false;
+                    clinicTab.Visible = false;
+                    pacientTab.Visible = false;
                     operationTab.Visible = false;
-                    configTab.Visible = false;
+                    btnToolsInventarize.Visible = false;
+                    btnArticleRemoveExpired.Visible = false;
                     break;
                 case 3:
-                    clinicTab.Visible = false;
+                    btnHospitalAdd.Visible = false;
+                    btnHospitalEdit.Visible = false;
+                    btnHospitalRemove.Visible = false;
+                    btnLocalizationAdd.Visible = false;
+                    btnDoctorsAdd.Visible = false;
+                    btnDoctorsEdit.Visible = false;
+                    btnDoctorsDelete.Visible = false;
+                    btnDoctorsEnroll.Visible = false;
+                    btnClientsAdd.Visible = false;
+                    btnClientsEdit.Visible = false;
+                    btnClientsDelete.Visible = false;
+                    ribbonPanel24.Visible = false;
                     toolTab.Visible = false;
+                    drugTab.Visible = false;
                     operationTab.Visible = false;
                     costsTab.Visible = false;
                     producentTab.Visible = false;
-                    configTab.Visible = false;
+                    btnVisitsAdd.Visible = false;
+                    btnVisitsDelete.Visible = false;
+                    btnVisitsEdit.Visible = false;
+                    btnVisitsSchedule.Visible = false;
+                    btnVisitAccept.Visible = false;
+                    btnVisitRealize.Visible = false;
+                    btnClinicsOrder.Visible = false;
                     break;
                 default:
                     break;  
