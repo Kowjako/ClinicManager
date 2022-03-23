@@ -113,6 +113,7 @@ namespace ClinicManager.ViewModels
         public void GetSchedule()
         {
             var form = new Schedule();
+            form.SetSpecificProperties();
             form.ShowDialog();
         }
 
@@ -183,7 +184,7 @@ namespace ClinicManager.ViewModels
             {
                 using (var context = new ClinicDataEntities())
                 {
-                    var clinicList = context.RegistrationRow.SqlQuery($"SELECT Id, Pacjent, Lekarz, [Data operacji] AS Data_operacji, [Czas rozpoczecia] AS Czas_rozpoczecia, Status FROM registrationRow ORDER BY {list.Sort}").ToList();
+                    var clinicList = context.RegistrationRow.SqlQuery($"SELECT Id, Pacjent, Lekarz, Przychodnia, [Data operacji] AS Data_operacji, [Czas rozpoczecia] AS Czas_rozpoczecia, Status FROM registrationRow ORDER BY {list.Sort}").ToList();
                     newBs.DataSource = typeof(ClinicRow);
                     newBs.DataSource = clinicList;
                     grid.DataSource = newBs;

@@ -13,9 +13,28 @@ namespace ClinicManager.Controls
 {
     public partial class Schedule : Form
     {
+        private readonly StaticDictionaries Dictionaries;
         public Schedule()
         {
             InitializeComponent();
+            Dictionaries = new StaticDictionaries();
+        }
+
+        public void SetSpecificProperties()
+        {
+            var empList = new List<EmployeeRow>();
+            foreach (var emp in Dictionaries.EmployeeList.Value)
+            {
+                empList.Add(emp.Value);
+            }
+            bsDoctors.DataSource = empList;
+
+            var clinicsList = new List<ClinicRow>();
+            foreach (var clinic in Dictionaries.ClinicList.Value)
+            {
+                clinicsList.Add(clinic.Value);
+            }
+            bsClinics.DataSource = clinicsList;
         }
 
         private void button1_Click(object sender, EventArgs e)

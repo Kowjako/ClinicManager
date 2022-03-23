@@ -29,9 +29,10 @@ namespace ClinicManager.Controls
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.startDate = new System.Windows.Forms.DateTimePicker();
@@ -39,7 +40,15 @@ namespace ClinicManager.Controls
             this.label3 = new System.Windows.Forms.Label();
             this.endDate = new System.Windows.Forms.DateTimePicker();
             this.scheduleChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbClinics = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbDoctor = new System.Windows.Forms.ComboBox();
+            this.bsClinics = new System.Windows.Forms.BindingSource(this.components);
+            this.bsDoctors = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.scheduleChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsClinics)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDoctors)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -56,7 +65,7 @@ namespace ClinicManager.Controls
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(454, 44);
+            this.button2.Location = new System.Drawing.Point(454, 37);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(371, 23);
             this.button2.TabIndex = 1;
@@ -108,33 +117,89 @@ namespace ClinicManager.Controls
             // 
             this.scheduleChart.BackColor = System.Drawing.SystemColors.Control;
             this.scheduleChart.BackSecondaryColor = System.Drawing.SystemColors.Control;
-            chartArea2.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea2.AxisX.MajorGrid.Enabled = false;
-            chartArea2.BackColor = System.Drawing.SystemColors.Control;
-            chartArea2.Name = "ChartArea1";
-            this.scheduleChart.ChartAreas.Add(chartArea2);
-            this.scheduleChart.Location = new System.Drawing.Point(15, 84);
+            chartArea4.AxisX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea4.AxisX.MajorGrid.Enabled = false;
+            chartArea4.BackColor = System.Drawing.SystemColors.Control;
+            chartArea4.Name = "ChartArea1";
+            this.scheduleChart.ChartAreas.Add(chartArea4);
+            this.scheduleChart.Location = new System.Drawing.Point(12, 264);
             this.scheduleChart.Name = "scheduleChart";
             this.scheduleChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend2";
-            series2.Name = "SeriesData";
-            series2.YValuesPerPoint = 2;
-            this.scheduleChart.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend2";
+            series4.Name = "SeriesData";
+            series4.YValuesPerPoint = 2;
+            this.scheduleChart.Series.Add(series4);
             this.scheduleChart.Size = new System.Drawing.Size(809, 437);
             this.scheduleChart.TabIndex = 7;
             this.scheduleChart.Text = "chart1";
-            title2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title2.Name = "Title1";
-            title2.Text = "Ilość wizyt w zależności od dnia tygodnia";
-            this.scheduleChart.Titles.Add(title2);
+            title4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title4.Name = "Title1";
+            title4.Text = "Ilość wizyt w zależności od dnia tygodnia";
+            this.scheduleChart.Titles.Add(title4);
             this.scheduleChart.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label1.Location = new System.Drawing.Point(12, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Przychodnia";
+            // 
+            // cbClinics
+            // 
+            this.cbClinics.DataSource = this.bsClinics;
+            this.cbClinics.DisplayMember = "Nazwa";
+            this.cbClinics.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbClinics.FormattingEnabled = true;
+            this.cbClinics.Location = new System.Drawing.Point(227, 80);
+            this.cbClinics.Name = "cbClinics";
+            this.cbClinics.Size = new System.Drawing.Size(200, 21);
+            this.cbClinics.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.Magenta;
+            this.label4.Location = new System.Drawing.Point(13, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Lekarz";
+            // 
+            // cbDoctor
+            // 
+            this.cbDoctor.DataSource = this.bsDoctors;
+            this.cbDoctor.DisplayMember = "Lekarz";
+            this.cbDoctor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDoctor.FormattingEnabled = true;
+            this.cbDoctor.Location = new System.Drawing.Point(227, 114);
+            this.cbDoctor.Name = "cbDoctor";
+            this.cbDoctor.Size = new System.Drawing.Size(200, 21);
+            this.cbDoctor.TabIndex = 11;
+            // 
+            // bsClinics
+            // 
+            this.bsClinics.DataSource = typeof(ClinicManager.DataAccessLayer.ClinicRow);
+            // 
+            // bsDoctors
+            // 
+            this.bsDoctors.DataSource = typeof(ClinicManager.DataAccessLayer.EmployeeRow);
             // 
             // Schedule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(836, 83);
+            this.ClientSize = new System.Drawing.Size(834, 147);
+            this.Controls.Add(this.cbDoctor);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cbClinics);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.scheduleChart);
             this.Controls.Add(this.endDate);
             this.Controls.Add(this.label3);
@@ -148,6 +213,8 @@ namespace ClinicManager.Controls
             this.Name = "Schedule";
             this.Text = "Rozkład ilości wizyt w zależności od dnia";
             ((System.ComponentModel.ISupportInitialize)(this.scheduleChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsClinics)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDoctors)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +229,11 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker endDate;
         private System.Windows.Forms.DataVisualization.Charting.Chart scheduleChart;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbClinics;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbDoctor;
+        private System.Windows.Forms.BindingSource bsClinics;
+        private System.Windows.Forms.BindingSource bsDoctors;
     }
 }
