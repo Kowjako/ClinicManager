@@ -3,7 +3,7 @@ Program przedstawia system do zarządzania siecią przychodni. Jest dużo możli
 
 # Zastosowane technologie  
 💿 C# 7.3  
-💿 Windows Forms
+💿 Windows Forms  
 💿 Entity Framework 6.0  
 💿 ADO.NET  
 💿 Microsoft SQL Server  
