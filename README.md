@@ -2,7 +2,7 @@
 Program przedstawia system do zarządzania siecią przychodni. Jest dużo możliwości oraz został zaimplementowany menadżer baz danych który ułatwi pierwsze kroki przy uruchomieniu aplikacji. Aplikacja napisana na podstawie wzorzca architektonicznego MVVM, gdzie View - to będa poszczególne kontrolki, w roli Model - będzie występował DAL (Data Access Layer) który będzie przedstawial dostęp do bazy danych a naszym "Mediator" będzie ViewModel który będzie pobierał dane z DAL'a i przedstawiał do View oraz naodwrót.
 
 # Zastosowane technologie  
-💿 C# 7.3
+💿 C# 7.3  
 💿 Windows Forms
 💿 Entity Framework 6.0  
 💿 ADO.NET  
