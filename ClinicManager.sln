@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClinicManager", "ClinicManager\ClinicManager.csproj", "{C7EFDF76-7B35-44BA-9BD9-05838F6E586D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.Windows.Forms.Ribbon", "WlodekRibbon\System.Windows.Forms.Ribbon\System.Windows.Forms.Ribbon.csproj", "{4CFC2FCE-CF49-4D83-A0B5-E1C165B8C918}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C7EFDF76-7B35-44BA-9BD9-05838F6E586D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7EFDF76-7B35-44BA-9BD9-05838F6E586D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7EFDF76-7B35-44BA-9BD9-05838F6E586D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CFC2FCE-CF49-4D83-A0B5-E1C165B8C918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CFC2FCE-CF49-4D83-A0B5-E1C165B8C918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CFC2FCE-CF49-4D83-A0B5-E1C165B8C918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CFC2FCE-CF49-4D83-A0B5-E1C165B8C918}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
