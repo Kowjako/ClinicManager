@@ -11,15 +11,5 @@ namespace ClinicManager.Interfaces
 {
     interface IProducentDetailsViewModel
     {
-        void SaveProducent(Producents prod, Data producentData, DetailsMode mode);
-        void DeleteProducent(ProducentRow prod);
-        BindingSource RefreshProducents();
-        List<ProducentRow> Filter();
-        void EditProducent(ProducentRow row);
-        void AddProducent();
-        void ShowContact(ProducentRow row);
-        void Sort(DataGridView grid, BindingSource list);
-        BindingSource GetRelatedOrders(ProducentRow row);
-        BindingSource GetRelatedOrdersTools(ProducentRow row);
     }
 }

@@ -18,14 +18,5 @@ namespace ClinicManager.Controls
             InitializeComponent();
         }
         
-
-        public void InitializeData<T>(T person)
-        {
-            using(var context = new ClinicDataEntities())
-            {
-                var data = context.Data.Find(person.GetType().GetProperty("DataId").GetValue(person, null));
-                bsData.DataSource = new List<Data> { data };
-            }
-        }
     }
 }

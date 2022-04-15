@@ -121,7 +121,6 @@ namespace ClinicManager
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(368, 20);
             this.textBox2.TabIndex = 28;
-            this.textBox2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox2_Validating);
             // 
             // textBox1
             // 
@@ -130,7 +129,6 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(368, 20);
             this.textBox1.TabIndex = 27;
-            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating_1);
             // 
             // label6
             // 
@@ -250,7 +248,6 @@ namespace ClinicManager
             0,
             0,
             0});
-            this.numericUpDown1.Validating += new System.ComponentModel.CancelEventHandler(this.numericUpDown1_Validating);
             // 
             // _bsPatients
             // 
@@ -301,7 +298,6 @@ namespace ClinicManager
             this.saveBtn.TabIndex = 42;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // erp
             // 

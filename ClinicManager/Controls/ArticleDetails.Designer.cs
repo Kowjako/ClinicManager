@@ -60,7 +60,6 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 7;
-            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // label1
             // 
@@ -89,8 +88,6 @@ namespace ClinicManager
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(325, 20);
             this.numericUpDown1.TabIndex = 9;
-            this.numericUpDown1.Validating += new System.ComponentModel.CancelEventHandler(this.numericUpDown1_Validating);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -186,7 +183,6 @@ namespace ClinicManager
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(325, 20);
             this.textBox2.TabIndex = 23;
-            this.textBox2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox2_Validating);
             // 
             // unitCombo
             // 
@@ -205,7 +201,6 @@ namespace ClinicManager
             this.saveBtn.TabIndex = 25;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // erp
             // 

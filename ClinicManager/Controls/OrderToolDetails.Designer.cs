@@ -75,7 +75,6 @@ namespace ClinicManager.Controls
             this.amount.Name = "amount";
             this.amount.Size = new System.Drawing.Size(326, 20);
             this.amount.TabIndex = 35;
-            this.amount.Validating += new System.ComponentModel.CancelEventHandler(this.amount_Validating);
             // 
             // producentBox
             // 
@@ -107,7 +106,6 @@ namespace ClinicManager.Controls
             this.saveBtn.TabIndex = 32;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // clinicBox
             // 

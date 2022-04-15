@@ -11,16 +11,6 @@ namespace ClinicManager.Interfaces
 {
     interface IDoctorDetailsViewModel
     {
-        void SaveEmployee(Employees employee, Data employeeData, DetailsMode mode);
-        void DeleteEmployee(EmployeeRow employee);
-        BindingSource RefreshEmployees();
-        List<EmployeeRow> Filter();
-        void EditEmployee(EmployeeRow row);
-        void AddEmployee();
-        void Enroll();
-        void ShowContact(EmployeeRow row);
-        void Sort(DataGridView grid, BindingSource list);
-        BindingSource ShowHistory(EmployeeRow row);
-        void CheckCurrencyFormat(DataGridView grid);
+
     }
 }

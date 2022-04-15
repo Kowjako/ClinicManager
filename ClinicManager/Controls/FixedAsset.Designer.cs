@@ -55,7 +55,6 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 7;
-            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // label1
             // 
@@ -84,7 +83,6 @@ namespace ClinicManager
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(325, 20);
             this.numericUpDown1.TabIndex = 10;
-            this.numericUpDown1.Validating += new System.ComponentModel.CancelEventHandler(this.numericUpDown1_Validating);
             // 
             // label3
             // 
@@ -150,7 +148,6 @@ namespace ClinicManager
             this.saveBtn.TabIndex = 17;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // erp
             // 

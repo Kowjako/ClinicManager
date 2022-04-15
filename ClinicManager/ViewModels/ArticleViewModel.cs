@@ -27,75 +27,26 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
-        public void CheckPercentageFormat(DataGridView grid)
-        {
-            grid.Columns[2].DefaultCellStyle.Format = @"0 \%";
-            grid.Columns[6].DefaultCellStyle.Format = "0 szt" + @"\.";
-        }
-
-        public void DeleteArticle(DrugRow drug)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                var deleteDrug = context.Drugs.Find(drug.Id);
-                context.Drugs.Remove(deleteDrug);
-                context.SaveChanges();
-            }
-        }
-
         public void EditArticle(DrugRow row)
         {
             var form = new ArticleDetails(DetailsMode.Edit);
-            using (var context = new ClinicDataEntities())
-            {
-                var article = context.Drugs.Find(row.Id);
-                form.BindingSource = new List<Drugs> { article };
-            }
-            form.SetSpecificProperties();
             form.ShowDialog();
         }
 
         public List<DrugRow> Filter()
         {
-            var parameters = new string[] { "[Nazwa]", "[Dawka]", "[Data produkcji]", "[Data waznosci]", "[Psychotropowe]", "[Ilosc dostepna]", "[Jednostka]" };
-            var form = new FilterForm(parameters);
+            
+            var form = new FilterForm(new[] { string.Empty });
             if (form.ShowDialog() == DialogResult.OK)
             {
-                var sqlFilter = form.ReturnFilterString();
-                var sqlQuery = $"SELECT Id, Nazwa, Dawka, [Data produkcji] AS Data_produkcji, [Data waznosci] AS Data_waznosci, Psychotropowe, " +
-                               $"[Ilosc dostepna] AS Ilosc_dostepna, Jednostka FROM DrugRow {sqlFilter}";
-                using (var context = new ClinicDataEntities())
-                {
-                    try
-                    {
-                        var entites = context.Database.SqlQuery<DrugRow>(sqlQuery).ToList();
-                        return entites;
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show(null, "Niepoprawne zapytanie filtrowania", "Błąd");
-                    }
-                }
+
             }
             return null;
         }
 
         public void Inventarize()
         {
-            var dr = MessageBox.Show(null, "Po wykonaniu tej operacji zostana usuniete wszystkie leki data waznosci ktorych juz minela", "Uwaga", MessageBoxButtons.YesNo);
-            if(dr == DialogResult.Yes)
-            {
-                using (var context = new ClinicDataEntities())
-                {
-                    var entites = context.Drugs.Where(p => p.ExpireDate < DateTime.Now);
-                    context.Drugs.RemoveRange(entites);
-                    context.SaveChanges();
-                }
-            }
-            else
-            {
-                return;
-            }
+
         }
 
         public BindingSource RefreshArticles()
@@ -112,52 +63,13 @@ namespace ClinicManager.ViewModels
 
         public void SaveArticle(Drugs drug, Form1.DetailsMode Mode)
         {
-            using (var context = new ClinicDataEntities())
-            {
-                if (Mode == DetailsMode.Add)
-                {
-                    drug.ProductionDate = DateTime.Parse(drug.ProductionDate.ToShortDateString());
-                    drug.ExpireDate = DateTime.Parse(drug.ExpireDate.ToShortDateString());
-                    context.Drugs.Add(drug);
-                }
-                else
-                {
-                    context.Entry(drug).State = System.Data.Entity.EntityState.Modified;
-                }
-                try
-                {
-                    context.SaveChanges();
-                }
-                catch (DbUpdateException)
-                {
-                    MessageBox.Show(null, "Nie udalo sie zapisac artykulu", "Błąd!");
-                }
-            }
+
         }
 
         public void Sort(DataGridView grid, BindingSource list)
         {
             var form = new SortDetails();
-            form.SetParameters(grid, list);
             form.ShowDialog();
-
-            var newBs = new BindingSource();
-
-            if (!string.IsNullOrEmpty(list.Sort))
-            {
-                using (var context = new ClinicDataEntities())
-                {
-                    var clinicList = context.DrugRow.SqlQuery($"SELECT Id, Nazwa, Dawka, [Data produkcji] AS Data_produkcji, [Data waznosci] AS Data_waznosci, Psychotropowe, " +
-                                                              $"[Ilosc dostepna] AS Ilosc_dostepna, Jednostka FROM DrugRow ORDER BY {list.Sort}").ToList();
-                    newBs.DataSource = typeof(ClinicRow);
-                    newBs.DataSource = clinicList;
-                    grid.DataSource = newBs;
-                }
-            }
-            else
-            {
-                MessageBox.Show(null, "Nalezy zaznaczyc po czym filtrowac", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }

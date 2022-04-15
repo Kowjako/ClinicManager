@@ -81,7 +81,6 @@ namespace ClinicManager.Controls
             this.saveBtn.TabIndex = 41;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // label3
             // 
@@ -102,7 +101,6 @@ namespace ClinicManager.Controls
             this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.star1.TabIndex = 43;
             this.star1.TabStop = false;
-            this.star1.Click += new System.EventHandler(this.star1_Click);
             this.star1.MouseEnter += new System.EventHandler(this.star1_MouseEnter);
             // 
             // star2
@@ -115,7 +113,6 @@ namespace ClinicManager.Controls
             this.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.star2.TabIndex = 44;
             this.star2.TabStop = false;
-            this.star2.Click += new System.EventHandler(this.star1_Click);
             this.star2.MouseEnter += new System.EventHandler(this.star1_MouseEnter);
             // 
             // star3
@@ -127,7 +124,6 @@ namespace ClinicManager.Controls
             this.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.star3.TabIndex = 45;
             this.star3.TabStop = false;
-            this.star3.Click += new System.EventHandler(this.star1_Click);
             this.star3.MouseEnter += new System.EventHandler(this.star1_MouseEnter);
             // 
             // star4
@@ -139,7 +135,6 @@ namespace ClinicManager.Controls
             this.star4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.star4.TabIndex = 46;
             this.star4.TabStop = false;
-            this.star4.Click += new System.EventHandler(this.star1_Click);
             this.star4.MouseEnter += new System.EventHandler(this.star1_MouseEnter);
             // 
             // star5
@@ -151,7 +146,6 @@ namespace ClinicManager.Controls
             this.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.star5.TabIndex = 47;
             this.star5.TabStop = false;
-            this.star5.Click += new System.EventHandler(this.star1_Click);
             this.star5.MouseEnter += new System.EventHandler(this.star1_MouseEnter);
             // 
             // bsClinics

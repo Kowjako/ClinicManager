@@ -157,7 +157,6 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(368, 20);
             this.textBox1.TabIndex = 9;
-            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // _bsEmployeeData
             // 
@@ -170,7 +169,6 @@ namespace ClinicManager
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(368, 20);
             this.textBox2.TabIndex = 10;
-            this.textBox2.Validating += new System.ComponentModel.CancelEventHandler(this.textBox2_Validating);
             // 
             // dateTimePicker1
             // 
@@ -204,7 +202,6 @@ namespace ClinicManager
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(368, 20);
             this.textBox5.TabIndex = 16;
-            this.textBox5.Validating += new System.ComponentModel.CancelEventHandler(this.textBox5_Validating);
             // 
             // _bsEmployees
             // 
@@ -217,7 +214,6 @@ namespace ClinicManager
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(368, 20);
             this.textBox6.TabIndex = 17;
-            this.textBox6.Validating += new System.ComponentModel.CancelEventHandler(this.textBox6_Validating);
             // 
             // operationBox
             // 
@@ -265,7 +261,6 @@ namespace ClinicManager
             this.saveBtn.TabIndex = 21;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // erp
             // 

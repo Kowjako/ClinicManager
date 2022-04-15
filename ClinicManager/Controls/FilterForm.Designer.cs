@@ -87,7 +87,6 @@ namespace ClinicManager.Controls
             this.filterBtn.TabIndex = 11;
             this.filterBtn.Text = "Zatwierdź";
             this.filterBtn.UseVisualStyleBackColor = true;
-            this.filterBtn.Click += new System.EventHandler(this.filterBtn_Click);
             // 
             // firstCondition
             // 

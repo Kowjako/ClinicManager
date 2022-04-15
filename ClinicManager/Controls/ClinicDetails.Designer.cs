@@ -108,7 +108,6 @@ namespace ClinicManager
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(325, 20);
             this.textBox1.TabIndex = 5;
-            this.textBox1.Validating += new System.ComponentModel.CancelEventHandler(this.textBox1_Validating);
             // 
             // _bsDetails
             // 
@@ -174,7 +173,6 @@ namespace ClinicManager
             this.saveBtn.TabIndex = 10;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // epClinic
             // 

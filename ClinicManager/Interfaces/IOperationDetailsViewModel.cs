@@ -11,13 +11,5 @@ namespace ClinicManager.Interfaces
 {
     interface IOperationDetailsViewModel
     {
-        void SaveOperation(Operations op, DetailsMode mode);
-        void DeleteOperation(OperationRow op);
-        BindingSource RefreshOperations();
-        List<OperationRow> Filter();
-        void EditOperation(OperationRow row);
-        void AddOperation();
-        void AddOperationType();
-        void Sort(DataGridView grid, BindingSource list);
     }
 }

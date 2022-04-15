@@ -55,7 +55,6 @@ namespace ClinicManager.Controls
             this.saveBtn.TabIndex = 21;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // countryBox
             // 
@@ -63,7 +62,6 @@ namespace ClinicManager.Controls
             this.countryBox.Name = "countryBox";
             this.countryBox.Size = new System.Drawing.Size(325, 20);
             this.countryBox.TabIndex = 16;
-            this.countryBox.Validating += new System.ComponentModel.CancelEventHandler(this.countryBox_Validating);
             // 
             // label1
             // 
@@ -81,7 +79,6 @@ namespace ClinicManager.Controls
             this.cityBox.Name = "cityBox";
             this.cityBox.Size = new System.Drawing.Size(325, 20);
             this.cityBox.TabIndex = 23;
-            this.cityBox.Validating += new System.ComponentModel.CancelEventHandler(this.cityBox_Validating);
             // 
             // label2
             // 
@@ -99,7 +96,6 @@ namespace ClinicManager.Controls
             this.streetBox.Name = "streetBox";
             this.streetBox.Size = new System.Drawing.Size(325, 20);
             this.streetBox.TabIndex = 25;
-            this.streetBox.Validating += new System.ComponentModel.CancelEventHandler(this.streetBox_Validating);
             // 
             // label3
             // 
@@ -117,7 +113,6 @@ namespace ClinicManager.Controls
             this.houseBox.Name = "houseBox";
             this.houseBox.Size = new System.Drawing.Size(325, 20);
             this.houseBox.TabIndex = 27;
-            this.houseBox.Validating += new System.ComponentModel.CancelEventHandler(this.houseBox_Validating);
             // 
             // label4
             // 
@@ -135,7 +130,6 @@ namespace ClinicManager.Controls
             this.flatBox.Name = "flatBox";
             this.flatBox.Size = new System.Drawing.Size(325, 20);
             this.flatBox.TabIndex = 29;
-            this.flatBox.Validating += new System.ComponentModel.CancelEventHandler(this.flatBox_Validating);
             // 
             // label5
             // 
@@ -153,7 +147,6 @@ namespace ClinicManager.Controls
             this.codeBox.Name = "codeBox";
             this.codeBox.Size = new System.Drawing.Size(325, 20);
             this.codeBox.TabIndex = 31;
-            this.codeBox.Validating += new System.ComponentModel.CancelEventHandler(this.codeBox_Validating);
             // 
             // label6
             // 

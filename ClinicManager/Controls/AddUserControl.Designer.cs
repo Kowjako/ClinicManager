@@ -77,7 +77,6 @@ namespace ClinicManager.Controls
             this.saveBtn.TabStop = false;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // loginBox
             // 

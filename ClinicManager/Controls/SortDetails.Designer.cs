@@ -54,7 +54,6 @@ namespace ClinicManager.Controls
             this.ascSort.Text = "Sortuj rosnąco";
             this.ascSort.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ascSort.UseVisualStyleBackColor = true;
-            this.ascSort.Click += new System.EventHandler(this.ascSort_Click);
             // 
             // descSort
             // 
@@ -67,7 +66,6 @@ namespace ClinicManager.Controls
             this.descSort.Text = "Sortuj malejąco";
             this.descSort.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.descSort.UseVisualStyleBackColor = true;
-            this.descSort.Click += new System.EventHandler(this.descSort_Click);
             // 
             // SortDetails
             // 

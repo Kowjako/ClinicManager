@@ -11,14 +11,5 @@ namespace ClinicManager.Interfaces
 {
     interface IFixedAssetViewModel
     {
-        void SaveFixedAsset(Tools tool, DetailsMode mode);
-        void DeleteFixedAsset(ToolRow tool);
-        BindingSource RefreshFixedAssets();
-        List<ToolRow> Filter();
-        void EditFixedAsset(ToolRow row);
-        void AddFixedAsset();
-        void Sort(DataGridView grid, BindingSource list);
-        void Inventarize();
-        void CheckAmountFormat(DataGridView grid);
     }
 }

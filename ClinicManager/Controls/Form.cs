@@ -37,15 +37,15 @@ namespace Test
 
         #region ViewModels
 
-        IClinicDetailsViewModel ClinicViewModel;
-        IArticleDetailsViewModel ArticleViewModel;
-        IFixedAssetViewModel FixedAssetViewModel;
-        IVisitDetailsViewModel VisitViewModel;
-        IPatientDetailsViewModel PatientViewModel;
-        IOperationDetailsViewModel OperationViewModel;
-        ICostDetailsViewModel CostViewModel;
-        IDoctorDetailsViewModel EmployeeViewModel;
-        IProducentDetailsViewModel ProducentViewModel;
+        ClinicViewModel ClinicViewModel;
+        ArticleViewModel ArticleViewModel;
+        FixedAssetViewModel FixedAssetViewModel;
+        VisitViewModel VisitViewModel;
+        PatientViewModel PatientViewModel;
+        OperationViewModel OperationViewModel;
+        CostViewModel CostViewModel;
+        EmployeeViewModel EmployeeViewModel;
+        ProducentViewModel ProducentViewModel;
 
         #endregion
 
@@ -169,7 +169,6 @@ namespace Test
 
         private void btnGetHighestMark_Click(object sender, EventArgs e)
         {
-            ClinicViewModel.GetHighestMark((_gvMain.SelectedRows[0].DataBoundItem as ClinicRow).Id);
         }
 
         private void btnHospitalShowList_Click(object sender, EventArgs e)
@@ -186,14 +185,7 @@ namespace Test
 
         private void btnOpinionShow_Click(object sender, EventArgs e)
         {
-            try
-            {
-                _gvMain.DataSource = ClinicViewModel.GetOpinions(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
-            }
-            catch(ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac przychodnie", "Blad");
-            }
+
         }
 
         private void btnOpinionAdd_Click(object sender, EventArgs e)
@@ -209,14 +201,7 @@ namespace Test
 
         private void btnHospitalRemove_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ClinicViewModel.DeleteClinics(_gvMain.SelectedRows[0].DataBoundItem as ClinicRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }   
+
         }
 
         private void btnHospitalFilter_Click(object sender, EventArgs e)
@@ -282,14 +267,7 @@ namespace Test
 
         private void btnDoctorsDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                EmployeeViewModel.DeleteEmployee(_gvMain.SelectedRows[0].DataBoundItem as EmployeeRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         private void btnDoctorsRefresh_Click(object sender, EventArgs e)
@@ -328,15 +306,7 @@ namespace Test
 
         private void btnDoctorsHistory_Click(object sender, EventArgs e)
         {
-            try
-            {
-                _gvMain.DataSource = EmployeeViewModel.ShowHistory(_gvMain.SelectedRows[0].DataBoundItem as EmployeeRow);
-                VisitViewModel.CheckRegistrationStatus(_gvMain);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
+
         }
 
         #endregion
@@ -374,14 +344,7 @@ namespace Test
 
         private void btnClientsDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                PatientViewModel.DeletePatient(_gvMain.SelectedRows[0].DataBoundItem as PatientRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         private void btnClientsRefresh_Click(object sender, EventArgs e)
@@ -414,15 +377,7 @@ namespace Test
 
         private void btnPatientVisits_Click(object sender, EventArgs e)
         {
-            try
-            {
-                _gvMain.DataSource = PatientViewModel.ShowVisits(_gvMain.SelectedRows[0].DataBoundItem as PatientRow);
-                VisitViewModel.CheckRegistrationStatus(_gvMain);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         private void btnPatientsGenerateVisit_Click(object sender, EventArgs e)
@@ -467,14 +422,7 @@ namespace Test
 
         private void btnAssetsDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                FixedAssetViewModel.DeleteFixedAsset(_gvMain.SelectedRows[0].DataBoundItem as ToolRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
+
         }
 
         private void btnAssetsRefresh_Click(object sender, EventArgs e)
@@ -497,7 +445,6 @@ namespace Test
 
         private void btnToolsInventarize_Click(object sender, EventArgs e)
         {
-            FixedAssetViewModel.Inventarize();
         }
 
         #endregion
@@ -520,7 +467,6 @@ namespace Test
                 _gvMain.DataSource = bsMain;
             }
 
-            ArticleViewModel.CheckPercentageFormat(_gvMain);
         }
 
         private void btnArticleEdit_Click(object sender, EventArgs e)
@@ -537,27 +483,18 @@ namespace Test
 
         private void btnArticleDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ArticleViewModel.DeleteArticle(_gvMain.SelectedRows[0].DataBoundItem as DrugRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }          
+   
         }
 
         private void btnArticleRefresh_Click(object sender, EventArgs e)
         {
             _gvMain.DataSource = ArticleViewModel.RefreshArticles();
-            ArticleViewModel.CheckPercentageFormat(_gvMain);
         }
 
         private void btnArticleFilter_Click(object sender, EventArgs e)
         {
             bsMain.DataSource = ArticleViewModel.Filter();
             _gvMain.DataSource = bsMain;
-            ArticleViewModel.CheckPercentageFormat(_gvMain);
         }
 
         private void btnArticleAddUnit_Click(object sender, EventArgs e)
@@ -612,27 +549,17 @@ namespace Test
 
         private void btnVisitsDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                VisitViewModel.DeleteVisit(_gvMain.SelectedRows[0].DataBoundItem as RegistrationRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
+
         }
 
         private void btnVisitsRefresh_Click(object sender, EventArgs e)
         {
-            _gvMain.DataSource = VisitViewModel.RefreshVisits();
-            VisitViewModel.CheckRegistrationStatus(_gvMain);
+
         }
 
         private void btnVisitsFilter_Click(object sender, EventArgs e)
         {
             bsMain.DataSource = VisitViewModel.Filter();
-            _gvMain.DataSource = bsMain;
-            VisitViewModel.CheckRegistrationStatus(_gvMain);
         }
 
         private void btnVisitsSchedule_Click(object sender, EventArgs e)
@@ -648,38 +575,16 @@ namespace Test
 
         private void btnVisitAccept_Click(object sender, EventArgs e)
         {
-            try
-            {
-                VisitViewModel.AcceptVisit(_gvMain.SelectedRows[0].DataBoundItem as RegistrationRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void btnVisitRealize_Click(object sender, EventArgs e)
         {
-            try
-            {
-                VisitViewModel.RealizeVisit(_gvMain.SelectedRows[0].DataBoundItem as RegistrationRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         private void btnVisitUndo_Click(object sender, EventArgs e)
         {
-            try
-            {
-                VisitViewModel.UndoVisit(_gvMain.SelectedRows[0].DataBoundItem as RegistrationRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         #endregion
@@ -717,14 +622,7 @@ namespace Test
 
         private void btnOperationsDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                OperationViewModel.DeleteOperation(_gvMain.SelectedRows[0].DataBoundItem as OperationRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         private void btnOperationsRefresh_Click(object sender, EventArgs e)
@@ -784,14 +682,7 @@ namespace Test
 
         private void btnPriceDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                CostViewModel.DeleteCost(_gvMain.SelectedRows[0].DataBoundItem as CostRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }        
+      
         }
 
         private void btnPriceRefresh_Click(object sender, EventArgs e)
@@ -814,14 +705,12 @@ namespace Test
 
         private void btnCostsCheapest_Click(object sender, EventArgs e)
         {
-            _gvMain.DataSource = CostViewModel.GetCheapest();
-            CostViewModel.CheckCurrencyFormat(_gvMain, true);
+
         }
 
         private void btnCostsFastest_Click(object sender, EventArgs e)
         {
-            _gvMain.DataSource = CostViewModel.GetFastest();
-            CostViewModel.CheckCurrencyFormat(_gvMain, false, true);
+
         }
 
         #endregion
@@ -858,14 +747,7 @@ namespace Test
 
         private void btnSupplierDelete_Click(object sender, EventArgs e)
         {
-            try
-            {
-                ProducentViewModel.DeleteProducent(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         private void btnSupplierRefresh_Click(object sender, EventArgs e)
@@ -898,26 +780,12 @@ namespace Test
 
         private void btnProducentsOrders_Click(object sender, EventArgs e)
         {
-            try
-            {
-                _gvMain.DataSource = ProducentViewModel.GetRelatedOrders(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         private void btnProducentsOrdersTools_Click(object sender, EventArgs e)
         {
-            try
-            {
-                _gvMain.DataSource = ProducentViewModel.GetRelatedOrdersTools(_gvMain.SelectedRows[0].DataBoundItem as ProducentRow);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show(null, "Nalezy wybrac rekord", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } 
+
         }
 
         private void btnProducentsAddPrice_Click(object sender, EventArgs e)

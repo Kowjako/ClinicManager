@@ -62,7 +62,6 @@ namespace ClinicManager.Controls
             this.saveBtn.TabIndex = 21;
             this.saveBtn.Text = "Zatwierdź";
             this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // clinicBox
             // 
@@ -169,7 +168,6 @@ namespace ClinicManager.Controls
             this.amount.Name = "amount";
             this.amount.Size = new System.Drawing.Size(324, 20);
             this.amount.TabIndex = 24;
-            this.amount.Validating += new System.ComponentModel.CancelEventHandler(this.amount_Validating);
             // 
             // bsOrder
             // 
@@ -185,7 +183,6 @@ namespace ClinicManager.Controls
             this.unitBox.Size = new System.Drawing.Size(325, 21);
             this.unitBox.TabIndex = 25;
             this.unitBox.ValueMember = "Id";
-            this.unitBox.Validating += new System.ComponentModel.CancelEventHandler(this.unitBox_Validating);
             // 
             // erp
             // 

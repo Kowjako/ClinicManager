@@ -28,25 +28,9 @@ namespace ClinicManager.ViewModels
             form.ShowDialog();
         }
 
-        public void DeleteClinics(ClinicRow clinic)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                var deleteClinic = context.Clinics.Find(clinic.Id);
-                context.Clinics.Remove(deleteClinic);
-                context.SaveChanges();
-            }
-        }
-
         public void EditClinic(ClinicRow row)
         {
             var form = new ClinicDetails(DetailsMode.Edit);
-            using (var context = new ClinicDataEntities())
-            {
-                var clinic = context.Clinics.Find(row.Id);
-                form.BindingSource = new List<Clinics> { clinic };
-            }
-            form.SetSpecificProperties();
             form.ShowDialog();
         }
 
@@ -56,51 +40,11 @@ namespace ClinicManager.ViewModels
             var form = new FilterForm(parameters);
             if(form.ShowDialog() == DialogResult.OK)
             {
-                var sqlFilter = form.ReturnFilterString();
-                var sqlQuery = $"SELECT Id, Nazwa, [Data otwarcia] AS Data_otwarcia, Prywatna, Ocena, Lokalizacja, Kierownik FROM ClinicRow {sqlFilter}";
-                using(var context = new ClinicDataEntities())
-                {
-                    try
-                    {
-                        var entites = context.Database.SqlQuery<ClinicRow>(sqlQuery).ToList();
-                        return entites;
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show(null, "Niepoprawne zapytanie filtrowania", "Błąd");
-                    }
-                }
+
             }
             return null;
         }
 
-        public void GetHighestMark(int clinicId)
-        {
-            /* Using stored procedure with Entity Framework */
-            using(var context = new ClinicDataEntities())
-            {
-                ObjectParameter mark = new ObjectParameter("Mark", typeof(float));
-                MessageBox.Show(null, mark.Value.ToString(),"Najlepsza ocena",MessageBoxButtons.OK);
-            }
-        }
-
-        public BindingSource GetOpinions(ClinicRow row)
-        {
-            var bsMain = new BindingSource();
-            using (var context = new ClinicDataEntities())
-            {
-                var clinic = context.Clinics.Find(row.Id);
-                var opinions = context.Opinions.Where(p => p.ClinicId == clinic.Id).ToList();
-                var opinionList = new List<OpinionRow>();
-                foreach (var opinion in opinions)
-                {
-                    opinionList.Add(context.OpinionRow.First(p => p.Id == opinion.Id));
-                }
-                bsMain.DataSource = typeof(OpinionRow);
-                bsMain.DataSource = opinionList;
-                return bsMain;
-            }
-        }
 
         public void MakeOrder()
         {
@@ -126,33 +70,7 @@ namespace ClinicManager.ViewModels
             }
         }
 
-        public void SaveClinics(Clinics newClinicData, Form1.DetailsMode Mode)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                if (Mode == DetailsMode.Add)
-                {
-                    newClinicData.OpenDate = DateTime.Parse(newClinicData.OpenDate.ToShortDateString());
-                    context.Clinics.Add(newClinicData);
-                }
-                else
-                {
-                    context.Entry(newClinicData).State = System.Data.Entity.EntityState.Modified;
-                }
-                try
-                {
-                    context.SaveChanges();
-                }
-                catch (DbUpdateException ex)
-                {
-                    if (ex.InnerException.InnerException.Message.Contains("UQ__Clinics_LocalizationId"))
-                    {
-                        MessageBox.Show(null, "Wybrana lokalizacja jest już zajęta. Prosze stworzyc nowa", "Błąd!");
-                    }
-                }
-            }
-        }
-
+       
         public void SaveOrder(Orders order)
         {
             using(var context = new ClinicDataEntities())
@@ -174,32 +92,13 @@ namespace ClinicManager.ViewModels
         public void ShowHierarchy(ClinicRow row)
         {
             var form = new HierarchyControl();
-            form.SetHierarchy(row);
             form.ShowDialog();
         }
 
         public void Sort(DataGridView grid, BindingSource list)
         {
             var form = new SortDetails();
-            form.SetParameters(grid, list);
             form.ShowDialog();
-
-            var newBs = new BindingSource();
-
-            if (!string.IsNullOrEmpty(list.Sort))
-            {
-                using (var context = new ClinicDataEntities())
-                {
-                    var clinicList = context.ClinicRow.SqlQuery($"SELECT Id, Nazwa, [Data otwarcia] AS Data_otwarcia, Prywatna, Ocena, Lokalizacja, Kierownik FROM ClinicRow ORDER BY {list.Sort}").ToList();
-                    newBs.DataSource = typeof(ClinicRow);
-                    newBs.DataSource = clinicList;
-                    grid.DataSource = newBs;
-                }
-            }
-            else
-            {
-                MessageBox.Show(null, "Nalezy zaznaczyc po czym filtrowac", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
     }

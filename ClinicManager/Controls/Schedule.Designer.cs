@@ -60,7 +60,6 @@ namespace ClinicManager.Controls
             this.button1.TabStop = false;
             this.button1.Text = "Zatwierdź okres";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -72,7 +71,6 @@ namespace ClinicManager.Controls
             this.button2.TabStop = false;
             this.button2.Text = "Wyjdź";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // startDate
             // 

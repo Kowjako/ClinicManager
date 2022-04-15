@@ -16,17 +16,6 @@ namespace ClinicManager.ViewModels
 {
     public class VisitViewModel : IVisitDetailsViewModel
     {
-        public void AcceptVisit(RegistrationRow row)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                var editedVisit = context.Registrations.Find(row.Id);
-                editedVisit.Status = "Zaakceptowana";
-                context.Entry(editedVisit).State = System.Data.Entity.EntityState.Modified;
-                context.SaveChanges();
-            }
-        }
-
         public void AddRegistration()
         {
             var form = new VisitDetails(DetailsMode.Add);
@@ -36,9 +25,6 @@ namespace ClinicManager.ViewModels
         public void AddRegistrationForClient(PatientRow client)
         {
             var form = new VisitDetails(DetailsMode.Add);
-            form.Patient = client;
-            form.dateTimePicker1.Value = client.Planowana_data;
-            form.patientBox.SelectedItem = form.patientBox.Items.OfType<PatientRow>().First(p => p.Id == client.Id);
             form.ShowDialog();
         }
 
@@ -64,25 +50,9 @@ namespace ClinicManager.ViewModels
             }
         }
 
-        public void DeleteVisit(RegistrationRow visit)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                var deleteVisit = context.Registrations.Find(visit.Id);
-                context.Registrations.Remove(deleteVisit);
-                context.SaveChanges();
-            }
-        }
-
         public void EditRegistration(RegistrationRow row)
         {
             var form = new VisitDetails(DetailsMode.Edit);
-            using (var context = new ClinicDataEntities())
-            {
-                var visit = context.Registrations.Find(row.Id);
-                form.BindingSource = new List<Registrations> { visit };
-            }
-            form.SetSpecificProperties();
             form.ShowDialog();
         }
 
@@ -92,20 +62,7 @@ namespace ClinicManager.ViewModels
             var form = new FilterForm(parameters);
             if (form.ShowDialog() == DialogResult.OK)
             {
-                var sqlFilter = form.ReturnFilterString();
-                var sqlQuery = $"SELECT Id, Pacjent, Lekarz, [Data operacji] AS Data_operacji, [Czas rozpoczecia] AS Czas_rozpoczecia, Status FROM RegistrationRow {sqlFilter}";
-                using (var context = new ClinicDataEntities())
-                {
-                    try
-                    {
-                        var entites = context.Database.SqlQuery<RegistrationRow>(sqlQuery).ToList();
-                        return entites;
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show(null, "Niepoprawne zapytanie filtrowania", "Błąd");
-                    }
-                }
+
             }
             return null;
         }
@@ -113,24 +70,7 @@ namespace ClinicManager.ViewModels
         public void GetSchedule()
         {
             var form = new Schedule();
-            form.SetSpecificProperties();
             form.ShowDialog();
-        }
-
-        public void RealizeVisit(RegistrationRow row)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                var editedVisit = context.Registrations.Find(row.Id);
-                if(editedVisit.Status != "Zaakceptowana")
-                {
-                    MessageBox.Show(null, "Nie mozna zrealizowac niezaakceptowanej wizyty", "Blad");
-                    return;
-                }
-                editedVisit.Status = "Zrealizowana";
-                context.Entry(editedVisit).State = System.Data.Entity.EntityState.Modified;
-                context.SaveChanges();
-            }
         }
 
         public BindingSource RefreshVisits()
@@ -145,67 +85,10 @@ namespace ClinicManager.ViewModels
             }
         }
 
-        public void SaveVisit(Registrations visit, Form1.DetailsMode Mode, PatientRow patientRow)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                if (Mode == DetailsMode.Add)
-                {
-                    visit.Date = DateTime.Parse(visit.Date.Value.ToShortDateString());
-                    visit.Status = "Zaakceptowana"; 
-                    context.Registrations.Add(visit);
-
-                    context.Patients.First(p => p.Id == patientRow.Id).IsAccepted = true;
-                }
-                else
-                {
-                    context.Entry(visit).State = System.Data.Entity.EntityState.Modified;
-                }
-                try
-                {
-                    context.SaveChanges();
-                }
-                catch (DbUpdateException ex)
-                {
-                    MessageBox.Show(null, "Nie udalo sie zapisac wizyty", "Błąd!");
-                }
-            }
-        }
-
         public void Sort(DataGridView grid, BindingSource list)
         {
             var form = new SortDetails();
-            form.SetParameters(grid, list);
             form.ShowDialog();
-
-            var newBs = new BindingSource();
-
-            if (!string.IsNullOrEmpty(list.Sort))
-            {
-                using (var context = new ClinicDataEntities())
-                {
-                    var clinicList = context.RegistrationRow.SqlQuery($"SELECT Id, Pacjent, Lekarz, Przychodnia, [Data operacji] AS Data_operacji, [Czas rozpoczecia] AS Czas_rozpoczecia, Status FROM registrationRow ORDER BY {list.Sort}").ToList();
-                    newBs.DataSource = typeof(ClinicRow);
-                    newBs.DataSource = clinicList;
-                    grid.DataSource = newBs;
-                }
-            }
-            else
-            {
-                MessageBox.Show(null, "Nalezy zaznaczyc po czym filtrowac", "Blad", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        public void UndoVisit(RegistrationRow row)
-        {
-            using (var context = new ClinicDataEntities())
-            {
-                var editedVisit = context.Registrations.Find(row.Id);
-                editedVisit.Status = "Anulowana";
-                context.Entry(editedVisit).State = System.Data.Entity.EntityState.Modified;
-
-                context.SaveChanges();
-            }
         }
     }
 }

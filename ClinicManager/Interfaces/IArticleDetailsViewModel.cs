@@ -11,15 +11,5 @@ namespace ClinicManager.Interfaces
 {
     interface IArticleDetailsViewModel
     {
-        void SaveArticle(Drugs drug, DetailsMode mode);
-        void DeleteArticle(DrugRow drug);
-        BindingSource RefreshArticles();
-        List<DrugRow> Filter();
-        void EditArticle(DrugRow row);
-        void AddArticle();
-        void AddUnit();
-        void Sort(DataGridView grid, BindingSource list);
-        void Inventarize();
-        void CheckPercentageFormat(DataGridView grid);
     }
 }

@@ -11,14 +11,5 @@ namespace ClinicManager.Interfaces
 {
     interface IPatientDetailsViewModel
     {
-        void SavePatient(Patients patient, Data patientData, DetailsMode mode);
-        void DeletePatient(PatientRow patient);
-        BindingSource RefreshPatients();
-        List<PatientRow> Filter();
-        void EditPatient(PatientRow row);
-        void AddPatient();
-        void ShowContact(PatientRow row);
-        void Sort(DataGridView grid, BindingSource list);
-        BindingSource ShowVisits(PatientRow row);
     }
 }
