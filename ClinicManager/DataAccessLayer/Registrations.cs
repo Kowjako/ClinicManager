@@ -20,7 +20,6 @@ namespace ClinicManager.DataAccessLayer
         public int EmployeeId { get; set; }
         public int PatientId { get; set; }
         public string Status { get; set; }
-        public Nullable<bool> IsAccepted { get; set; }
     
         public virtual Employees Employees { get; set; }
         public virtual Patients Patients { get; set; }

@@ -151,7 +151,6 @@
           <Property Name="EmployeeId" Type="int" Nullable="false" />
           <Property Name="PatientId" Type="int" Nullable="false" />
           <Property Name="Status" Type="nvarchar" MaxLength="20" />
-          <Property Name="IsAccepted" Type="bit" />
         </EntityType>
         <EntityType Name="Tools">
           <Key>
@@ -1100,7 +1099,6 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Property Name="EmployeeId" Type="Int32" Nullable="false" />
           <Property Name="PatientId" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="IsAccepted" Type="Boolean" />
           <NavigationProperty Name="Employees" Relationship="Self.FK__Registrations_EmployeeId" FromRole="Registrations" ToRole="Employees" />
           <NavigationProperty Name="Patients" Relationship="Self.FK__Registrations_PatientId" FromRole="Registrations" ToRole="Patients" />
         </EntityType>
@@ -1879,7 +1877,6 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
                 <ScalarProperty Name="PatientId" ColumnName="PatientId" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
-                <ScalarProperty Name="IsAccepted" ColumnName="IsAccepted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
