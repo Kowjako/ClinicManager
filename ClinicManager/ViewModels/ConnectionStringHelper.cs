@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,11 @@ namespace ClinicManager.ViewModels
             {
                 connectionStrings.Add(elem);
             }
+
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            config.ConnectionStrings.ConnectionStrings["ClinicDataEntities"].ConnectionString = connectionStrings[0].Attributes.GetNamedItem("value").Value;
+            config.Save(ConfigurationSaveMode.Modified);
         }
         public static ConnectionStringHelper ConnectionStringInstance => _instance ?? (_instance = new ConnectionStringHelper());
     }
