@@ -121,6 +121,7 @@ namespace ClinicManager.Controls
                         cmd.Connection = connection;
                         foreach (var script in scripts)
                         {
+                            if (string.IsNullOrEmpty(script)) continue;
                             if (script.Contains("CREATE VIEW"))
                             {
                                 msg = $"Tworzenie widoku ->  {script.Substring(script.IndexOf("CREATE VIEW") + 11, script.IndexOf("AS") - (script.IndexOf("CREATE VIEW") + 11))}";
