@@ -31,8 +31,8 @@ namespace Test
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ribbon1 = new System.Windows.Forms.Ribbon();
             this.ribbonContext1 = new System.Windows.Forms.RibbonContext();
             this.ribbonOrbMenuItem4 = new System.Windows.Forms.RibbonOrbMenuItem();
@@ -181,24 +181,25 @@ namespace Test
             this.ribbonOrbMenuItem3 = new System.Windows.Forms.RibbonOrbMenuItem();
             this._gvMain = new System.Windows.Forms.DataGridView();
             this.headerPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.bClose = new System.Windows.Forms.PictureBox();
             this.bMinimize = new System.Windows.Forms.PictureBox();
+            this.bClose = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).BeginInit();
             this.headerPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bClose)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon1
             // 
             this.ribbon1.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.ribbon1.BackColor = System.Drawing.SystemColors.Control;
+            this.ribbon1.BackColor = System.Drawing.Color.DarkGray;
             this.ribbon1.BorderMode = System.Windows.Forms.RibbonWindowMode.InsideWindow;
             this.ribbon1.CaptionBarVisible = false;
             this.ribbon1.Contexts.Add(this.ribbonContext1);
             this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ribbon1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ribbon1.Location = new System.Drawing.Point(0, 31);
             this.ribbon1.Minimized = false;
             this.ribbon1.Name = "ribbon1";
@@ -214,7 +215,7 @@ namespace Test
             this.ribbon1.OrbDropDown.OptionItemsPadding = 5;
             this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 72);
             this.ribbon1.OrbDropDown.TabIndex = 0;
-            this.ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2010;
+            this.ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
             this.ribbon1.OrbText = "Wyloguj";
             this.ribbon1.OrbVisible = false;
             // 
@@ -239,7 +240,7 @@ namespace Test
             this.ribbon1.Tabs.Add(this.costsTab);
             this.ribbon1.Tabs.Add(this.producentTab);
             this.ribbon1.Tabs.Add(this.configTab);
-            this.ribbon1.TabSpacing = 3;
+            this.ribbon1.TabSpacing = 4;
             this.ribbon1.Text = "Clinic Manager";
             this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue_2010;
             // 
@@ -1563,14 +1564,14 @@ namespace Test
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Peru;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this._gvMain.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LawnGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.GridColor = System.Drawing.Color.Black;
             this._gvMain.Location = new System.Drawing.Point(0, 155);
@@ -1578,21 +1579,21 @@ namespace Test
             this._gvMain.MultiSelect = false;
             this._gvMain.Name = "_gvMain";
             this._gvMain.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this._gvMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this._gvMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._gvMain.Size = new System.Drawing.Size(1300, 745);
             this._gvMain.TabIndex = 1;
             // 
             // headerPanel
             // 
-            this.headerPanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.headerPanel.BackColor = System.Drawing.Color.Green;
             this.headerPanel.Controls.Add(this.bMinimize);
             this.headerPanel.Controls.Add(this.bClose);
             this.headerPanel.Controls.Add(this.label1);
@@ -1604,41 +1605,43 @@ namespace Test
             this.headerPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.headerPanel_MouseDown);
             this.headerPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.headerPanel_MouseMove);
             // 
-            // label1
+            // bMinimize
             // 
-            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(495, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(326, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ClinicManager - zarządzanie siecią przychodni";
+            this.bMinimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bMinimize.Image = ((System.Drawing.Image)(resources.GetObject("bMinimize.Image")));
+            this.bMinimize.Location = new System.Drawing.Point(1237, 3);
+            this.bMinimize.Name = "bMinimize";
+            this.bMinimize.Size = new System.Drawing.Size(25, 25);
+            this.bMinimize.TabIndex = 2;
+            this.bMinimize.TabStop = false;
+            this.bMinimize.Click += new System.EventHandler(this.bMinimize_Click);
             // 
             // bClose
             // 
             this.bClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.bClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bClose.Image = ((System.Drawing.Image)(resources.GetObject("bClose.Image")));
-            this.bClose.Location = new System.Drawing.Point(1269, 5);
+            this.bClose.Location = new System.Drawing.Point(1269, 3);
             this.bClose.Name = "bClose";
             this.bClose.Size = new System.Drawing.Size(25, 25);
             this.bClose.TabIndex = 1;
             this.bClose.TabStop = false;
             this.bClose.Click += new System.EventHandler(this.bClose_Click);
             // 
-            // bMinimize
+            // label1
             // 
-            this.bMinimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bMinimize.Image = ((System.Drawing.Image)(resources.GetObject("bMinimize.Image")));
-            this.bMinimize.Location = new System.Drawing.Point(1237, 5);
-            this.bMinimize.Name = "bMinimize";
-            this.bMinimize.Size = new System.Drawing.Size(25, 25);
-            this.bMinimize.TabIndex = 2;
-            this.bMinimize.TabStop = false;
-            this.bMinimize.Click += new System.EventHandler(this.bMinimize_Click);
+            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(495, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(326, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ClinicManager - zarządzanie siecią przychodni";
             // 
             // Form1
             // 
@@ -1657,8 +1660,8 @@ namespace Test
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).EndInit();
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bClose)).EndInit();
             this.ResumeLayout(false);
 
         }
