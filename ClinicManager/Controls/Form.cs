@@ -67,6 +67,7 @@ namespace Test
             this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
+
         public void SetPermissions(byte? permissionLevel)
         {
             switch (permissionLevel.Value)

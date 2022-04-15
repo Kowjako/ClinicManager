@@ -199,7 +199,7 @@ namespace Test
             this.ribbon1.Contexts.Add(this.ribbonContext1);
             this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ribbon1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.ribbon1.Location = new System.Drawing.Point(0, 31);
+            this.ribbon1.Location = new System.Drawing.Point(2, 33);
             this.ribbon1.Margin = new System.Windows.Forms.Padding(10);
             this.ribbon1.Minimized = false;
             this.ribbon1.Name = "ribbon1";
@@ -228,7 +228,7 @@ namespace Test
             this.ribbon1.QuickAccessToolbar.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Overflow;
             this.ribbon1.QuickAccessToolbar.Visible = false;
             this.ribbon1.RibbonTabFont = new System.Drawing.Font("Trebuchet MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ribbon1.Size = new System.Drawing.Size(1300, 124);
+            this.ribbon1.Size = new System.Drawing.Size(1296, 124);
             this.ribbon1.TabIndex = 0;
             this.ribbon1.Tabs.Add(this.clinicTab);
             this.ribbon1.Tabs.Add(this.employeeTab);
@@ -1553,6 +1553,7 @@ namespace Test
             this._gvMain.AllowUserToResizeRows = false;
             this._gvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this._gvMain.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this._gvMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this._gvMain.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this._gvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1565,7 +1566,7 @@ namespace Test
             this._gvMain.DefaultCellStyle = dataGridViewCellStyle1;
             this._gvMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gvMain.GridColor = System.Drawing.Color.Black;
-            this._gvMain.Location = new System.Drawing.Point(0, 155);
+            this._gvMain.Location = new System.Drawing.Point(2, 157);
             this._gvMain.Margin = new System.Windows.Forms.Padding(0);
             this._gvMain.MultiSelect = false;
             this._gvMain.Name = "_gvMain";
@@ -1579,7 +1580,7 @@ namespace Test
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this._gvMain.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this._gvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._gvMain.Size = new System.Drawing.Size(1300, 745);
+            this._gvMain.Size = new System.Drawing.Size(1296, 741);
             this._gvMain.TabIndex = 1;
             // 
             // headerPanel
@@ -1589,9 +1590,9 @@ namespace Test
             this.headerPanel.Controls.Add(this.bClose);
             this.headerPanel.Controls.Add(this.label1);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.headerPanel.Location = new System.Drawing.Point(0, 0);
+            this.headerPanel.Location = new System.Drawing.Point(2, 2);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(1300, 31);
+            this.headerPanel.Size = new System.Drawing.Size(1296, 31);
             this.headerPanel.TabIndex = 2;
             this.headerPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.headerPanel_MouseDown);
             this.headerPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.headerPanel_MouseMove);
@@ -1601,9 +1602,10 @@ namespace Test
             this.bMinimize.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.bMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bMinimize.Image = ((System.Drawing.Image)(resources.GetObject("bMinimize.Image")));
-            this.bMinimize.Location = new System.Drawing.Point(1237, 3);
+            this.bMinimize.Location = new System.Drawing.Point(1234, 5);
             this.bMinimize.Name = "bMinimize";
-            this.bMinimize.Size = new System.Drawing.Size(25, 25);
+            this.bMinimize.Size = new System.Drawing.Size(20, 20);
+            this.bMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bMinimize.TabIndex = 2;
             this.bMinimize.TabStop = false;
             this.bMinimize.Click += new System.EventHandler(this.bMinimize_Click);
@@ -1613,9 +1615,10 @@ namespace Test
             this.bClose.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.bClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bClose.Image = ((System.Drawing.Image)(resources.GetObject("bClose.Image")));
-            this.bClose.Location = new System.Drawing.Point(1269, 3);
+            this.bClose.Location = new System.Drawing.Point(1266, 5);
             this.bClose.Name = "bClose";
-            this.bClose.Size = new System.Drawing.Size(25, 25);
+            this.bClose.Size = new System.Drawing.Size(20, 20);
+            this.bClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bClose.TabIndex = 1;
             this.bClose.TabStop = false;
             this.bClose.Click += new System.EventHandler(this.bClose_Click);
@@ -1628,7 +1631,7 @@ namespace Test
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(495, 6);
+            this.label1.Location = new System.Drawing.Point(493, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(326, 19);
             this.label1.TabIndex = 0;
@@ -1638,6 +1641,7 @@ namespace Test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1300, 900);
             this.Controls.Add(this._gvMain);
             this.Controls.Add(this.ribbon1);
@@ -1646,6 +1650,7 @@ namespace Test
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Form1";
+            this.Padding = new System.Windows.Forms.Padding(2);
             this.Text = "ClinicManager - Zarządzanie siecią przychodni";
             ((System.ComponentModel.ISupportInitialize)(this.bsMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._gvMain)).EndInit();
