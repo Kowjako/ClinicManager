@@ -56,7 +56,6 @@ namespace Test
             this.btnHospitalOpinions = new System.Windows.Forms.RibbonButton();
             this.btnOpinionShow = new System.Windows.Forms.RibbonButton();
             this.btnOpinionAdd = new System.Windows.Forms.RibbonButton();
-            this.btnGetHighestMark = new System.Windows.Forms.RibbonButton();
             this.employeeTab = new System.Windows.Forms.RibbonTab();
             this.ribbonPanel3 = new System.Windows.Forms.RibbonPanel();
             this.btnDoctorsShow = new System.Windows.Forms.RibbonButton();
@@ -201,6 +200,7 @@ namespace Test
             this.ribbon1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ribbon1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.ribbon1.Location = new System.Drawing.Point(0, 31);
+            this.ribbon1.Margin = new System.Windows.Forms.Padding(10);
             this.ribbon1.Minimized = false;
             this.ribbon1.Name = "ribbon1";
             // 
@@ -215,7 +215,7 @@ namespace Test
             this.ribbon1.OrbDropDown.OptionItemsPadding = 5;
             this.ribbon1.OrbDropDown.Size = new System.Drawing.Size(527, 72);
             this.ribbon1.OrbDropDown.TabIndex = 0;
-            this.ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2013;
+            this.ribbon1.OrbStyle = System.Windows.Forms.RibbonOrbStyle.Office_2010;
             this.ribbon1.OrbText = "Wyloguj";
             this.ribbon1.OrbVisible = false;
             // 
@@ -240,9 +240,9 @@ namespace Test
             this.ribbon1.Tabs.Add(this.costsTab);
             this.ribbon1.Tabs.Add(this.producentTab);
             this.ribbon1.Tabs.Add(this.configTab);
-            this.ribbon1.TabSpacing = 4;
+            this.ribbon1.TabSpacing = 3;
             this.ribbon1.Text = "Clinic Manager";
-            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.Blue_2010;
+            this.ribbon1.ThemeColor = System.Windows.Forms.RibbonTheme.KovyakoTheme;
             // 
             // ribbonContext1
             // 
@@ -313,6 +313,7 @@ namespace Test
             this.btnHospitalEdit.Name = "btnHospitalEdit";
             this.btnHospitalEdit.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalEdit.SmallImage")));
             this.btnHospitalEdit.Text = "Edytuj";
+            this.btnHospitalEdit.TextAlignment = System.Windows.Forms.RibbonItem.RibbonItemTextAlignment.Right;
             this.btnHospitalEdit.Click += new System.EventHandler(this.btnHospitalEdit_Click);
             // 
             // btnHospitalRemove
@@ -423,7 +424,6 @@ namespace Test
             // 
             this.btnHospitalOpinions.DropDownItems.Add(this.btnOpinionShow);
             this.btnHospitalOpinions.DropDownItems.Add(this.btnOpinionAdd);
-            this.btnHospitalOpinions.DropDownItems.Add(this.btnGetHighestMark);
             this.btnHospitalOpinions.Image = ((System.Drawing.Image)(resources.GetObject("btnHospitalOpinions.Image")));
             this.btnHospitalOpinions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHospitalOpinions.LargeImage")));
             this.btnHospitalOpinions.Name = "btnHospitalOpinions";
@@ -435,9 +435,10 @@ namespace Test
             // 
             this.btnOpinionShow.DrawDropDownIconsBar = false;
             this.btnOpinionShow.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
+            this.btnOpinionShow.DropDownResizable = true;
             this.btnOpinionShow.Image = ((System.Drawing.Image)(resources.GetObject("btnOpinionShow.Image")));
             this.btnOpinionShow.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionShow.LargeImage")));
-            this.btnOpinionShow.MinSizeMode = System.Windows.Forms.RibbonElementSizeMode.Overflow;
+            this.btnOpinionShow.MaxSizeMode = System.Windows.Forms.RibbonElementSizeMode.DropDown;
             this.btnOpinionShow.Name = "btnOpinionShow";
             this.btnOpinionShow.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionShow.SmallImage")));
             this.btnOpinionShow.Text = "Wyświetl opinie";
@@ -453,16 +454,6 @@ namespace Test
             this.btnOpinionAdd.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnOpinionAdd.SmallImage")));
             this.btnOpinionAdd.Text = "Dodaj opinię";
             this.btnOpinionAdd.Click += new System.EventHandler(this.btnOpinionAdd_Click);
-            // 
-            // btnGetHighestMark
-            // 
-            this.btnGetHighestMark.DropDownArrowDirection = System.Windows.Forms.RibbonArrowDirection.Left;
-            this.btnGetHighestMark.Image = ((System.Drawing.Image)(resources.GetObject("btnGetHighestMark.Image")));
-            this.btnGetHighestMark.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGetHighestMark.LargeImage")));
-            this.btnGetHighestMark.Name = "btnGetHighestMark";
-            this.btnGetHighestMark.SmallImage = ((System.Drawing.Image)(resources.GetObject("btnGetHighestMark.SmallImage")));
-            this.btnGetHighestMark.Text = "Najlepsza ocena";
-            this.btnGetHighestMark.Click += new System.EventHandler(this.btnGetHighestMark_Click);
             // 
             // employeeTab
             // 
@@ -1811,7 +1802,6 @@ namespace Test
         private System.Windows.Forms.RibbonButton logOut;
         private System.Windows.Forms.RibbonPanel ribbonPanel24;
         private System.Windows.Forms.RibbonButton btnPatientsGenerateVisit;
-        private System.Windows.Forms.RibbonButton btnGetHighestMark;
         private System.Windows.Forms.RibbonDescriptionMenuItem ribbonDescriptionMenuItem1;
         private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem4;
         private System.Windows.Forms.RibbonContext ribbonContext1;

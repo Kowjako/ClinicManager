@@ -9,12 +9,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ClinicManager</RootNamespace>
     <AssemblyName>ClinicManager</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -72,9 +73,6 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Windows.Forms.Ribbon, Version=2.0.0.0, Culture=neutral, PublicKeyToken=928736e248aa81f9, processorArchitecture=MSIL">
-      <HintPath>..\packages\RibbonWinForms.5.0.1.1\lib\net472\System.Windows.Forms.Ribbon.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -515,7 +513,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="appIcon.ico" />
     <Content Include="DataAccessLayer\Clinics.Context.tt">
@@ -544,6 +541,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WlodekRibbon\System.Windows.Forms.Ribbon\System.Windows.Forms.Ribbon.csproj">
+      <Project>{4cfc2fce-cf49-4d83-a0b5-e1c165b8c918}</Project>
+      <Name>System.Windows.Forms.Ribbon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
