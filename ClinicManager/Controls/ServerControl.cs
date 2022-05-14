@@ -187,6 +187,7 @@ namespace ClinicManager.Controls
                     ConnectionStringHelper.ConnectionStringInstance.RefreshConnectionStrings();
 
                     logger.LogMessage(string.Empty, MessageSeverity.Finish);
+                    connection.Close();
                 }
                 catch(Exception ex)
                 {
