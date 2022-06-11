@@ -262,6 +262,7 @@
     <Compile Include="DataAccessLayer\Data.cs">
       <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataAccessLayer\Data.Extensions.cs" />
     <Compile Include="DataAccessLayer\DrugRow.cs">
       <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>

@@ -118,12 +118,12 @@ namespace ClinicManager.Controls
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 15);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Email";
+            this.label4.Text = "Nazwa";
             // 
             // dataBox
             // 
             this.dataBox.DataSource = this.bsData;
-            this.dataBox.DisplayMember = "Email";
+            this.dataBox.DisplayMember = "FullName";
             this.dataBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dataBox.FormattingEnabled = true;
             this.dataBox.Location = new System.Drawing.Point(89, 93);
