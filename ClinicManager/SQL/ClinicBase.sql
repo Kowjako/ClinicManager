@@ -359,3 +359,6 @@ JOIN Operations o ON (p.OperationId = o.Id)
 JOIN Data d ON (p.DataId = d.Id)
 WHERE p.IsAccepted IS NULL OR p.IsAccepted = 0
 GO
+
+ALTER TABLE Users
+ADD DataId INT 

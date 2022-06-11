@@ -175,6 +175,7 @@ warning 6002: The table/view 'ClinicData.dbo.Users' does not have a primary key 
           <Property Name="Login" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="Permission" Type="tinyint" />
+          <Property Name="DataId" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ClinicData.dbo.ClinicRow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -692,7 +693,8 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
     [Users].[Id] AS [Id], 
     [Users].[Login] AS [Login], 
     [Users].[Password] AS [Password], 
-    [Users].[Permission] AS [Permission]
+    [Users].[Permission] AS [Permission], 
+    [Users].[DataId] AS [DataId]
     FROM [dbo].[Users] AS [Users]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ClinicRow" EntityType="Self.ClinicRow" store:Type="Views" store:Schema="dbo">
@@ -1125,6 +1127,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
           <Property Name="Login" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Permission" Type="Byte" />
+          <Property Name="DataId" Type="Int32" />
         </EntityType>
         <EntityType Name="ClinicRow">
           <Key>
@@ -1899,6 +1902,7 @@ warning 6002: The table/view 'ClinicData.dbo.ToolRow' does not have a primary ke
                 <ScalarProperty Name="Login" ColumnName="Login" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Permission" ColumnName="Permission" />
+                <ScalarProperty Name="DataId" ColumnName="DataId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

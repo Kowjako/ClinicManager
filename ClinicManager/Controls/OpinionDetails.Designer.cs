@@ -167,6 +167,7 @@ namespace ClinicManager.Controls
             this.patientBox.DataSource = this.bsPatients;
             this.patientBox.DisplayMember = "Pacjent";
             this.patientBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.patientBox.Enabled = false;
             this.patientBox.FormattingEnabled = true;
             this.patientBox.Location = new System.Drawing.Point(172, 10);
             this.patientBox.Name = "patientBox";

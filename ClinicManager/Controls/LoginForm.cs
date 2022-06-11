@@ -18,7 +18,7 @@ namespace ClinicManager.Controls
     {
         private Point lastpoint;
         private bool isLoginSuccess = false;
-        private object permission;
+        private (int userId, byte permission, object dataId) perm;
 
         public LoginForm()
         {
@@ -54,7 +54,7 @@ namespace ClinicManager.Controls
                     connection.Open();
                     var loginParam = new SqlParameter("@login", loginBox.Text);
                     var passParam = new SqlParameter("@pass", passwordBox.Text);
-                    var sqlCommand = new SqlCommand("SELECT Id, Login, Password, Permission FROM Users WHERE Login = @login AND Password = @pass", connection);
+                    var sqlCommand = new SqlCommand("SELECT Id, Login, Password, DataId, Permission FROM Users WHERE Login = @login AND Password = @pass", connection);
                     sqlCommand.Parameters.Add(loginParam);
                     sqlCommand.Parameters.Add(passParam);
 
@@ -63,7 +63,7 @@ namespace ClinicManager.Controls
                         if (reader.HasRows && reader.Read())
                         {
                             isLoginSuccess = true;
-                            permission = reader.GetValue(3);
+                            perm = (reader.GetInt32(0), reader.GetByte(4), reader.GetValue(3));
                         }
                     }
                     
@@ -88,7 +88,7 @@ namespace ClinicManager.Controls
             {
                 Hide();
                 var form = new Form1();
-                form.SetPermissions(permission as byte?);
+                form.SetPermissions(perm);
                 form.ShowDialog();                
                 this.Close();
             }

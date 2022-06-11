@@ -19,6 +19,8 @@ namespace Test
     {
         private static Point lastPoint;
 
+        public static (int userId, byte permission, object dataId) Rights { get; private set; }
+
         #region Enums & values
 
         public enum DetailsMode
@@ -68,9 +70,10 @@ namespace Test
         }
 
 
-        public void SetPermissions(byte? permissionLevel)
+        public void SetPermissions((int userId, byte permission, object dataId) permissionLevel)
         {
-            switch (permissionLevel.Value)
+            Rights = permissionLevel;
+            switch (permissionLevel.permission)
             {
                 case 1:
                     btnHospitalAdd.Visible = false;

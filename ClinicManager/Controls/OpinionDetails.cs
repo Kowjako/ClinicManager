@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Test;
 
 namespace ClinicManager.Controls
 {
@@ -17,24 +18,20 @@ namespace ClinicManager.Controls
     {
         private byte Mark;
         private StaticDictionaries Dictionaries;
+        private PatientRow loggedUser;
         public OpinionDetails()
         {
             InitializeComponent();
             Dictionaries = new StaticDictionaries();
 
-            var patientList = new List<PatientRow>();
-            foreach (var obj in Dictionaries.PatientList.Value)
+            if((Form1.Rights.dataId as int?).HasValue)
             {
-                patientList.Add(obj.Value);
-            }
-            bsPatients.DataSource = patientList;
+                loggedUser = Dictionaries.PatientList.Value.Values.First(p => p.Id == p.GetIdByDataId((Form1.Rights.dataId as int?).Value));
+                bsPatients.DataSource = new List<PatientRow> { loggedUser };
 
-            var clinicList = new List<ClinicRow>();
-            foreach (var obj in Dictionaries.ClinicList.Value)
-            {
-                clinicList.Add(obj.Value);
+                bsClinics.DataSource = loggedUser.GetVisitedClinics();
             }
-            bsClinics.DataSource = clinicList;
+            
         }
 
         private void star1_MouseEnter(object sender, EventArgs e)
@@ -69,21 +66,28 @@ namespace ClinicManager.Controls
             }
             else
             {
-                var newOpinion = new Opinions();
-                newOpinion.Mark = Mark;
-                newOpinion.ClinicId = (clinicBox.SelectedItem as ClinicRow).Id;
-                try
+                if (loggedUser.ExistsOpinionForClinic((clinicBox.SelectedItem as ClinicRow).Id))
                 {
-                    using (var context = new ClinicDataEntities())
-                    {
-                        newOpinion.DataId = context.Data.Find((context.Patients.Find((patientBox.SelectedItem as PatientRow).Id)).DataId).Id;
-                        context.Opinions.Add(newOpinion);
-                        context.SaveChanges();
-                    }
+                    MessageBox.Show(null, "Wystawiles juz ocene dla tej przychodni", "Blad");
                 }
-                catch(DbUpdateException)
+                else
                 {
-                    MessageBox.Show(null, "Nie udalo sie wystawic opinii", "Blad");
+                    var newOpinion = new Opinions();
+                    newOpinion.Mark = Mark;
+                    newOpinion.ClinicId = (clinicBox.SelectedItem as ClinicRow).Id;
+                    try
+                    {
+                        using (var context = new ClinicDataEntities())
+                        {
+                            newOpinion.DataId = context.Data.Find((context.Patients.Find((patientBox.SelectedItem as PatientRow).Id)).DataId).Id;
+                            context.Opinions.Add(newOpinion);
+                            context.SaveChanges();
+                        }
+                    }
+                    catch (DbUpdateException)
+                    {
+                        MessageBox.Show(null, "Nie udalo sie wystawic opinii", "Blad");
+                    }
                 }
             }
             this.Close();

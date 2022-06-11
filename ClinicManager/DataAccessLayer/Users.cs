@@ -18,5 +18,6 @@ namespace ClinicManager.DataAccessLayer
         public string Login { get; set; }
         public string Password { get; set; }
         public Nullable<byte> Permission { get; set; }
+        public Nullable<int> DataId { get; set; }
     }
 }

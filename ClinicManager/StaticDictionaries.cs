@@ -22,6 +22,7 @@ namespace ClinicManager
         public Lazy<Dictionary<int, DrugRow>> DrugList { get; set; } = new Lazy<Dictionary<int, DrugRow>>(InitializeDictionary<DrugRow>);
         public Lazy<Dictionary<int, ProducentRow>> ProducentList { get; set; } = new Lazy<Dictionary<int, ProducentRow>>(InitializeDictionary<ProducentRow>);
         public Lazy<Dictionary<int, ClinicRow>> ClinicList { get; set; } = new Lazy<Dictionary<int, ClinicRow>>(InitializeDictionary<ClinicRow>);
+        public Lazy<Dictionary<int, Data>> DataList { get; set; } = new Lazy<Dictionary<int, Data>>(InitializeDictionary<Data>);
 
         #endregion
 

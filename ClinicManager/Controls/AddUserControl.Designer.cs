@@ -29,6 +29,7 @@ namespace ClinicManager.Controls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,6 +37,10 @@ namespace ClinicManager.Controls
             this.loginBox = new System.Windows.Forms.TextBox();
             this.typeBox = new System.Windows.Forms.ComboBox();
             this.passBox = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataBox = new System.Windows.Forms.ComboBox();
+            this.bsData = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bsData)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,7 +75,7 @@ namespace ClinicManager.Controls
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(12, 92);
+            this.saveBtn.Location = new System.Drawing.Point(12, 128);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(426, 23);
             this.saveBtn.TabIndex = 3;
@@ -105,11 +110,38 @@ namespace ClinicManager.Controls
             this.passBox.Size = new System.Drawing.Size(349, 22);
             this.passBox.TabIndex = 7;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lucida Console", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(13, 96);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 15);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Email";
+            // 
+            // dataBox
+            // 
+            this.dataBox.DataSource = this.bsData;
+            this.dataBox.DisplayMember = "Email";
+            this.dataBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dataBox.FormattingEnabled = true;
+            this.dataBox.Location = new System.Drawing.Point(89, 93);
+            this.dataBox.Name = "dataBox";
+            this.dataBox.Size = new System.Drawing.Size(349, 21);
+            this.dataBox.TabIndex = 9;
+            // 
+            // bsData
+            // 
+            this.bsData.DataSource = typeof(ClinicManager.DataAccessLayer.Data);
+            // 
             // AddUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 123);
+            this.ClientSize = new System.Drawing.Size(450, 159);
+            this.Controls.Add(this.dataBox);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.passBox);
             this.Controls.Add(this.typeBox);
             this.Controls.Add(this.loginBox);
@@ -122,6 +154,7 @@ namespace ClinicManager.Controls
             this.MinimizeBox = false;
             this.Name = "AddUserControl";
             this.Text = "Tworzenie konta użytkownika";
+            ((System.ComponentModel.ISupportInitialize)(this.bsData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +169,8 @@ namespace ClinicManager.Controls
         private System.Windows.Forms.TextBox loginBox;
         private System.Windows.Forms.ComboBox typeBox;
         private System.Windows.Forms.MaskedTextBox passBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox dataBox;
+        private System.Windows.Forms.BindingSource bsData;
     }
 }

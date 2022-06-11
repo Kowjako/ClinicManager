@@ -233,103 +233,103 @@
       <DependentUpon>UnitDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\ClinicRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataAccessLayer\Clinics.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Clinics.Context.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Clinics.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataAccessLayer\Clinics.Designer.cs">
+    <Compile Include="DataAccessLayer\ClinicsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Clinics.edmx</DependentUpon>
+      <DependentUpon>ClinicsModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataAccessLayer\Clinics1.cs">
+    <Compile Include="DataAccessLayer\ClinicsModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccessLayer\ClinicsModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClinicsModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\CostRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Costs.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Data.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\DrugRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Drugs.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\EmployeeRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Employees.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\LocalizationRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Localizations.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\OperationRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Operations.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\OpinionRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Opinions.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\OrderRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Orders.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\OrdersTools.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\OrderToolRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\PatientRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Patients.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\ProducentRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Producents.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\RegistrationRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Registrations.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\ToolRow.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Tools.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataAccessLayer\Users.cs">
-      <DependentUpon>Clinics.tt</DependentUpon>
+      <DependentUpon>ClinicsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IArticleDetailsViewModel.cs" />
     <Compile Include="Interfaces\IClinicDetailsViewModel.cs" />
@@ -354,6 +354,7 @@
       <DependentUpon>UILoggerMessage.cs</DependentUpon>
     </Compile>
     <Compile Include="Logger\UILoggerViewModel.cs" />
+    <Compile Include="DataAccessLayer\PatientRow.Extensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controls\VisitDetails.cs">
@@ -470,12 +471,12 @@
     <None Include="ClinicManager.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <EntityDeploy Include="DataAccessLayer\Clinics.edmx">
+    <EntityDeploy Include="DataAccessLayer\ClinicsModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Clinics.Designer.cs</LastGenOutput>
+      <LastGenOutput>ClinicsModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DataAccessLayer\Clinics.edmx.diagram">
-      <DependentUpon>Clinics.edmx</DependentUpon>
+    <None Include="DataAccessLayer\ClinicsModel.edmx.diagram">
+      <DependentUpon>ClinicsModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ClinicDetails.datasource" />
@@ -515,15 +516,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="appIcon.ico" />
-    <Content Include="DataAccessLayer\Clinics.Context.tt">
+    <Content Include="DataAccessLayer\ClinicsModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Clinics.edmx</DependentUpon>
-      <LastGenOutput>Clinics.Context.cs</LastGenOutput>
+      <DependentUpon>ClinicsModel.edmx</DependentUpon>
+      <LastGenOutput>ClinicsModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DataAccessLayer\Clinics.tt">
+    <Content Include="DataAccessLayer\ClinicsModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Clinics.edmx</DependentUpon>
-      <LastGenOutput>Clinics1.cs</LastGenOutput>
+      <DependentUpon>ClinicsModel.edmx</DependentUpon>
+      <LastGenOutput>ClinicsModel.cs</LastGenOutput>
     </Content>
     <Content Include="Logger\SeverityIcons\error.png" />
     <Content Include="Logger\SeverityIcons\message.png" />
@@ -547,6 +548,9 @@
       <Project>{4cfc2fce-cf49-4d83-a0b5-e1c165b8c918}</Project>
       <Name>System.Windows.Forms.Ribbon</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
