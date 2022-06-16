@@ -39,8 +39,9 @@ Pozwala automatycznie wykreować strukturę (tabele, widoki, triggery, procedury
 - Operacje
 
 # Screenshot
-![Screenshot_1](https://user-images.githubusercontent.com/19534189/135512422-faef3145-6605-48f4-b22f-df0b39a00f02.png)
-![Screenshot_7](https://user-images.githubusercontent.com/19534189/146606766-c60e250a-f89f-4390-b8c3-0e6e8c415ad4.png)
+![Screenshot_2](https://user-images.githubusercontent.com/19534189/174052464-3d4125f0-f152-4f74-bb54-f13352c51d40.jpg)
+![Screenshot_3](https://user-images.githubusercontent.com/19534189/174052472-6b4377b9-4771-4ac2-9d0f-9ff14f2f0749.jpg)
+![Screenshot_4](https://user-images.githubusercontent.com/19534189/174052474-c7790674-e1d8-497f-97bc-41e427a7d40c.jpg)
 
 
 
